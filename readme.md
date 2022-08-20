@@ -30,4 +30,8 @@
 - 오답코드를 확인할 경우  
 ![코드실행오답](https://github.com/GoHakNeung/python/blob/main/python/%EC%BD%94%EB%93%9C%20%EC%98%A4%EB%8B%B5.jpg?raw=true)  
 
-
+## 문제 입력하기
+주피터 노트북에서 온라인 저지를 사용하려면 문제를 입력해야 합니다.  
+1. 깃에 문제와 testset을 입력하는 방법  
+2. 코드를 가져간 다음 혼자 문제를 입력하는 경우  
+ 
