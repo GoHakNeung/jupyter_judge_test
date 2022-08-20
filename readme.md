@@ -36,7 +36,7 @@
 > code_check.py 상단에 있는 question_1, answer_1, test_set을 입력합니다.  
 
 >주피터 노트북에서 온라인 저지를 사용하려면 문제를 입력해야 합니다.  
-
+>문제 세트 입력한 것을 푸시해주거나 개인적으로 다운로드 받아서 문제를 입력합니다.  
 ``` python
 import sys, random, math
 question_1 = '이름을 입력하고 "Hello이름"이 출력되도록 프로그램을 만듭니다.\n입력 예시 : 가득\n출력 예시 : Hello가득'
