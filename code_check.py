@@ -93,7 +93,7 @@ def code_convert0(answer_input) :
     
     sys.stdout = original   
     f.close()
-    print('코드 변환 중 오류발생')    
+    print('입력/출력을 확인하세요')    
 #--------------------------------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
 def code_convert1(answer_input) : 
@@ -130,11 +130,12 @@ def code_convert1(answer_input) :
 
     sys.stdout = original   
     f.close()
-    print('코드 변환 중 오류발생')  
+    print('입력/출력을 확인하세요')  
 #--------------------------------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
 def code_convert2(answer_input) : 
   f = open('test2.py', 'w')  
+  global original
   original = sys.stdout
   sys.stdout = f
 
@@ -167,7 +168,7 @@ def code_convert2(answer_input) :
 
     sys.stdout = original   
     f.close()
-    print('코드 변환 중 오류발생')  
+    print('입력/출력을 확인하세요')  
 #--------------------------------------------------------------------------------------------------------#
 
 
@@ -301,11 +302,23 @@ def code_check(py) :
   code_convert0(answer)
   code_convert1(answer)
   code_convert2(answer)
-  exec(open('test0.py').read())
+  try : 
+    exec(open('test0.py').read())
+  except : 
+    sys.stdout = original   
+    print('코드 오류입니다.')
   code_test0(answer)
-  exec(open('test1.py').read())
+  try : 
+    exec(open('test1.py').read())
+  except : 
+    sys.stdout = original
+    print('코드 오류입니다.')
   code_test1(answer)
-  exec(open('test2.py').read())
+  try : 
+    exec(open('test2.py').read())
+  except : 
+    sys.stdout = original
+    print('코드 오류입니다. ')
   code_test2(answer)
   print(result)
   if result[0] and result[1] and result[2] == True:
