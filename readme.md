@@ -20,10 +20,14 @@
 1. 알고리즘 코드 작성하기  
 %%writefile 코드이름.py  
 이후 코드를 작성합니다.  
+- 정답코드 작성할 경우  
 ![코드작성정답](https://github.com/GoHakNeung/python/blob/main/python/%EC%BD%94%EB%93%9C%20%EC%9E%91%EC%84%B1_%EC%A0%95%EB%8B%B5.jpg?raw=true)  
+- 오답코드 작성할 경우  
 ![코드작성오답](https://github.com/GoHakNeung/python/blob/main/python/%EC%BD%94%EB%93%9C%20%EC%9E%91%EC%84%B1.jpg?raw=true)  
 2. code_check('코드이름')을 실행합니다.  
+- 정답코드를 확인할 경우  
 ![코드실행정답](https://github.com/GoHakNeung/python/blob/main/python/%EC%BD%94%EB%93%9C%20%EC%A0%95%EB%8B%B5.jpg?raw=true)  
+- 오답코드를 확인할 경우  
 ![코드실행오답](https://github.com/GoHakNeung/python/blob/main/python/%EC%BD%94%EB%93%9C%20%EC%98%A4%EB%8B%B5.jpg?raw=true)  
 
 
