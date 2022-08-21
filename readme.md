@@ -20,7 +20,8 @@
 `%run /content/jupyter_judge/code_check.py 
 ```
 을 실행합니다.  
-![실행결과](https://github.com/GoHakNeung/python/blob/main/python/%EC%A0%80%EC%A7%80%20%EC%8B%9C%EC%9E%91%20%EC%BD%94%EB%93%9C.jpg?raw=true)
+![실행결과](https://github.com/GoHakNeung/python/blob/main/python/%EC%A0%80%EC%A7%80%20%EC%8B%9C%EC%9E%91%20%EC%BD%94%EB%93%9C.jpg?raw=true)  
+
 3. `print(question_1)`을 실행하면 문제가 나옵니다.    
 4. `%%writefile _1.py` 아래 알고리즘 코드를 작성합니다.  
 5. `code_check('_1.py')`을 실행하면 결과를 확인할 수 있습니다. 
