@@ -19,7 +19,7 @@
 2. 주피터에서 저지 파일을 다운로드 받고 1회 실행합니다.  
 ``` python 
 !git clone https://github.com/GoHakNeung/jupyter_judge.git
-`%run /content/jupyter_judge/code_check.py 
+%run /content/jupyter_judge/code_check.py 
 ```
 을 실행합니다.  
 ![실행결과](https://github.com/GoHakNeung/python/blob/main/python/%EC%A0%80%EC%A7%80%20%EC%8B%9C%EC%9E%91%20%EC%BD%94%EB%93%9C.jpg?raw=true)  
