@@ -15,6 +15,7 @@ test_set = [['_1.py', 'answer_1'], ['_2.py', 'answer_2'], ['_4.py', 'answer_4']]
 #출력할 때 글씨 색
 reset = '\033[0m'
 tc_red = '\033[38;2;255;0;0m'
+tc_green = '\033[38;2;0;255;0m'
 #------------------------------------------------------------------------------#
 # 코드를 input /output 리스트에 넣기
 def code_arrange(py_name) : 
@@ -298,23 +299,6 @@ def code_print(py_name) :
       code_count += 1
   f.close()
 #------------------------------------------------------------------------------#
-#syntax 오류일 경우
-def code_print1(py_name) :  
-  file_name = '/content/'+py_name
-  f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
-  lines = f.readlines()
-  error_count = error_line1()
-  code_count = 1
-
-  for line in lines[4:-2] : 
-    if error_count == code_count : 
-      print(tc_red+line[:-1]+reset)
-      code_count += 1
-    else : 
-      print(line[:-1])
-      code_count += 1
-  f.close()
-#------------------------------------------------------------------------------#
 # syntax 외 오류 라인 검출
 
 def error_line() : 
@@ -328,20 +312,6 @@ def error_line() :
     if i.find('line') >= 0 : 
       line = i.strip()
   return int(line[line.find('e')+2:])-4
-#------------------------------------------------------------------------------#
-# syntax 오류
-
-def error_line1() : 
-  trace = traceback.format_exc()
-  error = ''
-  line = ''
-  for i in trace.split('\n') :  
-    if i.find('string') >= 0 : 
-      error = i.strip()    
-  for i in error.split(',') : 
-    if i.find('line') >= 0 : 
-      line = i.strip()
-  return int(line[line.find('e')+2:])-5
 #------------------------------------------------------------------------------#
 #에러에 따른 정보를 알려주는 함수
 def name_error(test_py) : 
@@ -383,7 +353,7 @@ def indentation_error(test_py) :
 
 def zerodivision_error(test_py) : 
   sys.stdout = original   
-  print(error_line(), '번째 줄에 0으로 나누면 안되요.')           
+  print(error_line(), '번째 줄에 숫자를 0으로 나누면 안되요.')           
   print("="*40)
   code_print(test_py)
 
@@ -399,9 +369,9 @@ def keyboard_interrupt(test_py) :
 
 def syntax_error(test_py) : 
   sys.stdout = original   
-  print(error_line1(), '번째 줄에 문법오류입니다.')
+  print('문법오류입니다. ":", "()"를 확인하세요')
   print("="*40)
-  code_print1(test_py)
+  code_print(test_py)
 
 def modulenotfound_error(test_py) : 
   sys.stdout = original       
@@ -465,7 +435,11 @@ def code_check(py) :
   except : 
     else_error('test0.py')
     return
-  code_test0(answer)      
+  try : 
+    code_test0(answer)      
+  except IndexError :  
+    print('입력/출력을 확인하세요.')
+    return
 #___________________________________________________________________________#
 
   try : 
@@ -506,8 +480,13 @@ def code_check(py) :
   except : 
     else_error('test1.py')
     return
-  code_test1(answer)  
+  try  :
+    code_test1(answer) 
+  except IndexError : 
+    print('입력/출력을 확인하세요.')
+    return
 
+#------------------------------------------------------------------------------#
   try : 
     exec(open('test2.py').read())
   except NameError as NE : 
@@ -546,10 +525,15 @@ def code_check(py) :
   except : 
     else_error('test2.py')
     return
-  code_test2(answer)
+  try : 
+    code_test2(answer)
+  except IndexError : 
+    print('입력/출력을 확인하세요.')
+    return
+
 
   print(result)
   if result[0] and result[1] and result[2] == True:
-    print('정답입니다.') 
+    print(tc_green+'정답입니다.'+reset) 
   else : 
-    print('틀렸습니다.')
+    print(tc_red+'틀렸습니다.'+reset)
