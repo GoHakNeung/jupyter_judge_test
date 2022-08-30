@@ -48,7 +48,7 @@ answer_1 = [[['mango'], ['Hellomango']],
             [['go'], ['Hellogo']], 
             [['good'], ['Hellogood']]]
 answer_2 = ['Hello World']
-test_set = [['_1.py', 'answer_1'], ['_2.py', 'answer_2']]
+test_set = [['_1.py', 'answer_1', question_1], ['_2.py', 'answer_2', question_2]]
 ```
 1. 필요한 라이브러리를 불러옵니다.  
 2. question_1, answer_1, _1.py가 한 세트입니다.  
@@ -67,5 +67,5 @@ answer_2 = [정답]
 ```  
 5. test_set에는 문제와 답을 리스트로 저장합니다.  
 ```
-test_set = [['문제1', '정답1'], ['_1.py', 'answer_1']]
+test_set = [['문제1', '정답1', question_1], ['_1.py', 'answer_1', question_2]]
 ```
