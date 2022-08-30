@@ -10,7 +10,7 @@ answer_2 = ['Hello World']
 answer_4 = [[[3,4], ['4 3']],
             [[156,1532], ['1532 156']], 
             [[-5456, 456], ['456 -5456']]]
-test_set = [['_1.py', 'answer_1'], ['_2.py', 'answer_2'], ['_4.py', 'answer_4']]
+test_set = [['_1.py', 'answer_1', question_1], ['_2.py', 'answer_2', question_2], ['_4.py', 'answer_4']]
 #------------------------------------------------------------------------------#
 #출력할 때 글씨 색
 reset = '\033[0m'
@@ -85,7 +85,7 @@ def code_convert0(answer_input) :
     
     sys.stdout = original   
     f.close()
-    print('입력/출력을 확인하세요')    
+    print('입력/출력을 확인하세요')
 #------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
 def code_convert1(answer_input) : 
@@ -165,7 +165,8 @@ def code_convert2(answer_input) :
 
 
 def code_test0(answer_input) : 
-  user_answer = []
+  global user_answer0
+  user_answer0 = []
   answer_input = eval(answer_input)
   answer_type = ''
   if len(code_input) == 0 : 
@@ -179,24 +180,24 @@ def code_test0(answer_input) :
   for line in lines :  # 결과를 자료형에 맞게 저장한다. 5.0과 5는 다르므로 테스트 셋에서 결과에 식 그대로 넣어야 한다.
     line = line.strip()
     if line != '' and answer_type == float : 
-      user_answer.append(float(line))
+      user_answer0.append(float(line))
     elif line != '' and answer_type == int : 
-      user_answer.append(int(line))
+      user_answer0.append(int(line))
     elif line != '' and answer_type == str : 
-      user_answer.append(str(line))
+      user_answer0.append(str(line))
     elif line != '' and answer_type == bool : 
-      user_answer.append(bool(line))
+      user_answer0.append(bool(line))
   f.close()
 
   if len(code_input) == 0 : 
-    if user_answer == answer_input : 
+    if user_answer0 == answer_input : 
 #      print('정답입니다.')
       result.append(True)
     else : 
 #      print('틀렸습니다')
       result.append(False)    
   else : 
-    if user_answer == answer_input[0][1] : 
+    if user_answer0 == answer_input[0][1] : 
 #      print('정답입니다.')
       result.append(True)
     else : 
@@ -205,7 +206,8 @@ def code_test0(answer_input) :
 #------------------------------------------------------------------------------#
 
 def code_test1(answer_input) : 
-  user_answer = []
+  global user_answer1
+  user_answer1 = []
   answer_input = eval(answer_input)
   answer_type = ''
   if len(code_input) == 0 : 
@@ -218,24 +220,24 @@ def code_test1(answer_input) :
   for line in lines :  # 결과를 자료형에 맞게 저장한다. 5.0과 5는 다르므로 테스트 셋에서 결과에 식 그대로 넣어야 한다.
     line = line.strip()
     if line != '' and answer_type == float : 
-      user_answer.append(float(line))
+      user_answer1.append(float(line))
     elif line != '' and answer_type == int : 
-      user_answer.append(int(line))
+      user_answer1.append(int(line))
     elif line != '' and answer_type == str : 
-      user_answer.append(str(line))
+      user_answer1.append(str(line))
     elif line != '' and answer_type == bool : 
-      user_answer.append(bool(line))
+      user_answer1.append(bool(line))
   f.close()
 
   if len(code_input) == 0 : 
-    if user_answer == answer_input : 
+    if user_answer1 == answer_input : 
 #      print('정답입니다.')
       result.append(True)
     else : 
 #      print('틀렸습니다')
       result.append(False)    
   else : 
-    if user_answer == answer_input[1][1] : 
+    if user_answer1 == answer_input[1][1] : 
 #      print('정답입니다.')
       result.append(True)
     else : 
@@ -245,7 +247,8 @@ def code_test1(answer_input) :
 #------------------------------------------------------------------------------#
 
 def code_test2(answer_input) : 
-  user_answer = []
+  global user_answer2
+  user_answer2 = []
   answer_input = eval(answer_input)
   answer_type = ''
   if len(code_input) == 0 : 
@@ -258,24 +261,24 @@ def code_test2(answer_input) :
   for line in lines :  # 결과를 자료형에 맞게 저장한다. 5.0과 5는 다르므로 테스트 셋에서 결과에 식 그대로 넣어야 한다.
     line = line.strip()
     if line != '' and answer_type == float : 
-      user_answer.append(float(line))
+      user_answer2.append(float(line))
     elif line != '' and answer_type == int : 
-      user_answer.append(int(line))
+      user_answer2.append(int(line))
     elif line != '' and answer_type == str : 
-      user_answer.append(str(line))
+      user_answer2.append(str(line))
     elif line != '' and answer_type == bool : 
-      user_answer.append(bool(line))
+      user_answer2.append(bool(line))
   f.close()
 
   if len(code_input) == 0 : 
-    if user_answer == answer_input : 
+    if user_answer2 == answer_input : 
 #      print('정답입니다.')
       result.append(True)
     else : 
 #      print('틀렸습니다')
       result.append(False)    
   else : 
-    if user_answer == answer_input[2][1] : 
+    if user_answer2 == answer_input[2][1] : 
 #      print('정답입니다.')
       result.append(True)
     else : 
@@ -392,6 +395,8 @@ def code_check(py) :
     if test_set[i][0] == py :
       global answer 
       answer = test_set[i][1]
+      global question
+      question = test_set[i][2]      
 
   code_arrange(py)
   code_convert0(answer)
@@ -532,8 +537,24 @@ def code_check(py) :
     return
 
 
-  print(result)
+  # print(result)
   if result[0] and result[1] and result[2] == True:
     print(tc_green+'정답입니다.'+reset) 
   else : 
+    print(question, '\n')
+    if len(code_input) == 0 : 
+      if result[0] == False :       
+        print(user_answer0,'가 출력됩니다.')
+      if result[1] == False :       
+        print(user_answer1,'가 출력됩니다.')
+      if result[2] == False :       
+        print(user_answer2,'가 출력됩니다.')
+
+    else : 
+      if result[0] == False : l
+        print(eval(answer)[0][0][0], '을 입력하면 ', user_answer0, '가 출력됩니다. ')
+      if result[1] == False : 
+        print(eval(answer)[1][0][0], '을 입력하면 ', user_answer1, '가 출력됩니다. ')
+      if result[2] == False : 
+        print(eval(answer)[2][0][0], '을 입력하면 ', user_answer2, '가 출력됩니다. ')  
     print(tc_red+'틀렸습니다.'+reset)
