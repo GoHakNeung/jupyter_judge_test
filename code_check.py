@@ -551,7 +551,7 @@ def code_check(py) :
         print(user_answer2,'가 출력됩니다.')
 
     else : 
-      if result[0] == False : l
+      if result[0] == False : 
         print(eval(answer)[0][0][0], '을 입력하면 ', user_answer0, '가 출력됩니다. ')
       if result[1] == False : 
         print(eval(answer)[1][0][0], '을 입력하면 ', user_answer1, '가 출력됩니다. ')
