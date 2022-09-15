@@ -52,6 +52,8 @@ def code_arrange(py_name) :
 #------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
 def code_convert0(answer_input) : 
+  global convert_error
+  convert_error = False
   f = open('test0.py', 'w')  
   original = sys.stdout
   sys.stdout = f
@@ -85,7 +87,7 @@ def code_convert0(answer_input) :
     
     sys.stdout = original   
     f.close()
-    print('입력/출력을 확인하세요')
+
 #------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
 def code_convert1(answer_input) : 
@@ -122,7 +124,7 @@ def code_convert1(answer_input) :
 
     sys.stdout = original   
     f.close()
-    print('입력/출력을 확인하세요')  
+
 #------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
 def code_convert2(answer_input) : 
@@ -160,7 +162,7 @@ def code_convert2(answer_input) :
 
     sys.stdout = original   
     f.close()
-    print('입력/출력을 확인하세요')  
+
 #------------------------------------------------------------------------------#
 
 
@@ -302,6 +304,18 @@ def code_print(py_name) :
       code_count += 1
   f.close()
 #------------------------------------------------------------------------------#
+# syntax 오류 외 코드 출력창에 코드 불러오는 것
+def code_print_syntax(py_name) :  
+  file_name = '/content/'+py_name
+  f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
+  lines = f.readlines()
+  error_count = error_line()
+  code_count = 1
+
+  for line in lines[4:-2] : 
+    print(line[:-1])
+  f.close()
+#------------------------------------------------------------------------------#
 # syntax 외 오류 라인 검출
 
 def error_line() : 
@@ -352,7 +366,7 @@ def indentation_error(test_py) :
   sys.stdout = original   
   print(error_line(), '번째 줄에 띄어쓰기를 확인해주세요.')     
   print("="*40)
-  code_print('test0.py')  
+  code_print(test0.py)  
 
 def zerodivision_error(test_py) : 
   sys.stdout = original   
@@ -374,7 +388,7 @@ def syntax_error(test_py) :
   sys.stdout = original   
   print('문법오류입니다. ":", "()"를 확인하세요')
   print("="*40)
-  code_print(test_py)
+  code_print_syntax(test_py)
 
 def modulenotfound_error(test_py) : 
   sys.stdout = original       
@@ -388,6 +402,60 @@ def else_error(test_py) :
   print("="*40)
   code_print(test_py)
 
+def error_check(test_py) : 
+  global compile_error
+  compile_error = False
+  try : 
+    exec(open(test_py).read())
+  except NameError : 
+    name_error(test_py)
+    compile_error = True
+    return
+  except TypeError : 
+    type_error(test_py)
+    compile_error = True
+    return
+  except AttributeError : 
+    attribute_error(test_py)
+    compile_error = True
+    return
+  except ValueError : 
+    value_error(test_py)
+    compile_error = True
+    return
+  except IndexError : 
+    index_error(test_py)
+    compile_error = True
+    return
+  except IndentationError : 
+    indentation_error(test_py)
+    compile_error = True
+    return
+  except ZeroDivisionError : 
+    zerodivision_error(test_py)
+    compile_error = True
+    return
+  except OverflowError : 
+    overflow_error(test_py)
+    compile_error = True
+    return
+  except KeyboardInterrupt : 
+    keyboard_interrupt(test_py)
+    compile_error = True
+    return
+  except SyntaxError : 
+    syntax_error(test_py)
+    compile_error = True
+    return
+  except ModuleNotFoundError : 
+    modulenotfound_error(test_py)
+    compile_error = True
+    return
+  except : 
+    else_error(test_py)
+    compile_error = True
+    return
+
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
@@ -400,143 +468,22 @@ def code_check(py) :
 
   code_arrange(py)
   code_convert0(answer)
+  if convert_error == True :
+    print('입력/출력을 확인하세요')     
+    return
   code_convert1(answer)
   code_convert2(answer)
-  try : 
-    exec(open('test0.py').read())
-  except NameError as NE : 
-    name_error('test0.py')
+
+  error_check('test0.py')
+  if compile_error == True : 
     return
-  except TypeError as TE : 
-    type_error('test0.py')
-    return
-  except AttributeError as AE : 
-    attribute_error('test0.py')
-    return
-  except ValueError as VE : 
-    value_error('test0.py')
-    return
-  except IndexError as IdE : 
-    index_error('test0.py')
-    return
-  except IndentationError as ItE : 
-    indentation_error('test0.py')
-    return
-  except ZeroDivisionError as ZE : 
-    zerodivision_error('test0.py')
-    return
-  except OverflowError as OE : 
-    overflow_error('test0.py')
-    return
-  except KeyboardInterrupt as KE : 
-    keyboard_interrupt('test0.py')
-    return
-  except SyntaxError as SE: 
-    syntax_error('test0.py')
-    return
-  except ModuleNotFoundError as MNFE : 
-    modulenotfound_error('test0.py')
-    return
-  except : 
-    else_error('test0.py')
-    return
-  try : 
-    code_test0(answer)      
-  except IndexError :  
-    print('입력/출력을 확인하세요.')
-    return
+  error_check('test1.py')
+  error_check('test2.py')
+
+  code_test0(answer)      
+  code_test1(answer)  
+  code_test2(answer)  
 #___________________________________________________________________________#
-
-  try : 
-    exec(open('test1.py').read())
-  except NameError as NE : 
-    name_error('test1.py')
-    return
-  except TypeError as TE : 
-    type_error('test1.py')
-    return
-  except AttributeError as AE : 
-    attribute_error('test1.py')
-    return
-  except ValueError as VE : 
-    value_error('test1.py')
-    return
-  except IndexError as IdE : 
-    index_error('test1.py')
-    return
-  except IndentationError as ItE : 
-    indentation_error('test1.py')
-    return
-  except ZeroDivisionError as ZE : 
-    zerodivision_error('test1.py')
-    return
-  except OverflowError as OE : 
-    overflow_error('test1.py')
-    return
-  except KeyboardInterrupt as KE : 
-    keyboard_interrupt('test1.py')
-    return
-  except SyntaxError as SE: 
-    syntax_error('test1.py')
-    return
-  except ModuleNotFoundError as MNFE : 
-    modulenotfound_error('test1.py')
-    return
-  except : 
-    else_error('test1.py')
-    return
-  try  :
-    code_test1(answer) 
-  except IndexError : 
-    print('입력/출력을 확인하세요.')
-    return
-
-#------------------------------------------------------------------------------#
-  try : 
-    exec(open('test2.py').read())
-  except NameError as NE : 
-    name_error('test2.py')
-    return
-  except TypeError as TE : 
-    type_error('test2.py')
-    return
-  except AttributeError as AE : 
-    attribute_error('test2.py')
-    return
-  except ValueError as VE : 
-    value_error('test2.py')
-    return
-  except IndexError as IdE : 
-    index_error('test2.py')
-    return
-  except IndentationError as ItE : 
-    indentation_error('test2.py')
-    return
-  except ZeroDivisionError as ZE : 
-    zerodivision_error('test2.py')
-    return
-  except OverflowError as OE : 
-    overflow_error('test2.py')
-    return
-  except KeyboardInterrupt as KE : 
-    keyboard_interrupt('test2.py')
-    return
-  except SyntaxError as SE: 
-    syntax_error('test2.py')
-    return
-  except ModuleNotFoundError as MNFE : 
-    modulenotfound_error('test2.py')
-    return
-  except : 
-    else_error('test2.py')
-    return
-  try : 
-    code_test2(answer)
-  except IndexError : 
-    print('입력/출력을 확인하세요.')
-    return
-
-
   # print(result)
   if result[0] and result[1] and result[2] == True:
     print(tc_green+'정답입니다.'+reset) 
