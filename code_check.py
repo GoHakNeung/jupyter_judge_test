@@ -1,8 +1,29 @@
-import sys, random, math, os, traceback
+import sys, random, math, os, traceback, gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
 #------------------------------------------------------------------------------#
+
+#구글 스프레드시트와 연동하기
+scope = ['https://spreadsheets.google.com/feeds']
+# 구글 클라우드 플랫폼에서 json 파일 인증 받아야 함.
+json_file_name = '/content/jupyter_judge/judge-dashboard-5145c009c952.json'
+credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
+gc = gspread.authorize(credentials)
+# 개인적으로 사용할 스프레드시트 url
+spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-NdFk0Fdw7Ut6m3LzHEZxKrMg/edit#gid=0'
+
+#------------------------------------------------------------------------------#
+
+# 문서 및 시트 불러오기
+doc = gc.open_by_url(spreadsheet_url)
+worksheet = doc.worksheet('시트1') 
+
+#------------------------------------------------------------------------------#
+
 #문제 입력
 question_1 = '이름을 입력하고 "Hello이름"이 출력되도록 프로그램을 만듭니다.\n입력 예시 : 가득\n출력 예시 : Hello가득'
 question_2 = '"Hello World"를 출력하는 프로그램을 만듭니다.\n입력 예시 : 없음\n출력 예시 : Hello World'
+question_4 = '두 숫자를 입력해서 큰 숫자, 작은 숫자가 출력되는 프로그램을 만듭니다.\n입력 예시 : 10, 5\n출력 예시 : 10 5'
 answer_1 = [[['mango'], ['Hellomango']], 
             [['go'], ['Hellogo']], 
             [['good'], ['Hellogood']]]
@@ -10,12 +31,22 @@ answer_2 = ['Hello World']
 answer_4 = [[[3,4], ['4 3']],
             [[156,1532], ['1532 156']], 
             [[-5456, 456], ['456 -5456']]]
-test_set = [['_1.py', 'answer_1', question_1], ['_2.py', 'answer_2', question_2], ['_4.py', 'answer_4']]
+test_set = [['_1.py', 'answer_1', question_1], ['_2.py', 'answer_2', question_2], ['_4.py', 'answer_4', question_4]]
+
 #------------------------------------------------------------------------------#
+
+#문제에 따른 시도한 횟수를 dictionary로 만듬
+trial_error_count = {}
+for i in range(len(test_set)) : 
+  trial_error_count[test_set[i][0]] = 0
+
+#------------------------------------------------------------------------------#
+
 #출력할 때 글씨 색
 reset = '\033[0m'
 tc_red = '\033[38;2;255;0;0m'
 tc_green = '\033[38;2;0;255;0m'
+
 #------------------------------------------------------------------------------#
 # 코드를 input /output 리스트에 넣기
 def code_arrange(py_name) : 
@@ -304,7 +335,7 @@ def code_print(py_name) :
       code_count += 1
   f.close()
 #------------------------------------------------------------------------------#
-# syntax 오류 외 코드 출력창에 코드 불러오는 것
+# syntax 오류 코드 출력창에 코드 불러오는 것
 def code_print_syntax(py_name) :  
   file_name = '/content/'+py_name
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
@@ -457,6 +488,28 @@ def error_check(test_py) :
     return
 
 #------------------------------------------------------------------------------#
+# 코드 결과를 구글 스프레드 시트에 보내기
+def update_excel(message, py) : 
+  name_list = worksheet.col_values(1)
+  question_list = worksheet.row_values(1)  
+  if my_id in name_list : 
+    row = name_list.index(my_id)+1
+  else : 
+    row = len(name_list)+1
+    worksheet.update_cell(row,1, my_id)
+
+  # 몇 번 문제 풀었는지 확인함. 
+  if py in question_list : 
+    col = question_list.index(py) + 1
+  else : 
+    col = len(question_list) + 1
+    worksheet.update_cell(1,col, py)
+    worksheet.update_cell(1,col+1, '시도횟수')  
+
+  worksheet.update_cell(row, col, message)
+  worksheet.update_cell(row, col+1, trial_error_count[py])
+
+#------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
   for i in range(len(test_set)) :
@@ -464,18 +517,23 @@ def code_check(py) :
       global answer 
       answer = test_set[i][1]
       global question
-      question = test_set[i][2]      
+      question = test_set[i][2]     
+  trial_error_count[py] += 1
+
+
 
   code_arrange(py)
   code_convert0(answer)
   if convert_error == True :
     print('입력/출력을 확인하세요')     
+    update_excel('입력 오류', py)    
     return
   code_convert1(answer)
   code_convert2(answer)
 
   error_check('test0.py')
-  if compile_error == True : 
+  if compile_error == True :
+    update_excel('오류입니다.', py)     
     return
   error_check('test1.py')
   error_check('test2.py')
@@ -483,10 +541,13 @@ def code_check(py) :
   code_test0(answer)      
   code_test1(answer)  
   code_test2(answer)  
-#___________________________________________________________________________#
+
+
   # print(result)
   if result[0] and result[1] and result[2] == True:
-    print(tc_green+'정답입니다.'+reset) 
+    update_excel('정답입니다.', py)
+    print(tc_green+'정답입니다.'+reset)
+
   else : 
     print(question, '\n')
     if len(code_input) == 0 : 
@@ -499,9 +560,12 @@ def code_check(py) :
 
     else : 
       if result[0] == False : 
-        print(eval(answer)[0][0][0], '을 입력하면 ', user_answer0, '가 출력됩니다. ')
+        print(eval(answer)[0][0], '을 입력하면 ', user_answer0, '가 출력됩니다. ')
       if result[1] == False : 
-        print(eval(answer)[1][0][0], '을 입력하면 ', user_answer1, '가 출력됩니다. ')
+        print(eval(answer)[1][0], '을 입력하면 ', user_answer1, '가 출력됩니다. ')
       if result[2] == False : 
-        print(eval(answer)[2][0][0], '을 입력하면 ', user_answer2, '가 출력됩니다. ')  
+        print(eval(answer)[2][0], '을 입력하면 ', user_answer2, '가 출력됩니다. ')  
+    update_excel('틀렸습니다.', py)
     print(tc_red+'틀렸습니다.'+reset)
+
+
