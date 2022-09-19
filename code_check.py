@@ -21,17 +21,35 @@ worksheet = doc.worksheet('시트1')
 #------------------------------------------------------------------------------#
 
 #문제 입력
+#input이 없으면 입력 비워놓기
 question_1 = '이름을 입력하고 "Hello이름"이 출력되도록 프로그램을 만듭니다.\n입력 예시 : 가득\n출력 예시 : Hello가득'
 question_2 = '"Hello World"를 출력하는 프로그램을 만듭니다.\n입력 예시 : 없음\n출력 예시 : Hello World'
+question_3 = '반복문(for)을 사용해서 0부터 9까지 출력하는 프로그램을 만듭니다.\n입력 예시 : 없음\n출력 예시 : 0,1,2,3,4,5,6,7,8,9'
 question_4 = '두 숫자를 입력해서 큰 숫자, 작은 숫자가 출력되는 프로그램을 만듭니다.\n입력 예시 : 10, 5\n출력 예시 : 10 5'
-answer_1 = [[['mango'], ['Hellomango']], 
+question_5 = '숫자를 입력합니다. 입력한 숫자가 10과 같거나 크면 "10과 같거나 큰 수", 10보다 작으면 "10보다 작은 수"를  출력하는 프로그램을 만듭니다.\n입력 예시 : 5\n출력 예시 : 10보다 작은 수'
+answer_1 = [
+            [['mango'], ['Hellomango']], 
             [['go'], ['Hellogo']], 
-            [['good'], ['Hellogood']]]
-answer_2 = ['Hello World']
-answer_4 = [[[3,4], ['4 3']],
+            [['good'], ['Hellogood']]
+           ]
+answer_2 = [
+            [[],['Hello World']]
+           ]
+answer_3 = [
+            [[],[0,1,2,3,4,5,6,7,8,9]]
+           ]
+answer_4 = [
+            [[3,4], ['4 3']],
             [[156,1532], ['1532 156']], 
-            [[-5456, 456], ['456 -5456']]]
-test_set = [['_1.py', 'answer_1', question_1], ['_2.py', 'answer_2', question_2], ['_4.py', 'answer_4', question_4]]
+            [[-5456, 456], ['456 -5456']]
+           ]
+answer_5 = [
+            [[3], ['10보다 작은 수']], 
+            [[123], ['10과 같거나 큰 수']],
+            [[10], ['10과 같거나 큰 수']], 
+            [[-123], ['10보다 작은 수']]
+]
+test_set = [['_1.py', 'answer_1', question_1], ['_2.py', 'answer_2', question_2], ['_3.py', 'answer_3', question_3], ['_4.py', 'answer_4', question_4], ['_5.py', 'answer_5', question_5]]
 
 #------------------------------------------------------------------------------#
 
@@ -48,7 +66,7 @@ tc_red = '\033[38;2;255;0;0m'
 tc_green = '\033[38;2;0;255;0m'
 
 #------------------------------------------------------------------------------#
-# 코드를 input /output 리스트에 넣기
+# 코드를 input/output 리스트에 넣기
 def code_arrange(py_name) : 
   global result, code, code_input, code_output
   result= []
@@ -82,24 +100,23 @@ def code_arrange(py_name) :
 
 #------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
-def code_convert0(answer_input) : 
-  global convert_error
-  convert_error = False
-  f = open('test0.py', 'w')  
+def code_convert(answer_input) : 
+  global test_py, answer_py, original
+
+  f = open(test_py, 'w')  
   original = sys.stdout
   sys.stdout = f
 
   print('import sys')
-  print("f = open('answer0.txt', 'w')")
+  print(f"f = open('{answer_py}', 'w')")
   print('original = sys.stdout')
   print('sys.stdout = f')
   try : 
     order = 0  
-    answer_input = eval(answer_input)
     count = 0
     for order in range(len(code)) : 
       if order in code_input : 
-        print(code[order][:code[order].find('=')+1],'"'+str(answer_input[0][0][count])+'"')
+        print(code[order][:code[order].find('=')+1],'"'+str(answer_input[test_count][0][count])+'"')
         count += 1  
       elif order in code_output : 
         print(code[order])
@@ -111,7 +128,7 @@ def code_convert0(answer_input) :
 
     # 파이썬 코드로 실행해야 함. 원상복구
     sys.stdout = original   
-    f.close()                   
+    f.close()                 
   except :  
     print('sys.stdout = original')
     print('f.close()')
@@ -120,205 +137,36 @@ def code_convert0(answer_input) :
     f.close()
 
 #------------------------------------------------------------------------------#
-# 리스트에 있는 코드를 평가 코드로 수정하기
-def code_convert1(answer_input) : 
-  f = open('test1.py', 'w')  
-  original = sys.stdout
-  sys.stdout = f
 
-  print('import sys')
-  print("f = open('answer1.txt', 'w')")
-  print('original = sys.stdout')
-  print('sys.stdout = f')
-  try : 
-    order = 0  
-    answer_input = eval(answer_input)
-    count = 0
-    for order in range(len(code)) : 
-      if order in code_input : 
-        print(code[order][:code[order].find('=')+1],'"'+str(answer_input[1][0][count])+'"')
-        count += 1  
-      elif order in code_output : 
-        print(code[order])
-      else : 
-        print(code[order])
-
-    print('sys.stdout = original')
-    print('f.close()')
-
-    # 파이썬 코드로 실행해야 함. 원상복구
-    sys.stdout = original   
-    f.close()                   
-  except :  
-    print('sys.stdout = original')
-    print('f.close()')
-
-    sys.stdout = original   
-    f.close()
-
-#------------------------------------------------------------------------------#
-# 리스트에 있는 코드를 평가 코드로 수정하기
-def code_convert2(answer_input) : 
-  f = open('test2.py', 'w')  
-  global original
-  original = sys.stdout
-  sys.stdout = f
-
-  print('import sys')
-  print("f = open('answer2.txt', 'w')")
-  print('original = sys.stdout')
-  print('sys.stdout = f')
-  try : 
-    order = 0  
-    answer_input = eval(answer_input)
-    count = 0
-    for order in range(len(code)) : 
-      if order in code_input : 
-        print(code[order][:code[order].find('=')+1],'"'+str(answer_input[2][0][count])+'"')
-        count += 1  
-      elif order in code_output : 
-        print(code[order])
-      else : 
-        print(code[order])
-
-    print('sys.stdout = original')
-    print('f.close()')
-
-    # 파이썬 코드로 실행해야 함. 원상복구
-    sys.stdout = original   
-    f.close()                   
-  except :  
-    print('sys.stdout = original')
-    print('f.close()')
-
-    sys.stdout = original   
-    f.close()
-
-#------------------------------------------------------------------------------#
-
-
-def code_test0(answer_input) : 
-  global user_answer0
-  user_answer0 = []
-  answer_input = eval(answer_input)
+def code_test(answer_input) : 
+  global user_answer, answer_py, test_count
+  user_answer = []
   answer_type = ''
-  if len(code_input) == 0 : 
-    answer_type = type(answer_input[0])
-  else : 
-    answer_type = type(answer_input[0][1][0]) 
-
-  f = open('/content/answer0.txt', 'r')
+  answer_type = type(answer_input[0][1][0])
+  answer_filename = '/content/'+answer_py
+  f = open(answer_filename, 'r')
   lines = f.readlines()
 
   for line in lines :  # 결과를 자료형에 맞게 저장한다. 5.0과 5는 다르므로 테스트 셋에서 결과에 식 그대로 넣어야 한다.
     line = line.strip()
     if line != '' and answer_type == float : 
-      user_answer0.append(float(line))
+      user_answer.append(float(line))
     elif line != '' and answer_type == int : 
-      user_answer0.append(int(line))
+      user_answer.append(int(line))
     elif line != '' and answer_type == str : 
-      user_answer0.append(str(line))
+      user_answer.append(str(line))
     elif line != '' and answer_type == bool : 
-      user_answer0.append(bool(line))
+      user_answer.append(bool(line))
   f.close()
 
-  if len(code_input) == 0 : 
-    if user_answer0 == answer_input : 
-#      print('정답입니다.')
-      result.append(True)
-    else : 
-#      print('틀렸습니다')
-      result.append(False)    
+  if user_answer == answer_input[test_count][1] : 
+    result.append(True)
   else : 
-    if user_answer0 == answer_input[0][1] : 
-#      print('정답입니다.')
-      result.append(True)
-    else : 
-#      print('틀렸습니다')
-      result.append(False)
-#------------------------------------------------------------------------------#
+    result.append(False)
 
-def code_test1(answer_input) : 
-  global user_answer1
-  user_answer1 = []
-  answer_input = eval(answer_input)
-  answer_type = ''
-  if len(code_input) == 0 : 
-    answer_type = type(answer_input[0])
-  else : 
-    answer_type = type(answer_input[1][1][0]) 
-  f = open('/content/answer1.txt', 'r')
-  lines = f.readlines()
-
-  for line in lines :  # 결과를 자료형에 맞게 저장한다. 5.0과 5는 다르므로 테스트 셋에서 결과에 식 그대로 넣어야 한다.
-    line = line.strip()
-    if line != '' and answer_type == float : 
-      user_answer1.append(float(line))
-    elif line != '' and answer_type == int : 
-      user_answer1.append(int(line))
-    elif line != '' and answer_type == str : 
-      user_answer1.append(str(line))
-    elif line != '' and answer_type == bool : 
-      user_answer1.append(bool(line))
-  f.close()
-
-  if len(code_input) == 0 : 
-    if user_answer1 == answer_input : 
-#      print('정답입니다.')
-      result.append(True)
-    else : 
-#      print('틀렸습니다')
-      result.append(False)    
-  else : 
-    if user_answer1 == answer_input[1][1] : 
-#      print('정답입니다.')
-      result.append(True)
-    else : 
-#      print('틀렸습니다')
-      result.append(False) 
-
-#------------------------------------------------------------------------------#
-
-def code_test2(answer_input) : 
-  global user_answer2
-  user_answer2 = []
-  answer_input = eval(answer_input)
-  answer_type = ''
-  if len(code_input) == 0 : 
-    answer_type = type(answer_input[0])
-  else : 
-    answer_type = type(answer_input[2][1][0]) 
-  f = open('/content/answer2.txt', 'r')
-  lines = f.readlines()
-
-  for line in lines :  # 결과를 자료형에 맞게 저장한다. 5.0과 5는 다르므로 테스트 셋에서 결과에 식 그대로 넣어야 한다.
-    line = line.strip()
-    if line != '' and answer_type == float : 
-      user_answer2.append(float(line))
-    elif line != '' and answer_type == int : 
-      user_answer2.append(int(line))
-    elif line != '' and answer_type == str : 
-      user_answer2.append(str(line))
-    elif line != '' and answer_type == bool : 
-      user_answer2.append(bool(line))
-  f.close()
-
-  if len(code_input) == 0 : 
-    if user_answer2 == answer_input : 
-#      print('정답입니다.')
-      result.append(True)
-    else : 
-#      print('틀렸습니다')
-      result.append(False)    
-  else : 
-    if user_answer2 == answer_input[2][1] : 
-#      print('정답입니다.')
-      result.append(True)
-    else : 
-#      print('틀렸습니다')
-      result.append(False)
 #------------------------------------------------------------------------------#
 # syntax 오류 외 코드 출력창에 코드 불러오는 것
+# 틀린 코드에 빨간색 표시
 def code_print(py_name) :  
   file_name = '/content/'+py_name
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
@@ -336,6 +184,7 @@ def code_print(py_name) :
   f.close()
 #------------------------------------------------------------------------------#
 # syntax 오류 코드 출력창에 코드 불러오는 것
+# 틀린 코드에 빨간색 표시 없음
 def code_print_syntax(py_name) :  
   file_name = '/content/'+py_name
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
@@ -348,7 +197,7 @@ def code_print_syntax(py_name) :
   f.close()
 #------------------------------------------------------------------------------#
 # syntax 외 오류 라인 검출
-
+# 오류가 몇 번째 코드에서 발생했는지 번호 호출
 def error_line() : 
   trace = traceback.format_exc()
   error = ''
@@ -416,7 +265,7 @@ def keyboard_interrupt(test_py) :
   print('사용자가 작동 정지함.')
 
 def syntax_error(test_py) : 
-  sys.stdout = original   
+  sys.stdout = original  
   print('문법오류입니다. ":", "()"를 확인하세요')
   print("="*40)
   code_print_syntax(test_py)
@@ -490,6 +339,7 @@ def error_check(test_py) :
 #------------------------------------------------------------------------------#
 # 코드 결과를 구글 스프레드 시트에 보내기
 def update_excel(message, py) : 
+  global my_id
   name_list = worksheet.col_values(1)
   question_list = worksheet.row_values(1)  
   if my_id in name_list : 
@@ -517,55 +367,38 @@ def code_check(py) :
       global answer 
       answer = test_set[i][1]
       global question
-      question = test_set[i][2]     
-  trial_error_count[py] += 1
-
-
+      question = test_set[i][2]   
+  trial_error_count[py] += 1    
 
   code_arrange(py)
-  code_convert0(answer)
-  if convert_error == True :
-    print('입력/출력을 확인하세요')     
-    update_excel('입력 오류', py)    
+  answer = eval(answer)
+  # 코드 실행 시 입력 수가 안 맞으면 실행 종료
+  if len(code_input) != len(answer[0][0]) : 
+    update_excel('입력 오류', py)     
+    print('입력을 확인해주세요.')
     return
-  code_convert1(answer)
-  code_convert2(answer)
 
-  error_check('test0.py')
-  if compile_error == True :
-    update_excel('오류입니다.', py)     
-    return
-  error_check('test1.py')
-  error_check('test2.py')
+  print(question, '\n')
+  global test_count
+  for test_count in range(len(answer)) : 
+    global test_py, answer_py
+    test_py = 'test'+str(test_count)+'.py'
+    answer_py = 'answer'+str(test_count)+'.txt'
+    code_convert(answer)
+    error_check(test_py)
+    # 코드 실행 시 오류발생하면 확인 종료
+    if compile_error == True :
+      update_excel('오류입니다.', py)     
+      return    
+    code_test(answer)        
+    if len(answer[0][0]) == 0 : 
+      print(user_answer, '가 출력됩니다.')
+    else : 
+      print(answer[test_count][0], '을 입력하면 ', user_answer, '가 출력됩니다. ')
 
-  code_test0(answer)      
-  code_test1(answer)  
-  code_test2(answer)  
-
-
-  # print(result)
-  if result[0] and result[1] and result[2] == True:
+  if sum(result) == test_count+1 :
     update_excel('정답입니다.', py)
     print(tc_green+'정답입니다.'+reset)
-
   else : 
-    print(question, '\n')
-    if len(code_input) == 0 : 
-      if result[0] == False :       
-        print(user_answer0,'가 출력됩니다.')
-      if result[1] == False :       
-        print(user_answer1,'가 출력됩니다.')
-      if result[2] == False :       
-        print(user_answer2,'가 출력됩니다.')
-
-    else : 
-      if result[0] == False : 
-        print(eval(answer)[0][0], '을 입력하면 ', user_answer0, '가 출력됩니다. ')
-      if result[1] == False : 
-        print(eval(answer)[1][0], '을 입력하면 ', user_answer1, '가 출력됩니다. ')
-      if result[2] == False : 
-        print(eval(answer)[2][0], '을 입력하면 ', user_answer2, '가 출력됩니다. ')  
     update_excel('틀렸습니다.', py)
     print(tc_red+'틀렸습니다.'+reset)
-
-
