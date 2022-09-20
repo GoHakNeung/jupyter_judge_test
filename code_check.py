@@ -49,7 +49,7 @@ answer_5 = [
             [[10], ['10과 같거나 큰 수']], 
             [[-123], ['10보다 작은 수']]
 ]
-test_set = [['_1.py', 'answer_1', question_1], ['_2.py', 'answer_2', question_2], ['_3.py', 'answer_3', question_3], ['_4.py', 'answer_4', question_4], ['_5.py', 'answer_5', question_5]]
+test_set = [['_1.py', answer_1, question_1], ['_2.py', answer_2, question_2], ['_3.py', answer_3, question_3], ['_4.py', answer_4, question_4], ['_5.py', answer_5, question_5]]
 
 #------------------------------------------------------------------------------#
 
@@ -371,7 +371,6 @@ def code_check(py) :
   trial_error_count[py] += 1    
 
   code_arrange(py)
-  answer = eval(answer)
   # 코드 실행 시 입력 수가 안 맞으면 실행 종료
   if len(code_input) != len(answer[0][0]) : 
     update_excel('입력 오류', py)     
