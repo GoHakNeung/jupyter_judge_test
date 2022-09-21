@@ -397,9 +397,15 @@ def code_check(py) :
       return    
     code_test(answer)        
     if len(answer[0][0]) == 0 : 
-      print(user_answer, '가 출력됩니다.')
-    else : 
-      print(answer[test_count][0], '을 입력하면 ', user_answer, '가 출력됩니다. ')
+      if result[test_count] == True : 
+        print(tc_green+'정답'+reset, user_answer, '가 출력됩니다.')
+      else : 
+        print(tc_red+'오답'+reset, user_answer, '가 출력됩니다.')        
+    else :  
+      if result[test_count] == True : 
+        print(tc_green+'정답'+reset, answer[test_count][0], '을 입력하면 ', user_answer, '가 출력됩니다. ')
+      else : 
+        print(tc_red+'오답'+reset, answer[test_count][0], '을 입력하면 ', user_answer, '가 출력됩니다. ')
 
   if sum(result) == test_count+1 :
     update_excel('정답입니다.', py)
