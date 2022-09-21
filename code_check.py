@@ -248,7 +248,7 @@ def indentation_error(test_py) :
   sys.stdout = original   
   print(error_line(), '번째 줄에 띄어쓰기를 확인해주세요.')     
   print("="*40)
-  code_print(test0.py)  
+  code_print(test_py)  
 
 def zerodivision_error(test_py) : 
   sys.stdout = original   
@@ -371,8 +371,11 @@ def code_check(py) :
       global question
       question = test_set[i][2]   
   trial_error_count[py] += 1    
-
-  code_arrange(py)
+  try : 
+    code_arrange(py)
+  except : 
+    print('평가 코드를 생성하세요.')
+    return
   # 코드 실행 시 입력 수가 안 맞으면 실행 종료
   if len(code_input) != len(answer[0][0]) : 
     update_excel('입력 오류', py)     
