@@ -29,37 +29,44 @@ question_2 = '"Hello World"를 출력하는 프로그램을 만듭니다.\n입�
 question_3 = '반복문(for)을 사용해서 0부터 9까지 출력하는 프로그램을 만듭니다.\n입력 예시 : 없음\n출력 예시 : 0,1,2,3,4,5,6,7,8,9'
 question_4 = '두 숫자를 입력해서 큰 숫자, 작은 숫자가 출력되는 프로그램을 만듭니다.\n입력 예시 : 10, 5\n출력 예시 : 10 5'
 question_5 = '숫자를 입력합니다. 입력한 숫자가 10과 같거나 크면 "10과 같거나 큰 수", 10보다 작으면 "10보다 작은 수"를  출력하는 프로그램을 만듭니다.\n입력 예시 : 5\n출력 예시 : 10보다 작은 수'
-answer_1 = [
-            [['mango'], ['Hellomango']], 
-            [['go'], ['Hellogo']], 
-            [['good'], ['Hellogood']]
-           ]
-answer_2 = [
-            [[],['Hello World']]
-           ]
-answer_3 = [
-            [[],[0,1,2,3,4,5,6,7,8,9]]
-           ]
-answer_4 = [
-            [[3,4], ['4 3']],
-            [[156,1532], ['1532 156']], 
-            [[-5456, 456], ['456 -5456']], 
-            [[21341234,2], ['21341234 2']]
-           ]
-answer_5 = [
-            [[3], ['10보다 작은 수']], 
-            [[123], ['10과 같거나 큰 수']],
-            [[10], ['10과 같거나 큰 수']], 
-            [[-123], ['10보다 작은 수']]
-]
-test_set = [['_1.py', answer_1, question_1], ['_2.py', answer_2, question_2], ['_3.py', answer_3, question_3], ['_4.py', answer_4, question_4], ['_5.py', answer_5, question_5]]
 
+answer_1 = [
+    {'input' : ['mango'], 'output' : ['Hellomango']},
+    {'input' : ['go'], 'output' : ['Hellogo']},
+    {'input' : ['good'], 'output' : ['Hellogood']}
+]
+answer_2 = [
+    {'input' : [], 'output' : ['Hello World']}
+]
+answer_3 = [
+    {'input' : [], 'output' : [0,1,2,3,4,5,6,7,8,9]}, 
+]
+answer_4 = [
+    {'input' : [3,4], 'output' : ['4 3']},
+    {'input' : [156,1532], 'output' : ['1532 156']},
+    {'input' : [-5456, 456], 'output' : ['456 -5456']},
+    {'input' : [21341234,2], 'output' : ['21341234 2']}    
+]
+answer_5 = [
+    {'input' : [3], 'output' : ['10보다 작은 수']},
+    {'input' : [123], 'output' : ['10과 같거나 큰 수']},
+    {'input' : [10], 'output' : ['10과 같거나 큰 수']},
+    {'input' : [-123], 'output' : ['10보다 작은 수']}  
+]
+
+test_set = [
+    {'test_file' : '_1.py', 'answer' : answer_1, 'question' : question_1}, 
+    {'test_file' : '_2.py', 'answer' : answer_2, 'question' : question_2}, 
+    {'test_file' : '_3.py', 'answer' : answer_3, 'question' : question_3}, 
+    {'test_file' : '_4.py', 'answer' : answer_4, 'question' : question_4}, 
+    {'test_file' : '_5.py', 'answer' : answer_5, 'question' : question_5}              
+]
 #------------------------------------------------------------------------------#
 
 #문제에 따른 시도한 횟수를 dictionary로 만듬
 trial_error_count = {}
 for i in range(len(test_set)) : 
-  trial_error_count[test_set[i][0]] = 0
+  trial_error_count[test_set[i]['test_file']] = 0
 
 #------------------------------------------------------------------------------#
 
@@ -106,14 +113,14 @@ def code_arrange(py_name) :
 #------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
 def code_convert(answer_input) : 
-  global test_py, answer_py, original
+  global test_py, answer_txt, original
 
   f = open(test_py, 'w')  
   original = sys.stdout
   sys.stdout = f
 
   print('import sys')
-  print(f"f = open('{answer_py}', 'w')")
+  print(f"f = open('{answer_txt}', 'w')")
   print('original = sys.stdout')
   print('sys.stdout = f')
   try : 
@@ -121,7 +128,7 @@ def code_convert(answer_input) :
     count = 0
     for order in range(len(code)) : 
       if order in code_input : 
-        print(code[order][:code[order].find('=')+1],'"'+str(answer_input[test_count][0][count])+'"')
+        print(code[order][:code[order].find('=')+1],'"'+str(answer_input[test_count]['input'][count])+'"')
         count += 1  
       elif order in code_output : 
         print(code[order])
@@ -144,11 +151,11 @@ def code_convert(answer_input) :
 #------------------------------------------------------------------------------#
 
 def code_test(answer_input) : 
-  global user_answer, answer_py, test_count
+  global user_answer, answer_txt, test_count
   user_answer = []
   answer_type = ''
-  answer_type = type(answer_input[0][1][0])
-  answer_filename = '/content/'+answer_py
+  answer_type = type(answer_input[0]['output'][0])
+  answer_filename = '/content/'+answer_txt
   f = open(answer_filename, 'r')
   lines = f.readlines()
 
@@ -164,7 +171,7 @@ def code_test(answer_input) :
       user_answer.append(bool(line))
   f.close()
 
-  if user_answer == answer_input[test_count][1] : 
+  if user_answer == answer_input[test_count]['output'] : 
     result.append(True)
   else : 
     result.append(False)
@@ -368,11 +375,11 @@ def update_excel(message, py) :
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
   for i in range(len(test_set)) :
-    if test_set[i][0] == py :
+    if test_set[i]['test_file'] == py :
       global answer 
-      answer = test_set[i][1]
+      answer = test_set[i]['answer']
       global question
-      question = test_set[i][2]   
+      question = test_set[i]['question']   
   trial_error_count[py] += 1    
   try : 
     code_arrange(py)
@@ -380,16 +387,16 @@ def code_check(py) :
     print('평가 코드를 생성하세요.')
     return
   # 코드 실행 시 입력 수가 안 맞으면 실행 종료
-  if len(code_input) != len(answer[0][0]) : 
+  if len(code_input) != len(answer[0]['input']) : 
     update_excel('입력 오류', py)     
     print('입력을 확인해주세요.')
     return
-
+  print(question, '\n')   
   global test_count
   for test_count in range(len(answer)) : 
-    global test_py, answer_py
+    global test_py, answer_txt
     test_py = 'test'+str(test_count)+'.py'
-    answer_py = 'answer'+str(test_count)+'.txt'
+    answer_txt = 'answer'+str(test_count)+'.txt'
     code_convert(answer)
     error_check(test_py)
     # 코드 실행 시 오류발생하면 확인 종료
@@ -398,17 +405,16 @@ def code_check(py) :
       return    
     code_test(answer)        
     
-    print(question, '\n')
-    if len(answer[0][0]) == 0 : 
+    if len(answer[0]['input']) == 0 : 
       if result[test_count] == True : 
         print(user_answer, '가 출력됩니다.', tc_green+'O'+reset)
       else : 
         print(user_answer, '가 출력됩니다.', tc_red+'X'+reset)        
     else :  
       if result[test_count] == True : 
-        print(answer[test_count][0], '을 입력하면 ', user_answer, '가 출력됩니다. ', tc_green+'O'+reset)
+        print(answer[test_count]['input'], '을 입력하면 ', user_answer, '가 출력됩니다. ', tc_green+'O'+reset)
       else : 
-        print(answer[test_count][0], '을 입력하면 ', user_answer, '가 출력됩니다. ', tc_red+'X'+reset)
+        print(answer[test_count]['input'], '을 입력하면 ', user_answer, '가 출력됩니다. ', tc_red+'X'+reset)
 
   if sum(result) == test_count+1 :
     update_excel('정답입니다.', py)
