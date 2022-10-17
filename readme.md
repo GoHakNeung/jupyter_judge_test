@@ -1,71 +1,95 @@
-# 주피터 노트북에서 온라인 저지를 할 수 있는 judge 라이브러리입니다. 
-> 제공하는 코드는 저지할 수 있는 파일입니다.  
-> 문제와 정답은 따로 입력해야 합니다.(아래 설명)
+# 자동 평가 시스템 in Jupyter Notebook 
+## 특징
+- 교사 입장
+1. Colab 코드 셀에서 github에서 코드 다운로드 및 실행하면 초기 설정이 완료됩니다.  
+2. Colab에서 코드 셀 3개를 이용해서 문제 제시, 평가 코드 작성, 코드 평가 함수를 제시할 수 있습니다.   
+3. print(문제 번호)를 통해 문제를 제시할 수 있습니다.(문제를 따로 적지 않아도 됩니다.)
+4. code_check(평가 코드 이름) 함수를 이용해서 학생에게 코드를 평가한 결과를 제공하고  
+평가 결과는 구글 스프레드 시트로 전송됩니다.
+5. 구글 클래스룸을 이용하면 학생들에게 학습 자료 제공 및 회수가 편해집니다. 
+- 학생 입장
+1. 교사가 제공한 github에서 코드 다운로드 및 실행 코드 셀을 실행하면 초기 설정이 완료됩니다. 
+2. 텍스트 셀에서 설명, 실습할 수 있는 코드 셀, 평가할 수 있는 코드 셀이 한 페이지에 구성되어 있습니다.
+3. `print(문제)` 출력 결과로 문제를 확인할 수 있습니다.  
+4. `%%writefile 문제번호.py`이 적힌 코드 셀에 코드를 작성 후 실행하면 평가 코드가 완성됩니다.  
+5. `code_check('문제번호.py')`가 작성된 코드 셀을 실행하면 코드가 평가됩니다. 
 
-## 저지할 수 있는 구조  
-1. print()만 있는 경우
-2. input()과 print()가 있는 경우  
-(주의사항은 `a = int(input())` 입력과 자료형 변환을 한 코드로 작성하면 안됩니다.  
-`a = input()`, `a = int(a)` 입력 후 자료형 변환을 해야 합니다. 
+## 자동 평가 시스템의 구성
+> 제공하는 코드는 크게 **2가지**로 구성되어 있습니다.  
+>> 1. 문제, 정답 데이터, 메타 데이터
+>> 2. 자동 평가 함수  
 
-## 저지 원리
-1. input()에 임의의 값을 입력합니다.  
-2. input()으로 받은 값을 작성한 알고리즘에 의해서 처리합니다.  
-3. 알고리즘에 의해서 얻은 결과와 답을 비교합니다. 
-4. 3세트 정도 비교해서 모두 맞으면 정답으로 인정합니다. 
- 
+## 문제, 정답 데이터, 메타 데이터  
+1. 문제입력  
+: question_번호 변수에 문제를 저장합니다.  
+: 문제, 입력 예시, 출력 예시를 제시합니다.  
+``` python
+question_1 = '''==================================================
+이름을 입력하고 "Hello 이름"이 출력되도록 프로그램을 만듭니다.
+입력 예시 : 가득
+출력 예시 : Hello 가득
+=================================================='''
+```
+2. 정답 데이터  
+: 입력 데이터와 정답 데이터의 여러 묶음을 리스트로 제시합니다.  
+: 입력 데이터와 정답 데이터는 딕셔너리로 저장합니다.  
+: 딕셔너리로 작성된 데이터 세트는 key 값은 `input`, `output`이고, value 값은 `입력 데이터`, `정답 데이터`입니다.   
+: 입력 데이터와 정답 데이터는 리스트로 입력합니다.  
+- 입력과 출력이 있을 경우  
+``` python
+answer_1 = [
+    {'input' : ['mango'], 'output' : ['Hellomango']},
+    {'input' : ['go'], 'output' : ['Hellogo']},
+    {'input' : ['good'], 'output' : ['Hellogood']}
+]
+```
+- 출력만 있을 경우  
+``` python
+answer_3 = [
+    {'input' : [], 'output' : [0,1,2,3,4,5,6,7,8,9]}
+]
+```
+3. 메타 데이터  
+: 평가할 파일 이름, 정답 데이터 번호, 문제 번호를 딕셔너리로 저장합니다.  
+: 딕셔너리로 작성된 메타 데이터는 key 값은 `test_file`, `answer`, `question`이고  
+: value 값은 `평가할 파일 이름`, `정답 데이터 번호`, `문제 번호` 입니다.  
+``` python
+test_set = [
+    {'test_file' : '_1.py', 'answer' : answer_1, 'question' : question_1}
+]
+```
+
+## 자동 평가 함수 원리
+1. 코드에서 입력 받는 변수를 확인합니다. 
+2. 코드를 변환합니다.  
+- 입력 받는 변수에 입력 데이터를 대입합니다. 
+- print()한 결과를 txt 파일에 저장하도록 표준 출력을 수정합니다. 
+3. 변환한 코드를 실행하여 출력한 결과와 정답 데이터를 비교합니다. 
+4. 코드에 대한 평가 또는 오류에 대한 피드백을 제공합니다. 
+
 ## 사용 방법
-1. colab을 실행한다. 
-2. 주피터에서 저지 파일을 다운로드 받고 1회 실행합니다.  
+- 교사 입장
+1. Colab을 이용해서 학습 자료(.ipynb)를 작성합니다.
+2. 초기 설정 코드 셀에서 github에서 다운로드 및 실핼 코드를 제공합니다. 
 ``` python 
 !git clone https://github.com/GoHakNeung/jupyter_judge.git
 %run /content/jupyter_judge/code_check.py 
 ```
-을 실행합니다.  
-![실행결과](https://github.com/GoHakNeung/python/blob/main/python/%EC%A0%80%EC%A7%80%20%EC%8B%9C%EC%9E%91%20%EC%BD%94%EB%93%9C.jpg?raw=true)  
+3. `print(문제번호)`, `%%writefile 평가코드.py`, `code_check('평가코드.py')`을 각각의 코드 셀에 입력 합니다.  
+print(문제번호)만 실행한다. 
+![교사 제공 파일](https://github.com/GoHakNeung/python/blob/main/python/%EA%B5%90%EC%82%AC%EA%B0%80%20%EC%A0%9C%EA%B3%B5%ED%95%98%EB%8A%94%20%ED%8C%8C%EC%9D%BC.jpg?raw=true)
+4. 학습 자료(.ipynb)를 학생에게 제공합니다.(구글 클래스룸, 주피터 허브 등)
 
-3. `print(question_1)`을 실행하면 문제가 나옵니다.    
-4. `%%writefile _1.py` 아래 알고리즘 코드를 작성합니다.  
-5. `code_check('_1.py')`을 실행하면 결과를 확인할 수 있습니다. 
-- 문제 출력  
-![프린트 문제](https://github.com/GoHakNeung/python/blob/main/python/%EB%AC%B8%EC%A0%9Cprint.jpg?raw=true)  
-- input이 있는 경우  
-![입력이 있는 경우](https://github.com/GoHakNeung/python/blob/main/python/input%EC%9D%B4%20%EC%9E%88%EB%8A%94%20%EA%B2%BD%EC%9A%B0.jpg?raw=true)  
-- input이 없는 경우  
-![입력이 없는 경우](https://github.com/GoHakNeung/python/blob/main/python/input%EC%9D%B4%20%EC%97%86%EB%8A%94%20%EA%B2%BD%EC%9A%B0.jpg?raw=true)  
-
-
-## 문제 입력하기(**중요**)
-> code_check.py 상단에 있는 question_1, answer_1, test_set을 입력합니다.  
-
->주피터 노트북에서 온라인 저지를 사용하려면 문제를 입력해야 합니다.  
->문제 세트 입력한 것을 푸시해주거나 개인적으로 다운로드 받아서 문제를 입력합니다.  
-``` python
-import sys, random, math
-question_1 = '이름을 입력하고 "Hello이름"이 출력되도록 프로그램을 만듭니다.\n입력 예시 : 가득\n출력 예시 : Hello가득'
-question_2 = '"Hello World"를 출력하는 프로그램을 만듭니다.\n입력 예시 : 없음\n출력 예시 : Hello World'
-answer_1 = [[['mango'], ['Hellomango']], 
-            [['go'], ['Hellogo']], 
-            [['good'], ['Hellogood']]]
-answer_2 = ['Hello World']
-test_set = [['_1.py', 'answer_1', question_1], ['_2.py', 'answer_2', question_2]]
-```
-1. 필요한 라이브러리를 불러옵니다.  
-2. question_1, answer_1, _1.py가 한 세트입니다.  
-3. question_1에는 문제를 입력합니다.  
-`print(question_1)`로 문제를 불러옵니다.    
-4. answer_1에는 답을 입력합니다.  
-- input이 있는 경우  
-``` python
-answer_1 = [[[입력1], [정답1]], 
-            [[입력2], [정답2]], 
-            [[입력3], [정답3]]]
-```
-- input이 없는 경우  
-``` python
-answer_2 = [정답]
-```  
-5. test_set에는 문제와 답을 리스트로 저장합니다.  
-```
-test_set = [['문제1', '정답1', question_1], ['_1.py', 'answer_1', question_2]]
-```
+- 학생 입장
+1. 초기 설정 코드를 실행합니다.  
+![초기실행코드](https://github.com/GoHakNeung/python/blob/main/python/%EC%B4%88%EA%B8%B0%EC%8B%A4%ED%96%89%EC%BD%94%EB%93%9C.jpg?raw=true)
+2. 평가 코드 작성하기  
+: `%%writefile 코드.py`의 코드 셀 하단에 평가할 코드를 작성합니다.  
+![평가코드작성하기](https://github.com/GoHakNeung/python/blob/main/python/%ED%8F%89%EA%B0%80%20%EC%BD%94%EB%93%9C%20%EC%9E%85%EB%A0%A5%20%EB%B0%8F%20%EC%8B%A4%ED%96%89.jpg?raw=true)
+3. code_check('코드.py') 코드를 실행하여 코드를 평가합니다. 
+- 정답인 경우  
+![코드 평가하기](https://github.com/GoHakNeung/python/blob/main/python/%ED%8F%89%EA%B0%80%20%EC%BD%94%EB%93%9C%20%EC%8B%A4%ED%96%89%20%EA%B2%B0%EA%B3%BC.jpg?raw=true)
+- 오답인 경우  
+![코드 오답](https://github.com/GoHakNeung/python/blob/main/python/%ED%8B%80%EB%A0%B8%EC%9D%84%20%EA%B2%BD%EC%9A%B0.jpg?raw=true)
+- 오류인 경우  
+![코드 오류](https://github.com/GoHakNeung/python/blob/main/python/%EC%98%A4%EB%A5%98%EC%9D%B8%20%EA%B2%BD%EC%9A%B0.jpg?raw=true)
