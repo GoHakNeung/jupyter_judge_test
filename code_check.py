@@ -221,8 +221,6 @@ def code_print_syntax(py_name) :
   file_name = '/content/'+py_name
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
   lines = f.readlines()
-  error_count = error_line()
-  code_count = 1
 
   for line in lines[4:-2] : 
     print(line[:-1])
