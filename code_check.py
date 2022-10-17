@@ -14,7 +14,7 @@ spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-Nd
 #------------------------------------------------------------------------------#
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
-my_id = get('http://172.28.0.2:9000/api/sessions').json()[0]['name']
+my_id = input('이름을 입력해주세요.')
 #------------------------------------------------------------------------------#
 # 문서 및 시트 불러오기
 doc = gc.open_by_url(spreadsheet_url)
@@ -25,9 +25,9 @@ worksheet = doc.worksheet('시트1')
 #문제 입력
 #input이 없으면 입력 비워놓기
 question_1 = '''==================================================
-이름을 입력하고 "Hello이름"이 출력되도록 프로그램을 만듭니다.
-입력 예시 : 가득
-출력 예시 : Hello가득
+이름을 입력하고 "Hello 이름"이 출력되도록 프로그램을 만듭니다.
+입력 예시 : World
+출력 예시 : Hello World
 =================================================='''
 question_2 = '''==================================================
 "Hello World"를 출력하는 프로그램을 만듭니다.
@@ -51,9 +51,9 @@ question_5 = '''==================================================
 =================================================='''
 
 answer_1 = [
-    {'input' : ['mango'], 'output' : ['Hellomango']},
-    {'input' : ['go'], 'output' : ['Hellogo']},
-    {'input' : ['good'], 'output' : ['Hellogood']}
+    {'input' : ['mango'], 'output' : ['Hello mango']},
+    {'input' : ['go'], 'output' : ['Hello go']},
+    {'input' : ['good'], 'output' : ['Hello good']}
 ]
 answer_2 = [
     {'input' : [], 'output' : ['Hello World']}
