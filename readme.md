@@ -62,8 +62,8 @@ test_set = [
 ## 자동 평가 함수 원리
 1. 코드에서 입력 받는 변수를 확인합니다. 
 2. 코드를 변환합니다.  
-- 입력 받는 변수에 입력 데이터를 대입합니다. 
-- print()한 결과를 txt 파일에 저장하도록 표준 출력을 수정합니다. 
+-- 입력 받는 변수에 입력 데이터를 대입합니다. 
+-- print()한 결과를 txt 파일에 저장하도록 표준 출력을 수정합니다. 
 3. 변환한 코드를 실행하여 출력한 결과와 정답 데이터를 비교합니다. 
 4. 코드에 대한 평가 또는 오류에 대한 피드백을 제공합니다. 
 
@@ -76,7 +76,7 @@ test_set = [
 %run /content/jupyter_judge/code_check.py 
 ```
 3. `print(문제번호)`, `%%writefile 평가코드.py`, `code_check('평가코드.py')`을 각각의 코드 셀에 입력 합니다.  
-print(문제번호)만 실행한다. 
+`print(문제번호)`만 실행한다. 
 ![교사 제공 파일](https://github.com/GoHakNeung/python/blob/main/python/%EA%B5%90%EC%82%AC%EA%B0%80%20%EC%A0%9C%EA%B3%B5%ED%95%98%EB%8A%94%20%ED%8C%8C%EC%9D%BC.jpg?raw=true)
 4. 학습 자료(.ipynb)를 학생에게 제공합니다.(구글 클래스룸, 주피터 허브 등)
 
