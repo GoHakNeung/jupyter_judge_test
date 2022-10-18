@@ -14,7 +14,7 @@ spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-Nd
 #------------------------------------------------------------------------------#
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
-my_id = input('이름을 입력해주세요.')
+my_id = get('http://172.28.0.2:9000/api/sessions').json()[0]['name']
 #------------------------------------------------------------------------------#
 # 문서 및 시트 불러오기
 doc = gc.open_by_url(spreadsheet_url)
@@ -41,13 +41,21 @@ question_3 = '''==================================================
 =================================================='''
 question_4 = '''==================================================
 두 숫자를 입력해서 큰 숫자, 작은 숫자가 출력되는 프로그램을 만듭니다.
-입력 예시 : 10, 5
-출력 예시 : 10 5
+입력 예시 : 
+10
+5
+출력 예시 : 
+10 5
 =================================================='''
 question_5 = '''==================================================
 숫자를 입력합니다. 입력한 숫자가 10과 같거나 크면 "10과 같거나 큰 수", 10보다 작으면 "10보다 작은 수"를  출력하는 프로그램을 만듭니다.
 입력 예시 : 5
 출력 예시 : 10보다 작은 수
+=================================================='''
+question_6 = '''==================================================
+두 정수가 띄어쓰기 간격으로 입력이 됩니다. 입력받은 정수를 더해봅시다. 
+입력 예시 : 5, 6
+출력 예시 : 11
 =================================================='''
 
 answer_1 = [
@@ -73,13 +81,19 @@ answer_5 = [
     {'input' : [10], 'output' : ['10과 같거나 큰 수']},
     {'input' : [-123], 'output' : ['10보다 작은 수']}  
 ]
-
+answer_6 = [
+    {'input' : [3, 4], 'output' : [7]}, 
+    {'input' : [45, 155], 'output' : [200]},        
+    {'input' : [-78, 8], 'output' : [-70]},
+    {'input' : [-123, -5], 'output' : [-128]},
+]
 test_set = [
     {'test_file' : '_1.py', 'answer' : answer_1, 'question' : question_1}, 
     {'test_file' : '_2.py', 'answer' : answer_2, 'question' : question_2}, 
     {'test_file' : '_3.py', 'answer' : answer_3, 'question' : question_3}, 
     {'test_file' : '_4.py', 'answer' : answer_4, 'question' : question_4}, 
-    {'test_file' : '_5.py', 'answer' : answer_5, 'question' : question_5}              
+    {'test_file' : '_5.py', 'answer' : answer_5, 'question' : question_5}, 
+    {'test_file' : '_6.py', 'answer' : answer_6, 'question' : question_6},                   
 ]
 #------------------------------------------------------------------------------#
 
@@ -100,11 +114,11 @@ bc_red = '\033[48;2;255;0;m'
 #------------------------------------------------------------------------------#
 # 코드를 input/output 리스트에 넣기
 def code_arrange(py_name) : 
-  global result, code, code_input, code_output
+  global result, code, code_input, code_input_split
   result= []
   code = []
   code_input = []
-  code_output = []
+  code_input_split = []
 
   file_name = '/content/'+py_name
 
@@ -114,11 +128,11 @@ def code_arrange(py_name) :
   #  line = line.strip()
     if line != '' : 
       code.append(line)    
+      if line.find('input().split()') >= 0 : 
+        code_input_split.append(code.index(line))
+        continue
       if line.find('input') >= 0 : 
         code_input.append(code.index(line))
-      if line.find('print') >= 0 : 
-        code_output.append(code.index(line))
-
   f.close()
 
   for i in range(len(code)) : 
@@ -147,11 +161,15 @@ def code_convert(answer_input) :
     order = 0  
     count = 0
     for order in range(len(code)) : 
-      if order in code_input : 
-        print(code[order][:code[order].find('=')+1],'"'+str(answer_input[test_count]['input'][count])+'"')
+
+      if order in code_input_split : 
+        replace_input =  str(list(map(str, answer_input[test_count]['input'])))
+        print(code[order].replace('input().split()',replace_input))
+            
+      elif order in code_input : 
+        replace_input =  '"'+str(answer_input[test_count]['input'][count])+'"'
+        print(code[order].replace('input()',replace_input))
         count += 1  
-      elif order in code_output : 
-        print(code[order])
       else : 
         print(code[order])
 
@@ -182,13 +200,22 @@ def code_test(answer_input) :
   for line in lines :  # 결과를 자료형에 맞게 저장한다. 5.0과 5는 다르므로 테스트 셋에서 결과에 식 그대로 넣어야 한다.
     line = line.strip()
     if line != '' and answer_type == float : 
-      user_answer.append(float(line))
+      try : 
+        user_answer.append(float(line))
+      except : 
+        user_answer.append(str(line))
     elif line != '' and answer_type == int : 
-      user_answer.append(int(line))
+      try : 
+        user_answer.append(int(line))
+      except : 
+        user_answer.append(str(line))
     elif line != '' and answer_type == str : 
       user_answer.append(str(line))
     elif line != '' and answer_type == bool : 
-      user_answer.append(bool(line))
+      try : 
+        user_answer.append(bool(line))
+      except : 
+        user_answer.append(str(line))      
   f.close()
 
   if user_answer == answer_input[test_count]['output'] : 
@@ -404,11 +431,17 @@ def code_check(py) :
   except : 
     print('평가 코드를 생성하세요.')
     return
-  # 코드 실행 시 입력 수가 안 맞으면 실행 종료
-  if len(code_input) != len(answer[0]['input']) : 
-    update_excel('입력 오류', py)     
-    print('입력을 확인해주세요.')
-    return
+  if code_input : 
+    if len(code_input) != len(answer[0]['input']) : 
+      update_excel('입력 오류', py)     
+      print('입력을 확인해주세요.')
+      return
+  if code_input_split : 
+    if len(code_input_split) != 1 : 
+      update_excel('입력 오류', py)     
+      print('입력을 확인해주세요.')    
+      return
+###    
   print(question, '\n')   
   global test_count
   for test_count in range(len(answer)) : 
