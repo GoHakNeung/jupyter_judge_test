@@ -1,4 +1,7 @@
 # 자동 평가 시스템 in Jupyter Notebook 
+___
+> 이해를 위해 `example.ipynb` 파일을 코랩에서 실행하는 것을 추천합니다.
+___
 ## 특징
 - 교사 입장
 1. Colab 코드 셀에서 github에서 코드 다운로드 및 실행하면 초기 설정이 완료됩니다.  
@@ -85,6 +88,7 @@ test_set = [
 ![초기실행코드](https://github.com/GoHakNeung/python/blob/main/python/%EC%B4%88%EA%B8%B0%20%EC%8B%A4%ED%96%89%20%EC%BD%94%EB%93%9C.jpg?raw=true)  
 2. 평가 코드 작성하기  
 : `%%writefile 코드.py`의 코드 셀 하단에 평가할 코드를 작성합니다.  
+: input() 괄호 안은 비워둡니다.  
 ![평가코드작성하기](https://github.com/GoHakNeung/python/blob/main/python/%ED%8F%89%EA%B0%80%20%EC%BD%94%EB%93%9C%20%EC%9E%85%EB%A0%A5%20%EB%B0%8F%20%EC%8B%A4%ED%96%89.jpg?raw=true)
 3. code_check('코드.py') 코드를 실행하여 코드를 평가합니다. 
 - 정답인 경우  
