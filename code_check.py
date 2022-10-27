@@ -14,7 +14,7 @@ spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-Nd
 #------------------------------------------------------------------------------#
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
-my_id = get('http://172.28.0.2:9000/api/sessions').json()[0]['name']
+my_id = input('이름을 입력해주세요.')
 #------------------------------------------------------------------------------#
 # 문서 및 시트 불러오기
 doc = gc.open_by_url(spreadsheet_url)
