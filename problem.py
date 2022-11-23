@@ -665,7 +665,7 @@ question_4303 = '''<h1>문제 설명</h1>
 <p>만들 수 있으면 가능, 만들 수 없으면 불가능을을 출력합니다.</p>
 <HR>
 <p>입력 예시 : <b>34, 67, 79</b></p>
-<p>출력 예시 : True</p>
+<p>출력 예시 : 가능</p>
 <HR>
 </h2>'''
 img_4303 = "https://github.com/GoHakNeung/python/blob/main/img_4303.jpg?raw=true"
