@@ -8,7 +8,7 @@ question_1101 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 30</p>
 <HR>
 </h2>'''
-img_1101 = "https://github.com/GoHakNeung/python/blob/main/img_1101.jpg?raw=true"
+img_1101 = "https://github.com/GoHakNeung/python/blob/main/img_1101.JPG?raw=true"
 answer_1101 = [
     {'input' : [35, 23], 'output' : [58]},
     {'input' : [54, 1243], 'output' : [1297]},
@@ -23,7 +23,7 @@ question_1102 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 3988</p>
 <HR>
 </h2>'''
-img_1102 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+img_1102 = "https://github.com/GoHakNeung/python/blob/main/img_1102.JPG?raw=true"
 answer_1102 = [
     {'input' : [32, 18], 'output' : [14]},
     {'input' : [100, 19], 'output' : [81]},
@@ -38,7 +38,7 @@ question_1103 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 117990</p>
 <HR>
 </h2>'''
-img_1103 = "https://github.com/GoHakNeung/python/blob/main/img_1103.jpg?raw=true"
+img_1103 = "https://github.com/GoHakNeung/python/blob/main/img_1103.JPG?raw=true"
 answer_1103 = [
     {'input' : [13, 21], 'output' : [273]},
     {'input' : [19, 212], 'output' : [4028]},
@@ -53,7 +53,7 @@ question_1104 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 2.0</p>
 <HR>
 </h2>'''
-img_1104 = "https://github.com/GoHakNeung/python/blob/main/img_1104.jpg?raw=true"
+img_1104 = "https://github.com/GoHakNeung/python/blob/main/img_1104.JPG?raw=true"
 answer_1104 = [
     {'input' : [12, 3], 'output' : [4.0]},
     {'input' : [576, 36], 'output' : [16.0]},
@@ -69,7 +69,7 @@ question_1105 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 17</p>
 <HR>
 </h2>'''
-img_1105 = "https://github.com/GoHakNeung/python/blob/main/img_1105.jpg?raw=true"
+img_1105 = "https://github.com/GoHakNeung/python/blob/main/img_1105.JPG?raw=true"
 answer_1105 = [
     {'input' : [5, 7, 2], 'output' : [37]},
     {'input' : [12, 4, 11], 'output' : [59]},
@@ -87,7 +87,7 @@ question_1106 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 8</p>
 <HR>
 </h2>'''
-img_1106 = "https://github.com/GoHakNeung/python/blob/main/img_1106.jpg?raw=true"
+img_1106 = "https://github.com/GoHakNeung/python/blob/main/img_1106.JPG?raw=true"
 answer_1106 = [
     {'input' : [543, 30], 'output' : [18]},
     {'input' : [2435, 24], 'output' : [101]},
@@ -104,7 +104,7 @@ question_1107 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 5</p>
 <HR>
 </h2>'''
-img_1107 = "https://github.com/GoHakNeung/python/blob/main/img_1107.jpg?raw=true"
+img_1107 = "https://github.com/GoHakNeung/python/blob/main/img_1107.JPG?raw=true"
 answer_1107 = [
     {'input' : [124, 12], 'output' : [11]},
     {'input' : [453, 34], 'output' : [14]},
@@ -120,7 +120,7 @@ question_1108 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 18</p>
 <HR>
 </h2>'''
-img_1108 = "https://github.com/GoHakNeung/python/blob/main/img_1108.jpg?raw=true"
+img_1108 = "https://github.com/GoHakNeung/python/blob/main/img_1108.JPG?raw=true"
 answer_1108 = [
     {'input' : [12, 3, 30, 6], 'output' : [360]},
     {'input' : [23, 4, 12, 2], 'output' : [270]},
@@ -137,7 +137,7 @@ question_1109 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 1598</p>
 <HR>
 </h2>'''
-img_1109 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
+img_1109 = "https://github.com/GoHakNeung/python/blob/main/img_1109.JPG?raw=true"
 answer_1109 = [
     {'input' : [10, 20, 30], 'output' : [10250]},
     {'input' : [123, 4, 12], 'output' : [2243]},
