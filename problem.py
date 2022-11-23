@@ -614,7 +614,7 @@ question_4203 = '''<h1>문제 설명</h1>
 <p>삼각형은 예각삼각형인지 직각삼각형인지 둔각삼각형인지 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <p>입력 예시 : <b>43 17 120</b></p>
-<p>출력 예시 : 둔각삼각형형</p>
+<p>출력 예시 : 둔각삼각형</p>
 <HR>
 </h2>'''
 img_4203 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
