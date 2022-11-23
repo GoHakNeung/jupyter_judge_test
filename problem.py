@@ -53,7 +53,7 @@ question_1104 = '''<h1>문제 설명</h1>
 <p>출력 예시 : 2.0</p>
 <HR>
 </h2>'''
-img_1104 = "https://github.com/GoHakNeung/python/blob/main/img_1104.JPG?raw=true"
+img_1104 = "https://github.com/GoHakNeung/python/blob/main/img_1104.jpg?raw=true"
 answer_1104 = [
     {'input' : [12, 3], 'output' : [4.0]},
     {'input' : [576, 36], 'output' : [16.0]},
