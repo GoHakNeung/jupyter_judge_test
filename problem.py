@@ -44,6 +44,48 @@ answer_103 = [
     {'input' : [234,657], 'output' : [234*657]}
 ]
 
+question_104 = '''<h1>문제 설명</h1>
+<h2>
+<p>'무궁화 꽃이 피었습니다.'가 5번 출력한 다음 '탈락'이 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<p>입력 예시 : <b>없음</b></p>
+<p>출력 예시 : </p>
+<p>무궁화 꽃이 피었습니다.</p>
+<p>무궁화 꽃이 피었습니다.</p>
+<p>무궁화 꽃이 피었습니다.</p>
+<p>무궁화 꽃이 피었습니다.</p>
+<p>무궁화 꽃이 피었습니다.</p>
+<p>탈락</p>
+<HR>
+</h2>'''
+img_104 = ""
+answer_104 = [
+    {'input' : [], 'output' : ['무궁화 꽃이 피었습니다.','무궁화 꽃이 피었습니다.','무궁화 꽃이 피었습니다.','무궁화 꽃이 피었습니다.','무궁화 꽃이 피었습니다.','탈락']},
+]
+
+question_105 = '''<h1>문제 설명</h1>
+<h2>
+<p>태양계 행성을 리스트에 저장합니다.</p>
+<p>수성부터 해왕성까지 차례대로 출력하는 프로그램을 만들어봅시다. </p>
+<p>(수,금,지,화,목,토,천,해로 줄여서 출력해봅시다.)</p>
+<HR>
+<p>입력 예시 : <b>없음</b></p>
+<p>출력 예시 : </p>
+<p>수</p>
+<p>금</p>
+<p>지</p>
+<p>화</p>
+<p>목</p>
+<p>토</p>
+<p>천</p>
+<p>해</p>
+<HR>
+</h2>'''
+img_105 = ""
+answer_105 = [
+    {'input' : [], 'output' : ['수','금','지','화','목','토','천','해']},
+]
+
 question_1101 = '''<h1>문제 설명</h1>
 <h2>
 <p>2개의 숫자를 입력받아 더한 결과를 출력하는 프로그램을 만들어봅시다.</p>
@@ -874,7 +916,8 @@ test_set = [
     {'test_file' : '_101.py', 'answer' : answer_101, 'question' : question_101, 'img' : img_101},
     {'test_file' : '_102.py', 'answer' : answer_102, 'question' : question_102, 'img' : img_102},   
     {'test_file' : '_103.py', 'answer' : answer_103, 'question' : question_103, 'img' : img_103},   
-    
+    {'test_file' : '_104.py', 'answer' : answer_104, 'question' : question_104, 'img' : img_104},   
+    {'test_file' : '_105.py', 'answer' : answer_105, 'question' : question_105, 'img' : img_105},       
 #입력,변수,출력_수와 연산산
     {'test_file' : '_1101.py', 'answer' : answer_1101, 'question' : question_1101, 'img' : img_1101},
     {'test_file' : '_1102.py', 'answer' : answer_1102, 'question' : question_1102, 'img' : img_1102},   
