@@ -1,6 +1,11 @@
+#@title
+# %%writefile automatic_assessment_program.py
 import sys, random, math, os, traceback, gspread
 from requests import get
 from oauth2client.service_account import ServiceAccountCredentials
+from IPython.core.display import display, HTML, Image
+from jupyter_judge.problem import *
+# from problem import *
 
 #------------------------------------------------------------------------------#
 #구글 스프레드시트와 연동하기
@@ -15,6 +20,7 @@ spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-Nd
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
 my_id = input('이름을 입력해주세요.')
+print('지금부터 공부를 시작합니다.')
 #------------------------------------------------------------------------------#
 # 문서 및 시트 불러오기
 doc = gc.open_by_url(spreadsheet_url)
@@ -24,77 +30,7 @@ worksheet = doc.worksheet('시트1')
 
 #문제 입력
 #input이 없으면 입력 비워놓기
-question_1 = '''==================================================
-이름을 입력하고 "Hello 이름"이 출력되도록 프로그램을 만듭니다.
-입력 예시 : World
-출력 예시 : Hello World
-=================================================='''
-question_2 = '''==================================================
-"Hello World"를 출력하는 프로그램을 만듭니다.
-입력 예시 : 없음
-출력 예시 : Hello World
-=================================================='''
-question_3 = '''==================================================
-반복문(for)을 사용해서 0부터 9까지 출력하는 프로그램을 만듭니다.
-입력 예시 : 없음
-출력 예시 : 0,1,2,3,4,5,6,7,8,9
-=================================================='''
-question_4 = '''==================================================
-두 숫자를 입력해서 큰 숫자, 작은 숫자가 출력되는 프로그램을 만듭니다.
-입력 예시 : 
-10
-5
-출력 예시 : 
-10 5
-=================================================='''
-question_5 = '''==================================================
-숫자를 입력합니다. 입력한 숫자가 10과 같거나 크면 "10과 같거나 큰 수", 10보다 작으면 "10보다 작은 수"를  출력하는 프로그램을 만듭니다.
-입력 예시 : 5
-출력 예시 : 10보다 작은 수
-=================================================='''
-question_6 = '''==================================================
-두 정수가 띄어쓰기 간격으로 입력이 됩니다. 입력받은 정수를 더해봅시다. 
-입력 예시 : 5, 6
-출력 예시 : 11
-=================================================='''
 
-answer_1 = [
-    {'input' : ['mango'], 'output' : ['Hello mango']},
-    {'input' : ['go'], 'output' : ['Hello go']},
-    {'input' : ['good'], 'output' : ['Hello good']}
-]
-answer_2 = [
-    {'input' : [], 'output' : ['Hello World']}
-]
-answer_3 = [
-    {'input' : [], 'output' : [0,1,2,3,4,5,6,7,8,9]}, 
-]
-answer_4 = [
-    {'input' : [3,4], 'output' : ['4 3']},
-    {'input' : [156,1532], 'output' : ['1532 156']},
-    {'input' : [-5456, 456], 'output' : ['456 -5456']},
-    {'input' : [21341234,2], 'output' : ['21341234 2']}    
-]
-answer_5 = [
-    {'input' : [3], 'output' : ['10보다 작은 수']},
-    {'input' : [123], 'output' : ['10과 같거나 큰 수']},
-    {'input' : [10], 'output' : ['10과 같거나 큰 수']},
-    {'input' : [-123], 'output' : ['10보다 작은 수']}  
-]
-answer_6 = [
-    {'input' : [3, 4], 'output' : [7]}, 
-    {'input' : [45, 155], 'output' : [200]},        
-    {'input' : [-78, 8], 'output' : [-70]},
-    {'input' : [-123, -5], 'output' : [-128]},
-]
-test_set = [
-    {'test_file' : '_1.py', 'answer' : answer_1, 'question' : question_1}, 
-    {'test_file' : '_2.py', 'answer' : answer_2, 'question' : question_2}, 
-    {'test_file' : '_3.py', 'answer' : answer_3, 'question' : question_3}, 
-    {'test_file' : '_4.py', 'answer' : answer_4, 'question' : question_4}, 
-    {'test_file' : '_5.py', 'answer' : answer_5, 'question' : question_5}, 
-    {'test_file' : '_6.py', 'answer' : answer_6, 'question' : question_6},                   
-]
 #------------------------------------------------------------------------------#
 
 #문제에 따른 시도한 횟수를 dictionary로 만듬
@@ -415,7 +351,11 @@ def update_excel(message, py) :
 
   worksheet.update_cell(row, col, message)
   worksheet.update_cell(row, col+1, trial_error_count[py])
-
+#------------------------------------------------------------------------------#
+#HTML 형식의 문제 불러오기기
+def Question(question_, img="") : 
+  display(HTML(question_))
+  return Image(url= img) 
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
@@ -441,8 +381,10 @@ def code_check(py) :
       update_excel('입력 오류', py)     
       print('입력을 확인해주세요.')    
       return
-###    
-  print(question, '\n')   
+   
+  # print(question, '\n')   
+  
+  Question(question)
   global test_count
   for test_count in range(len(answer)) : 
     global test_py, answer_txt
@@ -452,10 +394,13 @@ def code_check(py) :
     error_check(test_py)
     # 코드 실행 시 오류발생하면 확인 종료
     if compile_error == True :
-      update_excel('오류입니다.', py)     
-      return    
+      try : 
+        update_excel('오류입니다.', py)     
+        return    
+      except : 
+        return    
+
     code_test(answer)        
-    
     if len(answer[0]['input']) == 0 : 
       if result[test_count] == True : 
         print(user_answer, '가 출력됩니다.', tc_green+'O'+reset)
@@ -468,8 +413,14 @@ def code_check(py) :
         print(answer[test_count]['input'], '을 입력하면 ', user_answer, '가 출력됩니다. ', tc_red+'X'+reset)
 
   if sum(result) == test_count+1 :
-    update_excel('정답입니다.', py)
-    print(tc_green+'정답입니다.'+reset)
+    try : 
+      update_excel('정답입니다.', py)
+      print(tc_green+'정답입니다.'+reset)
+    except : 
+      print(tc_green+'정답입니다.'+reset)
   else : 
-    update_excel('틀렸습니다.', py)
-    print(tc_red+'틀렸습니다.'+reset)
+    try : 
+      update_excel('틀렸습니다.', py)
+      print(tc_red+'틀렸습니다.'+reset)
+    except : 
+      print(tc_red+'틀렸습니다.'+reset)
