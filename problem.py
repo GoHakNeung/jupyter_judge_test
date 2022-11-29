@@ -1,4 +1,48 @@
 #입력,출력,변수_수와 연산산
+question_101 = '''<h1>문제 설명</h1>
+<h2>
+<p>day라는 변수에 글자를 입력받고 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<p>입력 예시 : <b>월요일</b></p>
+<p>출력 예시 : 월요일</p>
+<HR>
+</h2>'''
+img_101 = ""
+answer_101 = [
+    {'input' : ['월요일'], 'output' : ['월요일']},
+    {'input' : ['화요일'], 'output' : ['화요일']},
+    {'input' : ['일요일'], 'output' : ['일요일']}
+]
+
+question_102 = '''<h1>문제 설명</h1>
+<h2>
+<p>name라는 변수에 글자를 입력받고 '안녕 name'을 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<p>입력 예시 : <b>두루초</b></p>
+<p>출력 예시 : 안녕 두루초</p>
+<HR>
+</h2>'''
+img_102 = ""
+answer_102 = [
+    {'input' : ['세종'], 'output' : ['안녕 세종']},
+    {'input' : ['반가워'], 'output' : ['안녕 반가워']},
+    {'input' : ['두루야'], 'output' : ['안녕']}
+]
+
+question_103 = '''<h1>문제 설명</h1>
+<h2>
+<p>num1과 num2에 숫자를 입력받습니다. num1과 num2를 곱한 결과를 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<p>입력 예시 : <b>12 6</b></p>
+<p>출력 예시 : 72</p>
+<HR>
+</h2>'''
+img_103 = ""
+answer_103 = [
+    {'input' : [2,6], 'output' : [2*6]},
+    {'input' : [65, 8], 'output' : [65*8]},
+    {'input' : [234,657], 'output' : [234*657]}
+]
 
 question_1101 = '''<h1>문제 설명</h1>
 <h2>
@@ -826,6 +870,11 @@ answer_5504 = [
 ]
 
 test_set = [
+#연습    
+    {'test_file' : '_101.py', 'answer' : answer_101, 'question' : question_101, 'img' : img_101},
+    {'test_file' : '_102.py', 'answer' : answer_102, 'question' : question_102, 'img' : img_102},   
+    {'test_file' : '_103.py', 'answer' : answer_103, 'question' : question_103, 'img' : img_103},   
+    
 #입력,변수,출력_수와 연산산
     {'test_file' : '_1101.py', 'answer' : answer_1101, 'question' : question_1101, 'img' : img_1101},
     {'test_file' : '_1102.py', 'answer' : answer_1102, 'question' : question_1102, 'img' : img_1102},   
