@@ -39,9 +39,9 @@ question_103 = '''<h1>문제 설명</h1>
 </h2>'''
 img_103 = ""
 answer_103 = [
-    {'input' : [2,6], 'output' : [2*6]},
-    {'input' : [65, 8], 'output' : [65*8]},
-    {'input' : [234,657], 'output' : [234*657]}
+    {'input' : [2,6], 'output' : [True]},
+    {'input' : [65, 8], 'output' : [False]},
+    {'input' : [234,657], 'output' : [True]}
 ]
 
 question_104 = '''<h1>문제 설명</h1>
