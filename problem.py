@@ -741,7 +741,7 @@ question_4101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 </h3>
 <HR>
 </h2>'''
-img_4203 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+img_4101 = "https://github.com/GoHakNeung/python/blob/main/img_4101.jpg?raw=true"
 answer_4101 = [
     {'input' : [1], 'output' : ['[15000, 15001, 15002, 15003, 15004, 15005, 15006, 15007, 15008, 15009]']},
     {'input' : [315], 'output' : ['[15000, 15315, 15630, 15945, 16260, 16575, 16890, 17205, 17520, 17835]']},
