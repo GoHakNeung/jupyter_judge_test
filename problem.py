@@ -1130,11 +1130,16 @@ question_6102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>3</p>
 <p>4</p>
 <p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>10</p>
 <HR>
 </h2>'''
 img_6102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_6102 = [
-    {'input' : [], 'output' : [1,2,3,4,5]}
+    {'input' : [], 'output' : [1,2,3,4,5,6,7,8,9,10]}
 ]
 #
 question_6103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
