@@ -383,8 +383,8 @@ def code_check(py) :
       return
    
   # print(question, '\n')   
-  
-  Question(question)
+  Question('<h2 style = "background-color:yellow">결과 확인</h2>')  
+  # Question(question)
   global test_count
   for test_count in range(len(answer)) : 
     global test_py, answer_txt
@@ -403,15 +403,24 @@ def code_check(py) :
     code_test(answer)        
     if len(answer[0]['input']) == 0 : 
       if result[test_count] == True : 
-        print(user_answer, '가 출력됩니다.', tc_green+'O'+reset)
+        for i in user_answer : 
+          print(i)
+        print('가 출력됩니다.', tc_green+'O'+reset)
       else : 
-        print(user_answer, '가 출력됩니다.', tc_red+'X'+reset)        
+        for i in user_answer : 
+          print(i)
+        print('가 출력됩니다.', tc_red+'X'+reset)    
     else :  
       if result[test_count] == True : 
-        print(answer[test_count]['input'], '을 입력하면 ', user_answer, '가 출력됩니다. ', tc_green+'O'+reset)
+        print(answer[test_count]['input'], '을 입력하면')
+        for i in user_answer : 
+          print(i)
+        print('가 출력됩니다. ', tc_green+'O'+reset)
       else : 
-        print(answer[test_count]['input'], '을 입력하면 ', user_answer, '가 출력됩니다. ', tc_red+'X'+reset)
-
+        print(answer[test_count]['input'], '을 입력하면')
+        for i in user_answer : 
+          print(i)
+        print('가 출력됩니다. ', tc_red+'X'+reset)
   if sum(result) == test_count+1 :
     try : 
       update_excel('정답입니다.', py)
