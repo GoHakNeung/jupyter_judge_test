@@ -1260,7 +1260,7 @@ answer_7101 = [
 question_7102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>
 <p>2개의 숫자를 입력받습니다.</p>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span>를 모두 나누어 떨어지게 하는 숫자를 모두 출력하는 프로그램을 만들어봅시다.</p>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span>를 모두 나누어 떨어지게 하는 숫자를 리스트로 출력하는 프로그램을 만들어봅시다.</p>
 <p>작은 숫자부터 출력하도록 합니다.</p>
 <HR>
 <p>입력 예시 : 20 12</p>
@@ -1303,7 +1303,7 @@ answer_7103 = [
 question_7104 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>
 <p>2개의 숫자를 입력받습니다.</p>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">2개 숫자</span>의 공배수를 모두 출력하는 프로그램을 만들어봅시다.</p>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">2개 숫자</span>의 공배수를 리스트로 출력하는 프로그램을 만들어봅시다.</p>
 <p>작은 숫자부터 10개를 출력하도록 합니다.</p>
 <HR>
 <p>입력 예시 : 20 12</p>
