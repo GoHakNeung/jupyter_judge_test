@@ -44,6 +44,7 @@ for i in range(len(test_set)) :
 reset = '\033[0m'
 tc_red = '\033[38;2;255;0;0m'
 tc_green = '\033[38;2;0;255;0m'
+bc_yellow = '\033[48;2;255;255;0m'
 bc_green = '\033[48;2;0;255;0m'
 bc_red = '\033[48;2;255;0;m'
 
@@ -404,22 +405,22 @@ def code_check(py) :
     if len(answer[0]['input']) == 0 : 
       if result[test_count] == True : 
         for i in user_answer : 
-          print(i)
+          print(bc_yellow+str(i)+reset)
         print('가 출력됩니다.', tc_green+'O'+reset)
       else : 
         for i in user_answer : 
-          print(i)
+          print(bc_yellow+str(i)+reset)
         print('가 출력됩니다.', tc_red+'X'+reset)    
     else :  
       if result[test_count] == True : 
         print(answer[test_count]['input'], '을 입력하면')
         for i in user_answer : 
-          print(i)
+          print(bc_yellow+str(i)+reset)
         print('가 출력됩니다. ', tc_green+'O'+reset)
       else : 
         print(answer[test_count]['input'], '을 입력하면')
         for i in user_answer : 
-          print(i)
+          print(bc_yellow+str(i)+reset)
         print('가 출력됩니다. ', tc_red+'X'+reset)
   if sum(result) == test_count+1 :
     try : 
