@@ -418,9 +418,9 @@ question_3304 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 </h2>'''
 img_3304 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3304 = [
-    {'input' : [15, 123], 'output' : [25877]},
-    {'input' : [21, 0], 'output' : [20000]},
-    {'input' : [40, 999], 'output' : [1]}
+    {'input' : [15, 12003], 'output' : ['True']},
+    {'input' : [21, 22343], 'output' : ['False']},
+    {'input' : [40, 999111], 'output' : ['True']}
 ]
 #단명수, 복명수수
 question_3305 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
