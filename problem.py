@@ -422,7 +422,7 @@ img_3304 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true
 answer_3304 = [
     {'input' : [15, 12003], 'output' : ['True']},
     {'input' : [21, 22343], 'output' : ['False']},
-    {'input' : [40, 999111], 'output' : ['True']}
+    {'input' : [40, 999111], 'output' : ['False']}
 ]
 #단명수, 복명수수
 question_3305 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
