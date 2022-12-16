@@ -95,7 +95,9 @@ question_2401 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 사과 개수, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 귤 개수입니다. </p>
 <p>사과에 대한 귤의 비에서 기준량을 출력하는 프로그램을 만들어봅시다. </p>
 <HR>
-<p>입력 예시 : <b>10 15</b></p>
+<p>입력 예시 :</p>
+<p>10</p>
+<p>15</p>
 <h3>
 <p>1000이하의 숫자가 입력됩니다.</p>
 </h3>
