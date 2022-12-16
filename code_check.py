@@ -128,37 +128,21 @@ def code_convert(answer_input) :
 def code_test(answer_input) : 
   global user_answer, answer_txt, test_count
   user_answer = []
-  answer_type = ''
-  answer_type = type(answer_input[0]['output'][0])
   answer_filename = '/content/'+answer_txt
   f = open(answer_filename, 'r')
   lines = f.readlines()
 
-  for line in lines :  # 결과를 자료형에 맞게 저장한다. 5.0과 5는 다르므로 테스트 셋에서 결과에 식 그대로 넣어야 한다.
+  for line in lines :  # 결과를 문자열로 형태로 정답 리스트에 추가한다.
     line = line.strip()
-    if line != '' and answer_type == float : 
-      try : 
-        user_answer.append(float(line))
-      except : 
-        user_answer.append(str(line))
-    elif line != '' and answer_type == int : 
-      try : 
-        user_answer.append(int(line))
-      except : 
-        user_answer.append(str(line))
-    elif line != '' and answer_type == str : 
+    if line != '' : 
       user_answer.append(str(line))
-    elif line != '' and answer_type == bool : 
-      try : 
-        user_answer.append(bool(line))
-      except : 
-        user_answer.append(str(line))      
   f.close()
 
+  answer_input[test_count]['output'] = list(map(str, answer_input[test_count]['output']))
   if user_answer == answer_input[test_count]['output'] : 
     result.append(True)
   else : 
-    result.append(False)
+    result.append(False) 
 
 #------------------------------------------------------------------------------#
 # syntax 오류 외 코드 출력창에 코드 불러오는 것
@@ -402,6 +386,7 @@ def code_check(py) :
         return    
 
     code_test(answer)        
+    #입력이 없는 문제
     if len(answer[0]['input']) == 0 : 
       if result[test_count] == True : 
         for i in user_answer : 
@@ -412,16 +397,26 @@ def code_check(py) :
           print(bc_yellow+str(i)+reset)
         print('가 출력됩니다.', tc_red+'X'+reset)    
     else :  
+    #입력이 있는 문제
       if result[test_count] == True : 
-        print(answer[test_count]['input'], '을 입력하면')
-        for i in user_answer : 
-          print(bc_yellow+str(i)+reset)
-        print('가 출력됩니다. ', tc_green+'O'+reset)
+        for i in answer[test_count]['input'] :
+          if i == answer[test_count]['input'][-1] : 
+            print(i,end = '')
+          else : 
+            print(i, end = '\n') 
+        print('인 데이터를 입력하면')
+        for i in user_answer : print(bc_yellow+str(i)+reset, end = '')
+        print('로 데이터가 처리됩니다.',tc_green+'O'+reset)
       else : 
-        print(answer[test_count]['input'], '을 입력하면')
-        for i in user_answer : 
-          print(bc_yellow+str(i)+reset)
-        print('가 출력됩니다. ', tc_red+'X'+reset)
+        for i in answer[test_count]['input'] :
+          if i == answer[test_count]['input'][-1] : 
+            print(i,end = '')
+          else : 
+            print(i, end = '\n') 
+        print('인 데이터를 입력하면')
+        for i in user_answer : print(bc_yellow+str(i)+reset, end = '')
+        print('로 데이터가 처리됩니다.',tc_red+'X'+reset)
+    Question('<HR>')
   if sum(result) == test_count+1 :
     try : 
       update_excel('정답입니다.', py)
