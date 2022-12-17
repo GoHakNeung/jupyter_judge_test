@@ -118,7 +118,7 @@ answer_2401 = [
     {'input' : [45, 7], 'output' : [45]}
 ]
 #입출력, 기준량, 비교하는양
-question_2402 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+question_2402 = '''<h1 style = "background-color:yellow; ">문제</h1>
 <h2>
 <p>2개의 숫자를 입력 받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 대호네 반 학생 수이고 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 아침 건강 달리기에 참여한 학생 수입니다. </p>
