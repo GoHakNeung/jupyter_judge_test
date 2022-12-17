@@ -89,22 +89,28 @@ answer_1204 = [
     {'input' : [], 'output' : [9]}
 ]
 #입출력, 기준량, 비교하는양
-question_2401 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>2개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 사과 개수, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 귤 개수입니다. </p>
-<p>사과에 대한 귤의 비에서 기준량을 출력하는 프로그램을 만들어봅시다. </p>
+question_2401 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>사과와 귤의 개수를 입력받습니다. </p>
+<p>사과에 대한 귤의 비에서 기준량에 해당하는 숫자를 출력하는 프로그램을 만들어봅시다. </p>
 <HR>
-<p>입력 예시 :</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 사과 개수가, 둘째 줄에 귤 개수가 주어진다.</p>
+<p>(사과와 귤의 개수는 1000이하의 숫자가 입력된다.)</p>
+<h2> 출력
+</h2>
+기준량에 해당하는 숫자를 출력한다.
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 10</p>
+<p> 15</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
 <p>10</p>
-<p>15</p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 10</p>
-<HR>
-</h2>'''
+</div>
+'''
 img_2401 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_2401 = [
     {'input' : [23, 17], 'output' : [23]},
