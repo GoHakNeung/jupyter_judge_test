@@ -389,33 +389,39 @@ def code_check(py) :
     #입력이 없는 문제
     if len(answer[0]['input']) == 0 : 
       if result[test_count] == True : 
+        Question('<li>처리한 데이터 : </li>') 
         for i in user_answer : 
-          print(bc_yellow+str(i)+reset)
-        print('가 출력됩니다.', tc_green+'O'+reset)
-      else : 
+          if i == user_answer[-1] : 
+            print(bc_yellow+str(i)+reset,tc_green+'O'+reset)
+          else : 
+            print(bc_yellow+str(i)+reset)
+      else :
+        Question('<li>처리한 데이터 : </li>') 
         for i in user_answer : 
-          print(bc_yellow+str(i)+reset)
-        print('가 출력됩니다.', tc_red+'X'+reset)    
+          if i == user_answer[-1] : 
+            print(bc_yellow+str(i)+reset, tc_red+'X'+reset)
+          else : 
+            print(bc_yellow+str(i)+reset)
     else :  
     #입력이 있는 문제
       if result[test_count] == True : 
-        for i in answer[test_count]['input'] :
-          if i == answer[test_count]['input'][-1] : 
-            print(i,end = '')
+        Question('<li>입력한 데이터 : </li>') 
+        for i in answer[test_count]['input'] : print(i)
+        Question('<li>처리한 데이터 : </li>') 
+        for i in user_answer : 
+          if i == user_answer[-1] : 
+            print(bc_yellow+str(i)+reset, tc_green+'O'+reset)
           else : 
-            print(i, end = '\n') 
-        print('인 데이터를 입력하면')
-        for i in user_answer : print(bc_yellow+str(i)+reset, end = '')
-        print('로 데이터가 처리됩니다.',tc_green+'O'+reset)
+            print(bc_yellow+str(i)+reset)
       else : 
-        for i in answer[test_count]['input'] :
-          if i == answer[test_count]['input'][-1] : 
-            print(i,end = '')
+        Question('<li>입력한 데이터 : </li>') 
+        for i in answer[test_count]['input'] : print(i)
+        Question('<li>처리한 데이터 : </li>') 
+        for i in user_answer : 
+          if i == user_answer[-1] : 
+            print(bc_yellow+str(i)+reset,tc_red+'X'+reset)
           else : 
-            print(i, end = '\n') 
-        print('인 데이터를 입력하면')
-        for i in user_answer : print(bc_yellow+str(i)+reset, end = '')
-        print('로 데이터가 처리됩니다.',tc_red+'X'+reset)
+            print(bc_yellow+str(i)+reset)
     Question('<HR>')
   if sum(result) == test_count+1 :
     try : 
