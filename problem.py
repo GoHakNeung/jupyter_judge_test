@@ -1,11 +1,22 @@
-question_1101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_1101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>5.24에서 자연수 부분을 출력해봅시다.</p>
 <HR>
-<p>입력 예시 : 없음</p>
-<p>출력 예시 : 자연수 부분 숫자</p>
+<h2> 입력
+</h2>
+<p>없음</p>
+<h2> 출력
+</h2>
+<p>자연수에 해당하는 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>5.24에서 자연수 부분</p>
+</div>
+'''
 img_1101 = "https://github.com/GoHakNeung/python/blob/main/img_1101.JPG?raw=true"
 answer_1101 = [
     {'input' : [], 'output' : [5]}
@@ -176,19 +187,28 @@ answer_2404 = [
     {'input' : [2, 5], 'output' : [2]},
     {'input' : [45, 7], 'output' : [45]}
 ]
-question_3101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_3101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 더한 결과를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 10 20</p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 30</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 첫번째 숫자가, 둘째 줄에 두번째 숫자가 주어집니다.</p>
+<p>(1000이하의 숫자가 입력됩니다.)</p>
+<h2> 출력
+</h2>
+<p>첫번째 숫자와 두번째 숫자를 더한 결과를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 10</p>
+<p> 20</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>30</p>
+</div>
+'''
 img_3101 = "https://github.com/GoHakNeung/python/blob/main/img_1101.JPG?raw=true"
 answer_3101 = [
     {'input' : [35, 23], 'output' : [58]},
@@ -733,22 +753,27 @@ answer_3403 = [
     {'input' : [22, 10], 'output' : [416*22/32]}
 ]
 #띄어세기
-question_4101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>15000에서 <span style = "background-color:	#E0E0E0;">입력받은 숫자</span>만큼 띄어세는 수를 리스트로 만들어서 출력하는 프로그램을 만들어봅시다.</p>
-<p>리스트에 숫자는 10개를 저장합니다.</p>
+question_4101 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>15000에서  <span style = "background-color:	#E0E0E0;">입력받은 숫자</span>만큼 띄어세는 수를 리스트로 만들어서 출력하는 프로그램을 만들어봅시다. </p>
+<p>리스트에 10개의 숫자를 저장합니다. </p>
 <HR>
-<p>입력 예시 : 100</p>
-<h3>
-<p>입력되는 숫자는 10000이하 숫자입니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : [15000, 15100, 15200, 15300, 15400, 15500, 15600, 15700, 15800, 15900]</p>
-<h3>
-<p>리스트로 출력합니다.</p>
-</h3>
+<h2> 입력
+</h2>
+<p>인접한 두 숫자의 간격</p>
+<p>(10000이하의 숫자가 입력됩니다.)</p>
+<h2> 출력
+</h2>
+<p>입력한 숫자만큼 띄어세기 한 리스트(리스트 길이는 10)를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 100</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>[15000, 15100, 15200, 15300, 15400, 15500, 15600, 15700, 15800, 15900]</p>
+</div>
+'''
 img_4101 = "https://github.com/GoHakNeung/python/blob/main/img_4101.jpg?raw=true"
 answer_4101 = [
     {'input' : [1], 'output' : ['[15000, 15001, 15002, 15003, 15004, 15005, 15006, 15007, 15008, 15009]']},
@@ -992,18 +1017,25 @@ answer_5104 = [
     {'input' : [452, 34, 6565], 'output' : [34]}
 ]
 #예각,직각,둔각 알기
-question_5201 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_5201 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 1개의 <span style = "background-color : #E0E0E0">숫자(각도)</span>가 예각인지, 직각인지, 둔각인지 출력하도록 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : <b>56</b></p>
-<h3>
-<p>입력되는 숫자는 1에서 179이하 숫자이며 단위는 &#176이다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 예각</p>
+<h2> 입력
+</h2>
+<p>1 ~ 179 사이 숫자가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>예각, 직각, 둔각 중 하나를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>56</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>예각</p>
+</div>
+'''
 img_5201 = "https://github.com/GoHakNeung/python/blob/main/img_4201.jpg?raw=true"
 answer_5201 = [
     {'input' : [65], 'output' : ['예각']},
@@ -1071,19 +1103,27 @@ answer_5301 = [
     {'input' : [1, 1, 178], 'output' : ['가능']}
 ]
 #이등변 삼각형 가능/불가능
-question_5302 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_5302 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>숫자와 글자를 순서대로 입력받습니다.</p>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">십만 자리 숫자</span>를 입력받은 <span style = "background-color:	#E0E0E0;">글자</span>에 맞게 올림 또는 내림하여 만 자리까지 나타내는 프로그램을 만들어봅시다.</p>
-<p>숫자는 십만 자리 숫자가 입력받고 글자는 올림 또는 내림을 입력받습니다.</p>
 <HR>
-<p>- 입력 예시 : </p>
-<p>123421 </p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 십만 자리 숫자가 입력되고, 둘째 줄에 올림 또는 내림이 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>올림 또는 내림하여 만의 자리 까지 나타낸 수를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>123421</p>
 <p>올림</p>
-<h2>
-<p>- 출력 예시 : 130000</p>
-<HR>
-</h2>'''
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>130000</p>
+</div>
+'''
 img_5302 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_5302 = [
     {'input' : [781233, '내림'], 'output' : [780000]},
@@ -1218,25 +1258,29 @@ answer_6105 = [
     {'input' : [10001], 'output' : ['[1, 0, 0, 0, 1]']}
 ]
 #
-question_6106 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>10씩 띄어세기 하는 <span style = "background-color:	#E0E0E0;">숫자 모음(리스트)</span>을 입력받습니다.</p>
-<p>숫자 모음을 순서대로 출력하는 프로그램을 만들어봅시다.</p>
+question_6106 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>10씩 띄어세기 하는 <span style = "background-color:	#E0E0E0;">숫자 모음(리스트)</span>을 입력받아 숫자 모음에 저장된 숫자를 순서대로 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>- 입력 예시 : 10, 20, 30, 40, 50</p>
-<h2>
-<p>- 출력 예시 : </p>
+<h2> 입력
+</h2>
+<p>숫자모음(리스트)가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>숫자모음(리스트)에 저장된 숫자가 순서대로 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 10, 20, 30, 40, 50</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
 <p>10</p>
 <p>20</p>
 <p>30</p>
 <p>40</p>
 <p>50</p>
-<h3>
-<p>줄바꿈하여 출력합니다.</p>
-</h3>
-<h2>
-<HR>
-</h2>'''
+</div>
+'''
 img_6106 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_6106 = [
     {'input' : [20, 30, 40, 50, 60], 'output' : [20, 30, 40, 50, 60]},
@@ -1265,20 +1309,27 @@ answer_7101 = [
     {'input' : [17], 'output' : ['[1, 17]']}
 ]
 #약수
-question_7102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>2개의 숫자를 입력받습니다.</p>
+question_7102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span>를 모두 나누어 떨어지게 하는 숫자를 리스트로 출력하는 프로그램을 만들어봅시다.</p>
-<p>작은 숫자부터 출력하도록 합니다.</p>
 <HR>
-<p>입력 예시 : 20 12</p>
-<h3>
-<p>1000000보다 작은 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 1, 2, 4</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 첫번째 숫자가, 둘째 줄에 두번째 숫자가 입력됩니다.</p>
+<p>(2개의 숫자는 1000000보다 작은 숫자가 입력됩니다.)</p>
+<h2> 출력
+</h2>
+<p>두 숫자를 모두 나누어 떨어지게 하는 숫자를 리스트로 출력합니다. 
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 20</p>
+<p> 12</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>1,2,4</p>
+</div>
+'''
 img_7102 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
 answer_7102 = [
     {'input' : [16, 40], 'output' : ['[1, 2, 4, 8]']},
