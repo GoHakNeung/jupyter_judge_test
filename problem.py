@@ -167,20 +167,28 @@ answer_2403 = [
     {'input' : [45, 7], 'output' : [7]}
 ]
 #입출력, 기준량, 비교하는양
-question_2404 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>2개의 숫자를 입력받습니다. </p> 
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 복숭아 개수, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 포도 개수입니다. </p>
+question_2404 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>2개의 숫자를 입력 받아 <span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 복숭아 개수, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 포도 개수입니다. </p>
 <p>복숭아와 포도의 비에서 비교하는 양을 출력하는 프로그램을 만들어봅시다. </p>
 <HR>
-<p>입력 예시 : <b>20 25</b></p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 20</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 복숭아 개수가, 둘째 줄에 포도 개수가 주어진다.</p>
+<p>(복숭아와 포도의 개수는 1000이하의 숫자가 입력된다.)</p>
+<h2> 출력
+</h2>
+비교하는 양에 해당하는 숫자를 출력한다.
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 20</p>
+<p> 25</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>20</p>
+</div>
+'''
 img_2404 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_2404 = [
     {'input' : [23, 17], 'output' : [23]},
