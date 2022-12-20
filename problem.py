@@ -946,18 +946,25 @@ answer_4107 = [
     {'input' : [1802, 1903, 2004, 2105, 2206, 2307, 2408, 2509, 2610, 2711, 2812, 2913], 'output' : '[1802, 1903, 2004, 2105, 2206, 2307, 2408, 2509, 2610, 2711, 2812, 2913, 3014]'}
 ]
 #이등변 삼각형 가능/불가능
-question_5101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_5101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>가 홀수인지 짝수인지 알려주는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 23</p>
-<h3>
+<h2> 입력
+</h2>
 <p>1000이하 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 홀수</p>
+<h2> 출력
+</h2>
+<p>홀수 또는 짝수가 출력됩니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>23</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>홀수</p>
+</div>
+'''
 img_5101 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_5101 = [
     {'input' : [10], 'output' : ['짝수']},
@@ -965,24 +972,31 @@ answer_5101 = [
     {'input' : [6445], 'output' : ['홀수']}
 ]
 #크기비교
-question_5102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>2개의 숫자를 입력받습니다. </p>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span> 중 크기가 큰 숫자부터 출력하는 프로그램을 만들어봅시다.</p>
+question_5102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span> 중 크기가 큰 숫자를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 12 43</p>
-<h3>
-<p>1000이하 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 43 12</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 첫번째 숫자가 입력되고, 둘째 줄에 두번째 숫자가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>두 숫자 중 큰 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>12</p>
+<p>43</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>43</p>
+</div>
+'''
 img_5102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_5102 = [
-    {'input' : [20, 10], 'output' : ['20 10']},
-    {'input' : [423, 1233], 'output' : ['1233 423']},
-    {'input' : [7213, 22321], 'output' : ['22321 7213']}
+    {'input' : [20, 10], 'output' : [0]},
+    {'input' : [423, 1233], 'output' : [1233]},
+    {'input' : [7213, 22321], 'output' : [22321]}
 ]
 #크기비교
 question_5103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -1091,19 +1105,28 @@ answer_5203 = [
     {'input' : [60, 70], 'output' : ['불가능']}
 ]
 #이등변 삼각형 가능/불가능
-question_5301 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>3개의 숫자를 입력받습니다.</p>
+question_5301 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">3개의 숫자(각도)</span>로 삼각형을 만들 수 있으면 '가능'을 출력하고 만들 수 없으면 '불가능'을 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 34 67 79</p>
-<h3>
-<p>입력되는 숫자는 1에서 179이하 숫자이며 단위는 &#176이다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 가능</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에는 첫번째 숫자가 입력되고, 둘째 줄에는 두번째 숫자가 입력되고 셋째 줄에는 세번째 숫자가 출력됩니다.</p>
+<p>1 ~ 179 사이 숫자가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>가능 또는 불가능을 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>34</p>
+<p>67</p>
+<p>79</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>가능</p>
+</div>
+'''
 img_5301 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_5301 = [
     {'input' : [60, 32, 88], 'output' : ['가능']},
