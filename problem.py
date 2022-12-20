@@ -994,9 +994,10 @@ question_5102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_5102 = [
-    {'input' : [20, 10], 'output' : [0]},
+    {'input' : [20, 10], 'output' : [20]},
     {'input' : [423, 1233], 'output' : [1233]},
-    {'input' : [7213, 22321], 'output' : [22321]}
+    {'input' : [7213, 22321], 'output' : [22321]},
+    {'input' : [12344, 12344], 'output' : [12344]}    
 ]
 #크기비교
 question_5103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
