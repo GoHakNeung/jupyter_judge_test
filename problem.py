@@ -223,57 +223,85 @@ answer_3101 = [
     {'input' : [54, 1243], 'output' : [1297]},
     {'input' : [453, 987], 'output' : [1440]}
 ]
-question_3102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_3102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 뺀 결과를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : <b>533 134</b></p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 399</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 첫번째 숫자가, 둘째 줄에 두번째 숫자가 주어집니다.</p>
+<p>(1000이하의 숫자가 입력됩니다.)</p>
+<h2> 출력
+</h2>
+<p>첫번째 숫자와 두번째 숫자를 뺀 결과를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 533</p>
+<p> 134</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>399</p>
+</div>
+'''
 img_3102 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_3102 = [
     {'input' : [32, 18], 'output' : [14]},
     {'input' : [100, 19], 'output' : [81]},
     {'input' : [455, 92], 'output' : [363]}
 ]
-question_3103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_3103 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 곱한 결과를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 342 345</p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 117990</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 첫번째 숫자가, 둘째 줄에 두번째 숫자가 주어집니다.</p>
+<p>(1000이하의 숫자가 입력됩니다.)</p>
+<h2> 출력
+</h2>
+<p>첫번째 숫자와 두번째 숫자를 곱한 결과를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 342</p>
+<p> 345</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>117990</p>
+</div>
+'''
 img_3103 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_3103 = [
     {'input' : [13, 21], 'output' : [273]},
     {'input' : [19, 212], 'output' : [4028]},
     {'input' : [234, 142], 'output' : [33228]}
 ]
-question_3104 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_3104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 나눈 결과를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : <b>4 2</b></p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 2.0</p>
+<h2> 입력
+</h2>
+<p>첫째 줄에 첫번째 숫자가, 둘째 줄에 두번째 숫자가 주어집니다.</p>
+<p>(1000이하의 숫자가 입력됩니다.)</p>
+<h2> 출력
+</h2>
+<p>첫번째 숫자와 두번째 숫자를 나눈 결과를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 4</p>
+<p> 2</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>2.0</p>
+</div>
+'''
+
 img_3104 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_3104 = [
     {'input' : [12, 3], 'output' : [4.0]},
