@@ -1186,9 +1186,9 @@ question_5302 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5302 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_5302 = [
-    {'input' : [781233, '내림'], 'output' : [781233/10000*100000]},
-    {'input' : [312543, '올림'], 'output' : [(312543/10000+1)*100000]},
-    {'input' : [465563, '내림'], 'output' : [465563/10000*100000]}
+    {'input' : [781233, '내림'], 'output' : [781233//10000*10000]},
+    {'input' : [312543, '올림'], 'output' : [(312543//10000+1)*10000]},
+    {'input' : [465563, '내림'], 'output' : [465563//10000*10000]}
 ]
 #이등변 삼각형 가능/불가능
 question_5303 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
