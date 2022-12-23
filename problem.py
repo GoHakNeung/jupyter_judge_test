@@ -1274,16 +1274,22 @@ answer_6103 = [
     {'input' : [], 'output' : [1,3,5,7,9,11,13,15,17,19,21]}
 ]
 #
-question_6104 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_6104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>의 구구단을 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>- 입력 예시 : 5</p>
-<h3>
-<p>19이하 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>- 출력 예시 : </p>
+<h2> 입력
+</h2>
+<p>2 ~ 9사이 숫자가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>입력한 숫자에 해당하는 구구단이 출력됩니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>5</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
 <p>5</p>
 <p>10</p>
 <p>15</p>
@@ -1293,13 +1299,12 @@ question_6104 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>35</p>
 <p>40</p>
 <p>45</p>
-<HR>
-</h2>'''
+</div>
+'''
 img_6104 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_6104 = [
     {'input' : [9], 'output' : [9, 18, 27, 36, 45, 54, 63, 72, 81]},
-    {'input' : [11], 'output' : [11, 22, 33, 44, 55, 66, 77, 88, 99]},
-    {'input' : [19], 'output' : [19, 38, 57, 76, 95, 114, 133, 152, 171]}
+    {'input' : [11], 'output' : [11, 22, 33, 44, 55, 66, 77, 88, 99]}
 ]
 #
 question_6105 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
