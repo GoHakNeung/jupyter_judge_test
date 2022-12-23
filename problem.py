@@ -1392,7 +1392,7 @@ question_7102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 </div>
 <div style = "float:right;width:50%">
 <h2> 출력 예시 </h2>
-<p>1,2,4</p>
+<p>[1,2,4]</p>
 </div>
 '''
 img_7102 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
