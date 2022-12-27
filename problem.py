@@ -1200,10 +1200,7 @@ answer_5302 = [
     {'input' : [465563, '내림'], 'output' : [465563//10000*10000]}
 ]
 #이등변 삼각형 가능/불가능
-question_5303 =
-
-
-'''<h1 style = "background-color:yellow; ">문제 설명</h1>
+question_5303 ='''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>
 <p>숫자와 글자를 순서대로 입력받습니다.</p>
 <p>m(미터)단위인 입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>를 입력받은 <span style = "background-color:	#E0E0E0;">글자(단위)</span>에 맞게 바꾸는 프로그램을 만들어봅시다.</p>
