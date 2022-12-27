@@ -1114,19 +1114,28 @@ answer_5202 = [
     {'input' : [60, 70, 50], 'output' : ['예각삼각형']}
 ]
 #이등변 삼각형 가능/불가능
-question_5203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_5203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자(각도)</span>는 삼각형에서 두 각의 크기입니다. </p>
 <p>이등변삼각형이 될 수 있으면 '가능'을 출력하고 이등변 삼각형이 될 수 없으면 '불가능'을 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 50 80</p>
-<h3>
-<p>입력되는 숫자는 1에서 179이하 숫자이며 단위는 &#176이다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 가능</p>
+<h2> 입력
+</h2>
+<p>삼각형에서 두 각이 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>가능 또는 불가능</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>50</p>
+<p>80</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>가능</p>
+</div>
+'''
+
 img_5203 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_5203 = [
     {'input' : [80, 20], 'output' : ['가능']},
@@ -1191,7 +1200,10 @@ answer_5302 = [
     {'input' : [465563, '내림'], 'output' : [465563//10000*10000]}
 ]
 #이등변 삼각형 가능/불가능
-question_5303 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+question_5303 =
+
+
+'''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>
 <p>숫자와 글자를 순서대로 입력받습니다.</p>
 <p>m(미터)단위인 입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>를 입력받은 <span style = "background-color:	#E0E0E0;">글자(단위)</span>에 맞게 바꾸는 프로그램을 만들어봅시다.</p>
@@ -1250,12 +1262,22 @@ answer_6102 = [
     {'input' : [], 'output' : [1,2,3,4,5,6,7,8,9,10]}
 ]
 #
-question_6103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_6103 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>1부터 21까지 2씩 띄어서 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>- 입력 예시 : 없음</p>
-<p>- 출력 예시 : </p>
+<h2> 입력
+</h2>
+<p>없음</p>
+<h2> 출력
+</h2>
+<p>1, 3, 5, ... , 21</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
 <p>1</p>
 <p>3</p>
 <p>5</p>
@@ -1267,8 +1289,9 @@ question_6103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>17</p>
 <p>19</p>
 <p>21</p>
-<HR>
-</h2>'''
+</div>
+'''
+
 img_6103 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_6103 = [
     {'input' : [], 'output' : [1,3,5,7,9,11,13,15,17,19,21]}
@@ -1353,20 +1376,27 @@ answer_6106 = [
     {'input' : [45, 55, 65, 75, 85], 'output' : [45, 55, 65, 75, 85]}
 ]
 #약수
-question_7101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
+question_7101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>를 나누어 떨어지게 하는 숫자를 모두 출력하는 프로그램을 만들어봅시다.</p>
 <p>작은 숫자부터 출력하도록 합니다.</p>
 <HR>
-<p>입력 예시 : 12</p>
-<h3>
+<h2> 입력
+</h2>
 <p>1000000보다 작은 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 1,2,3,4,6,12</p>
+<h2> 출력
+</h2>
+<p>약수가 리스트로 출력됩니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>12</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>[1,2,3,4,6,12]</p>
+</div>
+'''
 img_7101 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
 answer_7101 = [
     {'input' : [100], 'output' : ['[1, 2, 4, 5, 10, 20, 25, 50, 100]']},
