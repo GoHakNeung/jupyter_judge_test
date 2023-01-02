@@ -1,4 +1,4 @@
-test = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_test = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>사과와 귤의 개수를 입력받습니다. </p>
 <p>사과에 대한 귤의 비에서 기준량에 해당하는 숫자를 출력하는 프로그램을 만들어봅시다. </p>
 <HR>
@@ -20,3 +20,9 @@ test = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>10</p>
 </div>
 '''
+img_test = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_test = [
+    {'input' : [[13,21], [13]], 'output' : [273]},
+    {'input' : [[19,212], [212]], 'output' : [4028]},
+    {'input' : [[142,234], [142]], 'output' : [33228]}
+]
