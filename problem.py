@@ -1530,6 +1530,38 @@ answer_7502 = [
     {'input' : [23, 51, 3, 43, 61, 123], 'output' : [0/6]},
     {'input' : [6550, 112152, 3144, 62, 12, 124, 142, 52, 98], 'output' : [9/9]}
 ]
+
+
+question_3100 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>2개의 숫자를 입력받습니다.</p>
+<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 곱한 결과를 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2> 입력
+</h2>
+<p>첫째 줄에 첫번째 숫자가, 둘째 줄에 두번째 숫자가 주어집니다.</p>
+<p>(1000이하의 숫자가 입력됩니다.)</p>
+<h2> 출력
+</h2>
+<p>첫번째 숫자와 두번째 숫자를 곱한 결과를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 342</p>
+<p> 345</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>117990</p>
+</div>
+'''
+img_3100 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_3100 = [
+    {'input' : [[13], [21]], 'output' : [273]},
+    {'input' : [[19], [212]], 'output' : [4028]},
+    {'input' : [[234], [142]], 'output' : [33228]}
+]
+
+
 test_set = [
 #입력,변수,출력_수와 연산산
     {'test_file' : '_1101.py', 'answer' : answer_1101, 'question' : question_1101, 'img' : img_1101},
@@ -1607,4 +1639,5 @@ test_set = [
     {'test_file' : '_7105.py', 'answer' : answer_7105, 'question' : question_7105, 'img' : img_7105},
     {'test_file' : '_7501.py', 'answer' : answer_7501, 'question' : question_7501, 'img' : img_7501},
     {'test_file' : '_7502.py', 'answer' : answer_7502, 'question' : question_7502, 'img' : img_7502},       
+    {'test_file' : '_3100.py', 'answer' : answer_3100, 'question' : question_3100, 'img' : img_3100},    
 ]
