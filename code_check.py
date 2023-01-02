@@ -51,11 +51,12 @@ bc_red = '\033[48;2;255;0;m'
 #------------------------------------------------------------------------------#
 # 코드를 input/output 리스트에 넣기
 def code_arrange(py_name) : 
-  global result, code, code_input, code_input_split
+  global result, code, code_input, code_input_count #, code_input_split
   result= []
   code = []
+  code_input_count = 0
   code_input = []
-  code_input_split = []
+  # code_input_split = []
 
   file_name = '/content/'+py_name
 
@@ -65,10 +66,12 @@ def code_arrange(py_name) :
   #  line = line.strip()
     if line != '' : 
       code.append(line)    
-      if line.find('input().split()') >= 0 : 
-        code_input_split.append(code.index(line))
-        continue
+      # if line.find('input().split()') >= 0 : 
+      #   code_input_count += 1
+      #   code_input_split.append(code.index(line))
+      #   continue
       if line.find('input') >= 0 : 
+        code_input_count += 1
         code_input.append(code.index(line))
   f.close()
 
@@ -78,8 +81,8 @@ def code_arrange(py_name) :
     code[i] = code[i].rstrip()
 
   # print(f'code 리스트 : {code}, code 개수 : {len(code)}')
-  # print(f'input 리스트 : {code_input}, input 개수 : {len(code_input)}')
-  # print(f'output 리스트 : {code_output}, output 개수 : {len(code_output)}')
+  # print(f'code_input 리스트 : {code_input}')
+  # print(f'code_input_count 리스트 : {code_input_count}')
 
 #------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
@@ -97,16 +100,17 @@ def code_convert(answer_input) :
   try : 
     order = 0  
     count = 0
-    for order in range(len(code)) : 
 
-      if order in code_input_split : 
-        replace_input =  str(list(map(str, answer_input[test_count]['input'])))
-        print(code[order].replace('input().split()',replace_input))
-            
-      elif order in code_input : 
-        replace_input =  '"'+str(answer_input[test_count]['input'][count])+'"'
-        print(code[order].replace('input()',replace_input))
-        count += 1  
+    for order in range(len(code)) : 
+      if order in code_input : 
+        if len(answer_input[test_count]['input'][code_input.index(order)]) == 1 : 
+          replace_input =  '"'+str(answer_input[test_count]['input'][code_input.index(order)][0])+'"' 
+          print(code[order].replace('input()',replace_input))
+       
+        else : 
+          replace_input =  str(answer_input[test_count]['input'][code_input.index(order)])
+          print(code[order].replace('input().split()',replace_input))  
+
       else : 
         print(code[order])
 
@@ -210,7 +214,7 @@ def attribute_error(test_py) :
 
 def value_error(test_py) : 
   sys.stdout = original   
-  print(error_line(), '번째 줄에 숫자나 문자를 바르게 입력했나요?')
+  print(error_line(), '번째 줄에 숫자나 문자, 입력을 바르게 입력했나요?')
   print("="*40)
   code_print(test_py)
 
@@ -356,16 +360,16 @@ def code_check(py) :
   except : 
     print('평가 코드를 생성하세요.')
     return
-  if code_input : 
-    if len(code_input) != len(answer[0]['input']) : 
+  if code_input_count : 
+    if code_input_count != len(answer[0]['input']) :         
       update_excel('입력 오류', py)     
       print('입력을 확인해주세요.')
       return
-  if code_input_split : 
-    if len(code_input_split) != 1 : 
-      update_excel('입력 오류', py)     
-      print('입력을 확인해주세요.')    
-      return
+  # if code_input_split : 
+  #   if len(code_input_split) != 1 : 
+  #     update_excel('입력 오류', py)     
+  #     print('입력을 확인해주세요.')    
+  #     return
    
   # print(question, '\n')   
   Question('<h2 style = "background-color:yellow">결과 확인</h2>')  
@@ -406,7 +410,17 @@ def code_check(py) :
     #입력이 있는 문제
       if result[test_count] == True : 
         Question('<li>입력한 데이터 : </li>') 
-        for i in answer[test_count]['input'] : print(i)
+        for i in answer[test_count]['input'] :    
+          if len(i) == 1 : 
+            print(i[0])
+          else : 
+            for j in i : 
+              if j == i[-1] : 
+                print(j, end = '\n')
+              else : 
+                print(j, end = ' ')              
+
+        # for i in answer[test_count]['input'] : print(i)
         Question('<li>처리한 데이터 : </li>') 
         for i in user_answer : 
           if i == user_answer[-1] : 
@@ -415,7 +429,16 @@ def code_check(py) :
             print(bc_yellow+str(i)+reset)
       else : 
         Question('<li>입력한 데이터 : </li>') 
-        for i in answer[test_count]['input'] : print(i)
+        for i in answer[test_count]['input'] :    
+          if len(i) == 1 : 
+            print(i[0])
+          else : 
+            for j in i : 
+              if j == i[-1] : 
+                print(j, end = '\n')
+              else : 
+                print(j, end = ' ')              
+
         Question('<li>처리한 데이터 : </li>') 
         for i in user_answer : 
           if i == user_answer[-1] : 
