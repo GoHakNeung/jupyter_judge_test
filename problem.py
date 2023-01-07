@@ -955,7 +955,9 @@ question_3403 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>두 평행사변형 가(왼쪽), 나(오른쪽)의 넓이의 합은 832cm<sup>2</sup>입니다. </p>
 <p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 가 평행사변형의 밑면의 길이이고 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 나 평행사변형의 길이입니다.</p>
 <p>평행사변형 가의 넓이를 구하는 프로그램을 만들어봅시다.</p> 
+<svg width = "400" height = "100">
 <polygon points = "5,5 395,5 300,5 340,95 250,95 210,5 155,5 125,95 45,95 75,5 45,95 5,95 395,95 340,95 300,5", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4">
+</svg>
 <HR>
 <h2>입력</h2>
 <p>첫째 줄에는 가(왼쪽) 평행사변형의 밑변의 길이가 입력되고, 둘째 줄에는 나(오른쪽) 평행사변형의 밑변의 길이가 입력됩니다.</p>
