@@ -21,84 +21,146 @@ img_1101 = "https://github.com/GoHakNeung/python/blob/main/img_1101.JPG?raw=true
 answer_1101 = [
     {'input' : [], 'output' : [5]}
 ]
+
 question_1102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>1.1+1.7에서 소수 부분을 출력해봅시다.</p>
 <HR>
-<p>입력 예시 : 없음</p>
-<p>출력 예시 : 소수 부분 숫자</p>
+<h2> 입력
+</h2>
+<p>없음</p>
+<h2> 출력
+</h2>
+<p>소수 부분 숫자</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>1.1+1.7에서 자연수가 아닌 부분 부분</p>
+</div>'''
 img_1102 = "https://github.com/GoHakNeung/python/blob/main/img_1102.JPG?raw=true"
 answer_1102 = [
     {'input' : [], 'output' : [0.8]}
 ]
+
 question_1103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>0.01이 429개 있을 때, 자연수 부분과 소수 부분을 줄바꿈하여 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 없음</p>
-<p>출력 예시 : </p>
-<p>자연수 부분</p>
-<p>소수 부분</p>
+<h2> 입력
+</h2>
+<p>없음</p>
+<h2> 출력
+</h2>
+<p>첫째 줄에 자연수를, 둘째 줄에 소수를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>첫째 줄 : 자연수</p>
+<p>둘째 줄 : 소수</p>
+</div>'''
 img_1103 = "https://github.com/GoHakNeung/python/blob/main/img_1102.JPG?raw=true"
 answer_1103 = [
     {'input' : [], 'output' : [4,0.29]}
 ]
+
 question_1201 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>아래 도형의 이름을 출력해봅시다.</p>
 <svg width = "200" height = "100"><polygon points = "80,5 160,70 40,75", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
-<p>입력 예시 : 없음</p>
-<p>출력 예시 : </p>
+<h2>입력</h2>
+<p>없음</p>
+<h2>출력</h2>
+<p>도형의 이름을 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>도형이름</p>
+</div>
+'''
 img_1201 = "https://github.com/GoHakNeung/python/blob/main/img_1102.JPG?raw=true"
 answer_1201 = [
     {'input' : [], 'output' : ['삼각형']}
 ]
+
 question_1202 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>아래 도형의 이름을 출력해봅시다.</p>
 <svg width = "200" height = "100"><rect width = "200" height="100", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></rect></svg>
 <HR>
-<p>입력 예시 : 없음</p>
-<p>출력 예시 : </p>
+<h2>입력</h2>
+<p>없음</p>
+<h2>출력</h2>
+<p>각도를 고려해서 도형의 이름을 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p></p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>도형 이름</p>
+</div>
+'''
 img_1202 = "https://github.com/GoHakNeung/python/blob/main/img_1102.JPG?raw=true"
 answer_1202 = [
     {'input' : [], 'output' : ['직사각형']}
 ]
+
 question_1203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>아래 도형에서 대각선 수를 출력해봅시다.</p>
 <svg width = "200" height = "100"><polygon points = "100,5 160,40 130,80 70,80 40,40", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
-<p>입력 예시 : 없음</p>
-<p>출력 예시 : </p>
+<h2>입력</h2>
+<p>없음</p>
+<h2>출력</h2>
+<p>도형이 가지고 있는 대각선 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>대각선 숫자</p>
+</div>
+'''
 img_1203 = "https://github.com/GoHakNeung/python/blob/main/img_1102.JPG?raw=true"
 answer_1203 = [
     {'input' : [], 'output' : [5]}
 ]
+
 question_1204 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>아래 도형에서 대각선 수를 출력해봅시다.</p>
 <svg width = "200" height = "100"><polygon points = "70,5 160,5 190,50 160,90 70,90 30,50", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
-<p>입력 예시 : 없음</p>
-<p>출력 예시 : </p>
+<h2>입력</h2>
+<p>없음</p>
+<h2>출력</h2>
+<p>도형이 가지고 있는 대각선 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>대각선 숫자</p>
+</div>
+'''
 img_1204 = "https://github.com/GoHakNeung/python/blob/main/img_1102.JPG?raw=true"
 answer_1204 = [
     {'input' : [], 'output' : [9]}
 ]
+
 #입출력, 기준량, 비교하는양
 question_2401 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>사과와 귤의 개수를 입력받습니다. </p>
@@ -124,9 +186,9 @@ question_2401 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_2401 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_2401 = [
-    {'input' : [23, 17], 'output' : [23]},
-    {'input' : [2, 5], 'output' : [2]},
-    {'input' : [45, 7], 'output' : [45]}
+    {'input' : [[23], [17]], 'output' : [23]},
+    {'input' : [[2], [5]], 'output' : [2]},
+    {'input' : [[45], [7]], 'output' : [45]}
 ]
 #입출력, 기준량, 비교하는양
 question_2402 = '''<h1 style = "background-color:yellow; ">문제</h1>
