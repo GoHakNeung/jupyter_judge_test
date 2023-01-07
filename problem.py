@@ -191,75 +191,91 @@ answer_2401 = [
     {'input' : [[45], [7]], 'output' : [45]}
 ]
 #입출력, 기준량, 비교하는양
-question_2402 = '''<h1 style = "background-color:yellow; ">문제</h1>
-<h2>
-<p>2개의 숫자를 입력 받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 대호네 반 학생 수이고 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 아침 건강 달리기에 참여한 학생 수입니다. </p>
-<p>전체 학생 수에 대한 아침 건강 달리기에 참여한 학생 수의 비에서 비교하는 양을 출력하는 프로그램을 만들어봅시다.  </p>
+
+question_2402 = '''<h1 style = "background-color:yellow; ">문제 설</h1>
+<p>2개의 숫자를 입력받습니다. <span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 가득이네 반 학생 수이고 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 축구를한 학생 수입니다. </p>
+<p>전체 학생 수에 대한 축구를 한 학생 수의 비에서 비교하는 양을 출력하는 프로그램을 만들어봅시다.  </p>
 <HR>
-<p>입력 예시 : <b>27 19</b></p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 19</p>
-<HR>
-</h2>'''
-img_2402 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_2402 = [
-    {'input' : [26, 13], 'output' : [13]},
-    {'input' : [11, 5], 'output' : [5]},
-    {'input' : [30, 17], 'output' : [17]}
-]
-#입출력, 기준량, 비교하는양
-question_2403 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>2개의 숫자를 입력받습니다. </p> 
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 사과 개수, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 귤 개수입니다. </p>
-<p>사과와 귤의 비에서 기준량을 출력하는 프로그램을 만들어봅시다. </p>
-<HR>
-<p>입력 예시 : <b>10 15</b></p>
-<p>출력 예시 : 15</p>
-<HR>
-</h2>'''
-img_2403 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_2403 = [
-    {'input' : [23, 17], 'output' : [17]},
-    {'input' : [2, 5], 'output' : [5]},
-    {'input' : [45, 7], 'output' : [7]}
-]
-#입출력, 기준량, 비교하는양
-question_2404 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
-<p>2개의 숫자를 입력 받아 <span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 복숭아 개수, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 포도 개수입니다. </p>
-<p>복숭아와 포도의 비에서 비교하는 양을 출력하는 프로그램을 만들어봅시다. </p>
-<HR>
-<h2> 입력
-</h2>
-<p>첫째 줄에 복숭아 개수가, 둘째 줄에 포도 개수가 주어진다.</p>
-<p>(복숭아와 포도의 개수는 1000이하의 숫자가 입력된다.)</p>
-<h2> 출력
-</h2>
-비교하는 양에 해당하는 숫자를 출력한다.
+<h2>입력</h2>
+<p>첫째 줄에는 가득이네 반 학생 수가 입력되고, 둘째 줄에는 축구를 한 학생 수가 입력됩니다.</p>
+<h2>출력</h2>
+<p>비교하는 양에 해당하는 숫자를 출력합니다.</p>
 <HR>
 <div style = "float:left;width:50%">
-<h2> 입력 예시 </h2>
-<p> 20</p>
-<p> 25</p>
+<h2>입력 예시 </h2>
+<p>27</p>
+<p>19</p>
 </div>
 <div style = "float:right;width:50%">
-<h2> 출력 예시 </h2>
+<h2>출력 예시 </h2>
+<p>19</p>
+</div>
+'''
+img_2402 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_2402 = [
+    {'input' : [[26], [13]], 'output' : [13]},
+    {'input' : [[11], [5]], 'output' : [5]},
+    {'input' : [[30], [17]], 'output' : [17]}
+]
+
+#입출력, 기준량, 비교하는양
+question_2403 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>2개의 숫자를 입력받습니다. <span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 사과 개수, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 귤 개수입니다. </p>
+<p>사과와 귤의 비에서 기준량을 출력하는 프로그램을 만들어봅시다. </p>
+<HR>
+<h2>입력</h2>
+<p>첫째 줄에는 사과 개수가 입력되고, 둘째 줄에는 귤 개수가 입력됩니다.</p>
+<h2>출력</h2>
+<p>기준량에 해당하는 숫자를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>10</p>
+<p>15</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>15</p>
+</div>
+'''
+img_2403 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_2403 = [
+    {'input' : [[23], [17]], 'output' : [17]},
+    {'input' : [[2], [5]], 'output' : [5]},
+    {'input' : [[45], [7]], 'output' : [7]}
+]
+
+#입출력, 기준량, 비교하는양
+question_2404 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>2개의 숫자를 입력 받습니다. <span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 복숭아 개수, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 포도 개수입니다. </p>
+<p>복숭아와 포도의 비에서 비교하는 양을 출력하는 프로그램을 만들어봅시다. </p>
+<HR>
+<h2>입력</h2>
+<p>첫째 줄에 복숭아 개수가 입력되고, 둘째 줄에 포도 개수가 입력됩니다.</p>
+<p>(복숭아와 포도의 개수는 1000이하의 숫자가 입력된다.)</p>
+<h2>출력</h2>
+<p>비교하는 양에 해당하는 숫자를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>20</p>
+<p>25</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
 <p>20</p>
 </div>
 '''
 img_2404 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_2404 = [
-    {'input' : [23, 17], 'output' : [23]},
-    {'input' : [2, 5], 'output' : [2]},
-    {'input' : [45, 7], 'output' : [45]}
+    {'input' : [[23], [17]], 'output' : [23]},
+    {'input' : [[2], [5]], 'output' : [2]},
+    {'input' : [[45], [7]], 'output' : [45]}
 ]
+
 question_3101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 더한 결과를 출력하는 프로그램을 만들어봅시다.</p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>를 더한 결과를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2> 입력
 </h2>
@@ -281,10 +297,11 @@ question_3101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_3101 = "https://github.com/GoHakNeung/python/blob/main/img_1101.JPG?raw=true"
 answer_3101 = [
-    {'input' : [35, 23], 'output' : [58]},
-    {'input' : [54, 1243], 'output' : [1297]},
-    {'input' : [453, 987], 'output' : [1440]}
+    {'input' : [[35], [23]], 'output' : [58]},
+    {'input' : [[54], [1243]], 'output' : [1297]},
+    {'input' : [[453], [987]], 'output' : [1440]}
 ]
+
 question_3102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 뺀 결과를 출력하는 프로그램을 만들어봅시다.</p>
@@ -309,10 +326,11 @@ question_3102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_3102 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_3102 = [
-    {'input' : [32, 18], 'output' : [14]},
-    {'input' : [100, 19], 'output' : [81]},
-    {'input' : [455, 92], 'output' : [363]}
+    {'input' : [[32], [18]], 'output' : [14]},
+    {'input' : [[100], [19]], 'output' : [81]},
+    {'input' : [[455], [92]], 'output' : [363]}
 ]
+
 question_3103 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 곱한 결과를 출력하는 프로그램을 만들어봅시다.</p>
@@ -337,10 +355,11 @@ question_3103 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_3103 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_3103 = [
-    {'input' : [13, 21], 'output' : [273]},
-    {'input' : [19, 212], 'output' : [4028]},
-    {'input' : [234, 142], 'output' : [33228]}
+    {'input' : [[13], [21]], 'output' : [273]},
+    {'input' : [[19], [212]], 'output' : [4028]},
+    {'input' : [[234], [142]], 'output' : [33228]}
 ]
+
 question_3104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 나눈 결과를 출력하는 프로그램을 만들어봅시다.</p>
@@ -363,76 +382,96 @@ question_3104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2.0</p>
 </div>
 '''
-
 img_3104 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_3104 = [
-    {'input' : [12, 3], 'output' : [4.0]},
-    {'input' : [578, 32], 'output' : [578/32]},
-    {'input' : [764, 50], 'output' : [764/50]}
+    {'input' : [[12], [3]], 'output' : [4.0]},
+    {'input' : [[578], [32]], 'output' : [578/32]},
+    {'input' : [[764], [50]], 'output' : [764/50]}
 ]
+
 question_3105 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 소풍에 놀러 온 학생 숫자이고, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 관람차에 탈 수 있는 정원입니다.</p>
-<p>소풍 온 학생들이 모두 관람차를 타려면 몇 대가 필요할까요?</p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 소풍에 놀러 온 학생 숫자이고, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 관람차에 탈 수 있는 정원입니다. 소풍 온 학생들이 모두 관람차를 타려면 관람차는 몇 대가 필요할까요?</p>
 <HR>
-<p>입력 예시 : <b>36 8</b></p>
-<h3>
-<p>1000보다 작은 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 5</p>
+<h2>입력</h2>
+<p>첫째 줄에는 소풍에 놀러 온 학생 숫자이고, 둘째 줄에는 관람차 정원 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>소풍에 놀러 온 학생들이 모두 관람차를 타기 위해서 필요한 관람차 개수</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>36</p>
+<p>8</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>5</p>
+</div>
+'''
 img_3105 = "https://github.com/GoHakNeung/python/blob/main/img_1107.jpg?raw=true"
 answer_3105 = [
-    {'input' : [124, 12], 'output' : [11]},
-    {'input' : [453, 34], 'output' : [14]},
-    {'input' : [53, 7], 'output' : [8]}
+    {'input' : [[124], [12]], 'output' : [11]},
+    {'input' : [[453], [34]], 'output' : [14]},
+    {'input' : [[53], [7]], 'output' : [8]}
 ]
 question_3106 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 올 가을 수확한 사과 수이고, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 한 상자에 담을 수 있는 사과 수입니다.</p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 올 가을 수확한 사과 수이고, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 한 상자에 담을 수 있는 사과 수입니다.</p>
 <p>사과를 상자에 담아 판매하려고 할 때, 몇 상자를 팔 수 있을지 프로그램을 만들어봅시다.</p>
-<p>(상자에는 사과가 정량으로 담겨있어야 판매가 가능합니다.)</p>
+<p>(상자에는 사과가 가득 담겨있어야 판매할 수 있습니다.)</p>
 <HR>
-<p>입력 예시 : <b>67 8</b></p>
-<h3>
-<p>1000보다 작은 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 8</p>
+<h2>입력</h2>
+<p>첫째 줄에는 올 가을에 수확한 사과 숫자이고, 둘째 줄에는 한 상자에 담을 수 있는 사과 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>판매할 수 있는 상자 숫자</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>67</p>
+<p>8</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>8</p>
+</div>
+'''
 img_3106 = "https://github.com/GoHakNeung/python/blob/main/img_1106.jpg?raw=true"
 answer_3106 = [
-    {'input' : [543, 30], 'output' : [18]},
-    {'input' : [24, 25], 'output' : [0]},
-    {'input' : [768, 40], 'output' : [19]}
+    {'input' : [[543], [30]], 'output' : [18]},
+    {'input' : [[24], [25]], 'output' : [0]},
+    {'input' : [[768], [40]], 'output' : [19]}
 ]
-#미지수 찾기(혼합계산산)
+
+#혼합계산산
 question_3107 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>3개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 철수 나이이고, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 철수 동생 나이입니다. </p>
-<p>철수 어머니 나이는 철수 나이와 철수 동생 나이를 합한 것의 2배보다 <span style = "background-color:	#E0E0E0;">세번째 숫자</span>만큼 많습니다. </p>
-<p>철수 어머니 나이를 구하는 프로그램을 만들어봅시다.</p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 가득이 나이이고, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 가득이 동생 나이입니다. </p>
+<p>가득이 어머니 나이는 가득이 나이와 가득이 동생 나이를 합한 것의 2배보다 <span style = "background-color:	#E0E0E0;">세 번째 숫자</span>만큼 많습니다. </p>
+<p>가득이 어머니 나이를 구하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 12 10 3</p>
-<h3>
-<p>20보다 작은 숫자가 출력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 47</p>
+<h2>입력</h2>
+<p>첫째 줄에는 가득이 나이 숫자가 입력되고, 둘째 줄에는 가득이 동생 숫자가 입력되고, 셋째 줄에는 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>가득이 엄마 나이가 출력됩니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>12</p>
+<p>10</p>
+<p>3</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>47</p>
+</div>
+'''
 img_3107 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3107 = [
     {'input' : [12, 5, 9], 'output' : [(12+5)*2+9]},
     {'input' : [10, 9, 5], 'output' : [(10+9)*2+5]},
     {'input' : [13, 7, 3], 'output' : [(13+7)*2+3]}
 ]
+
 question_3108 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>
 <p>3개의 숫자를 입력받습니다.</p>
