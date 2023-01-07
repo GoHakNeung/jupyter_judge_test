@@ -557,352 +557,429 @@ answer_3302 = [
 #단명수, 복명수수
 
 question_3303 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받으며 <span style = "background-color:	#E0E0E0;">첫번째 숫자</span>의 단위는 km이고 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>의 단위는 m입니다. </p>
-<p>유진이는 41km 떨어져 있는 할머니 댁에 갔습니다. '<span style = "background-color:	#E0E0E0;">첫번째 숫자</span>km <span style = "background-color:	#E0E0E0;">두번째 숫자</span>m'는 버스를 타고 나머지는 걸어갔습니다. </p>
-<p>유진이가 걸어간 거리 m로 출력하는 프로그램을 만들어봅시다.</p> 
+<p>가득이는 50km 떨어져 있는 할아버지 댁에 갔습니다. '<span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>km <span style = "background-color:	#E0E0E0;">두번째 숫자</span>m'는 기차를 타고 나머지는 버스를 타고 갔습니다. </p>
+<p>가득이가 버스타고 간 거리 m로 출력하는 프로그램을 만들어봅시다.</p> 
 <HR>
-<p>입력 예시 : 32 150</p>
-<h3>
-<p>첫번째 숫자는 40미만의 숫자가 입력되고, 두번째 숫자는 1000미만의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 8850</p>
-<h3>
-<p>m단위는 생략하고 숫자만 출력합니다. </p>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 km에 해당하는 숫자가 입력되고, 둘째 줄에는 m에 해당하는 숫자가 입력됩니다</p>
+<p></p>
+<h2>출력</h2>
+<p>버스를 타고 간 거리를 첫째 줄에는 km에 해당하는 숫자를 출력하고, 둘째 줄에는 m에 해당하는 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>32</p>
+<p>150</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>17</p>
+<p>850</p>
+</div>
+'''
 img_3303 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3303 = [
-    {'input' : [15, 123], 'output' : [25877]},
-    {'input' : [21, 0], 'output' : [20000]},
-    {'input' : [40, 999], 'output' : [1]}
+    {'input' : [[15], [123]], 'output' : [34,877]},
+    {'input' : [[21], [0]], 'output' : [29, 0]},
+    {'input' : [[40], [999]], 'output' : [9, 1]}
 ]
+
 #단명수, 복명수수
 question_3304 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받으며 <span style = "background-color:	#E0E0E0;">첫번째 숫자</span>의 단위는 km이고 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>의 단위는 m입니다. </p>
-<p>km단위인 첫번째 숫자와 m단위인 두번째 숫자 크기 비교하여 첫번째 숫자가 크면 True를 출력하고, 두번째 숫자가 크면 False를 출력하는 프로그램을 만들어봅시다.</p>
+<p>km단위인 첫번째 숫자와 m단위인 두번째 숫자 크기 비교하여 첫 번째 숫자가 크면 True를 출력하고, 두 번째 숫자가 크면 False를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 32 31092</p>
-<h3>
-<p>첫번째 숫자는 100미만의 숫자가 입력되고, 두번째 숫자는 100000미만의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : True</p>
-<h3>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 km 단위인 숫자가 입력되고, 둘째 줄에는 m 단위인 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>두 숫자의 크기비교를 하여 True 또는 False를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>32</p>
+<p>31092</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>True</p>
+</div>
+'''
 img_3304 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3304 = [
-    {'input' : [15, 12003], 'output' : ['True']},
-    {'input' : [21, 22343], 'output' : ['False']},
-    {'input' : [40, 999111], 'output' : ['False']}
+    {'input' : [[15], [12003]], 'output' : ['True']},
+    {'input' : [[21], [22343]], 'output' : ['False']},
+    {'input' : [[40], [999111]], 'output' : ['False']}
 ]
 #단명수, 복명수수
+
 question_3305 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>2개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 세종이가 숙제하는데 걸린 시간이며 단위는 시간입니다.</p>
-<p><span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 가득이가 숙제하는데 걸린 시간이며 단위는 분입니다.</p>
+<p>2개의 숫자를 입력받으며 <span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 세종이가 숙제하는데 걸린 시간이며 단위는 시간이고 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 가득이가 숙제하는데 걸린 시간이며 단위는 분입니다.</p>
 <p>세종이가 숙제하는데 걸린 시간과 가득이가 숙제하는데 걸린 시간이 동일하면 True를 출력하고 다르면 False를 출력하는 프로그램을 만들어봅시다. </p>
 <HR>
-<p>입력 예시 : 3 150</p>
-<h3>
-<p>첫번째 숫자는 12미만의 숫자가 입력되고, 두번째 숫자는 720미만의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : False</p>
-<h3>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 세종이가 숙제하는데 걸린 시간(시간 단위)이 입력되고, 둘째 줄에는 가득이가 숙제하는데 걸린 시간(분 단위)이 입력됩니다. </p>
+<h2>출력</h2>
+<p>True 또는 False를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>3</p>
+<p>150</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>False</p>
+</div>
+'''
 img_3305 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3305 = [
-    {'input' : [2, 120], 'output' : ['True']},
-    {'input' : [8, 490], 'output' : ['False']},
-    {'input' : [6, 355], 'output' : ['False']}
+    {'input' : [[2], [120]], 'output' : ['True']},
+    {'input' : [[8], [490]], 'output' : ['False']},
+    {'input' : [[6], [355]], 'output' : ['False']}
 ]
+
 #단명수, 복명수수
 question_3306 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span>는 마름모에서 두 대각선의 길이입니다.</p>
+<p>입력 받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span>는 마름모에서 두 대각선의 길이입니다.</p>
 <p>마름모의 넓이가 50cm<sup>2</sup>보다 넓으면 True를 출력하고 작으면 False를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 8 9</p>
-<h3>
-<p>단위는 cm이며 단위는 생략되서 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : False</p>
-<h3>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 대각선의 길이가 입력되고, 둘째 줄에는 다른 대각선의 길이가 입력됩니다.</p>
+<h2>출력</h2>
+<p>마름모와 사다리꼴의 넓이(50cm<sup>2</sup>)를 비교하여 True 또는 False를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>8</p>
+<p>9</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>False</p>
+</div>
+'''
 img_3306 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3306 = [
-    {'input' : [15, 6], 'output' : ['False']},
-    {'input' : [9, 12], 'output' : ['True']},
-    {'input' : [40, 4], 'output' : ['True']}
+    {'input' : [[15], [6]], 'output' : ['False']},
+    {'input' : [[9], [12]], 'output' : ['True']},
+    {'input' : [[40], [4]], 'output' : ['True']}
 ]
 #단명수, 복명수수
+
 question_3307 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 원의 지름이며 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 정사각형의 한 변의 길이입니다.</p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 원의 지름이며 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 정사각형의 한 변의 길이입니다.</p>
 <p>정사각형 둘레의 길이가 원주보다 길면 True를 출력하고 원주가 정사각형 둘레의 길이보다 길면 False를 출력하는 프로그램을 만들어봅시다.</p>
-<p>원주율은 3.14로 계산합니다.</p>
+<p>(원주율은 3.14로 계산합니다.)</p>
 <HR>
-<p>입력 예시 : 12 10</p>
-<h3>
-<p>단위는 cm이며 단위는 생략되서 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : True</p>
-<h3>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 원의 지름이 입력되고, 둘째 줄에는 정사각형의 한 변의 길이가 입력됩니다.</p>
+<h2>출력</h2>
+<p>정사각형 둘레의 길이와 원주를 비교하여 True 또는 False를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>12</p>
+<p>10</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>True</p>
+</div>
+'''
 img_3307 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3307 = [
-    {'input' : [124, 99], 'output' : ['True']},
-    {'input' : [324, 220], 'output' : ['False']},
-    {'input' : [54, 49], 'output' : ['True']}
+    {'input' : [[124], [99]], 'output' : ['True']},
+    {'input' : [[324], [220]], 'output' : ['False']},
+    {'input' : [[54], [49]], 'output' : ['True']}
 ]
+
 #부피, 이미지 넣기, 기준량, 비교하는양
 question_3308 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>1개의 숫자를 입력받습니다.</p>
-<p>가로 20cm, 세로 15cm인 수조에 물이 담겨 있습니다. 수조에 돌을 넣었더니 <span style = "background-color:	#E0E0E0;">입력받은 숫자</span>만큼 높이가 늘어났습니다.</p>
+<p>가로 20cm, 세로 15cm인 수조에 물이 담겨 있습니다. 수조에 돌을 넣었더니 <span style = "background-color:	#E0E0E0;">입력 받은 숫자</span>만큼 높이가 늘어났습니다.</p>
 <p>이 돌의 부피를 구하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 5</p>
-<h3>
-<p>1000이하의 숫자가 입력되며 단위는 cm입니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 1500</p>
-<h3>
-<p>cm<sup>3</sup>단위는 생략하고 숫자만 출력합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>늘어난 높이(cm 단위)가 입력됩니다.</p>
+<h2>출력</h2>
+<p>cm<sup>3</sup>단위인 돌의 부피를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>5</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>1500</p>
+</div>
+'''
 img_3308 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3308 = [
-    {'input' : [10], 'output' : [3000]},
-    {'input' : [39], 'output' : [11700]},
-    {'input' : [99], 'output' : [29700]}
+    {'input' : [[10]], 'output' : [3000]},
+    {'input' : [[39]], 'output' : [11700]},
+    {'input' : [[99]], 'output' : [29700]}
 ]
+
 #사다리꼴 넓이
 question_3309 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>3개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 윗변의 길이, <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 아래변의 길이, <span style = "background-color:	#E0E0E0;">세번째 숫자</spanu>는 높이입니다.</p>
+<p>cm단위의 3개의 숫자를 입력받습니다.</p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 윗변의 길이, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 아랫변의 길이, <span style = "background-color:	#E0E0E0;">세 번째 숫자</spanu>는 높이입니다.</p>
 <p>사다리꼴의 넓이를 구하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>- 입력 예시 : 5 10 20</p>
-<h3>
-<p>입력되는 숫자는 1에서 100이하 숫자이며 cm단위이다.</p>
-</h3>
-<h2>
-<p>- 출력 예시 : 1500</p>
-<h3>
-<p>cm<sup>2</sup>단위는 생략하고 숫자만 출력합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 윗변의 길이, 둘째 줄에는 아랫 변의 길이, 셋째 줄에는 높이가 입력됩니다.</p>
+<h2>출력</h2>
+<p>사다리꼴의 넓이가 출력됩니다.</p>
+<p>(단위 생략)</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>5</p>
+<p>10</p>
+<p>20</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>1500</p>
+</div>
+<h2>
+'''
 img_3309 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3309 = [
-    {'input' : [43, 64, 9], 'output' : [(43+64)*9/2]},
-    {'input' : [23, 1, 6], 'output' : [(23+1)*6/2]},
-    {'input' : [8,4,12], 'output' : [(8+4)*12/2]}
+    {'input' : [[43], [64], [9]], 'output' : [(43+64)*9/2]},
+    {'input' : [[23], [1], [6]], 'output' : [(23+1)*6/2]},
+    {'input' : [[8],[4],[12]], 'output' : [(8+4)*12/2]}
 ]
+
 #부피, 이미지 넣기, 기준량, 비교하는양
 question_3310 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p><span  style = "background-color:#E0E0E0; ">원의 지름</span>을 입력받아 원의 넓이를 구하는 프로그램을 만들어봅시다.</p>
 <p>(원주율은 3.14로 계산합니다.)</p>
 <HR>
-<p>- 입력 예시 : 6</p>
-<h3>
-<p>입력되는 숫자는 1에서 100이하 숫자이며 cm단위이다.</p>
-</h3>
-<h2>
-<p>- 출력 예시 : 28.26</p>
-<h3>
-<p>cm<sup>2</sup>단위는 생략하고 숫자만 출력합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>자연수인 원의 지름을 입력받습니다.</p>
+<p>cm단위이며 단위는 생략하고 입력됩니다.</p>
+<h2>출력</h2>
+<p>원의 넓이를 출력합니다.</p>
+<p>단위는 생략합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>6</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>28.26</p>
+</div>
+'''
 img_3310 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3310 = [
-    {'input' : [12], 'output' : [6*6*3.14]},
-    {'input' : [7], 'output' : [7/2*7/2*3.14]},
-    {'input' : [35], 'output' : [35/2*35/2*3.14]}
+    {'input' : [[12]], 'output' : [6*6*3.14]},
+    {'input' : [[7]], 'output' : [7/2*7/2*3.14]},
+    {'input' : [[35]], 'output' : [35/2*35/2*3.14]}
 ]
+
 #원주, 원의 넓이
 question_3311 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p><span style = "background-color:	#E0E0E0;">원의 지름</span>을 입력받습니다. </p>
 <p>반지름과 원주, 원의 넓이를 구하는 프로그램을 만들어봅시다. </p>
 <p>원주율은 3.14로 계산합니다.</p>
 <HR>
-<p>- 입력 예시 : 8</p>
-<h3>
-<p>입력되는 숫자는 100이하 숫자이며 단위는 cm입니다.</p>
-</h3>
-<h2>
-<p>- 출력 예시 : </p>
+<h2>입력</h2>
+<p>자연수인 원의 지름을 입력받습니다.</p>
+<p>cm단위이며 단위는 생략하고 입력됩니다.</p>
+<h2>출력</h2>
+<p>첫째 줄에는 반지름, 둘째 줄에는 원주, 셋째 줄에는 원의 넓이를 출력합니다.</p>
+<p>단위는 생략합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>8</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
 <p>4</p>
 <p>25.12</p>
 <p>50.24</p>
-</p>
-<h3>
-<p>단위는 생략하고 계산한 결과는 줄바꿈하여 출력합니다.</p>
-</h3>
-<HR>
-</h2>'''
+</div>
+'''
 img_3311 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3311 = [
-    {'input' : [10], 'output' : [5, 10*3.14, 5*5*3.14]},
-    {'input' : [50], 'output' : [25, 50*3.14, 25*25*3.14]},
-    {'input' : [128], 'output' : [64, 128*3.14, 64*64*3.14]}
+    {'input' : [[10]], 'output' : [5, 10*3.14, 5*5*3.14]},
+    {'input' : [[50]], 'output' : [25, 50*3.14, 25*25*3.14]},
+    {'input' : [[128]], 'output' : [64, 128*3.14, 64*64*3.14]}
 ]
+
 #원주, 원의 넓이
 question_3312 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>원기둥의 전개도에서 <span style = "background-color:	#E0E0E0;">옆면의 둘레</span>를 입력받습니다. </p>
 <p>원기둥의 높이와 밑면의 지름이 같을 때, 원기둥의 높이를 구하는 프로그램을 만들어봅시다. </p>
 <p>원주율은 3으로 계산합니다.</p>
 <HR>
-<p>- 입력 예시 : 40</p>
-<h3>
-<p>입력되는 숫자는 1000이하 숫자이며 단위는 cm입니다.</p>
-</h3>
-<h2>
-<p>- 출력 예시 : 5</p>
-<h3>
-<p>cm단위는 생략하고 숫자만 출력합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>자연수인 옆면의 둘레를 입력받습니다.</p>
+<p>cm단위이며 단위는 생략하고 입력됩니다.</p>
+<h2>출력</h2>
+<p>원기둥의 높이를 출력합니다.</p>
+<p>단위는 생략합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>40</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>5</p>
+</div>
+'''
 img_3312 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3312 = [
-    {'input' : [400], 'output' : [400/8]},
-    {'input' : [900], 'output' : [900/8]},
-    {'input' : [324], 'output' : [324/8]}
+    {'input' : [[400]], 'output' : [400/8]},
+    {'input' : [[900]], 'output' : [900/8]},
+    {'input' : [[324]], 'output' : [324/8]}
 ]
+
 #올림림
 question_3313 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>입력받은 <span style = 'background-color :#E0E0E0'>천의 자리 숫자</span>를 올림하여 천의 자리까지 나타내는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>- 입력 예시 : <b>2345</b></p>
-<h3>
-<p>입력되는 숫자는 천의 자리 숫자입니다.</p>
-</h3>
-<h2>
-<p>- 출력 예시 : 3000</p>
-<h3>
-</h3>
+<h2>입력</h2>
+<p>천의 자리 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>올림하여 천의 자리까지 나타낸 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>2345</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>3000</p>
+</div>
+<h2>
+'''
 img_3313 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3313 = [
-    {'input' : [5436], 'output' : [6000]},
-    {'input' : [6034], 'output' : [7000]},
-    {'input' : [9999], 'output' : [10000]}
+    {'input' : [[5436]], 'output' : [6000]},
+    {'input' : [[6034]], 'output' : [7000]},
+    {'input' : [[9999]], 'output' : [10000]}
 ]
+
 #버림림
 question_3314 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p>입력받은 <span style = 'background-color :#E0E0E0'>만의 자리 숫자</span>를 내림하여 만의 자리까지 나타내는 프로그램을 만들어봅시다.</p>
+<p>입력받은 <span style = 'background-color :#E0E0E0'>만의 자리 숫자</span>를 버림하여 만의 자리까지 나타내는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>- 입력 예시 : <b>12345</b></p>
-<h3>
-<p>입력되는 숫자는 만만의 자리 숫자입니다.</p>
-</h3>
-<h2>
-<p>- 출력 예시 : 10000</p>
-<h3>
-</h3>
+<h2>입력</h2>
+<p>만의 자리 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>버림하여 만의 자리까지 나타낸 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>12345</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>10000</p>
+</div>
+'''
 img_3314 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3314 = [
-    {'input' : [45838], 'output' : [40000]},
-    {'input' : [82345], 'output' : [80000]},
-    {'input' : [20000], 'output' : [20000]}
+    {'input' : [[45838]], 'output' : [40000]},
+    {'input' : [[82345]], 'output' : [80000]},
+    {'input' : [[20000]], 'output' : [20000]}
 ]
+
 #비례배분
 question_3401 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받습니다. </p>
-<p>지민이와 유나가 <u style = "background-color:	#E0E0E0;">첫번째 숫자</u>와 <u style = "background-color:	#E0E0E0;">두번째 숫자</u> 비로 연필 144자루를 나눠갖기로 했습니다.</p>
+<p>지민이와 유나가 <u style = "background-color:	#E0E0E0;">첫 번째 숫자</u>와 <u style = "background-color:	#E0E0E0;">두 번째 숫자</u> 비로 연필 144자루를 나눠갖기로 했습니다.</p>
 <p>지민이가 갖게 될 연필을 구하는 프로그램을 만들어봅시다.</p> 
 <HR>
-<p>입력 예시 : 1 2</p>
-<h3>
-<p>입력되는 숫자는 1이상 144이하 숫자입니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 48.0</p>
+<h2>입력</h2>
+<p>첫째 줄과 둘째 줄에 자연수인 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>지민이가 갖게 될 연필의 수를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>1</p>
+<p>2</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>48.0</p>
+</div>
+'''
 img_3401 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3401 = [
-    {'input' : [1, 3], 'output' : [144*1/4]},
-    {'input' : [7, 2], 'output' : [144*7/9]},
-    {'input' : [5, 1], 'output' : [144*5/6]}
+    {'input' : [[1], [3]], 'output' : [144*1/4]},
+    {'input' : [[7], [2]], 'output' : [144*7/9]},
+    {'input' : [[5], [1]], 'output' : [144*5/6]}
 ]
+
 #비례배분
 question_3402 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>3개의 숫자를 입력받습니다. </p>
-<p>지민이와 유나가 <span style = "background-color:	#E0E0E0;">첫번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두번째 숫자</span> 비로 <span style = "background-color:	#E0E0E0;">세번째 숫자</span>만큼의 연필을 나눠갖기로 했습니다.</p>
+<p>지민이와 유나가 <span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>와 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span> 비로 <span style = "background-color:	#E0E0E0;">세 번째 숫자</span>만큼의 연필을 나눠갖기로 했습니다.</p>
 <p>유나가 갖게 될 연필을 구하는 프로그램을 만들어봅시다.</p> 
 <HR>
-<p>입력 예시 : 1 2 24</p>
-<h3>
-<p>입력되는 숫자는 100이하 숫자입니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 8.0</p>
+<h2>입력</h2>
+<p>첫째 줄, 둘째 줄, 셋째 줄에 자연수인 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>유나가 갖게 될 연필의 수를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>1</p>
+<p>2</p>
+<p>24</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>8.0</p>
+</div>
+'''
 img_3402 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3402 = [
-    {'input' : [2, 3, 25], 'output' : [25*3/5]},
-    {'input' : [8, 7, 60], 'output' : [60*7/15]},
-    {'input' : [19, 3, 88], 'output' : [88*3/19]}
+    {'input' : [[2], [3], [25]], 'output' : [25*3/5]},
+    {'input' : [[8], [7], [60]], 'output' : [60*7/15]},
+    {'input' : [[19], [3], [88]], 'output' : [88*3/19]}
 ]
+
 #비례배분
 question_3403 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받습니다. </p>
-<p>두 평행사변형 가, 나의 넓이의 합은 416cm<sup>2</sup>입니다. </p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>는 가 평행사변형의 밑면의 길이이고 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>는 나 평행사변형의 길이입니다.</p>
+<p>두 평행사변형 가(왼쪽), 나(오른쪽)의 넓이의 합은 832cm<sup>2</sup>입니다. </p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 가 평행사변형의 밑면의 길이이고 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 나 평행사변형의 길이입니다.</p>
 <p>평행사변형 가의 넓이를 구하는 프로그램을 만들어봅시다.</p> 
+<polygon points = "5,5 395,5 300,5 340,95 250,95 210,5 155,5 125,95 45,95 75,5 45,95 5,95 395,95 340,95 300,5", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4">
 <HR>
-<p>입력 예시 : 3 5</p>
-<h3>
-<p>입력되는 숫자는 416이하 숫자입니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 156.0</p>
-<h3>
-<p>cm<sup>2</sup>단위는 생략하고 숫자만 출력합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 가(왼쪽) 평행사변형의 밑변의 길이가 입력되고, 둘째 줄에는 나(오른쪽) 평행사변형의 밑변의 길이가 입력됩니다.</p>
+<h2>출력</h2>
+<p>가(왼쪽) 평행사변형의 넓이를 출력합니다.</p>
+<p>단위는 생략합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>3</p>
+<p>5</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>312.0</p>
+</div>
+'''
 img_3403 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3403 = [
-    {'input' : [3,1], 'output' : [416*3/4]},
-    {'input' : [9, 7], 'output' : [416*9/16]},
-    {'input' : [22, 10], 'output' : [416*22/32]}
+    {'input' : [3,1], 'output' : [832*3/4]},
+    {'input' : [9, 7], 'output' : [832*9/16]},
+    {'input' : [22, 10], 'output' : [832*22/32]}
 ]
+
 #띄어세기
 question_4101 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>15000에서  <span style = "background-color:	#E0E0E0;">입력받은 숫자</span>만큼 띄어세는 수를 리스트로 만들어서 출력하는 프로그램을 만들어봅시다. </p>
@@ -927,80 +1004,95 @@ question_4101 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_4101 = "https://github.com/GoHakNeung/python/blob/main/img_4101.jpg?raw=true"
 answer_4101 = [
-    {'input' : [1], 'output' : ['[15000, 15001, 15002, 15003, 15004, 15005, 15006, 15007, 15008, 15009]']},
-    {'input' : [315], 'output' : ['[15000, 15315, 15630, 15945, 16260, 16575, 16890, 17205, 17520, 17835]']},
-    {'input' : [5090], 'output' : ['[15000, 20090, 25180, 30270, 35360, 40450, 45540, 50630, 55720, 60810]']}
+    {'input' : [[1]], 'output' : ['[15000, 15001, 15002, 15003, 15004, 15005, 15006, 15007, 15008, 15009]']},
+    {'input' : [[315]], 'output' : ['[15000, 15315, 15630, 15945, 16260, 16575, 16890, 17205, 17520, 17835]']},
+    {'input' : [[5090]], 'output' : ['[15000, 20090, 25180, 30270, 35360, 40450, 45540, 50630, 55720, 60810]']}
 ]
+
 #띄어세기2
 question_4102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>에서 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>만큼 띄어세는 수를 만들어서 리스트로 출력하는 프로그램을 만들어봅시다. </p>
-<p>리스트에 숫자는 10개를 저장합니다.</p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>에서 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>만큼 띄어세는 수를 만들어서 리스트로 출력하는 프로그램을 만들어봅시다. </p>
+<p>리스트의 길이는 10입니다.</p>
 <HR>
-<p>입력 예시 : 100 10</p>
-<h3>
-<p>입력되는 숫자는 10000이하 숫자입니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : [100, 110, 120, 130, 140, 150, 160, 170, 180, 190]</p>
-<h3>
-<p>리스트로 출력합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 시작하는 숫자, 둘째 줄에는 두 숫자 사이의 간격에 해당하는 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>길이가 10인 리스트가 출력됩니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>100</p>
+<p>10</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>[100, 110, 120, 130, 140, 150, 160, 170, 180, 190]</p>
+</div>
+'''
 img_4102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_4102 = [
-    {'input' : [15, 25], 'output' : ['[15, 40, 65, 90, 115, 140, 165, 190, 215, 240]']},
-    {'input' : [300, 200], 'output' : ['[300, 500, 700, 900, 1100, 1300, 1500, 1700, 1900, 2100]']},
-    {'input' : [9000, 2000], 'output' : ['[9000, 11000, 13000, 15000, 17000, 19000, 21000, 23000, 25000, 27000]']}
+    {'input' : [[15], [25]], 'output' : ['[15, 40, 65, 90, 115, 140, 165, 190, 215, 240]']},
+    {'input' : [[300], [200]], 'output' : ['[300, 500, 700, 900, 1100, 1300, 1500, 1700, 1900, 2100]']},
+    {'input' : [[9000], [2000]], 'output' : ['[9000, 11000, 13000, 15000, 17000, 19000, 21000, 23000, 25000, 27000]']}
 ]
+
 #배수
 question_4103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
-<p><span style = "background-color:	#E0E0E0;">입력 받은 숫자</span>의 배수를 리스트로 만들어서 출력하는 프로그램을 만들어봅시다. </p>
-<p>배수는 총 10개를 구하고 가장 작은 수부터 차례대로 커지도록 만듭니다.</p>
+<p><span style = "background-color:	#E0E0E0;">입력 받은 숫자의</span>의 배수를 10개를 리스트로 만들어서 출력하는 프로그램을 만들어봅시다. </p>
+<p>첫 번째 숫자는 포함하지 않으며 작은 수부터 차례대로 커지도록 만듭니다.</p>
 <HR>
-<p>입력 예시 : <b>5</b></p>
-<h3>
-<p>100보다 작은 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : '[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]'</p>
-<h3>
-<p>배수는 총 10개를 구합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>자연수가 입력됩니다..</p>
+<h2>출력</h2>
+<p>길이가 10인 리스트가 출력됩니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>5</p>
+<p>7</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>[10,15,20,25,30,35,40,45,50,55]</p>
+</div>
+'''
 img_4103 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
 answer_4103 = [
-    {'input' : [48, 52], 'output' : [4]},
-    {'input' : [20, 35], 'output' : [5]},
-    {'input' : [13, 84], 'output' : [1]}
+    {'input' : [[48], [5]], 'output' : ['[96, 144, 192, 240, 288, 336, 384, 432, 480, 528]']},
+    {'input' : [[20], [6]], 'output' : ['[40, 60, 80, 100, 120, 140, 160, 180, 200, 220]']},
+    {'input' : [[13], [3]], 'output' : ['[26, 39, 52, 65, 78, 91, 104, 117, 130, 143]']}
 ]
+
 #이상이하
 question_4104 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받습니다. </p>
-<p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>초과 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>이하인 수를 리스트로 만들어서 출력하는 프로그램을 만들어봅시다. </p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>초과 <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>이하인 수를 리스트로 만들어서 출력하는 프로그램을 만들어봅시다. </p>
 <HR>
-<p>입력 예시 : <b>5 12</b></p>
-<h3>
-<p>100보다 작은 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : '[6, 7, 8, 9, 10, 11, 12]'</p>
+<h2>입력</h2>
+<p>첫째 줄과 둘째 줄에 자연수가 입력됩니다.</p>
+<h2>출력</h2>
+<p>범위에 해당하는 자연수를 리스트로 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>5</p>
+<p>12</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>[6, 7, 8, 9, 10, 11, 12]</p>
+</div>
+'''
 img_4104 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
 answer_4104 = [
-    {'input' : [4, 10], 'output' : ['[5,6,7,8,9,10]']},
-    {'input' : [12, 13], 'output' : ['[13]']},
-    {'input' : [81, 86], 'output' : ['[82,83,84,85,86]']}
+    {'input' : [[4], [10]], 'output' : ['[5,6,7,8,9,10]']},
+    {'input' : [[12], [13]], 'output' : ['[13]']},
+    {'input' : [[81], [86]], 'output' : ['[82,83,84,85,86]']}
 ]
+
 #규칙성, 리스트 추가하기
 question_4105 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <table border="1"
        cellspacing="0"
        width = 10
@@ -1031,63 +1123,80 @@ question_4105 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 </table>
 <p>그림과 같이 대각선(2,6,10...)으로 규칙을 갖는 숫자모음에서 <span style = "background-color:	#E0E0E0;">입력받은 숫자</span>의 길이만큼 리스트를를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : <b>5</b></p>
-<h3>
-<p>100보다 작은 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : '[2,6,10,14,18]'</p>
-<h3>
-<p>배수는 총 10개를 구합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>자연수가 입력됩니다.</p>
+<h2>출력</h2>
+<p>리스트가 출력됩니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>5</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>[2,6,10,14,18]</p>
+</div>
+'''
 img_4105 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
 answer_4105 = [
-    {'input' : [10], 'output' : ['[2, 6, 10, 14, 18, 22, 26, 30, 34, 38]']},
-    {'input' : [15], 'output' : ['[2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58]']},
-    {'input' : [20], 'output' : ['[2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 78]']}
+    {'input' : [[10]], 'output' : ['[2, 6, 10, 14, 18, 22, 26, 30, 34, 38]']},
+    {'input' : [[15]], 'output' : ['[2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58]']},
+    {'input' : [[20]], 'output' : ['[2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 78]']}
 ]
+
 #리스트 요소 및 길이
 question_4106 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>5씩 커지는 <span style = "background-color:	#E0E0E0;">숫자 모음(리스트)</span>를 입력받습니다.</p>
 <p>5번째에 들어있는 값과 숫자 모음에 포함되어 있는 숫자 개수를 출력하는 프로그램을 구해봅시다.</p> 
 <HR>
-<p>입력 예시 : 1,6,11,16,21,26,31,36,41,46,51</p>
-<h2>
-<p>출력 예시 : </p>
+<h2>입력</h2>
+<p>5씩 커지는 리스트가 입력됩니다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 리스트에 있는 5번째 값을 출력하고 둘째 줄에 리스트 길이를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>[1,6,11,16,21,26,31,36,41,46,51]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
 <p>21</p>
 <p>11</p>
-<h3>
-<p>줄바꿈하여 출력합니다.</p>
-</h3>
-<h2>
-<HR>
-</h2>'''
+</div>
+'''
 img_4106 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
 answer_4106 = [
-    {'input' : [14,19,24,29,34,39,44,49,54], 'output' : [34, 9]},
-    {'input' : [102,107,112,117,122,127,132,137], 'output' : [122, 8]},
-    {'input' : [0,5,10,15,20], 'output' : [20,5]}
+    {'input' : [[14,19,24,29,34,39,44,49,54]], 'output' : [34, 9]},
+    {'input' : [[102,107,112,117,122,127,132,137]], 'output' : [122, 8]},
+    {'input' : [[0,5,10,15,20]], 'output' : [20,5]}
 ]
+
 #리스트 요소 및 길이
 question_4107 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>101씩 띄어세기 하는 <span style = "background-color:	#E0E0E0;">숫자 모음(리스트)</span>을 입력받습니다.</p>
 <p>숫자 모음에 다음에 올 수를 추가하여 리스트를 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
-<p>입력 예시 : 1,102,203,304,405</p>
-<h2>
-<p>출력 예시 : [1,102,203,304,405,506]</p>
+<h2>입력</h2>
+<p>리스트를 입력받습니다.</p>
+<h2>출력</h2>
+<p>리스트를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>[1,102,203,304,405]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>[1,102,203,304,405,506]</p>
+</div>
+'''
 img_4107 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
 answer_4107 = [
-    {'input' : [34, 135, 236, 337, 438, 539], 'output' : '[34, 135, 236, 337, 438, 539, 640]'},
-    {'input' : [18, 119, 220, 321], 'output' : '[18, 119, 220, 321, 422]'},
-    {'input' : [1802, 1903, 2004, 2105, 2206, 2307, 2408, 2509, 2610, 2711, 2812, 2913], 'output' : '[1802, 1903, 2004, 2105, 2206, 2307, 2408, 2509, 2610, 2711, 2812, 2913, 3014]'}
+    {'input' : [[34, 135, 236, 337, 438, 539]], 'output' : '[34, 135, 236, 337, 438, 539, 640]'},
+    {'input' : [[18, 119, 220, 321]], 'output' : '[18, 119, 220, 321, 422]'},
+    {'input' : [[1802, 1903, 2004, 2105, 2206, 2307, 2408, 2509, 2610, 2711, 2812, 2913]], 'output' : '[1802, 1903, 2004, 2105, 2206, 2307, 2408, 2509, 2610, 2711, 2812, 2913, 3014]'}
 ]
+
 #이등변 삼각형 가능/불가능
 question_5101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>가 홀수인지 짝수인지 알려주는 프로그램을 만들어봅시다.</p>
