@@ -467,81 +467,95 @@ question_3107 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 '''
 img_3107 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3107 = [
-    {'input' : [12, 5, 9], 'output' : [(12+5)*2+9]},
-    {'input' : [10, 9, 5], 'output' : [(10+9)*2+5]},
-    {'input' : [13, 7, 3], 'output' : [(13+7)*2+3]}
+    {'input' : [[12], [5], [9]], 'output' : [(12+5)*2+9]},
+    {'input' : [[10], [9], [5]], 'output' : [(10+9)*2+5]},
+    {'input' : [[13], [7], [3]], 'output' : [(13+7)*2+3]}
 ]
 
 question_3108 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>3개의 숫자를 입력받습니다.</p>
 <p>어떤 수에 <span style = "background-color:	#E0E0E0;">첫번째 숫자</span>를 뺀 다음 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>를 나눈 뒤 <span style = "background-color:	#E0E0E0;">세번째 숫자</span>를 더했더니 542가 나왔습니다.</p>
 <p>어떤 수를 구하는 프로그램을 만들어봅시다. </p>
 <HR>
-<p>입력 예시 : <b>2 3 10</b></p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 1598</p>
+<h2>입력</h2>
+<p>3개의 숫자가 줄바꿈하여 입력됩니다.</p>
+<h2>출력</h2>
+<p>자연수에 해당하는 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>2</p>
+<p>3</p>
+<p>10</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>1598</p>
+</div>
+'''
 img_3108 = "https://github.com/GoHakNeung/python/blob/main/img_1109.jpg?raw=true"
 answer_3108 = [
-    {'input' : [10, 20, 30], 'output' : [10250]},
-    {'input' : [123, 4, 12], 'output' : [2243]},
-    {'input' : [53, 7, 123], 'output' : [2986]}
+    {'input' : [[10], [20], [30]], 'output' : [10250]},
+    {'input' : [[123], [4], [12]], 'output' : [2243]},
+    {'input' : [[53], [7], [123]], 'output' : [2986]}
 ]
+
 #단명수, 복명수수
 question_3301 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫번째 숫자</span>의 단위는 km이고 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>의 단위는 m입니다. </p>
 <p>'<span style = "background-color:	#E0E0E0;">첫번째 숫자</span>km <span style = "background-color:	#E0E0E0;">두번째 숫자</span>m'인 길이를 m로 출력하는 프로그램을 만들어봅시다. </p>
 <HR>
-<p>입력 예시 : 51 102</p>
-<h3>
-<p>1000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : 51102</p>
-<h3>
-<p>m단위는 생략하고 숫자만 출력합니다.</p>
-</h3>
+<h2>입력</h2>
+<p>첫째 줄에는 km에 해당하는 숫자가 입력되고, 둘째 줄에는 m에 해당하는 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>m로 단위를 바꾼 숫자가 출력됩니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>51</p>
+<p>102</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>51102</p>
+</div>
+'''
 img_3301 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3301 = [
-    {'input' : [15, 25], 'output' : [15*1000+25]},
-    {'input' : [351, 102], 'output' : [351*1000+102]},
-    {'input' : [901, 1], 'output' : [901*1000+1]}
+    {'input' : [[15], [25]], 'output' : [15*1000+25]},
+    {'input' : [[351], [102]], 'output' : [351*1000+102]},
+    {'input' : [[901], [1]], 'output' : [901*1000+1]}
 ]
+
 #단명수, 복명수수
 question_3302 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<h2>
 <p>1개의 숫자를 입력받습니다.</p>
 <p>mL단위 <span style = "background-color:	#E0E0E0;">숫자</span>를 '_L_mL' 단위로 바꾸어 L와 mL를 줄바꿈하여 출력하는 프로그램을 만들어봅시다.
 <HR>
-<p>입력 예시 : 1812</p>
-<h3>
-<p>100000이하의 숫자가 입력됩니다.</p>
-</h3>
-<h2>
-<p>출력 예시 : </p>
-<p> 1 </p>
-<p> 812 </p>
-<h3>
-<p>L단위를 출력하고 mL를 출력합니다. </p>
-</h3>
+<h2>입력</h2>
+<p>mL 단위인 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>L와 mL로 단위롤 바꾸어 첫째 줄에는 L에 해당하는 숫자를, 둘째 줄에는 mL에 해당하는 숫자를 출력합니다.</p>
 <HR>
-</h2>'''
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>1812</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>1</p>
+<p>812</p>
+</div>
+'''
 img_3302 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
 answer_3302 = [
-    {'input' : [12053], 'output' : [12, 53]},
-    {'input' : [205], 'output' : [0, 205]},
-    {'input' : [12001], 'output' : [12, 1]}
+    {'input' : [[12053]], 'output' : [12, 53]},
+    {'input' : [[205]], 'output' : [0, 205]},
+    {'input' : [[12001]], 'output' : [12, 1]}
 ]
 #단명수, 복명수수
+
 question_3303 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>
 <p>2개의 숫자를 입력받으며 <span style = "background-color:	#E0E0E0;">첫번째 숫자</span>의 단위는 km이고 <span style = "background-color:	#E0E0E0;">두번째 숫자</span>의 단위는 m입니다. </p>
