@@ -1741,7 +1741,7 @@ question_6205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>s.forward(), s.right()를 이용해서 별을 그립니다..</p>
+<p>s.forward(), s.right()를 이용해서 마름모를 그립니다..</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
@@ -1764,7 +1764,7 @@ question_6206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>s.forward(), s.left()를 이용해서 도형형을 그립니다..</p>
+<p>s.forward(), s.left()를 이용해서 도형을 그립니다..</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
@@ -1772,7 +1772,7 @@ question_6206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 </div>
 <div style = "float:right;width:50%">
 <h2> 출력 예시 </h2>
-<p>길이가 120이고 한 각이 45&#176인 마름모</p>
+<p>제시된 삼각형과 좌우 뒤집어진 삼각형</p>
 </div>
 '''
 img_6206 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
