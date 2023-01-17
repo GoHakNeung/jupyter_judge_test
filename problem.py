@@ -1482,7 +1482,122 @@ answer_5303 = [
 ]
 
 
-question_6101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+question_6101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 정사각형을 그려봅시다.</p>
+<svg width = "200" height = "100"><polygon points = "5,5 95,5 95,95 5 95", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<HR>
+<h2> 입력 </h2>
+<p>없음</p>
+<h2> 출력 </h2>
+<p>s.forward(), s.right()를 이용해서 정사각형을 그립니다..</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>길이가 100인 정사각형</p>
+</div>
+'''
+img_6101 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_6101 = [
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(4) : ', ' t.forward(100)', ' t.right(90)']}
+]
+
+question_6102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 정육각형을 그려봅시다.</p>
+<svg width = "200" height = "200"><polygon points = "100,5 5,167 195,167", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<HR>
+<h2> 입력 </h2>
+<p>없음</p>
+<h2> 출력 </h2>
+<p>s.forward(), s.right()를 이용해서 정삼각형을 그립니다..</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>길이가 150인 정삼각형</p>
+</div>
+'''
+img_6102 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_6102 = [
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(150)', ' t.right(60)']}
+]
+
+question_6103 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>길이가 <span style = "background-color:	#E0E0E0;">75</span>인 정육각형을 그려봅시다.</p>
+<svg width = "210" height = "210"><polygon points = "55,5 155,5 205,90 155,175 55,175 5,90", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<HR>
+<h2> 입력 </h2>
+<p>없음</p>
+<h2> 출력 </h2>
+<p>s.forward(), s.right()를 이용해서 정육각형을 그립니다..</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>길이가 75인 정육각형</p>
+</div>
+'''
+img_6103 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_6103 = [
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(6) : ', ' t.forward(75)', ' t.right(120)']}
+]
+
+question_6104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 별을 그려봅시다.</p>
+<svg width = "210" height = "210"><polygon points = "5,75 195,75 40,185 100,5 160,185 ", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<HR>
+<h2> 입력 </h2>
+<p>없음</p>
+<h2> 출력 </h2>
+<p>s.forward(), s.right()를 이용해서 별을 그립니다..</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>길이가 100인 별</p>
+</div>
+'''
+img_6104 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_6104 = [
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(5) : ', ' t.forward(100)', ' t.right(36)']}
+]
+
+question_6105 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>길이가 <span style = "background-color:	#E0E0E0;">120</span>이고 한 각이 <span style = "background-color:	#E0E0E0;">45</span>&#176인 마름모를 그려봅시다.</p>
+<svg width = "210" height = "100"><polygon points = "5,75 75,5 175,5 105,75", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<HR>
+<h2> 입력 </h2>
+<p>없음</p>
+<h2> 출력 </h2>
+<p>s.forward(), s.right()를 이용해서 별을 그립니다..</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>길이가 120이고 한 각이 45&#176인 마름모</p>
+</div>
+'''
+img_6105 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_6105 = [
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(2) : ', ' t.forward(120)', ' t.right(45)', ' t.forward(120)', ' t.right(135)' ]}
+]
+
+question_6106 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>를 자리 수로 분리해서 리스트로 만드는 프로그램을 만들어봅시다.</p>
 <p>일의 자리에 해당하는 숫자가 맨 마지막에 위치하도록 합니다.</p>
 <HR>
@@ -1501,15 +1616,15 @@ question_6101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>[1,2,3,4]</p>
 </div>
 '''
-img_6101 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6101 = [
+img_6106 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6106 = [
     {'input' : [125], 'output' : ['[1, 2, 5]']},
     {'input' : [65423], 'output' : ['[6, 5, 4, 2, 3]']},
     {'input' : [10001], 'output' : ['[1, 0, 0, 0, 1]']}
 ]
 
 #
-question_6102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+question_6107 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>1부터 10까지 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2>입력</h2>
@@ -1535,13 +1650,13 @@ question_6102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>10</p>
 </div>
 '''
-img_6102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6102 = [
+img_6107 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6107 = [
     {'input' : [], 'output' : [1,2,3,4,5,6,7,8,9,10]}
 ]
 
 #
-question_6103 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_6108 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>1부터 21까지 2씩 띄어서 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2> 입력
@@ -1570,13 +1685,13 @@ question_6103 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>21</p>
 </div>
 '''
-img_6103 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6103 = [
+img_6108 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6108 = [
     {'input' : [], 'output' : [1,3,5,7,9,11,13,15,17,19,21]}
 ]
 #
 
-question_6104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_6109 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>의 구구단을 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2> 입력
@@ -1603,14 +1718,14 @@ question_6104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>45</p>
 </div>
 '''
-img_6104 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6104 = [
+img_6109 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6109 = [
     {'input' : [[9]], 'output' : [9, 18, 27, 36, 45, 54, 63, 72, 81]},
     {'input' : [[11]], 'output' : [11, 22, 33, 44, 55, 66, 77, 88, 99]}
 ]
 #
 
-question_6105 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_6110 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>10씩 띄어세기 하는 <span style = "background-color:	#E0E0E0;">숫자 모음(리스트)</span>을 입력받아 숫자 모음에 저장된 숫자를 순서대로 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2> 입력
@@ -1633,13 +1748,12 @@ question_6105 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>50</p>
 </div>
 '''
-img_6105 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6105 = [
+img_6110 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6110 = [
     {'input' : [[20, 30, 40, 50, 60]], 'output' : [20, 30, 40, 50, 60]},
     {'input' : [[12,22,32,42,52]], 'output' : [12,22,32,42,52]},
     {'input' : [[45, 55, 65, 75, 85]], 'output' : [45, 55, 65, 75, 85]}
 ]
-
 #약수
 question_7101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>2개의 숫자를 입력받습니다.</p>
@@ -2062,7 +2176,10 @@ test_set = [
     #colabturtle test
     {'test_file' : '_6106.py', 'answer' : answer_6106, 'question' : question_6106, 'img' : img_6106},     
     {'test_file' : '_6107.py', 'answer' : answer_6107, 'question' : question_6107, 'img' : img_6107},        
-
+    {'test_file' : '_6108.py', 'answer' : answer_6108, 'question' : question_6108, 'img' : img_6108},     
+    {'test_file' : '_6109.py', 'answer' : answer_6109, 'question' : question_6109, 'img' : img_6109},          
+    {'test_file' : '_6110.py', 'answer' : answer_6110, 'question' : question_6110, 'img' : img_6110},         
+    
     {'test_file' : '_7101.py', 'answer' : answer_7101, 'question' : question_7101, 'img' : img_7101},
     {'test_file' : '_7102.py', 'answer' : answer_7102, 'question' : question_7102, 'img' : img_7102},
     {'test_file' : '_7103.py', 'answer' : answer_7103, 'question' : question_7103, 'img' : img_7103},
