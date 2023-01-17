@@ -1969,6 +1969,27 @@ img_6105 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true
 answer_6105 = [
     {'input' : [[13,21], [13]], 'output' : ['t = Turtle(window)', "t.color('red')", 'for i in range(3) : ', ' t.forward(100)', ' t.right(60)']}
 ]
+question_6106 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>길이가 <span style = "background-color:	#E0E0E0;">60</span>인 정육각형을 그려봅시다.</p>
+<HR>
+<h2> 입력 </h2>
+<p>없음</p>
+<h2> 출력 </h2>
+<p>s.forward(), s.right()를 이용해서 그립니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p> 없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>길이가 60인 정삼각형</p>
+</div>
+'''
+img_6106 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_6106 = [
+    {'input' : [[13,21], [13]], 'output' : ['t = Turtle(window)', "t.color('red')", 'for i in range(6) : ', ' t.forward(60)', ' t.right(120)']}
+]
 
 test_set = [
 #입력,변수,출력_수와 연산산
@@ -2039,6 +2060,7 @@ test_set = [
     {'test_file' : '_6104.py', 'answer' : answer_6104, 'question' : question_6104, 'img' : img_6104},
     #colabturtle test
     {'test_file' : '_6105.py', 'answer' : answer_6105, 'question' : question_6105, 'img' : img_6105},    
+    {'test_file' : '_6106.py', 'answer' : answer_6106, 'question' : question_6106, 'img' : img_6106},     
 
     {'test_file' : '_7101.py', 'answer' : answer_7101, 'question' : question_7101, 'img' : img_7101},
     {'test_file' : '_7102.py', 'answer' : answer_7102, 'question' : question_7102, 'img' : img_7102},
