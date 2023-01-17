@@ -486,7 +486,7 @@ def turtle_convert(output_turtle) :
   original = sys.stdout
   sys.stdout = f
 
-  print('from ColabTurtleClass import Turtle, Window')
+  print('from jupyter_judge.ColabTurtleClass import Turtle, Window')
   print('window = Window()')
   for i in range(len(turtle_code)) : 
     print(turtle_code[i])
