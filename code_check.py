@@ -5,7 +5,7 @@ from requests import get
 from oauth2client.service_account import ServiceAccountCredentials
 from IPython.core.display import display, HTML, Image
 from jupyter_judge.problem import *
-# from problem import *
+from jupyter_judge.ColabTurtleClass import *
 
 #------------------------------------------------------------------------------#
 #구글 스프레드시트와 연동하기
@@ -458,3 +458,56 @@ def code_check(py) :
       print(tc_red+'틀렸습니다.'+reset)
     except : 
       print(tc_red+'틀렸습니다.'+reset)
+
+#------------------------------------------------------------------------------#
+#터틀 평가 함수
+def turtle_arrange(py) : 
+  global turtle_code
+  turtle_code = []
+
+  file_name = '/content/'+py
+
+  f = open(file_name, 'r') 
+  lines = f.readlines()
+  for line in lines : 
+    if line != '' : 
+      turtle_code.append(line)    
+  f.close()
+
+  for i in range(len(turtle_code)) : 
+    if turtle_code[i].find('\n') >= 0 : 
+      turtle_code[i] = turtle_code[i][:-1]
+    turtle_code[i] = turtle_code[i].rstrip()
+
+def turtle_convert(output_turtle) : 
+  global turtle_code
+  global answer_turtle
+  f = open(output_turtle, 'w')  
+  original = sys.stdout
+  sys.stdout = f
+
+  print('from ColabTurtleClass import Turtle, Window')
+  print('window = Window()')
+  for i in range(len(turtle_code)) : 
+    print(turtle_code[i])
+
+  for i in answer_turtle : 
+    print(i)
+  sys.stdout = original   
+  f.close()
+
+def turtle_check(py) : 
+  for i in range(len(test_set)) :
+    if test_set[i]['test_file'] == py :
+      global answer, answer_turtle
+      answer = test_set[i]['answer']
+      answer_turtle = answer[0]['output']
+      global question
+      question = test_set[i]['question']   
+
+
+  turtle_arrange(py)
+  turtle_convert('turtle_output.py')
+  Question('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
+  exec(open('turtle_output.py').read())
+
