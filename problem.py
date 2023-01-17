@@ -1199,290 +1199,7 @@ answer_4107 = [
     {'input' : [[1802, 1903, 2004, 2105, 2206, 2307, 2408, 2509, 2610, 2711, 2812, 2913]], 'output' : '[1802, 1903, 2004, 2105, 2206, 2307, 2408, 2509, 2610, 2711, 2812, 2913, 3014]'}
 ]
 
-#이등변 삼각형 가능/불가능
-question_5101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>가 홀수인지 짝수인지 알려주는 프로그램을 만들어봅시다.</p>
-<HR>
-<h2> 입력
-</h2>
-<p>1000이하 숫자가 입력됩니다.</p>
-<h2> 출력
-</h2>
-<p>홀수 또는 짝수가 출력됩니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2> 입력 예시 </h2>
-<p>23</p>
-</div>
-<div style = "float:right;width:50%">
-<h2> 출력 예시 </h2>
-<p>홀수</p>
-</div>
-'''
-img_5101 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5101 = [
-    {'input' : [[10]], 'output' : ['짝수']},
-    {'input' : [[54435]], 'output' : ['홀수']},
-    {'input' : [[6445]], 'output' : ['홀수']}
-]
-#크기비교
-question_5102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span> 중 크기가 큰 숫자를 출력하는 프로그램을 만들어봅시다.</p>
-<HR>
-<h2> 입력
-</h2>
-<p>첫째 줄에 첫 번째 숫자가 입력되고, 둘째 줄에 두 번째 숫자가 입력됩니다.</p>
-<h2> 출력
-</h2>
-<p>두 숫자 중 큰 숫자를 출력합니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2> 입력 예시 </h2>
-<p>12</p>
-<p>43</p>
-</div>
-<div style = "float:right;width:50%">
-<h2> 출력 예시 </h2>
-<p>43</p>
-</div>
-'''
-img_5102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5102 = [
-    {'input' : [[20], [10]], 'output' : [20]},
-    {'input' : [[423], [1233]], 'output' : [1233]},
-    {'input' : [[7213], [22321]], 'output' : [22321]},
-    {'input' : [[12344], [12344]], 'output' : [12344]}    
-]
-#크기비교
-question_5103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>3개의 숫자를 입력받습니다. </p>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">3개의 숫자</span> 중 가장 큰 숫자를 출력하는 프로그램을 만들어봅시다.</p>
-<HR>
-<h2>입력</h2>
-<p>첫째 줄, 둘째 줄, 셋째 줄에 자연수를 입력받습니다.</p>
-<h2>출력</h2>
-<p>가장 큰 숫자를 출력합니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2>입력 예시 </h2>
-<p>3</p>
-<p>5</p>
-<p>2</p>
-</div>
-<div style = "float:right;width:50%">
-<h2>출력 예시 </h2>
-<p>5</p>
-</div>
-'''
-img_5103 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5103 = [
-    {'input' : [[12], [65], [34]], 'output' : [65]},
-    {'input' : [[2134], [1243], [32]], 'output' : [2134]},
-    {'input' : [[452], [34], [6565]], 'output' : [6565]}
-]
-#크기비교
-question_5104 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>3개의 숫자를 입력받습니다. </p>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">3개의 숫자</span> 중 가장 작은 숫자를 출력하는 프로그램을 만들어봅시다.</p>
-<HR>
-<h2>입력</h2>
-<p>첫째 줄, 둘째 줄, 셋째 줄에 자연수를 입력받습니다.</p>
-<h2>출력</h2>
-<p>가장 작은 숫자를 출력합니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2>입력 예시 </h2>
-<p>4</p>
-<p>6</p>
-<p>9</p>
-</div>
-<div style = "float:right;width:50%">
-<h2>출력 예시 </h2>
-<p>4</p>
-</div>
-'''
-img_5104 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5104 = [
-    {'input' : [[12], [65], [34]], 'output' : [12]},
-    {'input' : [[2134], [1243], [32]], 'output' : [32]},
-    {'input' : [[452], [34], [6565]], 'output' : [34]}
-]
-#예각,직각,둔각 알기
-question_5201 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
-<p>입력 받은 1개의 <span style = "background-color : #E0E0E0">숫자(각도)</span>가 예각인지, 직각인지, 둔각인지 출력하도록 프로그램을 만들어봅시다.</p>
-<HR>
-<h2> 입력
-</h2>
-<p>1 ~ 179 사이 숫자가 입력됩니다.</p>
-<h2> 출력
-</h2>
-<p>예각, 직각, 둔각 중 하나를 출력합니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2> 입력 예시 </h2>
-<p>56</p>
-</div>
-<div style = "float:right;width:50%">
-<h2> 출력 예시 </h2>
-<p>예각</p>
-</div>
-'''
-img_5201 = "https://github.com/GoHakNeung/python/blob/main/img_4201.jpg?raw=true"
-answer_5201 = [
-    {'input' : [[1]], 'output' : ['예각']},
-    {'input' : [[89]], 'output' : ['예각']},
-    {'input' : [[90]], 'output' : ['직각']},
-    {'input' : [[91]], 'output' : ['둔각']},
-    {'input' : [[179]], 'output' : ['둔각']}
-]
-
-#예각삼각형, 직각삼각형, 둔각삼각형
-question_5202 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>입력 받은 <span style = "background-color : #E0E0E0">3개의 숫자(각도)</span>는 삼각형에서 세 각의 크기입니다. </p>
-<p>삼각형은 예각삼각형인지 직각삼각형인지 둔각삼각형인지 출력하는 프로그램을 만들어봅시다.</p>
-<HR>
-<h2>입력</h2>
-<p>삼각형 세 각의 크기가 줄바꿈하여 입력됩니다.</p>
-<p>(단위는 생략되고 입력됩니다.)</p>
-<h2>출력</h2>
-<p>예각삼각형, 직각삼각형, 둔각삼각형 중 하나를 출력합니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2>입력 예시 </h2>
-<p>43</p>
-<p>17</p>
-<p>120</p>
-</div>
-<div style = "float:right;width:50%">
-<h2>출력 예시 </h2>
-<p>둔각삼각형</p>
-</div>'''
-img_5202 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5202 = [
-    {'input' : [[65], [19], [96]], 'output' : ['둔각삼각형']},
-    {'input' : [[90], [20], [70]], 'output' : ['직각삼각형']},
-    {'input' : [[60], [70], [50]], 'output' : ['예각삼각형']}
-]
-#이등변 삼각형 가능/불가능
-
-question_5203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
-<p>입력 받은 <span style = "background-color:	#E0E0E0;">2개의 숫자(각도)</span>는 삼각형에서 두 각의 크기입니다. </p>
-<p>이등변삼각형이 될 수 있으면 '가능'을 출력하고 이등변 삼각형이 될 수 없으면 '불가능'을 출력하는 프로그램을 만들어봅시다.</p>
-<HR>
-<h2> 입력
-</h2>
-<p>삼각형에서 두 각이  입력됩니다.</p>
-<h2> 출력
-</h2>
-<p>가능 또는 불가능</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2> 입력 예시 </h2>
-<p>50</p>
-<p>80</p>
-</div>
-<div style = "float:right;width:50%">
-<h2> 출력 예시 </h2>
-<p>가능</p>
-</div>
-'''
-
-img_5203 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5203 = [
-    {'input' : [[80], [20]], 'output' : ['가능']},
-    {'input' : [[90], [20]], 'output' : ['불가능']},
-    {'input' : [[60], [70]], 'output' : ['불가능']}
-]
-#이등변 삼각형 가능/불가능
-
-question_5301 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">3개의 숫자(각도)</span>로 삼각형을 만들 수 있으면 '가능'을 출력하고 만들 수 없으면 '불가능'을 출력하는 프로그램을 만들어봅시다.</p>
-<HR>
-<h2> 입력
-</h2>
-<p>첫째 줄에는 첫 번째 숫자가 입력되고, 둘째 줄에는 두 번째 숫자가 입력되고 셋째 줄에는 세번째 숫자가 출력됩니다.</p>
-<p>1 ~ 179 사이 숫자가 입력됩니다.</p>
-<h2> 출력
-</h2>
-<p>가능 또는 불가능을 출력합니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2> 입력 예시 </h2>
-<p>34</p>
-<p>67</p>
-<p>79</p>
-</div>
-<div style = "float:right;width:50%">
-<h2> 출력 예시 </h2>
-<p>가능</p>
-</div>
-'''
-img_5301 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5301 = [
-    {'input' : [[60], [32], [88]], 'output' : ['가능']},
-    {'input' : [[35], [79], [153]], 'output' : ['불가능']},
-    {'input' : [[1], [1], [178]], 'output' : ['가능']}
-]
-
-#이등변 삼각형 가능/불가능
-question_5302 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
-<p>숫자와 글자를 순서대로 입력받습니다.</p>
-<p>입력받은 <span style = "background-color:	#E0E0E0;">십만 자리 숫자</span>를 입력받은 <span style = "background-color:	#E0E0E0;">글자</span>에 맞게 올림 또는 내림하여 만 자리까지 나타내는 프로그램을 만들어봅시다.</p>
-<HR>
-<h2> 입력
-</h2>
-<p>첫째 줄에 십만 자리 숫자가 입력되고, 둘째 줄에 올림 또는 내림이 입력됩니다.</p>
-<h2> 출력
-</h2>
-<p>올림 또는 내림하여 만의 자리 까지 나타낸 수를 출력합니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2> 입력 예시 </h2>
-<p>123421</p>
-<p>올림</p>
-</div>
-<div style = "float:right;width:50%">
-<h2> 출력 예시 </h2>
-<p>130000</p>
-</div>
-'''
-img_5302 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5302 = [
-    {'input' : [[781233], ['내림']], 'output' : [781233//10000*10000]},
-    {'input' : [[312543], ['올림']], 'output' : [(312543//10000+1)*10000]},
-    {'input' : [[465563], ['내림']], 'output' : [465563//10000*10000]}
-]
-
-#단위 바꾸기
-question_5303 ='''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>숫자와 글자를 순서대로 입력받습니다.</p>
-<p>m(미터)단위인 입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>를 입력받은 <span style = "background-color:	#E0E0E0;">글자(단위)</span>에 맞게 바꾸는 프로그램을 만들어봅시다.</p>
-<p>글자는 cm 또는 mm를 입력받습니다.</p>
-<HR>
-<h2>입력</h2>
-<p>첫째 줄에 m 단위의 길이, 둘째 줄에 단위를 입력받습니다.</p>
-<h2>출력</h2>
-<p>입력 받은 숫자를 단위에 맞게 바꿔 출력합니다.</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2>입력 예시 </h2>
-<p>25</p>
-<p>cm</p>
-</div>
-<div style = "float:right;width:50%">
-<h2>출력 예시 </h2>
-<p>2500</p>
-</div>
-'''
-img_5303 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_5303 = [
-    {'input' : [[50], ['cm']], 'output' : [5000]},
-    {'input' : [[534], ['mm']], 'output' : [534000]},
-    {'input' : [[1244], ['mm']], 'output' : [1244000]}
-]
-
-
-question_6101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+question_5101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>를 자리 수로 분리해서 리스트로 만드는 프로그램을 만들어봅시다.</p>
 <p>일의 자리에 해당하는 숫자가 맨 마지막에 위치하도록 합니다.</p>
 <HR>
@@ -1501,15 +1218,15 @@ question_6101 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>[1,2,3,4]</p>
 </div>
 '''
-img_6101 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6101 = [
+img_5101 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_5101 = [
     {'input' : [125], 'output' : ['[1, 2, 5]']},
     {'input' : [65423], 'output' : ['[6, 5, 4, 2, 3]']},
     {'input' : [10001], 'output' : ['[1, 0, 0, 0, 1]']}
 ]
 
 #
-question_6102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+question_5102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>1부터 10까지 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2>입력</h2>
@@ -1535,13 +1252,13 @@ question_6102 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>10</p>
 </div>
 '''
-img_6102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6102 = [
+img_5102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_5102 = [
     {'input' : [], 'output' : [1,2,3,4,5,6,7,8,9,10]}
 ]
 
 #
-question_6103 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5103 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>1부터 21까지 2씩 띄어서 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2> 입력
@@ -1570,13 +1287,13 @@ question_6103 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>21</p>
 </div>
 '''
-img_6103 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6103 = [
+img_5103 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_5103 = [
     {'input' : [], 'output' : [1,3,5,7,9,11,13,15,17,19,21]}
 ]
 #
 
-question_6104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>의 구구단을 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2> 입력
@@ -1603,14 +1320,14 @@ question_6104 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>45</p>
 </div>
 '''
-img_6104 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6104 = [
+img_5104 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_5104 = [
     {'input' : [[9]], 'output' : [9, 18, 27, 36, 45, 54, 63, 72, 81]},
     {'input' : [[11]], 'output' : [11, 22, 33, 44, 55, 66, 77, 88, 99]}
 ]
 #
 
-question_6105 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5105 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>10씩 띄어세기 하는 <span style = "background-color:	#E0E0E0;">숫자 모음(리스트)</span>을 입력받아 숫자 모음에 저장된 숫자를 순서대로 출력하는 프로그램을 만들어봅시다.</p>
 <HR>
 <h2> 입력
@@ -1633,8 +1350,8 @@ question_6105 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>50</p>
 </div>
 '''
-img_6105 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
-answer_6105 = [
+img_5105 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_5105 = [
     {'input' : [[20, 30, 40, 50, 60]], 'output' : [20, 30, 40, 50, 60]},
     {'input' : [[12,22,32,42,52]], 'output' : [12,22,32,42,52]},
     {'input' : [[45, 55, 65, 75, 85]], 'output' : [45, 55, 65, 75, 85]}
@@ -1642,7 +1359,7 @@ answer_6105 = [
 
 
 
-question_6201 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5201 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 정사각형을 그려봅시다.</p>
 <svg width = "200" height = "100"><polygon points = "5,5 95,5 95,95 5 95", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
@@ -1660,12 +1377,12 @@ question_6201 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 100인 정사각형</p>
 </div>
 '''
-img_6201 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
-answer_6201 = [
+img_5201 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_5201 = [
     {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(4) : ', ' t.forward(100)', ' t.right(90)']}
 ]
 
-question_6202 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5202 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">150</span>인 정삼각형을 그려봅시다.</p>
 <svg width = "200" height = "200"><polygon points = "100,5 5,167 195,167", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
@@ -1683,12 +1400,12 @@ question_6202 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 150인 정삼각형</p>
 </div>
 '''
-img_6202 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
-answer_6202 = [
+img_5202 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_5202 = [
     {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(150)', ' t.right(60)']}
 ]
 
-question_6203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">75</span>인 정육각형을 그려봅시다.</p>
 <svg width = "210" height = "210"><polygon points = "55,5 155,5 205,90 155,175 55,175 5,90", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
@@ -1706,12 +1423,12 @@ question_6203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 75인 정육각형</p>
 </div>
 '''
-img_6203 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
-answer_6203 = [
+img_5203 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_5203 = [
     {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(6) : ', ' t.forward(75)', ' t.right(120)']}
 ]
 
-question_6204 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5204 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 별을 그려봅시다.</p>
 <svg width = "210" height = "210"><polygon points = "5,75 195,75 40,185 100,5 160,185 ", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
@@ -1729,12 +1446,12 @@ question_6204 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 100인 별</p>
 </div>
 '''
-img_6204 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
-answer_6204 = [
+img_5204 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_5204 = [
     {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(5) : ', ' t.forward(100)', ' t.right(36)']}
 ]
 
-question_6205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">120</span>이고 한 각이 <span style = "background-color:	#E0E0E0;">45</span>&#176인 마름모를 그려봅시다.</p>
 <svg width = "100" height = "200"><polygon points = "5,105 5,5 75,75 75,175", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
@@ -1752,12 +1469,12 @@ question_6205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 120이고 한 각이 45&#176인 마름모</p>
 </div>
 '''
-img_6205 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
-answer_6205 = [
+img_5205 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_5205 = [
     {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(2) : ', ' t.forward(120)', ' t.right(45)', ' t.forward(120)', ' t.right(135)' ]}
 ]
 
-question_6206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+question_5206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 다음과 같은 정삼각형을 좌우로 뒤집었을 때, 나오는 도형을 그려봅시다.  </p>
 <svg width = "100" height = "200"><polygon points = "5,5 72,50 5,95", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
@@ -1775,9 +1492,292 @@ question_6206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>제시된 삼각형과 좌우 뒤집어진 삼각형</p>
 </div>
 '''
-img_6206 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
-answer_6206 = [
+img_5206 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
+answer_5206 = [
     {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(100)', ' t.left(60)']}
+]
+
+
+#이등변 삼각형 가능/불가능
+question_6101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>가 홀수인지 짝수인지 알려주는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2> 입력
+</h2>
+<p>1000이하 숫자가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>홀수 또는 짝수가 출력됩니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>23</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>홀수</p>
+</div>
+'''
+img_6101 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6101 = [
+    {'input' : [[10]], 'output' : ['짝수']},
+    {'input' : [[54435]], 'output' : ['홀수']},
+    {'input' : [[6445]], 'output' : ['홀수']}
+]
+#크기비교
+question_6102 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">2개의 숫자</span> 중 크기가 큰 숫자를 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2> 입력
+</h2>
+<p>첫째 줄에 첫 번째 숫자가 입력되고, 둘째 줄에 두 번째 숫자가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>두 숫자 중 큰 숫자를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>12</p>
+<p>43</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>43</p>
+</div>
+'''
+img_6102 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6102 = [
+    {'input' : [[20], [10]], 'output' : [20]},
+    {'input' : [[423], [1233]], 'output' : [1233]},
+    {'input' : [[7213], [22321]], 'output' : [22321]},
+    {'input' : [[12344], [12344]], 'output' : [12344]}    
+]
+#크기비교
+question_6103 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>3개의 숫자를 입력받습니다. </p>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">3개의 숫자</span> 중 가장 큰 숫자를 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2>입력</h2>
+<p>첫째 줄, 둘째 줄, 셋째 줄에 자연수를 입력받습니다.</p>
+<h2>출력</h2>
+<p>가장 큰 숫자를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>3</p>
+<p>5</p>
+<p>2</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>5</p>
+</div>
+'''
+img_6103 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6103 = [
+    {'input' : [[12], [65], [34]], 'output' : [65]},
+    {'input' : [[2134], [1243], [32]], 'output' : [2134]},
+    {'input' : [[452], [34], [6565]], 'output' : [6565]}
+]
+#크기비교
+question_6104 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>3개의 숫자를 입력받습니다. </p>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">3개의 숫자</span> 중 가장 작은 숫자를 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2>입력</h2>
+<p>첫째 줄, 둘째 줄, 셋째 줄에 자연수를 입력받습니다.</p>
+<h2>출력</h2>
+<p>가장 작은 숫자를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>4</p>
+<p>6</p>
+<p>9</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>4</p>
+</div>
+'''
+img_6104 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6104 = [
+    {'input' : [[12], [65], [34]], 'output' : [12]},
+    {'input' : [[2134], [1243], [32]], 'output' : [32]},
+    {'input' : [[452], [34], [6565]], 'output' : [34]}
+]
+#예각,직각,둔각 알기
+question_6201 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>입력 받은 1개의 <span style = "background-color : #E0E0E0">숫자(각도)</span>가 예각인지, 직각인지, 둔각인지 출력하도록 프로그램을 만들어봅시다.</p>
+<HR>
+<h2> 입력
+</h2>
+<p>1 ~ 179 사이 숫자가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>예각, 직각, 둔각 중 하나를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>56</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>예각</p>
+</div>
+'''
+img_6201 = "https://github.com/GoHakNeung/python/blob/main/img_4201.jpg?raw=true"
+answer_6201 = [
+    {'input' : [[1]], 'output' : ['예각']},
+    {'input' : [[89]], 'output' : ['예각']},
+    {'input' : [[90]], 'output' : ['직각']},
+    {'input' : [[91]], 'output' : ['둔각']},
+    {'input' : [[179]], 'output' : ['둔각']}
+]
+
+#예각삼각형, 직각삼각형, 둔각삼각형
+question_6202 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>입력 받은 <span style = "background-color : #E0E0E0">3개의 숫자(각도)</span>는 삼각형에서 세 각의 크기입니다. </p>
+<p>삼각형은 예각삼각형인지 직각삼각형인지 둔각삼각형인지 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2>입력</h2>
+<p>삼각형 세 각의 크기가 줄바꿈하여 입력됩니다.</p>
+<p>(단위는 생략되고 입력됩니다.)</p>
+<h2>출력</h2>
+<p>예각삼각형, 직각삼각형, 둔각삼각형 중 하나를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>43</p>
+<p>17</p>
+<p>120</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>둔각삼각형</p>
+</div>'''
+img_6202 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6202 = [
+    {'input' : [[65], [19], [96]], 'output' : ['둔각삼각형']},
+    {'input' : [[90], [20], [70]], 'output' : ['직각삼각형']},
+    {'input' : [[60], [70], [50]], 'output' : ['예각삼각형']}
+]
+#이등변 삼각형 가능/불가능
+
+question_6203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>입력 받은 <span style = "background-color:	#E0E0E0;">2개의 숫자(각도)</span>는 삼각형에서 두 각의 크기입니다. </p>
+<p>이등변삼각형이 될 수 있으면 '가능'을 출력하고 이등변 삼각형이 될 수 없으면 '불가능'을 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2> 입력
+</h2>
+<p>삼각형에서 두 각이  입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>가능 또는 불가능</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>50</p>
+<p>80</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>가능</p>
+</div>
+'''
+
+img_6203 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6203 = [
+    {'input' : [[80], [20]], 'output' : ['가능']},
+    {'input' : [[90], [20]], 'output' : ['불가능']},
+    {'input' : [[60], [70]], 'output' : ['불가능']}
+]
+#이등변 삼각형 가능/불가능
+
+question_6301 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">3개의 숫자(각도)</span>로 삼각형을 만들 수 있으면 '가능'을 출력하고 만들 수 없으면 '불가능'을 출력하는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2> 입력
+</h2>
+<p>첫째 줄에는 첫 번째 숫자가 입력되고, 둘째 줄에는 두 번째 숫자가 입력되고 셋째 줄에는 세번째 숫자가 출력됩니다.</p>
+<p>1 ~ 179 사이 숫자가 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>가능 또는 불가능을 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>34</p>
+<p>67</p>
+<p>79</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>가능</p>
+</div>
+'''
+img_6301 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6301 = [
+    {'input' : [[60], [32], [88]], 'output' : ['가능']},
+    {'input' : [[35], [79], [153]], 'output' : ['불가능']},
+    {'input' : [[1], [1], [178]], 'output' : ['가능']}
+]
+
+#이등변 삼각형 가능/불가능
+question_6302 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
+<p>숫자와 글자를 순서대로 입력받습니다.</p>
+<p>입력받은 <span style = "background-color:	#E0E0E0;">십만 자리 숫자</span>를 입력받은 <span style = "background-color:	#E0E0E0;">글자</span>에 맞게 올림 또는 내림하여 만 자리까지 나타내는 프로그램을 만들어봅시다.</p>
+<HR>
+<h2> 입력
+</h2>
+<p>첫째 줄에 십만 자리 숫자가 입력되고, 둘째 줄에 올림 또는 내림이 입력됩니다.</p>
+<h2> 출력
+</h2>
+<p>올림 또는 내림하여 만의 자리 까지 나타낸 수를 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 입력 예시 </h2>
+<p>123421</p>
+<p>올림</p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 출력 예시 </h2>
+<p>130000</p>
+</div>
+'''
+img_6302 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6302 = [
+    {'input' : [[781233], ['내림']], 'output' : [781233//10000*10000]},
+    {'input' : [[312543], ['올림']], 'output' : [(312543//10000+1)*10000]},
+    {'input' : [[465563], ['내림']], 'output' : [465563//10000*10000]}
+]
+
+#단위 바꾸기
+question_6303 ='''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>숫자와 글자를 순서대로 입력받습니다.</p>
+<p>m(미터)단위인 입력받은 <span style = "background-color:	#E0E0E0;">숫자</span>를 입력받은 <span style = "background-color:	#E0E0E0;">글자(단위)</span>에 맞게 바꾸는 프로그램을 만들어봅시다.</p>
+<p>글자는 cm 또는 mm를 입력받습니다.</p>
+<HR>
+<h2>입력</h2>
+<p>첫째 줄에 m 단위의 길이, 둘째 줄에 단위를 입력받습니다.</p>
+<h2>출력</h2>
+<p>입력 받은 숫자를 단위에 맞게 바꿔 출력합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>25</p>
+<p>cm</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>2500</p>
+</div>
+'''
+img_6303 = "https://github.com/GoHakNeung/python/blob/main/img_4203.jpg?raw=true"
+answer_6303 = [
+    {'input' : [[50], ['cm']], 'output' : [5000]},
+    {'input' : [[534], ['mm']], 'output' : [534000]},
+    {'input' : [[1244], ['mm']], 'output' : [1244000]}
 ]
 
 #약수
@@ -2182,30 +2182,32 @@ test_set = [
     {'test_file' : '_4105.py', 'answer' : answer_4105, 'question' : question_4105, 'img' : img_4105},
     {'test_file' : '_4106.py', 'answer' : answer_4106, 'question' : question_4106, 'img' : img_4106},
     {'test_file' : '_4107.py', 'answer' : answer_4107, 'question' : question_4107, 'img' : img_4107},
-
+    
     {'test_file' : '_5101.py', 'answer' : answer_5101, 'question' : question_5101, 'img' : img_5101},
-    {'test_file' : '_5102.py', 'answer' : answer_5102, 'question' : question_5102, 'img' : img_5102},   
+    {'test_file' : '_5102.py', 'answer' : answer_5102, 'question' : question_5102, 'img' : img_5102},
     {'test_file' : '_5103.py', 'answer' : answer_5103, 'question' : question_5103, 'img' : img_5103},
     {'test_file' : '_5104.py', 'answer' : answer_5104, 'question' : question_5104, 'img' : img_5104},
-    {'test_file' : '_5201.py', 'answer' : answer_5201, 'question' : question_5201, 'img' : img_5201},
-    {'test_file' : '_5202.py', 'answer' : answer_5202, 'question' : question_5202, 'img' : img_5202},
-    {'test_file' : '_5203.py', 'answer' : answer_5203, 'question' : question_5203, 'img' : img_5203},   
-    {'test_file' : '_5301.py', 'answer' : answer_5301, 'question' : question_5301, 'img' : img_5301},
-    {'test_file' : '_5302.py', 'answer' : answer_5302, 'question' : question_5302, 'img' : img_5302},
-    {'test_file' : '_5303.py', 'answer' : answer_5303, 'question' : question_5303, 'img' : img_5303},
+    {'test_file' : '_5105.py', 'answer' : answer_5105, 'question' : question_5105, 'img' : img_5105},        
+    #colabturtle test
+    {'test_file' : '_5201.py', 'answer' : answer_5201, 'question' : question_5201, 'img' : img_5201},     
+    {'test_file' : '_5202.py', 'answer' : answer_5202, 'question' : question_5202, 'img' : img_5202},        
+    {'test_file' : '_5203.py', 'answer' : answer_5203, 'question' : question_5203, 'img' : img_5203},     
+    {'test_file' : '_5204.py', 'answer' : answer_5204, 'question' : question_5204, 'img' : img_5204},          
+    {'test_file' : '_5205.py', 'answer' : answer_5205, 'question' : question_5205, 'img' : img_5205},
+    {'test_file' : '_5206.py', 'answer' : answer_5206, 'question' : question_5206, 'img' : img_5206},       
 
     {'test_file' : '_6101.py', 'answer' : answer_6101, 'question' : question_6101, 'img' : img_6101},
-    {'test_file' : '_6102.py', 'answer' : answer_6102, 'question' : question_6102, 'img' : img_6102},
+    {'test_file' : '_6102.py', 'answer' : answer_6102, 'question' : question_6102, 'img' : img_6102},   
     {'test_file' : '_6103.py', 'answer' : answer_6103, 'question' : question_6103, 'img' : img_6103},
     {'test_file' : '_6104.py', 'answer' : answer_6104, 'question' : question_6104, 'img' : img_6104},
-    {'test_file' : '_6105.py', 'answer' : answer_6105, 'question' : question_6105, 'img' : img_6105},        
-    #colabturtle test
-    {'test_file' : '_6201.py', 'answer' : answer_6201, 'question' : question_6201, 'img' : img_6201},     
-    {'test_file' : '_6202.py', 'answer' : answer_6202, 'question' : question_6202, 'img' : img_6202},        
-    {'test_file' : '_6203.py', 'answer' : answer_6203, 'question' : question_6203, 'img' : img_6203},     
-    {'test_file' : '_6204.py', 'answer' : answer_6204, 'question' : question_6204, 'img' : img_6204},          
-    {'test_file' : '_6205.py', 'answer' : answer_6205, 'question' : question_6205, 'img' : img_6205},
-    {'test_file' : '_6206.py', 'answer' : answer_6206, 'question' : question_6206, 'img' : img_6206},    
+    {'test_file' : '_6201.py', 'answer' : answer_6201, 'question' : question_6201, 'img' : img_6201},
+    {'test_file' : '_6202.py', 'answer' : answer_6202, 'question' : question_6202, 'img' : img_6202},
+    {'test_file' : '_6203.py', 'answer' : answer_6203, 'question' : question_6203, 'img' : img_6203},   
+    {'test_file' : '_6301.py', 'answer' : answer_6301, 'question' : question_6301, 'img' : img_6301},
+    {'test_file' : '_6302.py', 'answer' : answer_6302, 'question' : question_6302, 'img' : img_6302},
+    {'test_file' : '_6303.py', 'answer' : answer_6303, 'question' : question_6303, 'img' : img_6303},
+
+ 
     
     {'test_file' : '_7101.py', 'answer' : answer_7101, 'question' : question_7101, 'img' : img_7101},
     {'test_file' : '_7102.py', 'answer' : answer_7102, 'question' : question_7102, 'img' : img_7102},
