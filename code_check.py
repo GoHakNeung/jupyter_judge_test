@@ -511,5 +511,6 @@ def turtle_check(py) :
     print('평가 코드를 생성하세요.')
     return
   turtle_convert('turtle_output.py')
+  error_check('turtle_output.py')
   Question('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
   exec(open('turtle_output.py').read())
