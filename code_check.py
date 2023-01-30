@@ -194,84 +194,60 @@ def error_line() :
 #------------------------------------------------------------------------------#
 #에러에 따른 정보를 알려주는 함수
 def name_error(test_py) : 
-  global original
-  sys.stdout = original   
   print(error_line(), '번째 줄에 변수 또는 명령어 이름을 확인하거나, 문자열에 따옴표가 붙어 있는지 확인하세요.')
   print("="*40)
   code_print(test_py)
 
 def type_error(test_py) : 
-  global original
-  sys.stdout = original   
   print(error_line(), '번째 줄에 숫자나 문자를 바르게 입력했나요?')
   print('또는 ()안에 알맞은 숫자를 입력했나요?')
   print("="*40)
   code_print(test_py)
 
 def attribute_error(test_py) : 
-  global original
-  sys.stdout = original   
   print(error_line(), '번째 줄에 라이브러리의 속성 또는 메서드를 바르게 입력했나요?')
   print("="*40)
   code_print(test_py)
 
 def value_error(test_py) : 
-  global original
-  sys.stdout = original   
   print(error_line(), '번째 줄에 숫자나 문자, 입력을 바르게 입력했나요?')
   print("="*40)
   code_print(test_py)
 
 def index_error(test_py) : 
-  global original
-  sys.stdout = original   
   print(error_line(), '번째 줄에 리스트나 튜플의 길이를 확인해주세요.')
   print("="*40)
   code_print(test_py)
 
-def indentation_error(test_py) : 
-  global original
-  sys.stdout = original   
+def indentation_error(test_py) :   
   print(error_line(), '번째 줄에 띄어쓰기를 확인해주세요.')     
   print("="*40)
   code_print(test_py)  
 
-def zerodivision_error(test_py) : 
-  global original
-  sys.stdout = original   
+def zerodivision_error(test_py) :   
   print(error_line(), '번째 줄에 숫자를 0으로 나누면 안되요.')           
   print("="*40)
   code_print(test_py)
 
-def overflow_error(test_py) : 
-  global original
-  sys.stdout = original   
+def overflow_error(test_py) :  
   print(error_line(), '번째 줄에 너무 큰 수는 표현할 수 없어요')
   print("="*40)
   code_print(test_py)
 
 def keyboard_interrupt(test_py) : 
-  global original
-  sys.stdout = original   
   print('사용자가 작동 정지함.')
 
 def syntax_error(test_py) : 
-  global original
-  sys.stdout = original  
   print('문법오류입니다. ":", "()"를 확인하세요')
   print("="*40)
   code_print_syntax(test_py)
 
-def modulenotfound_error(test_py) : 
-  global original
-  sys.stdout = original       
+def modulenotfound_error(test_py) :  
   print(error_line(), '번째 줄에 라이브러리를 확인해주세요.')
   print("="*40)
   code_print(test_py)
 
-def else_error(test_py) : 
-  global original
-  sys.stdout = original   
+def else_error(test_py) :  
   print('코드 오류입니다.') 
   print("="*40)
   code_print(test_py)
