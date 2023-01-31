@@ -1458,7 +1458,7 @@ question_5205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>forward(), left()를 이용해서 마름모를 그립니다..</p>
+<p>forward(), left(), right() 등을 이용해서 마름모를 그립니다.</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
@@ -1481,7 +1481,7 @@ question_5206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>forward(), left()를 이용해서 도형을 그립니다..</p>
+<p>forward(), left(), right() 등을 이용해서 도형을 그립니다.</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
