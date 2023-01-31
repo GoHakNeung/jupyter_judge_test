@@ -242,7 +242,7 @@ def keyboard_interrupt(test_py) :
   print('사용자가 작동 정지함.')
 
 def syntax_error(test_py) : 
-  print('문법오류입니다. ":", "()"를 확인하세요')
+  print('문법오류입니다. "명령어", ":", "()"를 확인하세요')
   print("="*40)
   code_print_syntax(test_py)
 
