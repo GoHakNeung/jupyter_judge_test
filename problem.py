@@ -1453,7 +1453,7 @@ answer_5204 = [
 
 question_5205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">120</span>이고 한 각이 <span style = "background-color:	#E0E0E0;">45</span>&#176인 마름모를 그려봅시다.</p>
-<svg width = "100" height = "200"><polygon points = "5,75 105,75 175,5 75,5", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<svg width = "200" height = "100"><polygon points = "5,75 105,75 175,5 75,5", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
 <h2> 입력 </h2>
 <p>없음</p>
@@ -1476,7 +1476,7 @@ answer_5205 = [
 
 question_5206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 다음과 같은 정삼각형을 상하로 뒤집었을 때, 나오는 도형을 그려봅시다.  </p>
-<svg width = "100" height = "200"><polygon points = "5,50 55,135 105,50", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<svg width = "150" height = "200"><polygon points = "5,50 55,135 105,50", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
 <h2> 입력 </h2>
 <p>없음</p>
