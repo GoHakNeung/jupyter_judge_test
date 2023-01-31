@@ -1366,7 +1366,7 @@ question_5201 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>s.forward(), s.right()를 이용해서 정사각형을 그립니다..</p>
+<p>forward(), left()를 이용해서 정사각형을 그립니다..</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
@@ -1379,7 +1379,7 @@ question_5201 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5201 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5201 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(4) : ', ' t.forward(100)', ' t.right(90)']}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(4) : ', ' t.forward(100)', ' t.left(90)']}
 ]
 
 question_5202 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
@@ -1389,7 +1389,7 @@ question_5202 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>s.forward(), s.right()를 이용해서 정삼각형을 그립니다..</p>
+<p>forward(), left()를 이용해서 정삼각형을 그립니다..</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
@@ -1402,7 +1402,7 @@ question_5202 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5202 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5202 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(150)', ' t.right(60)']}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(150)', ' t.left(60)']}
 ]
 
 question_5203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
@@ -1412,7 +1412,7 @@ question_5203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>s.forward(), s.right()를 이용해서 정육각형을 그립니다..</p>
+<p>forward(), left()를 이용해서 정육각형을 그립니다..</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
@@ -1425,7 +1425,7 @@ question_5203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5203 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5203 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(6) : ', ' t.forward(75)', ' t.right(120)']}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(6) : ', ' t.forward(75)', ' t.left(120)']}
 ]
 
 question_5204 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
@@ -1435,7 +1435,7 @@ question_5204 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>s.forward(), s.right()를 이용해서 별을 그립니다..</p>
+<p>forward(), right()를 이용해서 별을 그립니다..</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
@@ -1453,7 +1453,7 @@ answer_5204 = [
 
 question_5205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>길이가 <span style = "background-color:	#E0E0E0;">120</span>이고 한 각이 <span style = "background-color:	#E0E0E0;">45</span>&#176인 마름모를 그려봅시다.</p>
-<svg width = "100" height = "200"><polygon points = "5,105 5,5 75,75 75,175", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<svg width = "100" height = "200"><polygon points = "5,75 105,75 175,5 75,5", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
 <h2> 입력 </h2>
 <p>없음</p>
@@ -1471,17 +1471,17 @@ question_5205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5205 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5205 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(2) : ', ' t.forward(120)', ' t.right(45)', ' t.forward(120)', ' t.right(135)' ]}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(2) : ', ' t.forward(120)', ' t.left(135)', ' t.forward(120)', ' t.left(45)' ]}
 ]
 
 question_5206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
-<p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 다음과 같은 정삼각형을 좌우로 뒤집었을 때, 나오는 도형을 그려봅시다.  </p>
-<svg width = "100" height = "200"><polygon points = "5,5 72,50 5,95", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
+<p>길이가 <span style = "background-color:	#E0E0E0;">100</span>인 다음과 같은 정삼각형을 상하로 뒤집었을 때, 나오는 도형을 그려봅시다.  </p>
+<svg width = "100" height = "200"><polygon points = "5,50 30,93 55,50", fill = "#FFFFFF", stroke = "#000000", stroke-width = "4"></svg>
 <HR>
 <h2> 입력 </h2>
 <p>없음</p>
 <h2> 출력 </h2>
-<p>s.forward(), s.left()를 이용해서 도형을 그립니다..</p>
+<p>forward(), left()를 이용해서 도형을 그립니다..</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 입력 예시 </h2>
