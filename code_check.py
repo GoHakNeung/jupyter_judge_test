@@ -257,7 +257,7 @@ def else_error(test_py) :
   code_print(test_py)
 
 def error_check(test_py) : 
-  global compile_error
+  global compile_error, original
   compile_error = False
   try : 
     exec(open(test_py).read())
