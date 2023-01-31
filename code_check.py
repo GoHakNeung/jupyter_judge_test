@@ -257,56 +257,67 @@ def else_error(test_py) :
   code_print(test_py)
 
 def error_check(test_py) : 
-  global compile_error, original
-  sys.stdout = original 
+  global compile_error
   compile_error = False
   try : 
     exec(open(test_py).read())
   except NameError : 
+    sys.stdout = original 
     name_error(test_py)
     compile_error = True
     return
   except TypeError : 
+    sys.stdout = original 
     type_error(test_py)
     compile_error = True
     return
   except AttributeError : 
+    sys.stdout = original 
     attribute_error(test_py)
     compile_error = True
     return
   except ValueError : 
+    sys.stdout = original 
     value_error(test_py)
     compile_error = True
     return
   except IndexError : 
+    sys.stdout = original 
     index_error(test_py)
     compile_error = True
     return
   except IndentationError : 
+    sys.stdout = original 
     indentation_error(test_py)
     compile_error = True
     return
   except ZeroDivisionError : 
+    sys.stdout = original 
     zerodivision_error(test_py)
     compile_error = True
     return
   except OverflowError : 
+    sys.stdout = original 
     overflow_error(test_py)
     compile_error = True
     return
   except KeyboardInterrupt : 
+    sys.stdout = original 
     keyboard_interrupt(test_py)
     compile_error = True
     return
   except SyntaxError : 
+    sys.stdout = original 
     syntax_error(test_py)
     compile_error = True
     return
   except ModuleNotFoundError : 
+    sys.stdout = original 
     modulenotfound_error(test_py)
     compile_error = True
     return
   except : 
+    sys.stdout = original 
     else_error(test_py)
     compile_error = True
     return
