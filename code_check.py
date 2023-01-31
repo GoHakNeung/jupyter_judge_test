@@ -152,13 +152,15 @@ def code_test(answer_input) :
 # syntax 오류 외 코드 출력창에 코드 불러오는 것
 # 틀린 코드에 빨간색 표시
 def code_print(py_name) :  
+  global code  
   file_name = '/content/'+py_name
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
   lines = f.readlines()
   error_count = error_line()
   code_count = 1
 
-  for line in lines[4:-2] : 
+#   for line in lines[4:-2] : 
+  for line in lines[4:4+len(code)]
     if error_count == code_count : 
       print(tc_red+line[:-1]+reset)
       code_count += 1
@@ -170,11 +172,13 @@ def code_print(py_name) :
 # syntax 오류 코드 출력창에 코드 불러오는 것
 # 틀린 코드에 빨간색 표시 없음
 def code_print_syntax(py_name) :  
+  global code
   file_name = '/content/'+py_name
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
   lines = f.readlines()
 
-  for line in lines[4:-2] : 
+  for line in lines[4:4+len(code)]
+  #for line in lines[4:-2] : 
     print(line[:-1])
   f.close()
 #------------------------------------------------------------------------------#
@@ -473,9 +477,10 @@ def turtle_convert(output_turtle) :
   f = open(output_turtle, 'w')  
   original = sys.stdout
   sys.stdout = f
-
+  print('#---코드 변환---')
   print('from jupyter_judge.ColabTurtleClass import Turtle, Window')
   print('window = Window()')
+  print('#---코드 변환---')
   for i in range(len(turtle_code)) : 
     print(turtle_code[i])
 
