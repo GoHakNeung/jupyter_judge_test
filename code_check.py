@@ -160,7 +160,7 @@ def code_print(py_name) :
   code_count = 1
 
 #   for line in lines[4:-2] : 
-  for line in lines[4:4+len(code)] :
+  for line in lines[4:4+len(code)+1] :
     if error_count == code_count : 
       print(tc_red+line[:-1]+reset)
       code_count += 1
@@ -177,7 +177,7 @@ def code_print_syntax(py_name) :
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
   lines = f.readlines()
 
-  for line in lines[4:4+len(code)] :
+  for line in lines[4:4+len(code)+1] :
   #for line in lines[4:-2] : 
     print(line[:-1])
   f.close()
