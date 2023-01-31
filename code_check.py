@@ -1,5 +1,4 @@
 #@title
-# %%writefile automatic_assessment_program.py
 import sys, random, math, os, traceback, gspread
 from requests import get
 from oauth2client.service_account import ServiceAccountCredentials
@@ -29,7 +28,7 @@ worksheet = doc.worksheet('시트1')
 #------------------------------------------------------------------------------#
 
 #문제 입력
-#input이 없으면 입력 비워놓기
+#problem.py에 입력
 
 #------------------------------------------------------------------------------#
 
@@ -51,25 +50,19 @@ bc_red = '\033[48;2;255;0;m'
 #------------------------------------------------------------------------------#
 # 코드를 input/output 리스트에 넣기
 def code_arrange(py_name) : 
-  global result, code, code_input, code_input_count #, code_input_split
+  global result, code, code_input, code_input_count 
   result= []
   code = []
   code_input_count = 0
   code_input = []
-  # code_input_split = []
 
   file_name = '/content/'+py_name
 
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
   lines = f.readlines()
   for line in lines : 
-  #  line = line.strip()
     if line != '' : 
       code.append(line)    
-      # if line.find('input().split()') >= 0 : 
-      #   code_input_count += 1
-      #   code_input_split.append(code.index(line))
-      #   continue
       if line.find('input') >= 0 : 
         code_input_count += 1
         code_input.append(code.index(line))
@@ -160,7 +153,7 @@ def code_print(py_name) :
   code_count = 1
 
 #   for line in lines[4:-2] : 
-  for line in lines[4:4+len(code)+1] :
+  for line in lines[4:4+len(code)] :
     if error_count == code_count : 
       print(tc_red+line[:-1]+reset)
       code_count += 1
@@ -177,7 +170,7 @@ def code_print_syntax(py_name) :
   f = open(file_name, 'r')  # '/content/____.py  << 이 부분은 함수 매개변수로 불러와야 함.
   lines = f.readlines()
 
-  for line in lines[4:4+len(code)+1] :
+  for line in lines[4:4+len(code)] :
   #for line in lines[4:-2] : 
     print(line[:-1])
   f.close()
@@ -369,15 +362,9 @@ def code_check(py) :
       update_excel('입력 오류', py)     
       print('입력을 확인해주세요.')
       return
-  # if code_input_split : 
-  #   if len(code_input_split) != 1 : 
-  #     update_excel('입력 오류', py)     
-  #     print('입력을 확인해주세요.')    
-  #     return
-   
-  # print(question, '\n')   
+
   Question('<h2 style = "background-color:yellow">결과 확인</h2>')  
-  # Question(question)
+
   global test_count
   for test_count in range(len(answer)) : 
     global test_py, answer_txt
@@ -466,8 +453,8 @@ def code_check(py) :
 #------------------------------------------------------------------------------#
 #터틀 평가 함수
 def turtle_arrange(py) : 
-  global turtle_code
-  turtle_code = []
+  global code
+  code = []
 
   file_name = '/content/'+py
 
@@ -475,16 +462,16 @@ def turtle_arrange(py) :
   lines = f.readlines()
   for line in lines : 
     if line != '' : 
-      turtle_code.append(line)    
+      code.append(line)    
   f.close()
 
-  for i in range(len(turtle_code)) : 
-    if turtle_code[i].find('\n') >= 0 : 
-      turtle_code[i] = turtle_code[i][:-1]
-    turtle_code[i] = turtle_code[i].rstrip()
+  for i in range(len(code)) : 
+    if code[i].find('\n') >= 0 : 
+      code[i] = code[i][:-1]
+    code[i] = code[i].rstrip()
 
 def turtle_convert(output_turtle) : 
-  global turtle_code
+  global code
   global answer_turtle
   global original
   f = open(output_turtle, 'w')  
@@ -494,8 +481,8 @@ def turtle_convert(output_turtle) :
   print('from jupyter_judge.ColabTurtleClass import Turtle, Window')
   print('window = Window()')
   print('#---코드 변환---')
-  for i in range(len(turtle_code)) : 
-    print(turtle_code[i])
+  for i in range(len(code)) : 
+    print(code[i])
 
   for i in answer_turtle : 
     print(i)
@@ -519,5 +506,5 @@ def turtle_check(py) :
     return
   turtle_convert('turtle_output.py')
   Question('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
-  error_check('turtle_output.py')
-  #exec(open('turtle_output.py').read())
+  #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)
+  error_check('turtle_output.py') 
