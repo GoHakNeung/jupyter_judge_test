@@ -1489,7 +1489,7 @@ question_5206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 </div>
 <div style = "float:right;width:50%">
 <h2> 출력 예시 </h2>
-<p>제시된 삼각형과 좌우 뒤집어진 삼각형</p>
+<p>제시된 삼각형과 상하 뒤집어진 삼각형</p>
 </div>
 '''
 img_5206 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
