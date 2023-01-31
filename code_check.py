@@ -486,6 +486,7 @@ def turtle_arrange(py) :
 def turtle_convert(output_turtle) : 
   global turtle_code
   global answer_turtle
+  global original
   f = open(output_turtle, 'w')  
   original = sys.stdout
   sys.stdout = f
