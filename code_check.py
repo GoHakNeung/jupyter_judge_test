@@ -16,6 +16,26 @@ gc = gspread.authorize(credentials)
 # 개인적으로 사용할 스프레드시트 url
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-NdFk0Fdw7Ut6m3LzHEZxKrMg/edit#gid=0'
 #------------------------------------------------------------------------------#
+# matplotlib에서 한글을 사용하기 위한 코드
+# 나눔바른고딕을 git에 저장시켜서 다운로드하기. 그래야 나눔 폰트 다운로드에 시간 안씀.
+# 폰트 크기 수정하기
+import matplotlib as mpl 
+import matplotlib.pyplot as plt 
+import seaborn as sns
+
+!mkdir /usr/share/fonts/truetype/nanum
+!cp /content/jupyter_judge/NanumBarunGothic.ttf /usr/share/fonts/truetype/nanum/
+os.system('fc-cache -fv')
+mpl.font_manager._rebuild()
+findfont = mpl.font_manager.fontManager.findfont
+mpl.font_manager.findfont = findfont
+mpl.backends.backend_agg.findfont = findfont
+plt.rcParams['font.family'] = 'NanumBarunGothic'
+mpl.rcParams['axes.unicode_minus'] = False
+
+plt.rc('font', size = 14)
+# took-took 블로그, https://didalsgur.tistory.com/entry/Python-Colab-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%ED%95%9C%EA%B8%80-%EA%B9%A8%EC%A7%90-%ED%98%84%EC%83%81-%ED%95%B4%EA%B2%B0-feat-matplotlib
+#------------------------------------------------------------------------------#
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
 my_id = input('이름을 입력해주세요.')
@@ -25,20 +45,14 @@ print('지금부터 공부를 시작합니다.')
 doc = gc.open_by_url(spreadsheet_url)
 worksheet = doc.worksheet('시트1') 
 
-#------------------------------------------------------------------------------#
-
-#문제 입력
-#problem.py에 입력
-
-#------------------------------------------------------------------------------#
-
 #문제에 따른 시도한 횟수를 dictionary로 만듬
 trial_error_count = {}
 for i in range(len(test_set)) : 
   trial_error_count[test_set[i]['test_file']] = 0
-
 #------------------------------------------------------------------------------#
-
+#문제 입력
+#problem.py에 입력
+#------------------------------------------------------------------------------#
 #출력할 때 글씨 색
 reset = '\033[0m'
 tc_red = '\033[38;2;255;0;0m'
@@ -46,7 +60,6 @@ tc_green = '\033[38;2;0;255;0m'
 bc_yellow = '\033[48;2;255;255;0m'
 bc_green = '\033[48;2;0;255;0m'
 bc_red = '\033[48;2;255;0;m'
-
 #------------------------------------------------------------------------------#
 # 코드를 input/output 리스트에 넣기
 def code_arrange(py_name) : 
@@ -492,6 +505,7 @@ def turtle_convert(output_turtle) :
 
 def turtle_check(py) : 
   global original
+  trial_error_count[py] += 1      
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer, answer_turtle
@@ -508,3 +522,79 @@ def turtle_check(py) :
   Question('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
   #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)
   error_check('turtle_output.py') 
+  if compile_error == True : 
+    update_excel('오류입니다.',py)
+  else : 
+    update_excel('turtle_실행', py)
+#------------------------------------------------------------------------------#
+import matplotlib.pyplot as plt
+import sys
+
+def plot_arrange(py) : 
+  global code
+  code = []
+
+  file_name = '/content/'+py
+
+  f = open(file_name, 'r') 
+  lines = f.readlines()
+  for line in lines : 
+    if line != '' : 
+      code.append(line)    
+  f.close()
+
+  for i in range(len(code)) : 
+    if code[i].find('\n') >= 0 : 
+      code[i] = code[i][:-1]
+    code[i] = code[i].rstrip()      
+
+  for i in code : 
+    if i.find('show()') >= 0 :
+      code.remove(i)
+
+def plot_convert(output_plot) : 
+  global code
+  global answer_plot
+  global original
+  global compile_error
+  f = open(output_plot, 'w')  
+  original = sys.stdout
+  sys.stdout = f
+  print('#---코드 변환---')
+  print('import matplotlib.pyplot as plt')
+  print('plt.figure(figsize = (16,8))')    
+  print('plt.subplot(1,2,1)')
+
+  for i in range(len(code)) : 
+    print(code[i])
+
+  for i in answer_plot : 
+    print(i)
+  sys.stdout = original   
+  f.close()
+
+def plot_check(py) : 
+  global original
+  trial_error_count[py] += 1      
+  for i in range(len(test_set)) :
+    if test_set[i]['test_file'] == py :
+      global answer, answer_plot
+      answer = test_set[i]['answer']
+      answer_plot = answer[0]['output']
+      global question
+      question = test_set[i]['question']   
+  try : 
+    plot_arrange(py)
+  except : 
+    print('평가 코드를 생성하세요.')
+    return
+  plot_convert('plot_output.py')
+  Question('''<h3>왼쪽 그래프는 여러분이 작성한 그래프이고 오른쪽 그래프는 선생님이 작성한 코드르 그린 그래프입니다.</h3>''')
+  #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)  
+  # exec(open('plot_output.py').read())
+  
+  error_check('plot_output.py') 
+  if compile_error == True : 
+    update_excel('오류입니다.',py)
+  else : 
+    update_excel('plot_실행', py)
