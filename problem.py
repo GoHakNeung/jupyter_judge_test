@@ -2131,6 +2131,46 @@ answer_6107 = [
     {'input' : [[13,21], [13]], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(6) : ', ' t.forward(60)', ' t.right(120)']}
 ]
 
+question_8000 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>아래 표는 대전, 세종, 충남, 충북의 인구를 나타는 표입니다.</p>
+<table border="1"
+       cellspacing="0"
+       width = 15%
+       height = 10>
+    <tr>
+    	<td>대전</td>
+      <td>세종</td>
+      <td>충남</td>
+      <td>충북</td>
+    </tr>
+    <tr>
+    	<td>150만명</td>
+      <td>37만명</td>
+      <td>220만명</td>
+      <td>160만명</td>      
+</table>
+<p>대전, 세종, 충남, 충북의 인구수를 원그래프로 나타내봅시다.</p>
+<HR>
+<h2>입력</h2>
+<p>없음</p>
+<h2>출력</h2>
+<p>label, 백분율을 표시합니다.</p>
+<p>세종시의 인구를 강조하기 위해 원 그래프에서 떨어져서 표시해봅시다.(0.3)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>없음</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>label, 백분율이 표시되고 세종시가 강조된 원 그래프</p>
+</div>
+'''
+img_8000 = ''
+answer_8000 = [
+    {'input' : [[10]], 'output' : ['labels = ["대전", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.figure(figsize = (8,8))', 'plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'plt.title("충청도 인구")', 'plt.show()']}
+]
+
 test_set = [
 #입력,변수,출력_수와 연산산
     {'test_file' : '_1101.py', 'answer' : answer_1101, 'question' : question_1101, 'img' : img_1101},
@@ -2221,4 +2261,5 @@ test_set = [
     {'test_file' : '_3100.py', 'answer' : answer_3100, 'question' : question_3100, 'img' : img_3100},    
     {'test_file' : '_3200.py', 'answer' : answer_3200, 'question' : question_3200, 'img' : img_3200},    
     {'test_file' : '_3300.py', 'answer' : answer_3300, 'question' : question_3300, 'img' : img_3300},        
+    {'test_file' : '_8000.py', 'answer' : answer_8000, 'question' : question_8000, 'img' : img_8000},   
 ]
