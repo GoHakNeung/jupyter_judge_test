@@ -597,8 +597,8 @@ def plot_check(py) :
     return
   plot_convert('plot_output.py')
   Question('''
-  <div style = "float:left;width:50%" > <h3> 왼쪽 그래프는 여러분이 작성한 그래프입니다. </h3></div>
-  <div style = "float:right;width:50%" > <h3> 오른쪽 그래프는 예시 답안입니다. </h3></div>
+  <h3 style = "float:left;width:50%" >왼쪽 그래프는 여러분이 작성한 그래프입니다. </h3>
+  <h3 style = "float:right;width:50%" >오른쪽 그래프는 예시 답안입니다. </h3>
   ''')
   #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)  
   # exec(open('plot_output.py').read())
