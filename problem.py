@@ -2478,7 +2478,7 @@ question_review_8219 = '''
 <input type='checkbox'/>상관관계가 있는 그래프일까요?
 '''
 answer_8219 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도 및 추세선')", "plt.show()", "Question(question_review_8219)")]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도 및 추세선')", "plt.show()", "Question(question_review_8219)"]}
 ]
 
 question_8220 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
