@@ -2178,6 +2178,363 @@ answer_8000 = [
     {'input' : [[10]], 'output' : ['labels = ["광주", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.subplot(1,2,2)', 'plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'plt.title("충청도 인구")', 'plt.show()', 'Question(question_review_8000)']}
 ]
 
+question_8201 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>아래 표는 집에서 학교까지 가는 방법별 걸리는 시간은 다음과 같습니다.</p>
+<table border="1"
+       cellspacing="0"
+       width = 30%
+       height = 10>
+    <tr>
+    	<td>이동 수단</td>
+      <td>자동차</td>
+      <td>버스</td>
+      <td>지하철</td>
+      <td>버스와 지하철</td>
+    </tr>
+    <tr>
+    	<td>소요 시간</td>
+      <td>35분</td>
+      <td>55분</td>
+      <td>20분</td>      
+      <td>30분</td>      
+</table>
+<p>집에서 학교까지 가는 이동 수단별 소요 시간을 막대그래프로 표현해봅시다.</p>
+<HR>
+<h2>데이터</h2>
+<p>이동수단 별 걸리는 시간</p>
+<h2>그래프</h2>
+<p>막대그래프</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>way = [ ]</p>
+<p>way_time = [ ]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프프 예시 </h2>
+<p>가로축 이름 : 이동수단</p>
+<p>세로축 이름 : 소요시간</p>
+<p>그래프 제목 : 이동 수단 별 소요 시간</p>
+</div>
+'''
+img_8201 = ''
+question_review_8201 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>x축에 표시된 값
+<input type='checkbox'/>y축 값
+<input type='checkbox'/>막대그래프
+<input type='checkbox'/>x축, y축 label
+<input type='checkbox'/>그래프 제목
+'''
+answer_8201 = [
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "plt.bar(way, way_time)", "plt.xlabel('이동수단')", "plt.ylabel('소요시간')", "plt.title('이동수단별 소요시간')", "plt.show()",'Question(question_review_8201)']}
+]
+
+question_8203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>A도시의 8월 8일부터 14일의 최고온도를 나타낸 자료입니다.</p>
+<table border="1"
+       cellspacing="0"
+       width = 30%
+       height = 10>
+    <tr>
+    	<td>일</td>
+      <td>8일</td>
+      <td>9일</td>
+      <td>10일</td>
+      <td>11일</td>
+      <td>12일</td>
+      <td>13일</td>
+      <td>14일</td>
+    </tr>
+    <tr>
+    	<td>기온</td>
+      <td>30도</td>
+      <td>29도</td>
+      <td>33도</td>      
+      <td>32도</td>      
+      <td>29도</td>
+      <td>34도</td>
+      <td>31도</td>
+</table>
+<p>A도시의 8일부터 14일가지 최고기온을 꺽은선 그래프로 나타내봅시다.</p>
+<HR>
+<h2>데이터</h2>
+<p>8일부터 14일까지 최고기온</p>
+<h2>그래프</h2>
+<p>y축 범위가 0 ~ 35사이인 꺾은선 그래프</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>t_day = [ ]</p>
+<p>max_temp = [ ]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프프 예시 </h2>
+<p>가로축 이름 : 일</p>
+<p>세로축 이름 : 최고기온</p>
+<p>그래프 제목 : 일별 최고기온</p>
+</div>
+'''
+img_8203 = ''
+question_review_8203 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>x축, y축 label
+<input type='checkbox'/>y축 범위
+<input type='checkbox'/>그래프 제목
+'''
+answer_8203 = [
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "t_day = [8,9,10,11,12,13,14]", "max_temp = [30, 29, 33, 32, 29, 34, 31]", "plt.plot(t_day, max_temp)", "plt.xlabel('일')", "plt.ylabel('최고기온')", "plt.title('일별 최고기온')", "plt.ylim(0,35)", "plt.show()", "Question(question_review_8203)"]}
+]
+
+question_8206 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>아래 표는 대전, 세종, 충남, 충북의 인구를 나타는 표입니다.</p>
+<table border="1"
+       cellspacing="0"
+       width = 30%
+       height = 10>
+    <tr>
+    	<td>지역</td>
+      <td>대전</td>
+      <td>세종</td>
+      <td>충남</td>
+      <td>충북</td>
+    </tr>
+    <tr>
+    	<td>인구</td>
+      <td>1,500,000</td>
+      <td>370,000</td>
+      <td>2,220,000</td>      
+      <td>1,600,000</td>      
+</table>
+<p>세종시의 인구를 강조해서 원 그래프로 나타내봅시다.</p>
+<HR>
+<h2>데이터</h2>
+<p>충청도 지역별 인구</p>
+<h2>그래프</h2>
+<p>y세종시 인구가 강조(분리된)된 원 그래프</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>labels = [ ]</p>
+<p>population = [ ]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<p>분리된 정도 : 0.3</p>
+<p>그래프 제목 : 일별 최고기온</p>
+<p>백분율 : 소수점 첫째 자리까지 표시</p>
+</div>
+'''
+img_8206 = ''
+question_review_8206 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>원 그래프
+<input type='checkbox'/>label
+<input type='checkbox'/>백분율
+<input type='checkbox'/>explode
+<input type='checkbox'/>그래프 제목
+'''
+answer_8206 = [
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "labels = ['대전', '세종', '충남', '충북']", "population = [150, 37, 220, 160]", "explode = [0,0.3,0,0]", "plt.pie(labels = labels, x=population, explode = explode, autopct = '%.1f%%')", "plt.title('충청도 지역별 인구')", "plt.show()", "Question(question_review_8206)"]}
+]
+
+question_8208 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>push_up.csv 파일(파일경로:'/content/jupyter_judge/csv_file/push_up.csv')은 40명 학생의 팔굽혀펴기 기록이 있습니다. </p> 
+<p>40명 학생의 팔굽혀펴기 결과를 히스토그램으로 나타내시오.</p>
+<HR>
+<h2>데이터</h2>
+<p>40명 학생의 팔굽혀펴기 기록</p>
+<h2>그래프</h2>
+<p>히스토그램</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>csv 파일 속 데이터를 판다스를 이용해서 불러옵니다.</p>
+<p>df = pd.read_csv('파일경로')</p>
+<p>df.head(n=2)</p>
+<table border="1"
+       cellspacing="0"
+       width = 30%
+       height = 10>
+    <tr>
+    	<td>number</td>
+      <td>push_up</td>
+    </tr>
+    <tr>
+    	<td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+    	<td>2</td>
+      <td>14</td>
+    </tr>
+</table>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<p>계급 : 0~10, 10~20... 10간격</p>
+<p>그래프 제목 : 팔굽혀펴기 분포포</p>
+<p>그래프에 격자 표시</p>
+</div>
+'''
+img_8208 = ''
+question_review_8208 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>데이터프레임으로 그래프 작성
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>계급
+<input type='checkbox'/>격자표시
+<input type='checkbox'/>그래프 제목
+'''
+answer_8208 = [
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)","bins = [0,10,20,30,40,50,60,70]" ,"df = pd.read_csv('/content/jupyter_judge/csv_file/push_up.csv')" ,"plt.hist(df['push_up'], bins = bins)" ,"plt.grid()" ,"plt.title('팔굽혀펴기 분포도')", "plt.show()", "Question(question_review_8208)"]}
+]
+
+question_8211 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>다음은 학생 A가 10회에 걸쳐 화살을 쏘아 얻은 점수를 조사하여 만든 자료입니다.</p> 
+<p>회차별 점수를 막대그래프로 나타내고 평균에 해당하는 점수에 수평선을 추가하여 나타내봅시다.</p>
+<HR>
+<h2>데이터</h2>
+<p>1~10회에서 얻은 점수</p>
+<h2>그래프</h2>
+<p>막대그래프와 수평선</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>데이터를 데이터 프레임으로 저장합니다.</p>
+<p>df = pd.DataFrame({'col1' : [], 'col2' : []})</p>
+<p>df_mean = __</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<p>회차별 점수를 나타내느 막대그래프</p>
+<p>점수 평균에 해당하는 수평선</p>
+<p>그래프에 격자 표시</p>
+<p>x축, y축 label</p>
+<p>x축, y축 label</p>
+</div>
+'''
+img_8211 = ''
+question_review_8211 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>데이터프레임으로 그래프 작성
+<input type='checkbox'/>막대그래프
+<input type='checkbox'/>평균 값에서 수평선
+<input type='checkbox'/>격자표시
+<input type='checkbox'/>그래프 제목
+'''
+answer_8211 = [
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "shoot = list(range(1,11,1))", "points = [9, 10, 8, 7, 9, 10, 6, 5, 10, 9]", "df = pd.DataFrame({", "    'shoot' : shoot,", "    'points' : points", "})", "df_mean = df['points'].mean()", "plt.bar(df['shoot'], df['points'])", "plt.hlines(df_mean, 0, 10)", "plt.grid()", "plt.show()", "Question(question_review_8211)"]}
+]
+
+
+question_8219 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>scatter1.csv 파일(파일경로:'/content/jupyter_judge/csv_file/scatter1.csv')은 x,y 값이 저장되어 있습니다. </p> 
+<p>x,y를 산점도를 나타내봅시다. </p>
+<HR>
+<h2>데이터</h2>
+<p>x,y 값</p>
+<h2>그래프</h2>
+<p>히스토그램</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>csv 파일 속 데이터를 판다스를 이용해서 불러옵니다.</p>
+<p>df = pd.read_csv('파일경로')</p>
+<p>df.head(n=2)</p>
+<table border="1"
+       cellspacing="0"
+       width = 30%
+       height = 10>
+    <tr>
+    	<td>x</td>
+      <td>y</td>
+    </tr>
+    <tr>
+    	<td>84</td>
+      <td>69</td>
+    </tr>
+    <tr>
+    	<td>54</td>
+      <td>27</td>
+    </tr>
+</table>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<p>그래프 제목 : x,y 산점도</p>
+<p>x,y 범위 : 0 ~ 100
+<p>그래프에 격자 표시</p>
+</div>
+'''
+img_8219 = ''
+question_review_8219 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>데이터프레임으로 그래프 작성
+<input type='checkbox'/>산점도
+<input type='checkbox'/>x,y 범위
+<input type='checkbox'/>그래프 제목
+<input type='checkbox'/>상관관계가 있는 그래프일까요?
+'''
+answer_8219 = [
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도 및 추세선')", "plt.show()", "Question(question_review_8219)")]}
+]
+
+question_8220 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>scatter2.csv 파일(파일경로:'/content/jupyter_judge/csv_file/scatter2.csv')은 x,y 값이 저장되어 있습니다. </p> 
+<p>x,y를 산점도를 나타내봅시다. </p>
+<HR>
+<h2>데이터</h2>
+<p>x,y 값</p>
+<h2>그래프</h2>
+<p>히스토그램</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>csv 파일 속 데이터를 판다스를 이용해서 불러옵니다.</p>
+<p>df = pd.read_csv('파일경로')</p>
+<p>df.head(n=2)</p>
+<table border="1"
+       cellspacing="0"
+       width = 30%
+       height = 10>
+    <tr>
+    	<td>x</td>
+      <td>y</td>
+    </tr>
+    <tr>
+    	<td>19</td>
+      <td>13</td>
+    </tr>
+    <tr>
+    	<td>24</td>
+      <td>30</td>
+    </tr>
+</table>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<p>그래프 제목 : x,y 산점도</p>
+<p>x,y 범위 : 0 ~ 100
+<p>그래프에 격자 표시</p>
+</div>
+'''
+img_8220 = ''
+question_review_8220 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>데이터프레임으로 그래프 작성
+<input type='checkbox'/>산점도
+<input type='checkbox'/>x,y 범위
+<input type='checkbox'/>그래프 제목
+<input type='checkbox'/>상관관계가 있는 그래프일까요?
+'''
+answer_8220 = [
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter2.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도 및 추세선')", "plt.show()", "Question(question_review_8220)"]}
+]
+
+
+
 test_set = [
 #입력,변수,출력_수와 연산산
     {'test_file' : '_1101.py', 'answer' : answer_1101, 'question' : question_1101, 'img' : img_1101},
@@ -2268,5 +2625,13 @@ test_set = [
     {'test_file' : '_3100.py', 'answer' : answer_3100, 'question' : question_3100, 'img' : img_3100},    
     {'test_file' : '_3200.py', 'answer' : answer_3200, 'question' : question_3200, 'img' : img_3200},    
     {'test_file' : '_3300.py', 'answer' : answer_3300, 'question' : question_3300, 'img' : img_3300},        
-    {'test_file' : '_8000.py', 'answer' : answer_8000, 'question' : question_8000, 'img' : img_8000},   
+    {'test_file' : '_8000.py', 'answer' : answer_8000, 'question' : question_8000, 'img' : img_8000},  
+    #plot_check() 문제 모음
+    {'test_file' : '_8201.py', 'answer' : answer_8201, 'question' : question_8201, 'img' : img_8201},        
+    {'test_file' : '_8203.py', 'answer' : answer_8203, 'question' : question_8203, 'img' : img_8203},    
+    {'test_file' : '_8206.py', 'answer' : answer_8206, 'question' : question_8206, 'img' : img_8206},    
+    {'test_file' : '_8208.py', 'answer' : answer_8208, 'question' : question_8208, 'img' : img_8208},        
+    {'test_file' : '_8211.py', 'answer' : answer_8211, 'question' : question_8211, 'img' : img_8211},      
+    {'test_file' : '_8219.py', 'answer' : answer_8219, 'question' : question_8219, 'img' : img_8219},        
+    {'test_file' : '_8220.py', 'answer' : answer_8220, 'question' : question_8220, 'img' : img_8220},         
 ]
