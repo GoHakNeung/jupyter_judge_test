@@ -2168,7 +2168,7 @@ question_8000 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 '''
 img_8000 = ''
 answer_8000 = [
-    {'input' : [[10]], 'output' : ['labels = ["대전", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.figure(figsize = (8,8))', 'plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'plt.title("충청도 인구")', 'plt.show()']}
+    {'input' : [[10]], 'output' : ['labels = ["대전", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.subplot(1,2,2)','plt.figure(figsize = (8,8))', 'plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'plt.title("충청도 인구")', 'plt.show()']}
 ]
 
 test_set = [
