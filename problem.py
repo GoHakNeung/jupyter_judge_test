@@ -2168,6 +2168,7 @@ question_8000 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 '''
 img_8000 = ''
 question_review_8000 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
 <input type='checkbox'/>원 그래프
 <input type='checkbox'/>label
 <input type='checkbox'/>백분율
