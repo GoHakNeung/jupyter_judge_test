@@ -1,5 +1,6 @@
 #@title
 import sys, random, math, os, traceback, gspread, shutil
+import pandas as pd
 from requests import get
 from oauth2client.service_account import ServiceAccountCredentials
 from IPython.core.display import display, HTML, Image
