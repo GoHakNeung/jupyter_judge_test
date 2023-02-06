@@ -1,5 +1,5 @@
 #@title
-import sys, random, math, os, traceback, gspread
+import sys, random, math, os, traceback, gspread, shutil
 from requests import get
 from oauth2client.service_account import ServiceAccountCredentials
 from IPython.core.display import display, HTML, Image
@@ -23,8 +23,15 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt 
 import seaborn as sns
 
-!mkdir /usr/share/fonts/truetype/nanum
-!cp /content/jupyter_judge/NanumBarunGothic.ttf /usr/share/fonts/truetype/nanum/
+try : 
+  os.mkdir('/usr/share/fonts/truetype/nanum')
+except : 
+  pass
+try : 
+  shutil.move("/content/jupyter_judge/NanumBarunGothic.ttf", "/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf")
+except : 
+  pass
+
 os.system('fc-cache -fv')
 mpl.font_manager._rebuild()
 findfont = mpl.font_manager.fontManager.findfont
