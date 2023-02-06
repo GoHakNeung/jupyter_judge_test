@@ -2174,7 +2174,7 @@ question_review_8000 = '''
 <input type='checkbox'/>explode
 '''
 answer_8000 = [
-    {'input' : [[10]], 'output' : ['labels = ["광주", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.subplot(1,2,2)','plt.figure(figsize = (8,8))', 'plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'plt.title("충청도 인구")', 'plt.show()', 'Question(question_review_8000)']}
+    {'input' : [[10]], 'output' : ['labels = ["광주", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.subplot(1,2,2)', 'plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'plt.title("충청도 인구")', 'plt.show()', 'Question(question_review_8000)']}
 ]
 
 test_set = [
