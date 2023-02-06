@@ -596,7 +596,10 @@ def plot_check(py) :
     print('평가 코드를 생성하세요.')
     return
   plot_convert('plot_output.py')
-  Question('''<h3>왼쪽 그래프는 여러분이 작성한 그래프이고 오른쪽 그래프는 선생님이 작성한 코드르 그린 그래프입니다.</h3>''')
+  Question('''
+  <div style = "float:left;width:50%" /> 왼쪽 그래프는 여러분이 작성한 그래프입니다. 
+  <div style = "float:right;width:50%" /> 오른쪽 그래프는 예시 답안입니다. 
+  ''')
   #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)  
   # exec(open('plot_output.py').read())
   
