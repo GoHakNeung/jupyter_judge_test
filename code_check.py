@@ -360,9 +360,9 @@ def update_excel(message, py) :
   worksheet.update_cell(row, col+1, trial_error_count[py])
 #------------------------------------------------------------------------------#
 #HTML 형식의 문제 불러오기기
-def Question(question_, img="") : 
-  display(HTML(question_))
-  return Image(url= img) 
+# def Question(question_, img="") : 
+#   display(HTML(question_))
+#   return Image(url= img) 
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
