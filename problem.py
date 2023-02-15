@@ -1,6 +1,7 @@
-def Question(question_, img="") : 
+from IPython.display import display, HTML
+
+def Question(question_) : 
   display(HTML(question_))
-  return Image(url= img) 
 
 question_1101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>5.24에서 자연수 부분을 출력해봅시다.</p>
