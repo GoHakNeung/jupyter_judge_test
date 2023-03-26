@@ -24,25 +24,10 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt 
 import seaborn as sns
 
-try : 
-  os.mkdir('/usr/share/fonts/truetype/nanum')
-except : 
-  pass
-try : 
-  shutil.move("/content/jupyter_judge/NanumBarunGothic.ttf", "/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf")
-except : 
-  pass
-
-os.system('fc-cache -fv')
-mpl.font_manager._rebuild()
-findfont = mpl.font_manager.fontManager.findfont
-mpl.font_manager.findfont = findfont
-mpl.backends.backend_agg.findfont = findfont
-plt.rcParams['font.family'] = 'NanumBarunGothic'
+mpl.font_manager.fontManager.addfont('/content/jupyter_judge/NanumBarunGothic.ttf')
+mpl.rcParams['font.family'] = 'NanumBarunGothic'
 mpl.rcParams['axes.unicode_minus'] = False
-
-plt.rc('font', size = 14)
-# took-took 블로그, https://didalsgur.tistory.com/entry/Python-Colab-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%ED%95%9C%EA%B8%80-%EA%B9%A8%EC%A7%90-%ED%98%84%EC%83%81-%ED%95%B4%EA%B2%B0-feat-matplotlib
+mpl.rc('font', size = 14)
 #------------------------------------------------------------------------------#
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
