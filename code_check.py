@@ -28,6 +28,8 @@ mpl.font_manager.fontManager.addfont('/content/jupyter_judge/NanumBarunGothic.tt
 mpl.rcParams['font.family'] = 'NanumBarunGothic'
 mpl.rcParams['axes.unicode_minus'] = False
 mpl.rc('font', size = 14)
+# addfont reference
+# https://github.com/matplotlib/matplotlib/blob/v3.7.1/lib/matplotlib/font_manager.py#L1025-L1046
 #------------------------------------------------------------------------------#
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
