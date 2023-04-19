@@ -1,11 +1,13 @@
 #@title
 import sys, random, math, os, traceback, gspread, shutil
 import pandas as pd
+import numpy as np
 from requests import get
 from oauth2client.service_account import ServiceAccountCredentials
-from IPython.core.display import display, HTML, Image
+from IPython.core.display import display, HTML
 from jupyter_judge.problem import *
 from jupyter_judge.ColabTurtleClass import *
+from PIL import Image
 
 #------------------------------------------------------------------------------#
 #구글 스프레드시트와 연동하기
@@ -552,16 +554,18 @@ def plot_convert(output_plot) :
   global answer_plot
   global original
   global compile_error
+
   f = open(output_plot, 'w')  
   original = sys.stdout
   sys.stdout = f
-  print('#---코드 변환---')
   print('import matplotlib.pyplot as plt')
+  print('from PIL import Image')
   print('plt.figure(figsize = (16,8))')    
   print('plt.subplot(1,2,1)')
 
   for i in range(len(code)) : 
     print(code[i])
+  print('plt.savefig("submit.png")')
 
   for i in answer_plot : 
     print(i)
@@ -569,6 +573,8 @@ def plot_convert(output_plot) :
   f.close()
 
 def plot_check(py) : 
+  answer_graph = '/content/jupyter_judge/graph/answer'+py[:-3]+'.png'
+  review = 'question'+'_review'+py[:-3]
   global original
   trial_error_count[py] += 1      
   for i in range(len(test_set)) :
@@ -592,6 +598,15 @@ def plot_check(py) :
   # exec(open('plot_output.py').read())
   
   error_check('plot_output.py') 
+  img_submit = np.asarray(Image.open("/content/submit.png"))
+  img_answer = np.asarray(Image.open(answer_graph))
+  
+  if np.array_equal(img_submit, img_answer) : 
+    print(tc_green+'정답입니다.'+reset)
+  else : 
+    print(tc_red+'오답입니다.'+reset)
+  Question(eval(review))
+  
   if compile_error == True : 
     update_excel('오류입니다.',py)
   else : 
