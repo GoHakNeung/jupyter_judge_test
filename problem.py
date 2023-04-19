@@ -2180,7 +2180,7 @@ question_review_8000 = '''
 <input type='checkbox'/>explode
 '''
 answer_8000 = [
-    {'input' : [[10]], 'output' : ['labels = ["광주", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.subplot(1,2,2)', 'plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'plt.title("충청도 인구")', 'plt.show()', 'Question(question_review_8000)']}
+    {'input' : [[10]], 'output' : ['labels = ["광주", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.subplot(1,2,2)', 'plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'plt.title("충청도 인구")', 'plt.show()']}
 ]
 
 question_8201 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2232,7 +2232,7 @@ question_review_8201 = '''
 <input type='checkbox'/>그래프 제목
 '''
 answer_8201 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "plt.bar(way, way_time)", "plt.xlabel('이동수단')", "plt.ylabel('소요시간')", "plt.title('이동수단별 소요시간')", "plt.show()",'Question(question_review_8201)']}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "plt.bar(way, way_time)", "plt.xlabel('이동수단')", "plt.ylabel('소요시간')", "plt.title('이동수단별 소요시간')", "plt.show()"]}
 ]
 
 question_8203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2289,7 +2289,7 @@ question_review_8203 = '''
 <input type='checkbox'/>그래프 제목
 '''
 answer_8203 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "t_day = [8,9,10,11,12,13,14]", "max_temp = [30, 29, 33, 32, 29, 34, 31]", "plt.plot(t_day, max_temp)", "plt.xlabel('일')", "plt.ylabel('최고기온')", "plt.title('일별 최고기온')", "plt.ylim(0,35)", "plt.show()", "Question(question_review_8203)"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "t_day = [8,9,10,11,12,13,14]", "max_temp = [30, 29, 33, 32, 29, 34, 31]", "plt.plot(t_day, max_temp)", "plt.xlabel('일')", "plt.ylabel('최고기온')", "plt.title('일별 최고기온')", "plt.ylim(0,35)", "plt.show()"]}
 ]
 
 question_8206 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2341,7 +2341,7 @@ question_review_8206 = '''
 <input type='checkbox'/>그래프 제목
 '''
 answer_8206 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "labels = ['대전', '세종', '충남', '충북']", "population = [150, 37, 220, 160]", "explode = [0,0.3,0,0]", "plt.pie(labels = labels, x=population, explode = explode, autopct = '%.1f%%')", "plt.title('충청도 지역별 인구')", "plt.show()", "Question(question_review_8206)"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "labels = ['대전', '세종', '충남', '충북']", "population = [150, 37, 220, 160]", "explode = [0,0.3,0,0]", "plt.pie(labels = labels, x=population, explode = explode, autopct = '%.1f%%')", "plt.title('충청도 지역별 인구')", "plt.show()"]}
 ]
 
 question_8208 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2393,7 +2393,7 @@ question_review_8208 = '''
 <input type='checkbox'/>그래프 제목
 '''
 answer_8208 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)","bins = [0,10,20,30,40,50,60,70]" ,"df = pd.read_csv('/content/jupyter_judge/csv_file/push_up.csv')" ,"plt.hist(df['push_up'], bins = bins)" ,"plt.grid()" ,"plt.title('팔굽혀펴기 분포도')", "plt.show()", "Question(question_review_8208)"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)","bins = [0,10,20,30,40,50,60,70]" ,"df = pd.read_csv('/content/jupyter_judge/csv_file/push_up.csv')" ,"plt.hist(df['push_up'], bins = bins)" ,"plt.grid()" ,"plt.title('팔굽혀펴기 분포도')", "plt.show()"]}
 ]
 
 question_8211 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2431,7 +2431,7 @@ question_review_8211 = '''
 <input type='checkbox'/>그래프 제목
 '''
 answer_8211 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "shoot = list(range(1,11,1))", "points = [9, 10, 8, 7, 9, 10, 6, 5, 10, 9]", "df = pd.DataFrame({", "    'shoot' : shoot,", "    'points' : points", "})", "df_mean = df['points'].mean()", "plt.bar(df['shoot'], df['points'])", "plt.hlines(df_mean, 0, 10)", "plt.grid()", "plt.show()", "Question(question_review_8211)"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "shoot = list(range(1,11,1))", "points = [9, 10, 8, 7, 9, 10, 6, 5, 10, 9]", "df = pd.DataFrame({", "    'shoot' : shoot,", "    'points' : points", "})", "df_mean = df['points'].mean()", "plt.bar(df['shoot'], df['points'])", "plt.hlines(df_mean, 0, 10)", "plt.grid()", "plt.show()"]}
 ]
 
 
@@ -2484,7 +2484,7 @@ question_review_8219 = '''
 <input type='checkbox'/>상관관계가 있는 그래프일까요?
 '''
 answer_8219 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도 및 추세선')", "plt.show()", "Question(question_review_8219)"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도 및 추세선')", "plt.show()"]}
 ]
 
 question_8220 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2536,7 +2536,7 @@ question_review_8220 = '''
 <input type='checkbox'/>상관관계가 있는 그래프일까요?
 '''
 answer_8220 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter2.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도 및 추세선')", "plt.show()", "Question(question_review_8220)"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter2.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도 및 추세선')", "plt.show()"]}
 ]
 
 
