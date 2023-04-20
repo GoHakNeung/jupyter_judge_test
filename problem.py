@@ -2156,14 +2156,14 @@ question_8000 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 </table>
 <p>대전, 세종, 충남, 충북의 인구수를 원그래프로 나타내봅시다.</p>
 <HR>
-<h2>입력</h2>
+<h2>데이터</h2>
 <p>없음</p>
-<h2>출력</h2>
+<h2>그래프</h2>
 <p>label, 백분율을 표시합니다.</p>
 <p>세종시의 인구를 강조하기 위해 원 그래프에서 떨어져서 표시해봅시다.(0.3)</p>
 <HR>
 <div style = "float:left;width:50%">
-<h2>입력 예시 </h2>
+<h2>데이터 예시 </h2>
 <p>없음</p>
 </div>
 <div style = "float:right;width:50%">
