@@ -2169,7 +2169,7 @@ question_8000 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:right;width:50%">
 <h2>출력 예시 </h2>
 <p>label, 백분율이 표시되고 세종시가 강조된 원 그래프</p>
-<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8000.png?raw=true" width = 100% height = 100%>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8000.png?raw=true" width = 150% height = 150%>
 </div>
 '''
 img_8000 = ''
@@ -2279,6 +2279,7 @@ question_8203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>가로축 이름 : 일</p>
 <p>세로축 이름 : 최고기온</p>
 <p>그래프 제목 : 일별 최고기온</p>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8203.png?raw=true" width = 150% height = 150%>
 </div>
 '''
 img_8203 = ''
