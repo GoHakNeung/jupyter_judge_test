@@ -2163,8 +2163,8 @@ question_8000 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <HR>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
-<p>labels = []</p>
-<p>pop = []</p>
+<p>labels = ["대전", "세종", "충남" ,"충북"]</p>
+<p>pop = [1500000, 370000, 2200000, 1600000]</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>출력 예시 </h2>
@@ -2271,8 +2271,8 @@ question_8203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <HR>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
-<p>t_day = [ ]</p>
-<p>max_temp = [ ]</p>
+<p>t_day = [8,9,10,11,12,13,14]</p>
+<p>max_temp = [30, 29, 33, 32, 29, 34, 31]</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프프 예시 </h2>
