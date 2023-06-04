@@ -646,8 +646,8 @@ def get_return(info) :
   global A_pie, A_scatter, A_bar, A_hist, A_hlines, A_vlines, A_plot, A_title, A_xlabel, A_ylabel, A_xlim, A_ylim, A_legend    
 
   if info == 'pie' : 
-    pie_text.append([_pie[1][i].get_text() for i in range(len(_pie[1]))])
-    pie_autotext.append([_pie[2][i].get_text() for i in range(len(_pie[2]))])
+    pie_text.append([globals()['_pie'][1][i].get_text() for i in range(len(globals()['_pie'][1]))])
+    pie_autotext.append([globals()['_pie'][2][i].get_text() for i in range(len(globals()['_pie'][2]))])
   elif info == 'boxplot' : 
     print('box')
   elif info == 'scatter' : 
@@ -838,95 +838,92 @@ def plot_check(py) :
   compile_error = False
   
   for i in code :
-#     try : 
-      print(i)  # 진행 과정을 알기 위한 코드1
-      exec(i)
+    try : 
+      exec(i, globals())
       if i in list(code_dict.keys()) : 
-        _pie  # 진행 과정을 알기 위한 코드2
         get_return(code_dict[i])
-        print('get 실행', i)  # 진행 과정을 알기 위한 코드3
-#     except NameError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('명령어 이름을 확인하거나 문자열에 따옴표가 붙어 있는지 확인하세요. ')
-#       compile_error = True
-#       break
-#     except TypeError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('숫자나 문자를 바르게 입력하세요')
-#       compile_error = True
-#       break
-#     except AttributeError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('라이브러리 속성 또는 메서드를 바르게 입력하세요.')
-#       compile_error = True
-#       break
-#     except ValueError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('입력할 때 숫자나 문자를 바르게 입력하세요')
-#       compile_error = True
-#       break
-#     except IndexError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('리스트나 튜플의 길이를 확인하세요.')
-#       compile_error = True
-#       break
-#     except IndentationError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('띄어쓰기를 확인하세요.')
-#       compile_error = True
-#       break
-#     except ZeroDivisionError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('숫자를 0으로 나누었는지 확인하세요.')
-#       compile_error = True
-#       break
-#     except OverflowError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('너무 큰 수는 표현할 수 없습니다.')
-#       compile_error = True
-#       break
-#     except KeyboardInterrupt :
-#       plt.clf()    
-#       output.clear()
-#       print('사용자가 작동 중지함.')
+    except NameError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('명령어 이름을 확인하거나 문자열에 따옴표가 붙어 있는지 확인하세요. ')
+      compile_error = True
+      break
+    except TypeError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('숫자나 문자를 바르게 입력하세요')
+      compile_error = True
+      break
+    except AttributeError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('라이브러리 속성 또는 메서드를 바르게 입력하세요.')
+      compile_error = True
+      break
+    except ValueError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('입력할 때 숫자나 문자를 바르게 입력하세요')
+      compile_error = True
+      break
+    except IndexError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('리스트나 튜플의 길이를 확인하세요.')
+      compile_error = True
+      break
+    except IndentationError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('띄어쓰기를 확인하세요.')
+      compile_error = True
+      break
+    except ZeroDivisionError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('숫자를 0으로 나누었는지 확인하세요.')
+      compile_error = True
+      break
+    except OverflowError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('너무 큰 수는 표현할 수 없습니다.')
+      compile_error = True
+      break
+    except KeyboardInterrupt :
+      plt.clf()    
+      output.clear()
+      print('사용자가 작동 중지함.')
       
-#     except SyntaxError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('문법 오류입니다. 명령어, :, () 등을 확인하세요.')
-#       compile_error = True
-#       break
-#     except ModuleNotFoundError :
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('라이브러리를 확인하세요.')
-#       compile_error = True
-#       break
-#     except : 
-#       plt.clf()    
-#       output.clear()
-#       print('오류가 있는 코드 :',tc_red,i,reset)
-#       print('코드 오류입니다.')
-#       compile_error = True
-#       break
+    except SyntaxError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('문법 오류입니다. 명령어, :, () 등을 확인하세요.')
+      compile_error = True
+      break
+    except ModuleNotFoundError :
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('라이브러리를 확인하세요.')
+      compile_error = True
+      break
+    except : 
+      plt.clf()    
+      output.clear()
+      print('오류가 있는 코드 :',tc_red,i,reset)
+      print('코드 오류입니다.')
+      compile_error = True
+      break
 
   Question(eval(review))
 
