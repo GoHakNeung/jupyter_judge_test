@@ -659,7 +659,7 @@ def get_return(info) :
     vlines_data.append(globals()['_vlines'].segments())
   elif info == 'plot' : 
     plot_data.append(globals()['_plot'][0].get_data())
-    plot_mcl.append([globals()'[_plot'][0].get_marker(), globals()['_plot'][0].get_color(), globals()['_plot'][0].get_linestyle()])
+    plot_mcl.append([globals()['_plot'][0].get_marker(), globals()['_plot'][0].get_color(), globals()['_plot'][0].get_linestyle()])
   elif info == 'title' : 
     plot_title = globals()['_title'].get_text()
   elif info == 'xlabel' : 
