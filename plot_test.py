@@ -643,6 +643,9 @@ def plot_check(py) :
   global A_pie_text, A_pie_autotext, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
 
+  global _pie, _scatter, _bar, _hist, _hlines, _vlines, _plot, _title, _xlabel, _ylabel, _xlim, _ylim, _legend
+  global A_pie, A_scatter, A_bar, A_hist, A_hlines, A_vlines, A_plot, A_title, A_xlabel, A_ylabel, A_xlim, A_ylim, A_legend
+  
   #plot_check() 실행할 때마다 초기화해야 함. append를 사용하므로 그래야 쌓이지 않음.
   pie_text = []
   A_pie_text = []
