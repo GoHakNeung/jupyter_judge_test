@@ -825,9 +825,6 @@ def plot_check(py) :
   # 기존에는 코드 전체를 실행시켰다면 이번에는 코드 한 줄씩 실행시킴. 
   # 한 줄 실행시키고 정보를 얻고, 한 줄 실행시키고 정보를 얻고, 오류 발생하면 출력한 것 삭제하고 오류 발생 보여주고 이렇게 함.
   
-  for i in code : 
-    print(i)
-  
   global compile_error
   compile_error = False
   
