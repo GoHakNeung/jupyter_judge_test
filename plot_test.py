@@ -635,6 +635,80 @@ def plot_feedback(A_plot_kind) :
   if A_plot_legend != '' : 
     print('범례 :', A_plot_legend == plot_legend)  
 
+def get_return(info) : 
+  global pie_text, pie_autotext, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
+  global plot_title, plot_xlabel, plot_ylabel, plot_xlim, plot_ylim, plot_legend
+
+  global A_pie_text, A_pie_autotext, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
+  global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
+
+  global _pie, _scatter, _bar, _hist, _hlines, _vlines, _plot, _title, _xlabel, _ylabel, _xlim, _ylim, _legend
+  global A_pie, A_scatter, A_bar, A_hist, A_hlines, A_vlines, A_plot, A_title, A_xlabel, A_ylabel, A_xlim, A_ylim, A_legend    
+
+  if info == 'pie' : 
+    pie_text.append([_pie[1][i].get_text() for i in range(len(_pie[1]))])
+    pie_autotext.append([_pie[2][i].get_text() for i in range(len(_pie[2]))])
+  elif info == 'boxplot' : 
+    print('box')
+  elif info == 'scatter' : 
+    scatter_offset.append(_scatter.get_offsets())
+  elif info == 'bar' :   #높이 값을 구할 수 있음, x 값은 아직,
+    bar_data.append(list(_bar.datavalues))     # array를 list로 변환
+  elif info == 'hist' : 
+    hist_data.append(_hist)
+  elif info == 'hlines' : 
+    hlines_data.append(_hlines.segments())
+  elif info == 'vlines' : 
+    vlines_data.append(_vlines.segments())
+  elif info == 'plot' : 
+    plot_data.append(_plot[0].get_data())
+    plot_mcl.append([_plot[0].get_marker(), _plot[0].get_color(), _plot[0].get_linestyle()])
+  elif info == 'title' : 
+    plot_title = _title.get_text()
+  elif info == 'xlabel' : 
+    plot_xlabel = _xlabel.get_text()      
+  elif info == 'ylabel' : 
+    plot_ylabel = _ylabel.get_text() 
+  elif info == 'xlim' : 
+    plot_xlim = _xlim
+  elif info == 'ylim' : 
+    plot_ylim = _ylim  
+  elif info == 'legend' : 
+    plot_legend = list(_legend.get_texts())
+  elif info == 'A_pie' : 
+    A_pie_text.append([A_pie[1][i].get_text() for i in range(len(A_pie[1]))])
+    A_pie_autotext.append([A_pie[2][i].get_text() for i in range(len(A_pie[2]))])
+  elif info == 'A_boxplot' : 
+    print('box')
+  elif info == 'A_scatter' : 
+    A_scatter_offset.append(A_scatter.get_offsets())
+  elif info == 'A_bar' :   #높이 값을 구할 수 있음, x 값은 아직,
+    A_bar_data.append(list(A_bar.datavalues))     # array를 list로 변환
+  elif info == 'A_hist' : 
+    A_hist_data.append(A_hist)
+  elif info == 'A_hlines' : 
+    A_hlines_data.append(A_hlines.segments())
+  elif info == 'A_vlines' : 
+    A_vlines_data.append(A_vlines.segments())
+  elif info == 'A_plot' : 
+    A_plot_data.append(A_plot[0].get_data())
+    A_plot_mcl.append([A_plot[0].get_marker(), _plot[0].get_color(), _plot[0].get_linestyle()])
+  elif info == 'A_title' : 
+    A_plot_title = A_title.get_text()
+  elif info == 'A_xlabel' : 
+    A_plot_xlabel = A_xlabel.get_text()      
+  elif info == 'A_ylabel' : 
+    A_plot_ylabel = A_ylabel.get_text() 
+  elif info == 'A_xlim' : 
+    A_plot_xlim = A_xlim
+  elif info == 'A_ylim' : 
+    A_plot_ylim = A_ylim  
+  elif info == 'A_legend' : 
+    A_plot_legend = list(A_legend.get_texts())
+  else : 
+    print('피드백 제외')
+    
+    
 def plot_check(py) : 
   # 피드백을 주기 위해 그래프에 설명을 넣기 위한 변수들
   global pie_text, pie_autotext, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
@@ -679,85 +753,12 @@ def plot_check(py) :
   plot_legend = ''
   A_plot_legend = ''
 
-  global code, plot_kind, A_plot_kind
+  global code, plot_kind, A_plot_kind, code_dict, plot_kind_code, A_plot_kind_code
   code = []
   plot_kind = []
   A_plot_kind = []
 
   #정보를 얻기 위함. get_return 함수를 plot_check 안에다가 만듬.
-  def get_return(info) : 
-    global pie_text, pie_autotext, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
-    global plot_title, plot_xlabel, plot_ylabel, plot_xlim, plot_ylim, plot_legend
-
-    global A_pie_text, A_pie_autotext, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
-    global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
-    
-    global _pie, _scatter, _bar, _hist, _hlines, _vlines, _plot, _title, _xlabel, _ylabel, _xlim, _ylim, _legend
-    global A_pie, A_scatter, A_bar, A_hist, A_hlines, A_vlines, A_plot, A_title, A_xlabel, A_ylabel, A_xlim, A_ylim, A_legend    
-
-    if info == 'pie' : 
-      pie_text.append([_pie[1][i].get_text() for i in range(len(_pie[1]))])
-      pie_autotext.append([_pie[2][i].get_text() for i in range(len(_pie[2]))])
-    elif info == 'boxplot' : 
-      print('box')
-    elif info == 'scatter' : 
-      scatter_offset.append(_scatter.get_offsets())
-    elif info == 'bar' :   #높이 값을 구할 수 있음, x 값은 아직,
-      bar_data.append(list(_bar.datavalues))     # array를 list로 변환
-    elif info == 'hist' : 
-      hist_data.append(_hist)
-    elif info == 'hlines' : 
-      hlines_data.append(_hlines.segments())
-    elif info == 'vlines' : 
-      vlines_data.append(_vlines.segments())
-    elif info == 'plot' : 
-      plot_data.append(_plot[0].get_data())
-      plot_mcl.append([_plot[0].get_marker(), _plot[0].get_color(), _plot[0].get_linestyle()])
-    elif info == 'title' : 
-      plot_title = _title.get_text()
-    elif info == 'xlabel' : 
-      plot_xlabel = _xlabel.get_text()      
-    elif info == 'ylabel' : 
-      plot_ylabel = _ylabel.get_text() 
-    elif info == 'xlim' : 
-      plot_xlim = _xlim
-    elif info == 'ylim' : 
-      plot_ylim = _ylim  
-    elif info == 'legend' : 
-      plot_legend = list(_legend.get_texts())
-    elif info == 'A_pie' : 
-      A_pie_text.append([A_pie[1][i].get_text() for i in range(len(A_pie[1]))])
-      A_pie_autotext.append([A_pie[2][i].get_text() for i in range(len(A_pie[2]))])
-    elif info == 'A_boxplot' : 
-      print('box')
-    elif info == 'A_scatter' : 
-      A_scatter_offset.append(A_scatter.get_offsets())
-    elif info == 'A_bar' :   #높이 값을 구할 수 있음, x 값은 아직,
-      A_bar_data.append(list(A_bar.datavalues))     # array를 list로 변환
-    elif info == 'A_hist' : 
-      A_hist_data.append(A_hist)
-    elif info == 'A_hlines' : 
-      A_hlines_data.append(A_hlines.segments())
-    elif info == 'A_vlines' : 
-      A_vlines_data.append(A_vlines.segments())
-    elif info == 'A_plot' : 
-      A_plot_data.append(A_plot[0].get_data())
-      A_plot_mcl.append([A_plot[0].get_marker(), _plot[0].get_color(), _plot[0].get_linestyle()])
-    elif info == 'A_title' : 
-      A_plot_title = A_title.get_text()
-    elif info == 'A_xlabel' : 
-      A_plot_xlabel = A_xlabel.get_text()      
-    elif info == 'A_ylabel' : 
-      A_plot_ylabel = A_ylabel.get_text() 
-    elif info == 'A_xlim' : 
-      A_plot_xlim = A_xlim
-    elif info == 'A_ylim' : 
-      A_plot_ylim = A_ylim  
-    elif info == 'A_legend' : 
-      A_plot_legend = list(A_legend.get_texts())
-    else : 
-      print('피드백 제외')
-
 
   #정답 코드 가져오는것
   answer_graph = '/content/jupyter_judge/graph/answer'+py[:-3]+'.png'
@@ -779,9 +780,7 @@ def plot_check(py) :
 
   plot_convert('plot_output.py')
 
-  global code_dict, plot_kind_code, A_plot_kind_code
   code = []
-
   # 변환한 코드를 불러와서 code 리스트에 넣기
   file_name =  '/content/'+'plot_output.py'
   f = open(file_name, 'r') 
@@ -837,6 +836,7 @@ def plot_check(py) :
   
   global compile_error
   compile_error = False
+  
   for i in code :
 #     try : 
       print(i)  # 진행 과정을 알기 위한 코드1
