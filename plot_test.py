@@ -642,69 +642,66 @@ def get_return(info) :
   global A_pie_text, A_pie_autotext, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
 
-  global _pie, _scatter, _bar, _hist, _hlines, _vlines, _plot, _title, _xlabel, _ylabel, _xlim, _ylim, _legend
-  global A_pie, A_scatter, A_bar, A_hist, A_hlines, A_vlines, A_plot, A_title, A_xlabel, A_ylabel, A_xlim, A_ylim, A_legend    
-
   if info == 'pie' : 
     pie_text.append([globals()['_pie'][1][i].get_text() for i in range(len(globals()['_pie'][1]))])
     pie_autotext.append([globals()['_pie'][2][i].get_text() for i in range(len(globals()['_pie'][2]))])
   elif info == 'boxplot' : 
     print('box')
   elif info == 'scatter' : 
-    scatter_offset.append(_scatter.get_offsets())
+    scatter_offset.append(globals()['_scatter'].get_offsets())
   elif info == 'bar' :   #높이 값을 구할 수 있음, x 값은 아직,
-    bar_data.append(list(_bar.datavalues))     # array를 list로 변환
+    bar_data.append(list(globals()['_bar'].datavalues))     # array를 list로 변환
   elif info == 'hist' : 
-    hist_data.append(_hist)
+    hist_data.append(globals()['_hist'])
   elif info == 'hlines' : 
-    hlines_data.append(_hlines.segments())
+    hlines_data.append(globals()['_hlines'].segments())
   elif info == 'vlines' : 
-    vlines_data.append(_vlines.segments())
+    vlines_data.append(globals()['_vlines'].segments())
   elif info == 'plot' : 
-    plot_data.append(_plot[0].get_data())
-    plot_mcl.append([_plot[0].get_marker(), _plot[0].get_color(), _plot[0].get_linestyle()])
+    plot_data.append(globals()['_plot'][0].get_data())
+    plot_mcl.append([globals()'[_plot'][0].get_marker(), globals()['_plot'][0].get_color(), globals()['_plot'][0].get_linestyle()])
   elif info == 'title' : 
-    plot_title = _title.get_text()
+    plot_title = globals()['_title'].get_text()
   elif info == 'xlabel' : 
-    plot_xlabel = _xlabel.get_text()      
+    plot_xlabel = globals()['_xlabel'].get_text()      
   elif info == 'ylabel' : 
-    plot_ylabel = _ylabel.get_text() 
+    plot_ylabel = globals()['_ylabel'].get_text() 
   elif info == 'xlim' : 
-    plot_xlim = _xlim
+    plot_xlim = globals()['_xlim']
   elif info == 'ylim' : 
-    plot_ylim = _ylim  
+    plot_ylim = globals()['_ylim']  
   elif info == 'legend' : 
-    plot_legend = list(_legend.get_texts())
+    plot_legend = list(globals()['_legend'].get_texts())
   elif info == 'A_pie' : 
-    A_pie_text.append([A_pie[1][i].get_text() for i in range(len(A_pie[1]))])
-    A_pie_autotext.append([A_pie[2][i].get_text() for i in range(len(A_pie[2]))])
+    A_pie_text.append([globals()['A_pie'][1][i].get_text() for i in range(len(globals()['A_pie'][1]))])
+    A_pie_autotext.append([globals()['A_pie'][2][i].get_text() for i in range(len(globals()['A_pie'][2]))])
   elif info == 'A_boxplot' : 
     print('box')
   elif info == 'A_scatter' : 
-    A_scatter_offset.append(A_scatter.get_offsets())
+    A_scatter_offset.append(globals()['A_scatter'].get_offsets())
   elif info == 'A_bar' :   #높이 값을 구할 수 있음, x 값은 아직,
-    A_bar_data.append(list(A_bar.datavalues))     # array를 list로 변환
+    A_bar_data.append(list(globals()['A_bar'].datavalues))     # array를 list로 변환
   elif info == 'A_hist' : 
-    A_hist_data.append(A_hist)
+    A_hist_data.append(globals()['A_hist'])
   elif info == 'A_hlines' : 
-    A_hlines_data.append(A_hlines.segments())
+    A_hlines_data.append(globals()['A_hlines'].segments())
   elif info == 'A_vlines' : 
-    A_vlines_data.append(A_vlines.segments())
+    A_vlines_data.append(globals()['A_vlines'].segments())
   elif info == 'A_plot' : 
-    A_plot_data.append(A_plot[0].get_data())
-    A_plot_mcl.append([A_plot[0].get_marker(), _plot[0].get_color(), _plot[0].get_linestyle()])
+    A_plot_data.append(globals()['A_plot'][0].get_data())
+    A_plot_mcl.append([globals()['A_plot'][0].get_marker(), globals()['A_plot'][0].get_color(), globals()['A_plot'][0].get_linestyle()])
   elif info == 'A_title' : 
-    A_plot_title = A_title.get_text()
+    A_plot_title = globals()['A_title'].get_text()
   elif info == 'A_xlabel' : 
-    A_plot_xlabel = A_xlabel.get_text()      
+    A_plot_xlabel = globals()['A_xlabel'].get_text()      
   elif info == 'A_ylabel' : 
-    A_plot_ylabel = A_ylabel.get_text() 
+    A_plot_ylabel = globals()['A_ylabel'].get_text() 
   elif info == 'A_xlim' : 
-    A_plot_xlim = A_xlim
+    A_plot_xlim = globals()['A_xlim']
   elif info == 'A_ylim' : 
-    A_plot_ylim = A_ylim  
+    A_plot_ylim = globals()['A_ylim']  
   elif info == 'A_legend' : 
-    A_plot_legend = list(A_legend.get_texts())
+    A_plot_legend = list(globals()['A_legend'].get_texts())
   else : 
     print('피드백 제외')
     
@@ -717,9 +714,6 @@ def plot_check(py) :
   global A_pie_text, A_pie_autotext, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
 
-  global _pie, _scatter, _bar, _hist, _hlines, _vlines, _plot, _title, _xlabel, _ylabel, _xlim, _ylim, _legend
-  global A_pie, A_scatter, A_bar, A_hist, A_hlines, A_vlines, A_plot, A_title, A_xlabel, A_ylabel, A_xlim, A_ylim, A_legend
-  
   #plot_check() 실행할 때마다 초기화해야 함. append를 사용하므로 그래야 쌓이지 않음.
   pie_text = []
   A_pie_text = []
