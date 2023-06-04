@@ -842,7 +842,7 @@ def plot_check(py) :
       print(i)  # 진행 과정을 알기 위한 코드1
       exec(i)
       if i in list(code_dict.keys()) : 
-        print(code_dict[i])  # 진행 과정을 알기 위한 코드2
+        _pie  # 진행 과정을 알기 위한 코드2
         get_return(code_dict[i])
         print('get 실행', i)  # 진행 과정을 알기 위한 코드3
 #     except NameError :
