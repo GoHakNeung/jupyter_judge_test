@@ -596,10 +596,10 @@ def plot_convert(output_plot) :
 # 함수에 정보를 주기 위 한 함수.
 
 def plot_feedback(A_plot_kind) : 
-  global pie_text, pie_autotext, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
+  global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
   global plot_title, plot_xlabel, plot_ylabel, plot_xlim, plot_ylim, plot_legend
 
-  global A_pie_text, A_pie_autotext, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
+  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
     
   for i in range(len(A_plot_kind)) : 
@@ -636,27 +636,28 @@ def plot_feedback(A_plot_kind) :
     print('범례 :', A_plot_legend == plot_legend)  
 
 def get_return(info) : 
-  global pie_text, pie_autotext, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
+  global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
   global plot_title, plot_xlabel, plot_ylabel, plot_xlim, plot_ylim, plot_legend
 
-  global A_pie_text, A_pie_autotext, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
+  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
 
   if info == 'pie' : 
     pie_text.append([globals()['_pie'][1][i].get_text() for i in range(len(globals()['_pie'][1]))])
     pie_autotext.append([globals()['_pie'][2][i].get_text() for i in range(len(globals()['_pie'][2]))])
   elif info == 'boxplot' : 
-    print('box')
+    box_data.append(globals()['_box']['boxes'][0].get_data()[1])    #boxplot 검토 필요, 1분위, 3분위 값만 저장
   elif info == 'scatter' : 
-    scatter_offset.append(globals()['_scatter'].get_offsets())
+    scatter_offset.append(globals()['_scatter'].get_offsets())  # np.array_equal(_scatter_offset,A_scatter_offset) << 형태로 일치 여부 확인
   elif info == 'bar' :   #높이 값을 구할 수 있음, x 값은 아직,
     bar_data.append(list(globals()['_bar'].datavalues))     # array를 list로 변환
   elif info == 'hist' : 
-    hist_data.append(globals()['_hist'])
+    hist_data.append(globals()['_hist'][0])  #값  이거 len 한게 bins
+    hist_data.append(globals()['_hist'][1])  #x위치  
   elif info == 'hlines' : 
-    hlines_data.append(globals()['_hlines'].segments())
+    hlines_data.append(globals()['_hlines'].segments()[0]) # np.array_equal(A,B) 형태로 비교
   elif info == 'vlines' : 
-    vlines_data.append(globals()['_vlines'].segments())
+    vlines_data.append(globals()['_vlines'].segments()[0])
   elif info == 'plot' : 
     plot_data.append(globals()['_plot'][0].get_data())
     plot_mcl.append([globals()['_plot'][0].get_marker(), globals()['_plot'][0].get_color(), globals()['_plot'][0].get_linestyle()])
@@ -676,17 +677,18 @@ def get_return(info) :
     A_pie_text.append([globals()['A_pie'][1][i].get_text() for i in range(len(globals()['A_pie'][1]))])
     A_pie_autotext.append([globals()['A_pie'][2][i].get_text() for i in range(len(globals()['A_pie'][2]))])
   elif info == 'A_boxplot' : 
-    print('box')
+    A_box_data.append(globals()['A_box']['boxes'][0].get_data()[1])
   elif info == 'A_scatter' : 
-    A_scatter_offset.append(globals()['A_scatter'].get_offsets())
+    A_scatter_offset.append(globals()['A_scatter'].get_offsets())   #boxplot 검토 필요, 1분위, 3분위 값만 저장
   elif info == 'A_bar' :   #높이 값을 구할 수 있음, x 값은 아직,
     A_bar_data.append(list(globals()['A_bar'].datavalues))     # array를 list로 변환
   elif info == 'A_hist' : 
-    A_hist_data.append(globals()['A_hist'])
+    A_hist_data.append(globals()['A_hist'][0])
+    A_hist_data.append(globals()['A_hist'][1])   
   elif info == 'A_hlines' : 
-    A_hlines_data.append(globals()['A_hlines'].segments())
+    A_hlines_data.append(globals()['A_hlines'].segments()[0])
   elif info == 'A_vlines' : 
-    A_vlines_data.append(globals()['A_vlines'].segments())
+    A_vlines_data.append(globals()['A_vlines'].segments()[0])
   elif info == 'A_plot' : 
     A_plot_data.append(globals()['A_plot'][0].get_data())
     A_plot_mcl.append([globals()['A_plot'][0].get_marker(), globals()['A_plot'][0].get_color(), globals()['A_plot'][0].get_linestyle()])
@@ -708,10 +710,10 @@ def get_return(info) :
     
 def plot_check(py) : 
   # 피드백을 주기 위해 그래프에 설명을 넣기 위한 변수들
-  global pie_text, pie_autotext, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
+  global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
   global plot_title, plot_xlabel, plot_ylabel, plot_xlim, plot_ylim, plot_legend
 
-  global A_pie_text, A_pie_autotext, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
+  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
 
   #plot_check() 실행할 때마다 초기화해야 함. append를 사용하므로 그래야 쌓이지 않음.
@@ -719,6 +721,10 @@ def plot_check(py) :
   A_pie_text = []
   pie_autotext = []
   A_pie_autotext = []
+
+  box_data = []
+  A_box_data = []
+
   scatter_offset = []
   A_scatter_offset = [] 
   bar_data = []
