@@ -2208,7 +2208,7 @@ img_8004 = ''
 question_review_8004 = ''' 
 '''
 answer_8004 = [
-    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_box=plt.boxplot(df['x'])",'A_title=plt.title("박스플롯")', 'plt.show()']}
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_boxplot=plt.boxplot(df['x'])",'A_title=plt.title("박스플롯")', 'plt.show()']}
 ]
 
 
