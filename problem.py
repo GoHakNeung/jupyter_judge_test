@@ -2184,6 +2184,100 @@ answer_8000 = [
     {'input' : [[10]], 'output' : ['labels = ["대전", "세종", "충남" ,"충북"]','x = [1500000, 370000, 2200000, 1600000]','explode = [0,0.3,0,0]','plt.subplot(1,2,2)', 'A_pie=plt.pie(x, labels = labels, autopct = "%.f%%", explode = explode)', 'A_title=plt.title("충청도 인구")', 'plt.show()']}
 ]
 
+question_8002 = '''scatter
+'''
+img_8002 = '
+'
+question_review_8002 = ''' 
+'''
+answer_8002 = [
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_scatter=plt.scatter(df['x'],df['y'])",'A_xlim=plt.xlim(0,100)','A_xlim=plt.ylim(0,100)',"A_title=plt.title('x,y의 산점도')", 'plt.show()']}
+]
+
+question_8003 = '''hist
+'''
+img_8003 = '
+'
+question_review_8003 = ''' 
+'''
+answer_8002 = [
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_scatter=plt.scatter(df['x'],df['y'])",'A_xlim=plt.xlim(0,100)','A_xlim=plt.ylim(0,100)',"A_title=plt.title('x,y의 산점도')", 'plt.show()']}
+]
+
+question_8002 = '''scatter
+'''
+img_8002 = '
+'
+question_review_8002 = ''' 
+'''
+answer_8003 = [
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_hist=plt.hist(df['x'])",'A_title=plt.title("히스토그램")', 'plt.show()']}
+]
+
+question_8002 = '''scatter
+'''
+img_8002 = '
+'
+question_review_8002 = ''' 
+'''
+answer_8002 = [
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_scatter=plt.scatter(df['x'],df['y'])",'A_xlim=plt.xlim(0,100)','A_xlim=plt.ylim(0,100)',"A_title=plt.title('x,y의 산점도')", 'plt.show()']}
+]
+
+question_8004 = '''boxplot
+'''
+img_8004 = '
+'
+question_review_8004 = ''' 
+'''
+answer_8004 = [
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_box=plt.boxplot(df['x'])",'A_title=plt.title("boxplot")', 'plt.show()']}
+]
+
+
+
+question_8005 = '''plot
+'''
+img_8005 = '
+'
+question_review_8005 = ''' 
+'''
+answer_8005 = [
+    {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', 'x = [1,2,3,4,5,6,7,8,9,10]', 'y = [1,3,5,7,8,9,1,2,3,4]', 'z = [2,4,1,2,5,6,2,3,1,2]', "A_plot=plt.plot(x, y, label='linear')", "A_plot=plt.plot(x, z, label='quadratic')", "A_xlabel=plt.xlabel('x label')", "A_ylabel=plt.ylabel('y label')", 'A_xlim=plt.xlim(0,15)', 'A_ylim=plt.ylim(0,10)', 'A_title=plt.title("Simple Plot")', 'A_legend=plt.legend()', 'plt.show()']}
+]
+
+question_8006 = '''hlines
+'''
+img_8006 = '
+'
+question_review_8006 = ''' 
+'''
+answer_8006 = [
+    {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', 'A_hlines=plt.hlines(1,20,25)', "A_title=plt.title('수평선')", 'plt.show()']}
+]
+
+question_8007 = '''vlines
+'''
+img_8007 = '
+'
+question_review_8007 = ''' 
+'''
+answer_8007 = [
+    {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', 'A_vlines=plt.vlines(1,20,25)', "A_title=plt.title('수직선')", 'plt.show()']}
+]
+
+question_8008 = '''bar
+'''
+img_8008 = '
+'
+question_review_8008 = ''' 
+'''
+answer_8008 = [
+    {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', 'a = [1,2,3,4,5]', 'b = [10, 12, 14, 13, 17]', 'A_bar=plt.bar(a,b)', 'A_ylim=plt.ylim(5, 20)', "A_title=plt.title('막대그래프')", 'plt.show()']}
+]
+
+
+
 question_8201 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>아래 표는 집에서 학교까지 가는 방법별 걸리는 시간은 다음과 같습니다.</p>
 <table border="1"
@@ -2632,8 +2726,20 @@ test_set = [
     {'test_file' : '_3000.py', 'answer' : answer_3000, 'question' : question_3000, 'img' : img_3000},        
     {'test_file' : '_3100.py', 'answer' : answer_3100, 'question' : question_3100, 'img' : img_3100},    
     {'test_file' : '_3200.py', 'answer' : answer_3200, 'question' : question_3200, 'img' : img_3200},    
-    {'test_file' : '_3300.py', 'answer' : answer_3300, 'question' : question_3300, 'img' : img_3300},        
+    {'test_file' : '_3300.py', 'answer' : answer_3300, 'question' : question_3300, 'img' : img_3300},       
+  
+    #테스트를 위함.
     {'test_file' : '_8000.py', 'answer' : answer_8000, 'question' : question_8000, 'img' : img_8000},  
+    {'test_file' : '_8002.py', 'answer' : answer_8002, 'question' : question_8002, 'img' : img_8002},   
+    {'test_file' : '_8003.py', 'answer' : answer_8003, 'question' : question_8003, 'img' : img_8003},   
+    {'test_file' : '_8004.py', 'answer' : answer_8004, 'question' : question_8004, 'img' : img_8004},
+    {'test_file' : '_8005.py', 'answer' : answer_8005, 'question' : question_8005, 'img' : img_8005},
+    {'test_file' : '_8006.py', 'answer' : answer_8006, 'question' : question_8006, 'img' : img_8006},
+    {'test_file' : '_8007.py', 'answer' : answer_8007, 'question' : question_8007, 'img' : img_8007},
+    {'test_file' : '_8008.py', 'answer' : answer_8008, 'question' : question_8008, 'img' : img_8008},
+      
+  
+  
     #plot_check() 문제 모음
     {'test_file' : '_8201.py', 'answer' : answer_8201, 'question' : question_8201, 'img' : img_8201},        
     {'test_file' : '_8203.py', 'answer' : answer_8203, 'question' : question_8203, 'img' : img_8203},    
