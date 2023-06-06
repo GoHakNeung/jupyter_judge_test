@@ -2186,8 +2186,7 @@ answer_8000 = [
 
 question_8002 = '''scatter
 '''
-img_8002 = '
-'
+img_8002 = ''
 question_review_8002 = ''' 
 '''
 answer_8002 = [
@@ -2196,38 +2195,16 @@ answer_8002 = [
 
 question_8003 = '''hist
 '''
-img_8003 = '
-'
+img_8003 = ''
 question_review_8003 = ''' 
-'''
-answer_8002 = [
-    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_scatter=plt.scatter(df['x'],df['y'])",'A_xlim=plt.xlim(0,100)','A_xlim=plt.ylim(0,100)',"A_title=plt.title('x,y의 산점도')", 'plt.show()']}
-]
-
-question_8002 = '''scatter
-'''
-img_8002 = '
-'
-question_review_8002 = ''' 
 '''
 answer_8003 = [
     {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_hist=plt.hist(df['x'])",'A_title=plt.title("히스토그램")', 'plt.show()']}
 ]
 
-question_8002 = '''scatter
-'''
-img_8002 = '
-'
-question_review_8002 = ''' 
-'''
-answer_8002 = [
-    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_scatter=plt.scatter(df['x'],df['y'])",'A_xlim=plt.xlim(0,100)','A_xlim=plt.ylim(0,100)',"A_title=plt.title('x,y의 산점도')", 'plt.show()']}
-]
-
 question_8004 = '''boxplot
 '''
-img_8004 = '
-'
+img_8004 = ''
 question_review_8004 = ''' 
 '''
 answer_8004 = [
@@ -2238,8 +2215,7 @@ answer_8004 = [
 
 question_8005 = '''plot
 '''
-img_8005 = '
-'
+img_8005 = ''
 question_review_8005 = ''' 
 '''
 answer_8005 = [
@@ -2248,8 +2224,7 @@ answer_8005 = [
 
 question_8006 = '''hlines
 '''
-img_8006 = '
-'
+img_8006 = ''
 question_review_8006 = ''' 
 '''
 answer_8006 = [
@@ -2258,8 +2233,7 @@ answer_8006 = [
 
 question_8007 = '''vlines
 '''
-img_8007 = '
-'
+img_8007 = ''
 question_review_8007 = ''' 
 '''
 answer_8007 = [
@@ -2268,8 +2242,7 @@ answer_8007 = [
 
 question_8008 = '''bar
 '''
-img_8008 = '
-'
+img_8008 = ''
 question_review_8008 = ''' 
 '''
 answer_8008 = [
