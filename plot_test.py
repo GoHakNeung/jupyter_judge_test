@@ -524,13 +524,14 @@ def turtle_check(py) :
   else : 
     update_excel('turtle_실행', py)
 #------------------------------------------------------------------------------#
+# 여기서 수정 중
 from google.colab import output
 # 그래프에서 평가 정보를 얻는 것은 info, 평가하는 그래프 종류는 pyplot, 정답과 관련된 것은 A_ 접두사를 붙임.
-plot_info= ['pie', 'boxplot', 'scatter', 'bar', 'hist', 'hlines', 'vlines', 'plot', 'title', 'xlabel', 'ylabel', 'xlim', 'ylim', 'legend']
+plot_info= ['pie', 'scatter', 'bar', 'hist', 'hlines', 'vlines', 'plot', 'title', 'xlabel', 'ylabel', 'xlim', 'ylim', 'legend']
 A_plot_info = ['A_pie', 'A_boxplot', 'A_scatter', 'A_bar', 'A_hist', 'A_hlines', 'A_vlines', 'A_plot', 'A_title', 'A_xlabel', 'A_ylabel', 'A_xlim', 'A_ylim', 'A_legend']
 
-plot_pyplot = ['pie', 'boxplot', 'scatter', 'bar', 'hist', 'hlines', 'vlines', 'plot']
-A_plo_pyplot = ['A_pie', 'A_boxplot', 'A_scatter', 'A_bar', 'A_hist', 'A_hlines', 'A_vlines', 'A_plot']
+plot_pyplot = ['pie', 'scatter', 'bar', 'hist', 'hlines', 'vlines', 'plot']
+A_plo_pyplot = ['A_pie', 'A_scatter', 'A_bar', 'A_hist', 'A_hlines', 'A_vlines', 'A_plot']
 
 plot_kind = []
 A_plot_kind = []
@@ -609,11 +610,11 @@ def plot_feedback(A_plot_kind) :
     elif A_plot_kind[i] == 'boxplot' : 
       print('일단 패스')
     elif A_plot_kind[i] == 'scatter' : 
-      print('scatter 데이터 :', scatter_offset[i] == A_scatter_offset[i] )
+      print('scatter 데이터 :', scatter_offset[i] == A_scatter_offset[i] )  # 너무 길다 ... 
     elif A_plot_kind[i] == 'bar' : 
       print('막대 그래프 데이터 :', bar_data[i] == A_bar_data[i])
     elif A_plot_kind[i] == 'hist' : 
-      print('히스토그램 데이터 :', hist_data[i] == A_hist_data[i])
+      print('히스토그램 데이터 :', hist_data[i] == A_hist_data[i])  # 이것도 길다... 
     elif A_plot_kind[i] == 'hlines' : 
       print('수평선 :', hlines_data[i] == A_hlines_data[i])
     elif A_plot_kind[i] == 'vlines' : 
@@ -622,18 +623,24 @@ def plot_feedback(A_plot_kind) :
       print('plot 데이터 :', plot_data[i] == plot_data[i])
       print('plot 마커, 색, 선 :', plot_mcl[i] == A_plot_mcl[i])
 
-  if A_plot_title != '' : 
-    print('제목 :',A_plot_title == plot_title)
-  if A_plot_xlabel != '' : 
-    print('x축 이름 :', A_plot_xlabel == plot_xlabel)
-  if A_plot_ylabel != '' : 
-    print('y축 이름 :', A_plot_ylabel == plot_ylabel)
-  if A_plot_xlim != '' : 
-    print('x축 범위 :', A_plot_xlim == plot_xlim)
-  if A_plot_ylim != '' : 
-    print('y축 범위 :', A_plot_ylim == plot_ylim)
-  if A_plot_legend != '' : 
-    print('범례 :', A_plot_legend == plot_legend)  
+  # if A_plot_title != '' : 
+  #   print('제목 :',A_plot_title == plot_title)
+  # if A_plot_xlabel != '' : 
+  #   print('x축 이름 :', A_plot_xlabel == plot_xlabel)
+  # if A_plot_ylabel != '' : 
+  #   print('y축 이름 :', A_plot_ylabel == plot_ylabel)
+  # if A_plot_xlim != '' : 
+  #   print('x축 범위 :', A_plot_xlim == plot_xlim)
+  # if A_plot_ylim != '' : 
+  #   print('y축 범위 :', A_plot_ylim == plot_ylim)
+  # if A_plot_legend != '' : 
+  #   print('범례 :', A_plot_legend == plot_legend)  
+  print('title :', plot_title, A_plot_title)
+  print('xlabel :', plot_xlabel, A_plot_xlabel)
+  print('ylabel :', plot_ylabel, A_plot_ylabel)
+  print('xlim :', plot_xlim, A_plot_xlim)
+  print('ylim :', plot_ylim, A_plot_ylim)
+  print('legend :', plot_legend, A_plot_legend)
 
 def get_return(info) : 
   global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
@@ -646,7 +653,7 @@ def get_return(info) :
     pie_text.append([globals()['_pie'][1][i].get_text() for i in range(len(globals()['_pie'][1]))])
     pie_autotext.append([globals()['_pie'][2][i].get_text() for i in range(len(globals()['_pie'][2]))])
   elif info == 'boxplot' : 
-    box_data.append(globals()['_box']['boxes'][0].get_data()[1])    #boxplot 검토 필요, 1분위, 3분위 값만 저장
+    box_data.append(globals()['_boxplot']['boxes'][0].get_data()[1])    #boxplot 검토 필요, 1분위, 3분위 값만 저장
   elif info == 'scatter' : 
     scatter_offset.append(globals()['_scatter'].get_offsets())  # np.array_equal(_scatter_offset,A_scatter_offset) << 형태로 일치 여부 확인
   elif info == 'bar' :   #높이 값을 구할 수 있음, x 값은 아직,
@@ -655,9 +662,9 @@ def get_return(info) :
     hist_data.append(globals()['_hist'][0])  #값  이거 len 한게 bins
     hist_data.append(globals()['_hist'][1])  #x위치  
   elif info == 'hlines' : 
-    hlines_data.append(globals()['_hlines'].segments()[0]) # np.array_equal(A,B) 형태로 비교
+    hlines_data.append(globals()['_hlines'].get_segments()[0]) # np.array_equal(A,B) 형태로 비교 
   elif info == 'vlines' : 
-    vlines_data.append(globals()['_vlines'].segments()[0])
+    vlines_data.append(globals()['_vlines'].get_segments()[0])
   elif info == 'plot' : 
     plot_data.append(globals()['_plot'][0].get_data())
     plot_mcl.append([globals()['_plot'][0].get_marker(), globals()['_plot'][0].get_color(), globals()['_plot'][0].get_linestyle()])
@@ -677,7 +684,7 @@ def get_return(info) :
     A_pie_text.append([globals()['A_pie'][1][i].get_text() for i in range(len(globals()['A_pie'][1]))])
     A_pie_autotext.append([globals()['A_pie'][2][i].get_text() for i in range(len(globals()['A_pie'][2]))])
   elif info == 'A_boxplot' : 
-    A_box_data.append(globals()['A_box']['boxes'][0].get_data()[1])
+    A_box_data.append(globals()['A_boxplot']['boxes'][0].get_data()[1])
   elif info == 'A_scatter' : 
     A_scatter_offset.append(globals()['A_scatter'].get_offsets())   #boxplot 검토 필요, 1분위, 3분위 값만 저장
   elif info == 'A_bar' :   #높이 값을 구할 수 있음, x 값은 아직,
@@ -686,9 +693,9 @@ def get_return(info) :
     A_hist_data.append(globals()['A_hist'][0])
     A_hist_data.append(globals()['A_hist'][1])   
   elif info == 'A_hlines' : 
-    A_hlines_data.append(globals()['A_hlines'].segments()[0])
+    A_hlines_data.append(globals()['A_hlines'].get_segments()[0])
   elif info == 'A_vlines' : 
-    A_vlines_data.append(globals()['A_vlines'].segments()[0])
+    A_vlines_data.append(globals()['A_vlines'].get_segments()[0])
   elif info == 'A_plot' : 
     A_plot_data.append(globals()['A_plot'][0].get_data())
     A_plot_mcl.append([globals()['A_plot'][0].get_marker(), globals()['A_plot'][0].get_color(), globals()['A_plot'][0].get_linestyle()])
@@ -755,6 +762,7 @@ def plot_check(py) :
 
   global code, plot_kind, A_plot_kind, code_dict, plot_kind_code, A_plot_kind_code
   code = []
+  code_dict = {}
   plot_kind = []
   A_plot_kind = []
 
@@ -803,25 +811,43 @@ def plot_check(py) :
     if code[i].find('plt') >= 0 and code[i].find('A_') == 0 :  
       for j in plot_pyplot : 
         if code[i].find(j) >= 0 : 
-          A_plot_kind.append(j)
-          A_plot_kind_code.append(code[i])
+          if  code[i].find('boxplot') >= 0 : 
+            A_plot_kind.append('boxplot')
+          else : 
+            A_plot_kind.append(j)
+            A_plot_kind_code.append(code[i])
     elif code[i].find('plt') >= 0 and code[i].find(plot_not[0]) == -1 and code[i].find(plot_not[1]) == -1 and code[i].find(plot_not[2]) == -1  : 
       for j in plot_pyplot : 
         if code[i].find(j) >= 0 : 
-          plot_kind.append(j)
-          plot_kind_code.append(code[i])   
+          if code[i].find('boxplot') >= 0 : 
+            plot_kind.append('boxplot')
+          else : 
+            plot_kind.append(j)
+            plot_kind_code.append(code[i])   
+
 
   #code에서 code_dict에 값 넣기
   for i in range(len(code)) : 
     if code[i].find('A_') == 0 : 
+      print(code[i])
+
       for j in A_plot_info : 
-        if code[i].find(j) >= 0 : 
-          code_dict[code[i]] = j  
+        if code[i].find(j) >= 0  :
+          print(j)
+
+          if code[i].find('boxplot') >= 0: 
+            code_dict[code[i]] = 'A_boxplot'  
+          else :  
+            code_dict[code[i]] = j
     elif code[i].find('plt') >= 0 : 
       for j in plot_info : 
         if code[i].find(j) >= 0 and code[i].find(plot_not[0]) == -1 and code[i].find(plot_not[1]) == -1 and code[i].find(plot_not[2]) == -1  and not code[i].find('_A') == 0: 
-          code_dict['_'+j+'='+code[i]] = j  
-          code[i] = '_'+j+'='+code[i]  
+          if code[i].find('boxplot') >= 0 : 
+            code_dict['_boxplot='+code[i]] = 'boxplot'
+            code[i] = '_boxplot='+code[i]
+          else : 
+            code_dict['_'+j+'='+code[i]] = j  
+            code[i] = '_'+j+'='+code[i]  
 
   Question('''
   <h3 style = "float:left;width:50%" >왼쪽 그래프는 여러분이 작성한 그래프입니다. </h3>
