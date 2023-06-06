@@ -603,48 +603,64 @@ def plot_feedback(A_plot_kind) :
   global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
     
-  for i in range(len(A_plot_kind)) : 
-    if A_plot_kind[i] == 'pie' :
-      print('pie label :', pie_text[i] == A_pie_text[i])  
-      print('pie x값 :', pie_autotext[i] == A_pie_autotext[i])
+  for i in A_plot_kind : 
+    if i == 'pie' :
+      if pie_text != A_pie_text : print('원 그래프의 labels이 틀렸습니다.')
+      if pie_autotext != A_pie_autotext : print('원 그래프의 x값이 틀렸습니다.')
+      # print('pie label :', pie_text == A_pie_text)  
+      # print('pie x값 :', pie_autotext == A_pie_autotext)
       # print('label : ', pie_text[i], A_pie_text[i])
       # print('x값 : ', pie_autotext[i], A_pie_autotext[i])
-    elif A_plot_kind[i] == 'boxplot' : 
-      print('box_data : ',np.array_equal(box_data[i], A_box_data[i]))    
+    elif i == 'boxplot' : 
+      if not np.array_equal(box_data, A_box_data) : print('boxplot의 x값이 틀렸습니다.')
+      # print('box_data : ',np.array_equal(box_data, A_box_data))    
            
-    elif A_plot_kind[i] == 'scatter' : 
-      print('scatter 데이터 :', np.array_equal(scatter_offset[i],A_scatter_offset[i]))  # 해결
+    elif i == 'scatter' : 
+      if not np.array_equal(scatter_offset,A_scatter_offset) : print('scatter의 x값, y값이 틀렸습니다.')
+      # print('scatter 데이터 :', np.array_equal(scatter_offset,A_scatter_offset))  # 해결
       # print('scatter : ', scatter_offset[i], A_scatter_offset[i])
-    elif A_plot_kind[i] == 'bar' : 
-      print('막대 그래프 데이터 :', bar_data[i] == A_bar_data[i])  # 해결
+    elif i == 'bar' : 
+      if bar_data != A_bar_data : print('막대그래프의 x값이 틀렸습니다.')
+      # print('막대 그래프 데이터 :', bar_data == A_bar_data)  # 해결
       # print('bar : ', bar_data, A_bar_data)
-    elif A_plot_kind[i] == 'hist' : 
-      print('히스토그램 데이터 :', str(hist_data[i]) == str(A_hist_data[i]))  # 이것도 길다...
+    elif i == 'hist' : 
+      if str(hist_data) != str(A_hist_data) : print('히스토그램의 x값이 틀렸습니다.')
+      # print('히스토그램 데이터 :', str(hist_data) == str(A_hist_data))  # 이것도 길다...
       # print('hist : ', hist_data[i], A_hist_data[i])
-    elif A_plot_kind[i] == 'hlines' : 
-      print('수평선 :', np.array_equal(hlines_data[i], A_hlines_data[i]))
+    elif i == 'hlines' : 
+      if not np.array_equal(hlines_data, A_hlines_data) : print('수평선의 y, xmin, xmax값이 틀렸습니다.')
+      # print('수평선 :', np.array_equal(hlines_data, A_hlines_data))
       # print('hlines : ', hlines_data[i], A_hlines_data[i])
-    elif A_plot_kind[i] == 'vlines' : 
-      print('수직선 :', np.array_equal(vlines_data[i], A_vlines_data[i]))
+    elif i == 'vlines' : 
+      if not np.array_equal(vlines_data, A_vlines_data) : print('수직선의 x, ymin, ymax값이 틀렸습니다.')
+      # print('수직선 :', np.array_equal(vlines_data, A_vlines_data))
       # print('vlines : ', vlines_data[i], A_vlines_data[i])      
-    elif A_plot_kind[i] == 'plot' : 
-      print('plot 데이터 :', np.array_equal(plot_data[i], plot_data[i]))
-      print('plot 마커, 색, 선 :', np.array_equal(plot_mcl[i], A_plot_mcl[i]))
+    elif i == 'plot' : 
+      if not np.array_equal(plot_data, A_plot_data) : print('plot의 데이터가 틀렸습니다.')
+      if not np.array_equal(plot_mcl, A_plot_mcl) : print('plot의 마커, 색, 선종류가 틀렸습니다.') 
+      # print('plot 데이터 :', np.array_equal(plot_data, plot_data))
+      # print('plot 마커, 색, 선 :', np.array_equal(plot_mcl, A_plot_mcl))
       # print('데이터 : ', plot_data[i], A_plot_data[i])
       # print('마커 등 : ', plot_mcl[i], A_plot_mcl[i])
 
   if A_plot_title != '' : 
-    print('제목 :',A_plot_title == plot_title)
+    if A_plot_title != plot_title : print('title이 틀렸습니다.')
+    # print('제목 :',A_plot_title == plot_title)
   if A_plot_xlabel != '' : 
-    print('x축 이름 :', A_plot_xlabel == plot_xlabel)
+    if A_plot_xlabel != plot_xlabel : print('xlabel이 틀렸습니다.')
+    # print('x축 이름 :', A_plot_xlabel == plot_xlabel)
   if A_plot_ylabel != '' : 
-    print('y축 이름 :', A_plot_ylabel == plot_ylabel)
+    if A_plot_ylabel != plot_ylabel : print('ylabel이 틀렸습니다.')
+    # print('y축 이름 :', A_plot_ylabel == plot_ylabel)
   if A_plot_xlim != '' : 
-    print('x축 범위 :', A_plot_xlim == plot_xlim)
+    if A_plot_xlim != plot_xlim : print('xlim이 틀렸습니다.')
+    # print('x축 범위 :', A_plot_xlim == plot_xlim)
   if A_plot_ylim != '' : 
-    print('y축 범위 :', A_plot_ylim == plot_ylim)
+    if A_plot_ylim != plot_ylim : print('ylim이 틀렸습니다.')
+    # print('y축 범위 :', A_plot_ylim == plot_ylim)
   if A_plot_legend != '' : 
-    print('범례 :', str(A_plot_legend) == str(plot_legend))  
+    if str(A_plot_legend) != str(plot_legend) : print('legend가 틀렸습니다.')
+    # print('범례 :', str(A_plot_legend) == str(plot_legend))  
   # print('title :', plot_title, A_plot_title)
   # print('xlabel :', plot_xlabel, A_plot_xlabel)
   # print('ylabel :', plot_ylabel, A_plot_ylabel)
