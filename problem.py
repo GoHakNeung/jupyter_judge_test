@@ -2190,7 +2190,7 @@ img_8002 = ''
 question_review_8002 = ''' 
 '''
 answer_8002 = [
-    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_scatter=plt.scatter(df['x'],df['y'])",'A_xlim=plt.xlim(0,100)','A_xlim=plt.ylim(0,100)',"A_title=plt.title('x,y의 산점도')", 'plt.show()']}
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/scatter1.csv')",'plt.subplot(1,2,2)',"A_scatter=plt.scatter(df['x'],df['y'])",'A_xlim=plt.xlim(0,100)','A_ylim=plt.ylim(0,100)',"A_title=plt.title('x,y의 산점도')", 'plt.show()']}
 ]
 
 question_8003 = '''hist
