@@ -2249,7 +2249,14 @@ answer_8008 = [
     {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', 'a = [1,2,3,4,5]', 'b = [10, 12, 14, 13, 17]', 'A_bar=plt.bar(a,b)', 'A_ylim=plt.ylim(5, 20)', "A_title=plt.title('막대그래프')", 'plt.show()']}
 ]
 
-
+question_8009 = '''complex_bar+plot
+'''
+img_8009 = ''
+question_review_8009 = ''' 
+'''
+answer_8009 = [
+    {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', "t_day = ['8','9','10','11','12','13','14']", 'max_temp = [30,29,33,32,29,34,31]', 'sell = [20, 22, 23, 23, 24, 24, 25]', 'A_plot=plt.plot(t_day, max_temp)', 'A_bar=plt.bar(t_day, sell)', "A_xlabel=plt.xlabel('일')", "A_ylabel=plt.ylabel('최고기온')", 'A_ylim=plt.ylim(0,35)', "A_title=plt.title('일별 최고기온')", 'plt.show()']}
+]
 
 question_8201 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>아래 표는 집에서 학교까지 가는 방법별 걸리는 시간은 다음과 같습니다.</p>
@@ -2710,6 +2717,7 @@ test_set = [
     {'test_file' : '_8006.py', 'answer' : answer_8006, 'question' : question_8006, 'img' : img_8006},
     {'test_file' : '_8007.py', 'answer' : answer_8007, 'question' : question_8007, 'img' : img_8007},
     {'test_file' : '_8008.py', 'answer' : answer_8008, 'question' : question_8008, 'img' : img_8008},
+    {'test_file' : '_8009.py', 'answer' : answer_8009, 'question' : question_8009, 'img' : img_8009},  
       
   
   
