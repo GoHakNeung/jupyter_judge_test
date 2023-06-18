@@ -2167,7 +2167,7 @@ question_8000 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>pop = [1500000, 370000, 2200000, 1600000]</p>
 </div>
 <div style = "float:right;width:50%">
-<h2>출력 예시 </h2>
+<h2>그래프 예시 </h2>
 <p>label, 백분율이 표시되고 세종시가 강조된 원 그래프</p>
 <img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8000.png?raw=true" width = 150% height = 150%>
 </div>
