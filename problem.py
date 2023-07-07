@@ -1407,7 +1407,7 @@ question_5202 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5202 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5202 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(150)', ' t.left(60)']}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(150)', ' t.left(120)']}
 ]
 
 question_5203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
@@ -1430,7 +1430,7 @@ question_5203 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5203 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5203 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(6) : ', ' t.forward(75)', ' t.left(120)']}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(6) : ', ' t.forward(75)', ' t.left(60)']}
 ]
 
 question_5204 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
@@ -1453,7 +1453,7 @@ question_5204 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5204 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5204 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(5) : ', ' t.forward(100)', ' t.right(36)']}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(5) : ', ' t.forward(100)', ' t.right(144)']}
 ]
 
 question_5205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
@@ -1476,7 +1476,7 @@ question_5205 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5205 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5205 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(2) : ', ' t.forward(120)', ' t.left(135)', ' t.forward(120)', ' t.left(45)' ]}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(2) : ', ' t.forward(120)', ' t.left(45)', ' t.forward(120)', ' t.left(135)' ]}
 ]
 
 question_5206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
@@ -1499,7 +1499,7 @@ question_5206 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 '''
 img_5206 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true"
 answer_5206 = [
-    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(100)', ' t.left(60)']}
+    {'input' : [], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(3) : ', ' t.forward(100)', ' t.left(120)']}
 ]
 
 
