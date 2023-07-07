@@ -249,7 +249,8 @@ class Turtle:
         if not isinstance(degrees, (int,float)):
             raise ValueError('degrees must be a number.')
 
-        self.turtle_degree = (self.turtle_degree + (180-degrees)) % 360
+#        self.turtle_degree = (self.turtle_degree + (180-degrees)) % 360 #도형의 내각을 중심으로 회전할 때, 
+        self.turtle_degree = (self.turtle_degree + degrees) % 360        #도형의 외각을 중심으로 회전할 때, 이게 기본임.
         self.drawing_window._updateDrawing(turtle=self, delay=force)
 
     rt = right # alias
