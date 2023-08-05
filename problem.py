@@ -445,7 +445,8 @@ img_3106 = "https://github.com/GoHakNeung/python/blob/main/img_1106.jpg?raw=true
 answer_3106 = [
     {'input' : [[543], [30]], 'output' : [18]},
     {'input' : [[24], [25]], 'output' : [0]},
-    {'input' : [[768], [40]], 'output' : [19]}
+    {'input' : [[768], [40]], 'output' : [19]},
+    {'input' : [[128], [8]], 'output' : [16]}
 ]
 
 #혼합계산산
