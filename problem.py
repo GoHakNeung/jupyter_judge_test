@@ -417,7 +417,8 @@ img_3105 = "https://github.com/GoHakNeung/python/blob/main/img_1107.jpg?raw=true
 answer_3105 = [
     {'input' : [[124], [12]], 'output' : [11]},
     {'input' : [[453], [34]], 'output' : [14]},
-    {'input' : [[53], [7]], 'output' : [8]}
+    {'input' : [[53], [7]], 'output' : [8]},
+    {'input' : [[64], [8]], 'output' : [8]}
 ]
 question_3106 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>2개의 숫자를 입력받습니다.</p>
