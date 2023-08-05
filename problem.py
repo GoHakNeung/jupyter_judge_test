@@ -394,32 +394,8 @@ answer_3104 = [
     {'input' : [[764], [50]], 'output' : [764/50]}
 ]
 
-question_3105 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>2개의 숫자를 입력받습니다.</p>
-<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 소풍에 놀러 온 학생 숫자이고, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 관람차에 탈 수 있는 정원입니다. 소풍 온 학생들이 모두 관람차를 타려면 관람차는 몇 대가 필요할까요?</p>
-<HR>
-<h2>입력</h2>
-<p>첫째 줄에는 소풍에 놀러 온 학생 숫자이고, 둘째 줄에는 관람차 정원 숫자가 입력됩니다.</p>
-<h2>출력</h2>
-<p>소풍에 놀러 온 학생들이 모두 관람차를 타기 위해서 필요한 관람차 개수</p>
-<HR>
-<div style = "float:left;width:50%">
-<h2>입력 예시 </h2>
-<p>36</p>
-<p>8</p>
-</div>
-<div style = "float:right;width:50%">
-<h2>출력 예시 </h2>
-<p>5</p>
-</div>
-'''
-img_3105 = "https://github.com/GoHakNeung/python/blob/main/img_1107.jpg?raw=true"
-answer_3105 = [
-    {'input' : [[124], [12]], 'output' : [11]},
-    {'input' : [[453], [34]], 'output' : [14]},
-    {'input' : [[53], [7]], 'output' : [8]},
-    {'input' : [[64], [8]], 'output' : [8]}
-]
+## 3105 문제는 조건문으로 옮김.
+
 question_3106 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>2개의 숫자를 입력받습니다.</p>
 <p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 올 가을 수확한 사과 수이고, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 한 상자에 담을 수 있는 사과 수입니다.</p>
@@ -1613,6 +1589,36 @@ answer_6104 = [
     {'input' : [[2134], [1243], [32]], 'output' : [32]},
     {'input' : [[452], [34], [6565]], 'output' : [34]}
 ]
+
+question_6105 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>2개의 숫자를 입력받습니다.</p>
+<p><span style = "background-color:	#E0E0E0;">첫 번째 숫자</span>는 소풍에 놀러 온 학생 숫자이고, <span style = "background-color:	#E0E0E0;">두 번째 숫자</span>는 관람차에 탈 수 있는 정원입니다. 소풍 온 학생들이 모두 관람차를 타려면 관람차는 몇 대가 필요할까요?</p>
+<HR>
+<h2>입력</h2>
+<p>첫째 줄에는 소풍에 놀러 온 학생 숫자이고, 둘째 줄에는 관람차 정원 숫자가 입력됩니다.</p>
+<h2>출력</h2>
+<p>소풍에 놀러 온 학생들이 모두 관람차를 타기 위해서 필요한 관람차 개수</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>입력 예시 </h2>
+<p>36</p>
+<p>8</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>출력 예시 </h2>
+<p>5</p>
+</div>
+'''
+img_6105 = "https://github.com/GoHakNeung/python/blob/main/img_1107.jpg?raw=true"
+answer_6105 = [
+    {'input' : [[124], [12]], 'output' : [11]},
+    {'input' : [[453], [34]], 'output' : [14]},
+    {'input' : [[53], [7]], 'output' : [8]},
+    {'input' : [[64], [8]], 'output' : [8]}
+]
+
+
+
 #예각,직각,둔각 알기
 question_6201 ='''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>입력 받은 1개의 <span style = "background-color : #E0E0E0">숫자(각도)</span>가 예각인지, 직각인지, 둔각인지 출력하도록 프로그램을 만들어봅시다.</p>
@@ -2639,7 +2645,7 @@ test_set = [
     {'test_file' : '_3102.py', 'answer' : answer_3102, 'question' : question_3102, 'img' : img_3102},
     {'test_file' : '_3103.py', 'answer' : answer_3103, 'question' : question_3103, 'img' : img_3103},
     {'test_file' : '_3104.py', 'answer' : answer_3104, 'question' : question_3104, 'img' : img_3104},
-    {'test_file' : '_3105.py', 'answer' : answer_3105, 'question' : question_3105, 'img' : img_3105},
+    #3105문제는 조건으로 옮김.
     {'test_file' : '_3106.py', 'answer' : answer_3106, 'question' : question_3106, 'img' : img_3106},
     {'test_file' : '_3107.py', 'answer' : answer_3107, 'question' : question_3107, 'img' : img_3107},    
     {'test_file' : '_3108.py', 'answer' : answer_3108, 'question' : question_3108, 'img' : img_3108},
@@ -2688,6 +2694,7 @@ test_set = [
     {'test_file' : '_6102.py', 'answer' : answer_6102, 'question' : question_6102, 'img' : img_6102},   
     {'test_file' : '_6103.py', 'answer' : answer_6103, 'question' : question_6103, 'img' : img_6103},
     {'test_file' : '_6104.py', 'answer' : answer_6104, 'question' : question_6104, 'img' : img_6104},
+    {'test_file' : '_6105.py', 'answer' : answer_6105, 'question' : question_6105, 'img' : img_6105},  
     {'test_file' : '_6201.py', 'answer' : answer_6201, 'question' : question_6201, 'img' : img_6201},
     {'test_file' : '_6202.py', 'answer' : answer_6202, 'question' : question_6202, 'img' : img_6202},
     {'test_file' : '_6203.py', 'answer' : answer_6203, 'question' : question_6203, 'img' : img_6203},   
