@@ -596,12 +596,6 @@ def plot_convert(output_plot) :
 
 
 # 함수에 정보를 주기 위 한 함수.
-# 후에 수정 사항
-# 1. plot_kind는 여러개가 들어올 수 있음.
-# 문제는 이상하면 피드백 하는데, 
-# 같은 종류 그래프가 2개 이상이면 같은 메세지를 2번 전달해버림... 
-# 하나로 리스트에서 set을 이용해서 통합시켜야 하나.. 이거 고민스..
-
 
 def plot_feedback(A_plot_kind) : 
   global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
@@ -610,7 +604,7 @@ def plot_feedback(A_plot_kind) :
   global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
     
-  for i in A_plot_kind : 
+  for i in set(A_plot_kind) : 
     if i == 'pie' :
       if pie_text != A_pie_text : Question('원 그래프의 <b>labels</b>가 틀렸습니다.') #print('원 그래프의 labels이 틀렸습니다.')
       if pie_autotext != A_pie_autotext : Question('원 그래프의 <b>x값</b>이 틀렸습니다.') #print('원 그래프의 x값이 틀렸습니다.')
