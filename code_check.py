@@ -596,6 +596,12 @@ def plot_convert(output_plot) :
 
 
 # 함수에 정보를 주기 위 한 함수.
+# 후에 수정 사항
+# 1. plot_kind는 여러개가 들어올 수 있음.
+# 문제는 이상하면 피드백 하는데, 
+# 같은 종류 그래프가 2개 이상이면 같은 메세지를 2번 전달해버림... 
+# 하나로 리스트에서 set을 이용해서 통합시켜야 하나.. 이거 고민스..
+
 
 def plot_feedback(A_plot_kind) : 
   global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
