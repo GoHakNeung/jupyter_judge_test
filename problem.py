@@ -2257,13 +2257,42 @@ answer_8008 = [
     {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', 'a = [1,2,3,4,5]', 'b = [10, 12, 14, 13, 17]', 'A_bar=plt.bar(a,b)', 'A_ylim=plt.ylim(5, 20)', "A_title=plt.title('막대그래프')", 'plt.show()']}
 ]
 
-question_8009 = '''complex_bar+plot
+question_8009 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>아래 데이터는 8일부터 14일까지 일별 최고기온과 아이스크림 판매량입니다.</p>
+<p>일별 최고기온을 꺾은선 그래프로 나타내고 일별 아이스크림 판매량을 막대 그래프로 나타내봅시다.</p>
+<HR>
+<h2>데이터</h2>
+<p>일별 최고기온</p>
+<p>일별 아이스크림 판매량</p>
+<h2>그래프</h2>
+<p>y축 범위는 0 ~ 35로 합니다.</p>
+<p>x축 이름은 일, y축 이름은 최고기온으로 합니다.</p>
+<p>그래프 이름은 일별 최고기온으로 합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>t_day = ['8일','9일','10일','11일','12일','13일','14일']</p>
+<p>max_temp = [30,29,39,32,29,34,31]</p>
+<p>sell = [20, 22, 23, 23, 24, 24, 25]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<p>막대그래프와 꺾은선그래프가 동시에 표현된 그래프</p>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8009.png?raw=true" width = 150% height = 150%>
+</div>
 '''
 img_8009 = ''
-question_review_8009 = ''' 
+question_review_8009 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>막대 그래프
+<input type='checkbox'/>꺽은선 그래프
+<input type='checkbox'/>y축 범위
+<input type='checkbox'/>title
+<input type='checkbox'/>x축 이름, y축 이름
 '''
+
 answer_8009 = [
-    {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', "t_day = ['8','9','10','11','12','13','14']", 'max_temp = [30,29,33,32,29,34,31]', 'sell = [20, 22, 23, 23, 24, 24, 25]', 'A_plot=plt.plot(t_day, max_temp)', 'A_bar=plt.bar(t_day, sell)', "A_xlabel=plt.xlabel('일')", "A_ylabel=plt.ylabel('최고기온')", 'A_ylim=plt.ylim(0,35)', "A_title=plt.title('일별 최고기온')", 'plt.show()']}
+    {'input' : [[10]], 'output' : ['plt.subplot(1,2,2)', "t_day = ['8일','9일','10일','11일','12일','13일','14일']", 'max_temp = [30,29,33,32,29,34,31]', 'sell = [20, 22, 23, 23, 24, 24, 25]', 'A_plot=plt.plot(t_day, max_temp)', 'A_bar=plt.bar(t_day, sell)', "A_xlabel=plt.xlabel('일')", "A_ylabel=plt.ylabel('최고기온')", 'A_ylim=plt.ylim(0,35)', "A_title=plt.title('일별 최고기온')", 'plt.show()']}
 ]
 
 question_8201 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
