@@ -2272,7 +2272,7 @@ question_8009 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>t_day = ['8일','9일','10일','11일','12일','13일','14일']</p>
-<p>max_temp = [30,29,39,32,29,34,31]</p>
+<p>max_temp = [30,29,33,32,29,34,31]</p>
 <p>sell = [20, 22, 23, 23, 24, 24, 25]</p>
 </div>
 <div style = "float:right;width:50%">
