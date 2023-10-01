@@ -490,7 +490,7 @@ def turtle_convert(output_turtle) :
   print('#---코드 변환---')
   print('from jupyter_judge.ColabTurtleClass import Turtle, Window')
   print('window = Window()')
-  print('#---코드 변환---')
+  print('s = Turtle(window)')
   for i in range(len(code)) : 
     print(code[i])
 
