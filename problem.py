@@ -2386,9 +2386,10 @@ question_8203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>max_temp = [30, 29, 33, 32, 29, 34, 31]</p>
 </div>
 <div style = "float:right;width:50%">
-<h2>그래프프 예시 </h2>
+<h2>그래프 예시 </h2>
 <p>가로축 이름 : 일</p>
 <p>세로축 이름 : 최고기온</p>
+<p>세로축 범위 : 0 ~ 35</p>
 <p>그래프 제목 : 일별 최고기온</p>
 <img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8203.png?raw=true" width = 150% height = 150%>
 </div>
