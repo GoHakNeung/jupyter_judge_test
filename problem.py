@@ -2870,4 +2870,7 @@ test_set = [
     {'test_file' : '_8211.py', 'answer' : answer_8211, 'question' : question_8211, 'img' : img_8211},      
     {'test_file' : '_8219.py', 'answer' : answer_8219, 'question' : question_8219, 'img' : img_8219},        
     {'test_file' : '_8220.py', 'answer' : answer_8220, 'question' : question_8220, 'img' : img_8220},         
+    {'test_file' : '_8401.py', 'answer' : answer_8401, 'question' : question_8401, 'img' : img_8401},      
+    {'test_file' : '_8402.py', 'answer' : answer_8402, 'question' : question_8402, 'img' : img_8402},        
+    {'test_file' : '_8403.py', 'answer' : answer_8403, 'question' : question_8403, 'img' : img_8403},        
 ]
