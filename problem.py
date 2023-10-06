@@ -2324,27 +2324,26 @@ question_8201 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <HR>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
-<p>way = [ ]</p>
-<p>way_time = [ ]</p>
+<p>way = ['자동차', '버스', '지하철', '버스와 지하철']</p>
+<p>way_time = [35, 55, 20, 30]</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프프 예시 </h2>
 <p>가로축 이름 : 이동수단</p>
 <p>세로축 이름 : 소요시간</p>
-<p>그래프 제목 : 이동 수단 별 소요 시간</p>
+<p>그래프 제목 : 이동수단 별 소요 시간</p>
 </div>
 '''
 img_8201 = ''
 question_review_8201 = '''
 <h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
-<input type='checkbox'/>x축에 표시된 값
+<input type='checkbox'/>x축에 표시된 이름
 <input type='checkbox'/>y축 값
-<input type='checkbox'/>막대그래프
 <input type='checkbox'/>x축, y축 label
 <input type='checkbox'/>그래프 제목
 '''
 answer_8201 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "plt.bar(way, way_time)", "plt.xlabel('이동수단')", "plt.ylabel('소요시간')", "plt.title('이동수단별 소요시간')", "plt.show()"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "plt.bar(way, way_time)", "plt.xlabel('이동수단')", "plt.ylabel('소요시간')", "plt.title('이동수단 별 소요시간')", "plt.show()"]}
 ]
 
 question_8203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
