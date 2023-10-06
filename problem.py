@@ -2652,6 +2652,108 @@ question_review_8220 = '''
 answer_8220 = [
     {'input' : [], 'output' : ["plt.subplot(1,2,2)", "df = pd.read_csv('/content/jupyter_judge/csv_file/scatter2.csv')", "plt.scatter(df['x'], df['y'])", "plt.xlim(0,100)", "plt.ylim(0,100)", "plt.title('x,y의 산점도')", "plt.show()"]}
 ]
+question_8401 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p> 다음은 부산광역시 연도별 자동차 등록 대수와 관련된 공공데이터이다.</p>
+<p><a href ="https://www.data.go.kr/data/15063675/fileData.do" target = 'blank'>부산광역시 자동차 등록 대수 공공데이터</a></p>
+<p>부산광역시의 연도별 자동차 등록대수를 꺾은선 그래프로 나타내봅시다. 100만에 해당하는 숫자에 수평선을 빨간색으로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>부산광역시 연도별 자동차 등록대수</p>
+<h2>그래프</h2>
+<p>연도별 자동차 등록 대수를 꺾은선 그래프로 나타냅니다.</p>
+<p>100만에 해당하는 숫자에 빨간색 수평선을 그립니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/busan_car.csv')</p>
+<p>'연도', '계' 열에 있는 데이터를 사용해봅시다.
+<p>그래프 제목은 '연도별 부산시 자동차 등록대수'로 합니다.</p>
+</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8401.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8401 = ''
+question_review_8401 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>수평선
+<input type='checkbox'/>제목
+<input type='checkbox'/>데이터 프레임에서 열 선택
+'''
+answer_8401 = [
+    {'input' : [[10]], 'output' : ["plt.plot(df['연도'], df['계'])", "plt.hlines(1000000,1960, 2022, color = 'red')", "plt.title('연도별 부산시 자동차 등록대수 변화')", "plt.show()"]}
+]
+
+question_8402 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>2022년 10대 수출품과 수입품의 중량과 금액에 대한 데이터입니다.</p>
+<p><a href ="https://tradedata.go.kr/cts/index.do" target = 'blank'>관세청 홈페이지</a></p>
+<p>10대 수출품과 수입품에 대한 데이터를 원 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>10대 수출입 품목 및 국가 무역통계</p>
+<h2>그래프</h2>
+<p>10대 수출품의 수출금액을 가지고 원그래프를 그립니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/trade.csv')</p>
+<p>'품목명', '수출금액' 열에 있는 데이터를 사용해봅시다.</p>
+<p>그래프 제목은 '2022년 10대 수출품'으로 합니다.</p>
+</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8402.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8402 = ''
+question_review_8402 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>원 그래프
+<input type='checkbox'/>X값
+<input type='checkbox'/>label
+<input type='checkbox'/>제목
+'''
+answer_8402 = [
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/trade.csv')", "x = df['수출금액']", "labels = df['품목명']", "plt.pie(x,labels = labels, autopct = '%.f%%')", "plt.title('2022년 10대 수출품')"]}
+]
+
+question_8403 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>2022년 월별 온도와 월별로 발생한 식중독 발생 건수입니다.</p>
+<p><a href ="https://data.kma.go.kr/stcs/grnd/grndTaList.do?pgmNo=70" target = 'blank'>기상청 홈페이지</a></p>
+<p><a href ="http://www.foodsafetykorea.go.kr/portal/healthyfoodlife/foodPoisoningStat.do?menu_no=519&menu_grp=MENU_GRP02" target = 'blank'>식품의약안전처</a></p>
+<p>2022년 월별 온도를 꺾은선 그래프로 나타내고, 월별 식중독 발생건수를 막대 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>2022년 월별 평균 온도</p>
+<p>2022년 월별 발생한 식중독 발생 건수</p>
+<h2>그래프</h2>
+<p>월별 온도는 꺾은선 그래프로 나타내고, 월별 식중독 발생 건수는 막대 그래프(빨간색)로 나타냅니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/food_poisoning.csv')</p>
+<p>'month', 'outbreak', 'temp' 열에 있는 데이터를 사용해봅시다.</p>
+<p>그래프 제목은 '식중독과 온도 그래프'</p>
+</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8403.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8403 = ''
+question_review_8403 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>막대 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+'''
+answer_8403 = [
+    {'input' : [[10]], 'output' : ["plt.plot(df.month, df.temp)", "plt.bar(df.month, df.outbreak, color = 'red')", "plt.title('식중독과 온도 그래프')", "plt.xlabel('월')", "plt.show()"]}
+]
+
 
 
 
