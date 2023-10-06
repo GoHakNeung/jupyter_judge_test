@@ -2683,7 +2683,7 @@ question_review_8401 = '''
 <input type='checkbox'/>데이터 프레임에서 열 선택
 '''
 answer_8401 = [
-    {'input' : [[10]], 'output' : ["plt.plot(df['연도'], df['계'])", "plt.hlines(1000000,1960, 2022, color = 'red')", "plt.title('연도별 부산시 자동차 등록대수 변화')", "plt.show()"]}
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/busan_car.csv')","plt.plot(df['연도'], df['계'])", "plt.hlines(1000000,1960, 2022, color = 'red')", "plt.title('연도별 부산시 자동차 등록대수 변화')", "plt.show()"]}
 ]
 
 question_8402 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2751,7 +2751,7 @@ question_review_8403 = '''
 <input type='checkbox'/>xlabel
 '''
 answer_8403 = [
-    {'input' : [[10]], 'output' : ["plt.plot(df.month, df.temp)", "plt.bar(df.month, df.outbreak, color = 'red')", "plt.title('식중독과 온도 그래프')", "plt.xlabel('월')", "plt.show()"]}
+    {'input' : [[10]], 'output' : ["df = pd.read_csv('/content/jupyter_judge/csv_file/food_poisoning.csv')","plt.plot(df.month, df.temp)", "plt.bar(df.month, df.outbreak, color = 'red')", "plt.title('식중독과 온도 그래프')", "plt.xlabel('월')", "plt.show()"]}
 ]
 
 
