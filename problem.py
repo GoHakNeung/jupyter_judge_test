@@ -2750,7 +2750,7 @@ question_review_8403 = '''
 <input type='checkbox'/>xlabel
 '''
 answer_8403 = [
-    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/food_poisoning.csv')","A_plt.plot(df.month, df.temp)", "A_bar=plt.bar(df.month, df.outbreak, color = 'red')", "A_title=plt.title('식중독과 온도 그래프')", "A_xlabel=plt.xlabel('월')", "plt.show()"]}
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/food_poisoning.csv')","A_plt=plt.plot(df.month, df.temp)", "A_bar=plt.bar(df.month, df.outbreak, color = 'red')", "A_title=plt.title('식중독과 온도 그래프')", "A_xlabel=plt.xlabel('월')", "plt.show()"]}
 ]
 
 
