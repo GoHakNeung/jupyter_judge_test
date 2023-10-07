@@ -2343,7 +2343,7 @@ question_review_8201 = '''
 <input type='checkbox'/>그래프 제목
 '''
 answer_8201 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "A_bar=plt.bar(way, way_time)", "A_xlabel=plt.xlabel('이동수단')", "A_ylabel=plt.ylabel('소요시간')", "A_title=plt.title('이동수단 별 소요시간')", "plt.show()"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "A_bar=plt.bar(way, way_time)", "A_xlabel=plt.xlabel('이동수단')", "A_ylabel=plt.ylabel('소요시간')", "A_title=plt.title('이동수단 별 소요 시간')", "plt.show()"]}
 ]
 
 question_8203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
