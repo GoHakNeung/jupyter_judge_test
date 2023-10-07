@@ -2343,7 +2343,7 @@ question_review_8201 = '''
 <input type='checkbox'/>그래프 제목
 '''
 answer_8201 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "plt.bar(way, way_time)", "plt.xlabel('이동수단')", "plt.ylabel('소요시간')", "plt.title('이동수단 별 소요시간')", "plt.show()"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "way = ['자동차', '버스', '지하철', '버스와 지하철']", "way_time = [35, 55, 20, 30]", "A_plt.bar(way, way_time)", "A_plt.xlabel('이동수단')", "A_plt.ylabel('소요시간')", "A_plt.title('이동수단 별 소요시간')", "plt.show()"]}
 ]
 
 question_8203 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2402,7 +2402,7 @@ question_review_8203 = '''
 <input type='checkbox'/>그래프 제목
 '''
 answer_8203 = [
-    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "t_day = [8,9,10,11,12,13,14]", "max_temp = [30, 29, 33, 32, 29, 34, 31]", "plt.plot(t_day, max_temp)", "plt.xlabel('일')", "plt.ylabel('최고기온')", "plt.title('일별 최고기온')", "plt.ylim(0,35)", "plt.show()"]}
+    {'input' : [], 'output' : ["plt.subplot(1,2,2)", "t_day = [8,9,10,11,12,13,14]", "max_temp = [30, 29, 33, 32, 29, 34, 31]", "A_plt.plot(t_day, max_temp)", "A_plt.xlabel('일')", "A_plt.ylabel('최고기온')", "A_plt.title('일별 최고기온')", "A_plt.ylim(0,35)", "plt.show()"]}
 ]
 
 question_8206 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2682,7 +2682,7 @@ question_review_8401 = '''
 <input type='checkbox'/>데이터 프레임에서 열 선택
 '''
 answer_8401 = [
-    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/busan_car.csv')","plt.plot(df['연도'], df['계'])", "plt.hlines(1000000,1960, 2022, color = 'red')", "plt.title('연도별 부산시 자동차 등록대수 변화')", "plt.show()"]}
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/busan_car.csv')","plt.plot(df['연도'], df['계'])", "A_plt.hlines(1000000,1960, 2022, color = 'red')", "A_plt.title('연도별 부산시 자동차 등록대수 변화')", "A_plt.show()"]}
 ]
 
 question_8402 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2715,7 +2715,7 @@ question_review_8402 = '''
 <input type='checkbox'/>제목
 '''
 answer_8402 = [
-    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/trade.csv')", "x = df['수출금액']", "labels = df['품목명']", "plt.pie(x,labels = labels, autopct = '%.f%%')", "plt.title('2022년 10대 수출품')"]}
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/trade.csv')", "x = df['수출금액']", "labels = df['품목명']", "A_plt.pie(x,labels = labels, autopct = '%.f%%')", "A_plt.title('2022년 10대 수출품')", "plt.show()"]}
 ]
 
 question_8403 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2750,7 +2750,7 @@ question_review_8403 = '''
 <input type='checkbox'/>xlabel
 '''
 answer_8403 = [
-    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/food_poisoning.csv')","plt.plot(df.month, df.temp)", "plt.bar(df.month, df.outbreak, color = 'red')", "plt.title('식중독과 온도 그래프')", "plt.xlabel('월')", "plt.show()"]}
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/food_poisoning.csv')","A_plt.plot(df.month, df.temp)", "A_plt.bar(df.month, df.outbreak, color = 'red')", "A_plt.title('식중독과 온도 그래프')", "A_plt.xlabel('월')", "plt.show()"]}
 ]
 
 
