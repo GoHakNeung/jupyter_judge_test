@@ -2659,7 +2659,7 @@ question_8401 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <p>부산광역시 연도별 자동차 등록대수</p>
 <h2>그래프</h2>
 <p>연도별 자동차 등록 대수를 꺾은선 그래프로 나타냅니다.</p>
-<p>100만에 해당하는 숫자에 빨간색 수평선을 그립니다.</p>
+<p>100만에 해당하는 숫자에 1960~2022까지 빨간색 수평선을 그립니다.</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
@@ -2682,7 +2682,7 @@ question_review_8401 = '''
 <input type='checkbox'/>데이터 프레임에서 열 선택
 '''
 answer_8401 = [
-    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/busan_car.csv')","A_plot=plt.plot(df['연도'], df['계'])", "A_hlines=plt.hlines(1000000,1960, 2022, color = 'red')", "A_title=plt.title('연도별 부산시 자동차 등록대수 변화')", "A_plt.show()"]}
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/busan_car.csv')","A_plot=plt.plot(df['연도'], df['계'])", "A_hlines=plt.hlines(1000000,1960, 2022, color = 'red')", "A_title=plt.title('연도별 부산시 자동차 등록대수 변화')", "plt.show()"]}
 ]
 
 question_8402 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
