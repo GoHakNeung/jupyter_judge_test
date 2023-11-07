@@ -1061,6 +1061,7 @@ def plot_check(py) :
   img_answer = np.asarray(Image.open(answer_graph))
 
   if np.array_equal(img_submit, img_answer) :
+    input('그래프를 보고 알 수 있는 내용을 적어봅시다.')
     # print(tc_green+'정답입니다.'+reset)
     Question('<h3 style = "color:green; ">정답입니다.</h2>')
   else :
