@@ -3914,7 +3914,7 @@ question_review_8583 = '''
 <input type='checkbox'/>ylabel
 '''
 answer_8583 = [
-    {'input' : [[10]], 'output' : ["p|lt.subplot(1,2,2)", 
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')",
                                   "income = data['income']",
                                   "old_percentage = data['old_percentage']", 
