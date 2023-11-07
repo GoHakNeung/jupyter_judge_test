@@ -4044,7 +4044,7 @@ test_set = [
     {'test_file' : '_8403.py', 'answer' : answer_8403, 'question' : question_8403, 'img' : img_8403},        
 
     {'test_file' : '_8501.py', 'answer' : answer_8501, 'question' : question_8501, 'img' : img_8501},        
-    {'test_file' : '_8502.py', 'answer' : answer_8502, 'question' : question_8202, 'img' : img_8502},    
+    {'test_file' : '_8502.py', 'answer' : answer_8502, 'question' : question_8502, 'img' : img_8502},    
     {'test_file' : '_8511.py', 'answer' : answer_8511, 'question' : question_8511, 'img' : img_8511},    
     {'test_file' : '_8512.py', 'answer' : answer_8512, 'question' : question_8512, 'img' : img_8512},        
     {'test_file' : '_8513.py', 'answer' : answer_8513, 'question' : question_8513, 'img' : img_8513},      
