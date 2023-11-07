@@ -2753,7 +2753,51 @@ answer_8403 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","df = pd.read_csv('/content/jupyter_judge/csv_file/food_poisoning.csv')","A_plt=plt.plot(df.month, df.temp)", "A_bar=plt.bar(df.month, df.outbreak, color = 'red')", "A_title=plt.title('식중독과 온도 그래프')", "A_xlabel=plt.xlabel('월')", "plt.show()"]}
 ]
 
+question_8501 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>경상남도 시에서 1년간 발생한 음식물 쓰레기량(톤)과 경상남도 시군구별 인구 데이터입니다.</p>
+<p><a href ="https://www.data.go.kr/data/15088741/fileData.do" target = 'blank'>경상남도 시군구별 음식물 쓰레기량</a></p>
+<p><a href ="https://bigdata.gyeongnam.go.kr/index.gn?menuCd=DOM_000000115001006000" target = 'blank'>경상남도 시군구별 인구</a></p>
+<p>경상남도 시에서 발생한 음식물 쓰레기량을 막대 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>경상남도 시에서 발생하는 음식물 쓰레기량, 인구와 인구당 발생하는 음식물 쓰레기량으로 구성된 데이터</p>
+<p>열 : city_province, emission, population, emission_per_person </p>
+<h2>그래프</h2>
+<p>가로 축에는 경상남도 시 이름, 세로 축에는 음식물 쓰레기 배출량을 막대 그래프로 나타냅니다.</p>
+<p>그래프 제목 : '경상남도 시에서 발생하는 음식물 쓰레기량'</p>
+<p>가로축 제목 : '경상남도 시'</p>
+<p>세로축 제목 : '음식물 쓰레기량(단위:톤)'</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')</p>
+<p>'city_province', 'emission' 열에 있는 데이터를 사용해봅시다.</p>
 
+</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8501.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8501 = ''
+question_review_8501 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>막대 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8501 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')",
+                                   "city = data['city_province']",
+                                   "emission = data['emission']",
+                                   "plt.bar(city, emission)",
+                                   "plt.xlabel('경상남도 시')",
+                                   "plt.ylabel('음식물 쓰레기량(톤)')",
+                                   "plt.title('경상남도 시에서 발생하는 음식물 쓰레기량')",
+                                   "plt.show()",
+                                   "input('그래프를 보고 알 수 있는 내용을 적어봅시다.')"]}
+]
 
 
 test_set = [
@@ -2874,30 +2918,30 @@ test_set = [
     {'test_file' : '_8403.py', 'answer' : answer_8403, 'question' : question_8403, 'img' : img_8403},        
 
     {'test_file' : '_8501.py', 'answer' : answer_8501, 'question' : question_8501, 'img' : img_8501},        
-    {'test_file' : '_8502.py', 'answer' : answer_8502, 'question' : question_8202, 'img' : img_8502},    
-    {'test_file' : '_8511.py', 'answer' : answer_8511, 'question' : question_8511, 'img' : img_8511},    
-    {'test_file' : '_8512.py', 'answer' : answer_8512, 'question' : question_8512, 'img' : img_8512},        
-    {'test_file' : '_8513.py', 'answer' : answer_8513, 'question' : question_8513, 'img' : img_8513},      
-    {'test_file' : '_8521.py', 'answer' : answer_8521, 'question' : question_8521, 'img' : img_8521},        
-    {'test_file' : '_8522.py', 'answer' : answer_8522, 'question' : question_8522, 'img' : img_8522},         
-    {'test_file' : '_8523.py', 'answer' : answer_8523, 'question' : question_8523, 'img' : img_8523},      
-    {'test_file' : '_8531.py', 'answer' : answer_8531, 'question' : question_8531, 'img' : img_8531},        
-    {'test_file' : '_8532.py', 'answer' : answer_8532, 'question' : question_8532, 'img' : img_8532},        
-    {'test_file' : '_8533.py', 'answer' : answer_8533, 'question' : question_8533, 'img' : img_8533},        
-    {'test_file' : '_8534.py', 'answer' : answer_8534, 'question' : question_8534, 'img' : img_8534},    
-    {'test_file' : '_8541.py', 'answer' : answer_8541, 'question' : question_8541, 'img' : img_8541},    
-    {'test_file' : '_8542.py', 'answer' : answer_8542, 'question' : question_8542, 'img' : img_8542},        
-    {'test_file' : '_8551.py', 'answer' : answer_8551, 'question' : question_8551, 'img' : img_8551},      
-    {'test_file' : '_8552.py', 'answer' : answer_8552, 'question' : question_8552, 'img' : img_8552},        
-    {'test_file' : '_8561.py', 'answer' : answer_8561, 'question' : question_8561, 'img' : img_8561},         
-    {'test_file' : '_8562.py', 'answer' : answer_8562, 'question' : question_8562, 'img' : img_8562},      
-    {'test_file' : '_8563.py', 'answer' : answer_8563, 'question' : question_8563, 'img' : img_8563},        
-    {'test_file' : '_8564.py', 'answer' : answer_8564, 'question' : question_8564, 'img' : img_8564},          
-    {'test_file' : '_8571.py', 'answer' : answer_8571, 'question' : question_8571, 'img' : img_8571},         
-    {'test_file' : '_8572.py', 'answer' : answer_8572, 'question' : question_8572, 'img' : img_8572},      
-    {'test_file' : '_8573.py', 'answer' : answer_8573, 'question' : question_8573, 'img' : img_8573},        
-    {'test_file' : '_8574.py', 'answer' : answer_8574, 'question' : question_8574, 'img' : img_8574},         
-    {'test_file' : '_8581.py', 'answer' : answer_8581, 'question' : question_8581, 'img' : img_8581},         
-    {'test_file' : '_8582.py', 'answer' : answer_8582, 'question' : question_8582, 'img' : img_8582},      
-    {'test_file' : '_8583.py', 'answer' : answer_8583, 'question' : question_8583, 'img' : img_8583},          
+#    {'test_file' : '_8502.py', 'answer' : answer_8502, 'question' : question_8202, 'img' : img_8502},    
+#    {'test_file' : '_8511.py', 'answer' : answer_8511, 'question' : question_8511, 'img' : img_8511},    
+#    {'test_file' : '_8512.py', 'answer' : answer_8512, 'question' : question_8512, 'img' : img_8512},        
+#    {'test_file' : '_8513.py', 'answer' : answer_8513, 'question' : question_8513, 'img' : img_8513},      
+#    {'test_file' : '_8521.py', 'answer' : answer_8521, 'question' : question_8521, 'img' : img_8521},        
+#    {'test_file' : '_8522.py', 'answer' : answer_8522, 'question' : question_8522, 'img' : img_8522},         
+#    {'test_file' : '_8523.py', 'answer' : answer_8523, 'question' : question_8523, 'img' : img_8523},      
+#    {'test_file' : '_8531.py', 'answer' : answer_8531, 'question' : question_8531, 'img' : img_8531},        
+#    {'test_file' : '_8532.py', 'answer' : answer_8532, 'question' : question_8532, 'img' : img_8532},        
+#    {'test_file' : '_8533.py', 'answer' : answer_8533, 'question' : question_8533, 'img' : img_8533},        
+#    {'test_file' : '_8534.py', 'answer' : answer_8534, 'question' : question_8534, 'img' : img_8534},    
+#    {'test_file' : '_8541.py', 'answer' : answer_8541, 'question' : question_8541, 'img' : img_8541},    
+#    {'test_file' : '_8542.py', 'answer' : answer_8542, 'question' : question_8542, 'img' : img_8542},        
+#    {'test_file' : '_8551.py', 'answer' : answer_8551, 'question' : question_8551, 'img' : img_8551},      
+#    {'test_file' : '_8552.py', 'answer' : answer_8552, 'question' : question_8552, 'img' : img_8552},        
+#    {'test_file' : '_8561.py', 'answer' : answer_8561, 'question' : question_8561, 'img' : img_8561},         
+#    {'test_file' : '_8562.py', 'answer' : answer_8562, 'question' : question_8562, 'img' : img_8562},      
+#    {'test_file' : '_8563.py', 'answer' : answer_8563, 'question' : question_8563, 'img' : img_8563},        
+#    {'test_file' : '_8564.py', 'answer' : answer_8564, 'question' : question_8564, 'img' : img_8564},          
+#    {'test_file' : '_8571.py', 'answer' : answer_8571, 'question' : question_8571, 'img' : img_8571},         
+#    {'test_file' : '_8572.py', 'answer' : answer_8572, 'question' : question_8572, 'img' : img_8572},      
+#    {'test_file' : '_8573.py', 'answer' : answer_8573, 'question' : question_8573, 'img' : img_8573},        
+#    {'test_file' : '_8574.py', 'answer' : answer_8574, 'question' : question_8574, 'img' : img_8574},         
+#    {'test_file' : '_8581.py', 'answer' : answer_8581, 'question' : question_8581, 'img' : img_8581},         
+#    {'test_file' : '_8582.py', 'answer' : answer_8582, 'question' : question_8582, 'img' : img_8582},      
+#    {'test_file' : '_8583.py', 'answer' : answer_8583, 'question' : question_8583, 'img' : img_8583},          
 ]
