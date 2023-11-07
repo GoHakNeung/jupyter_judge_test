@@ -2791,10 +2791,10 @@ answer_8501 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')",
                                    "city = data['city_province']",
                                    "emission = data['emission']",
-                                   "plt.bar(city, emission)",
-                                   "plt.xlabel('경상남도 시')",
-                                   "plt.ylabel('음식물 쓰레기량(톤)')",
-                                   "plt.title('경상남도 시에서 발생하는 음식물 쓰레기량')",
+                                   "A_bar = plt.bar(city, emission)",
+                                   "A_xlabel = plt.xlabel('경상남도 시')",
+                                   "A_ylabel = plt.ylabel('음식물 쓰레기량(톤)')",
+                                   "A_title = plt.title('경상남도 시에서 발생하는 음식물 쓰레기량')",
                                    "plt.show()"]}
 ]
 question_8502 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2838,10 +2838,10 @@ answer_8502 = [
                                    "city = data['city_province']", 
                                    "emission_per_person = data['emission_per_person']", 
 
-                                   "plt.bar(city, emission_per_person, color = 'green'), "
-                                   "plt.xlabel('경상남도 시')", 
-                                   "plt.ylabel('1인당 발생하는 음식물 쓰레기량(단위 : 톤/명)')",
-                                   "plt.title('경상남도 시에서 발생하는 1인당 음식물 쓰레기량')",
+                                   "A_bar = plt.bar(city, emission_per_person, color = 'green'), "
+                                   "A_xlabel = plt.xlabel('경상남도 시')", 
+                                   "A_ylabel = plt.ylabel('1인당 발생하는 음식물 쓰레기량(단위 : 톤/명)')",
+                                   "A_title = plt.title('경상남도 시에서 발생하는 1인당 음식물 쓰레기량')",
                                    "plt.show()"]}
 ]
 question_8511 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2880,10 +2880,10 @@ answer_8511 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
                                    "energy_source = ['thermal', 'LNG', 'nuclear', 'renewable', 'other', 'individual']",
                                    "amount = [188476694,123995839,176054012,47266256, 58156521, 30650791]",
-                                   "plt.bar(energy_source, amount)", 
-                                   "plt.xlabel('에너지원')", 
-                                   "plt.ylabel('발전량(MWh)')", 
-                                   "plt.title('에너지원별 발전량')",
+                                   "A_bar = plt.bar(energy_source, amount)", 
+                                   "A_xlabel = plt.xlabel('에너지원')", 
+                                   "A_ylabel = plt.ylabel('발전량(MWh)')", 
+                                   "A_title = plt.title('에너지원별 발전량')",
                                    "plt.show()"]}
 ]
 question_8512 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2924,11 +2924,11 @@ answer_8512 = [
                                    "data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')", 
                                    "year = data['year']", 
                                    "renewable = data['renewable_power']", 
-                                   "plt.plot(year, renewable)", 
-                                   "plt.xlabel('연도')", 
-                                   "plt.ylabel('신재생 에너지 발전량(MWh)')", 
-                                   "plt.xlim(2010,2022)", 
-                                   "plt.title('연도별 신재생 에너지 발전량')", 
+                                   "A_plot = plt.plot(year, renewable)", 
+                                   "A_xlabel = plt.xlabel('연도')", 
+                                   "A_ylabel = plt.ylabel('신재생 에너지 발전량(MWh)')", 
+                                   "A_xlim = plt.xlim(2010,2022)", 
+                                   "A_title = plt.title('연도별 신재생 에너지 발전량')", 
                                    "plt.show()"]}
 ]
 question_8513 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -2968,11 +2968,11 @@ answer_8513 = [
                                    "year = data['year']", 
                                    "renewable = data['renewable_power']", 
                                    "thermal = data['thermal_power']", 
-                                   "plt.plot(year, renewable)", 
-                                   "plt.plot(year, thermal)", 
-                                   "plt.xlabel('연도')",
-                                   "plt.ylabel('에너지 발전량(MWh)')", 
-                                   "plt.title('연도별 신재생 및 화력 에너지 발전량')", 
+                                   "A_plot = plt.plot(year, renewable)", 
+                                   "A_plot = plt.plot(year, thermal)", 
+                                   "A_xlabel = plt.xlabel('연도')",
+                                   "A_ylabel = plt.ylabel('에너지 발전량(MWh)')", 
+                                   "A_title = plt.title('연도별 신재생 및 화력 에너지 발전량')", 
                                    "plt.show()"]}
 ]
 question_8521 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3013,10 +3013,10 @@ answer_8521 = [
                                    "year = data['year']",
                                    "data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')", 
                                    "mother = data['mother']", 
-                                   "plt.plot(year, mother, label = 'mother')", 
-                                   "plt.xlabel('연도')", 
-                                   "plt.ylabel('육아휴직자 수(명)')", 
-                                   "plt.title('출생아 100명당 엄마 육아휴직자 수의 연도별 변화')", 
+                                   "A_plot = plt.plot(year, mother, label = 'mother')", 
+                                   "A_xlabel = plt.xlabel('연도')", 
+                                   "A_ylabel = plt.ylabel('육아휴직자 수(명)')", 
+                                   "A_title = plt.title('출생아 100명당 엄마 육아휴직자 수의 연도별 변화')", 
                                    "plt.show()"]}
 ]
 question_8522 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3057,10 +3057,10 @@ answer_8522 = [
                                    "data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')", 
                                    "year = data['year']", 
                                    "father = data['father']", 
-                                   "plt.plot(year, father, label = 'father')", 
-                                   "plt.xlabel('연도')", 
-                                   "plt.ylabel('육아휴직자 수(명)')", 
-                                   "plt.title('출생아 100명당 아빠 육아휴직자 수의 연도별 변화')", 
+                                   "A_plot = plt.plot(year, father, label = 'father')", 
+                                   "A_xlabel = plt.xlabel('연도')", 
+                                   "A_ylabel = plt.ylabel('육아휴직자 수(명)')", 
+                                   "A_title = plt.title('출생아 100명당 아빠 육아휴직자 수의 연도별 변화')", 
                                    "plt.show()"]}
 ]
 question_8523 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3102,12 +3102,12 @@ answer_8523 = [
                                    "year = data['year']", 
                                    "mother = data['mother']", 
                                    "father = data['father']", 
-                                   "plt.plot(year, mother, label = 'mother')", 
-                                   "plt.plot(year, father, label = 'father')", 
-                                   "plt.xlabel('연도')", 
-                                   "plt.ylabel('육아휴직자 수(명)')", 
-                                   "plt.legend()", 
-                                   "plt.title('연도별 출생아 100명당 육아휴직자 수')", 
+                                   "A_plot = plt.plot(year, mother, label = 'mother')", 
+                                   "A_plot = plt.plot(year, father, label = 'father')", 
+                                   "A_xlabel = plt.xlabel('연도')", 
+                                   "A_ylabel = plt.ylabel('육아휴직자 수(명)')", 
+                                   "A_legend = plt.legend()", 
+                                   "A_title= plt.title('연도별 출생아 100명당 육아휴직자 수')", 
                                    "plt.show()"]}
 ]
 question_8531 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3145,8 +3145,8 @@ answer_8531 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
                                    "school = ['초등학교', '중학교', '고등학교']", 
                                    "amount = [119055, 70832, 69651]", 
-                                   "plt.pie(amount, labels = school, explode = [0.1, 0, 0], autopct = '%1.f%%')", 
-                                   "plt.title('학교급별 사교육비 총액')", 
+                                   "A_pie = plt.pie(amount, labels = school, explode = [0.1, 0, 0], autopct = '%1.f%%')", 
+                                   "A_title = plt.title('학교급별 사교육비 총액')", 
                                    "plt.show()"                                   ]}
 ]
 question_8532 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3184,8 +3184,8 @@ answer_8532 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
                                   "subject = ['일반교과', '예체능', '취업', '진로']", 
                                   "price_sub = [74849, 43973, 0, 233]", 
-                                  "plt.pie(price_sub, labels = subject, explode = [0.1, 0, 0, 0], autopct = '%1.f%%')", 
-                                  "plt.title('2022년 초등학교 과목별 사교육비')", 
+                                  "A_pie = plt.pie(price_sub, labels = subject, explode = [0.1, 0, 0, 0], autopct = '%1.f%%')", 
+                                  "A_title = plt.title('2022년 초등학교 과목별 사교육비')", 
                                   "plt.show()"                                   ]}
 ]
 question_8533 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3221,8 +3221,8 @@ answer_8533 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
                                   "gen_subject = ['국어' ,'영어', '수학', '사회과학', '논술', '컴퓨터', '제2외국어']", 
                                   "gen_price = [7082, 34525, 22585, 2989, 5398, 914, 1357]", 
-                                  "plt.pie(gen_price, labels = gen_subject, autopct = '%1.f%%')", 
-                                  "plt.title('2022년 초등학교 일반과목 과목별 사교육비')", 
+                                  "A_pie = plt.pie(gen_price, labels = gen_subject, autopct = '%1.f%%')", 
+                                  "A_title = plt.title('2022년 초등학교 일반과목 과목별 사교육비')", 
                                   "plt.show()"                                   ]}
 ]
 question_8534 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3260,10 +3260,10 @@ answer_8534 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/private_education_expense.csv')",
                                   "year = data['연도']", 
                                   "total_ele = data['초등학교_전체']", 
-                                  "plt.plot(year, total_ele)", 
-                                  "plt.title('연도별 초등학교 사교육비 총액')", 
-                                  "plt.xlabel('연도')", 
-                                  "plt.ylabel('사교육비(억원)')", 
+                                  "A_plot = plt.plot(year, total_ele)", 
+                                  "A_title = plt.title('연도별 초등학교 사교육비 총액')", 
+                                  "A_xlabel = plt.xlabel('연도')", 
+                                  "A_ylabel = plt.ylabel('사교육비(억원)')", 
                                   "plt.show()"                                   ]}
 ]
 question_8541 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3303,8 +3303,8 @@ answer_8541 = [
                                   "data_city = data[data['metropolitan_city'] == '광역시']", 
                                   "city_province = data_city['city_province']", 
                                   "amount = data_city['accident']", 
-                                  "plt.pie(amount, labels = city_province, autopct = '%1.f%%')", 
-                                  "plt.title('광역시에서 발생하는 인구 10만명당 교통사고')", 
+                                  "A_pie = plt.pie(amount, labels = city_province, autopct = '%1.f%%')", 
+                                  "A_title = plt.title('광역시에서 발생하는 인구 10만명당 교통사고')", 
                                   "plt.show()"                                   ]}
 ]
 question_8542 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3339,9 +3339,9 @@ answer_8542 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')", 
                                   "death = data['death']", 
-                                  "plt.hist(death, bins = [2,3,4,5,6,7,8,9,10,11,12])", 
-                                  "plt.xlabel('사망자 수(명)')", 
-                                  "plt.title('17개 시도에서 발생한 인구 10만명당 교통사고 사망자 히스토그램')", 
+                                  "A_hist = plt.hist(death, bins = [2,3,4,5,6,7,8,9,10,11,12])", 
+                                  "A_xlabel = plt.xlabel('사망자 수(명)')", 
+                                  "A_title = plt.title('17개 시도에서 발생한 인구 10만명당 교통사고 사망자 히스토그램')", 
                                   "plt.show()"                                   ]}
 ]
 question_8551 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3378,9 +3378,9 @@ answer_8551 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')",
                                   "movigoer = data['total_moviegoer']",
-                                  "plt.hist(movigoer, bins = 8, range = (10000000, 18000000))",
-                                  "plt.title('1000만 관객을 넘은 영화의 히스토그램')",
-                                  "plt.xlabel('관객수(명)')",
+                                  "A_hist = plt.hist(movigoer, bins = 8, range = (10000000, 18000000))",
+                                  "A_title = plt.title('1000만 관객을 넘은 영화의 히스토그램')",
+                                  "A_xlabel = plt.xlabel('관객수(명)')",
                                   "plt.show()"                                   ]}
 ]
 question_8552 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3422,9 +3422,9 @@ answer_8552 = [
                                   "data = data.sort_values('sales_per_screening', ascending = False)[:15]",
                                   "sales_per_screening = data['sales_per_screening']",
                                   "movie_title = data['movie_title']",
-                                  "plt.barh(movie_title, sales_per_screening)",
-                                  "plt.title('1000만 관객 넘은 영화 중 1회 상영당 매출액')",
-                                  "plt.xlabel('1회 상영당 매출액(원)')",
+                                  "A_barh = plt.barh(movie_title, sales_per_screening)",
+                                  "A_title = plt.title('1000만 관객 넘은 영화 중 1회 상영당 매출액')",
+                                  "A_xlabel = plt.xlabel('1회 상영당 매출액(원)')",
                                   "plt.show()"                                   ]}
 ]
 question_8561 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3470,11 +3470,11 @@ answer_8561 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')", 
                                   "weekday_inner= data['weekday_inner']", 
                                   "weekday_inner_mean = weekday_inner.mean()", 
-                                  "plt.hist(weekday_inner)",
-                                  "plt.vlines(weekday_inner_mean, 0, 12, color = 'red', label = '평균')",
-                                  "plt.xlabel('혼잡도(%)')",
-                                  "plt.title('평일 사당역 내선의 혼잡도 히스토그램')",
-                                  "plt.legend()",
+                                  "A_hist = plt.hist(weekday_inner)",
+                                  "A_vlines = plt.vlines(weekday_inner_mean, 0, 12, color = 'red', label = '평균')",
+                                  "A_xlabel = plt.xlabel('혼잡도(%)')",
+                                  "A_title = plt.title('평일 사당역 내선의 혼잡도 히스토그램')",
+                                  "A_legend = plt.legend()",
                                   "plt.show()"                                   ]}
 ]
 question_8562 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3511,9 +3511,9 @@ answer_8562 = [
                                    "data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')", 
                                   "weekday_inner = data['weekday_inner']",
                                   "weekday_outer = data['weekday_outer']", 
-                                  "plt.boxplot([weekday_inner, weekday_outer], labels = ['내선', '외선'])", 
-                                  "plt.title('평일 사당역 내선, 외선 상자그림')", 
-                                  "plt.ylabel('혼잡도(%)')", 
+                                  "A_boxplot = plt.boxplot([weekday_inner, weekday_outer], labels = ['내선', '외선'])", 
+                                  "A_title = plt.title('평일 사당역 내선, 외선 상자그림')", 
+                                  "A_ylabel = plt.ylabel('혼잡도(%)')", 
                                   "plt.show()"]}
 ]
 question_8563 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3553,9 +3553,9 @@ answer_8563 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')", 
                                   "weekday_inner = data['weekday_inner']", 
                                   "subway_time = data['time']", 
-                                  "plt.barh(subway_time, weekday_inner)", 
-                                  "plt.title('시간대별 내선 혼잡도')", 
-                                  "plt.xlabel('혼잡도(%)')", 
+                                  "A_barh = plt.barh(subway_time, weekday_inner)", 
+                                  "A_title = plt.title('시간대별 내선 혼잡도')", 
+                                  "A_xlabel = plt.xlabel('혼잡도(%)')", 
                                   "plt.show()"                                   ]}
 ]
 question_8564 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3595,9 +3595,9 @@ answer_8564 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')", 
                                   "weekday_outer = data['weekday_outer']", 
                                   "subway_time = data['time']", 
-                                  "plt.barh(subway_time, weekday_outer)", 
-                                  "plt.xlabel('혼잡도(%)')", 
-                                  "plt.title('평일 시간대별 외선 혼잡도')", 
+                                  "A_barh = plt.barh(subway_time, weekday_outer)", 
+                                  "A_xlabel = plt.xlabel('혼잡도(%)')", 
+                                  "A_title = plt.title('평일 시간대별 외선 혼잡도')", 
                                   "plt.show()"                                   ]}
 ]
 question_8571 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3682,12 +3682,12 @@ answer_8572 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')", 
                                   "rent = data['rent']", 
                                   "rent_mean = data['rent'].mean()",
-                                  "plt.hist(rent)",
-                                  "plt.title('서울시 공공자전거 대여건수 히스토그램')", 
-                                  "plt.ylabel('도수')", 
-                                  "plt.xlabel('대여건수')", 
-                                  "plt.vlines(rent_mean, 0, 60, color = 'red', label = '평균')", 
-                                  "plt.legend()", 
+                                  "A_hist = plt.hist(rent)",
+                                  "A_title = plt.title('서울시 공공자전거 대여건수 히스토그램')", 
+                                  "A_ylabel = plt.ylabel('도수')", 
+                                  "A_xlabel = plt.xlabel('대여건수')", 
+                                  "A_vlines = plt.vlines(rent_mean, 0, 60, color = 'red', label = '평균')", 
+                                  "A_legend = plt.legend()", 
                                   "plt.show()"                                   ]}
 ]
 question_8573 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3731,10 +3731,10 @@ answer_8573 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')", 
                                   "rent = data['rent']", 
                                   "temperature = data['temperature']", 
-                                  "plt.scatter(rent, temperature)", 
-                                  "plt.title('대여건수와 온도의 관계')", 
-                                  "plt.xlabel('대여건수')", 
-                                  "plt.ylabel('온도')", 
+                                  "A_scatter = plt.scatter(rent, temperature)", 
+                                  "A_title = plt.title('대여건수와 온도의 관계')", 
+                                  "A_xlabel = plt.xlabel('대여건수')", 
+                                  "A_ylabel = plt.ylabel('온도')", 
                                   "plt.show()"                                   ]}
 ]
 question_8574 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3778,10 +3778,10 @@ answer_8574 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')", 
                                   "rent = data['rent']", 
                                   "dust = data['dust']", 
-                                  "plt.scatter(rent, dust)", 
-                                  "plt.title('대여건수와 미세먼지 농도와의 관계')", 
-                                  "plt.xlabel('대여건수')", 
-                                  "plt.ylabel('미세먼지 농도')", 
+                                  "A_scatter = plt.scatter(rent, dust)", 
+                                  "A_title = plt.title('대여건수와 미세먼지 농도와의 관계')", 
+                                  "A_xlabel = plt.xlabel('대여건수')", 
+                                  "A_ylabel = plt.ylabel('미세먼지 농도')", 
                                   "plt.show()"]}
 ]
 question_8581 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3825,12 +3825,12 @@ answer_8581 = [
                                    "data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')", 
                                   "income = data['income']", 
                                   "income_mean = income.mean()",
-                                  "plt.hist(income)",
-                                  "plt.vlines(income_mean, 0, 60, color = 'red', label = '평균')", 
-                                  "plt.legend()", 
-                                  "plt.title('지역별 평균소득월액 히스토그램')", 
-                                  "plt.xlabel('소득월액')", 
-                                  "plt.ylabel('도수')", 
+                                  "A_hist = plt.hist(income)",
+                                  "A_vlines = plt.vlines(income_mean, 0, 60, color = 'red', label = '평균')", 
+                                  "A_legend = plt.legend()", 
+                                  "A_title = plt.title('지역별 평균소득월액 히스토그램')", 
+                                  "A_xlabel = plt.xlabel('소득월액')", 
+                                  "A_ylabel = plt.ylabel('도수')", 
                                   "plt.show()"]}
 ]
 question_8582 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3871,10 +3871,10 @@ answer_8582 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')",
                                   "income = data['income']",
                                   "production_percentage = data['production_percentage']",
-                                  "plt.scatter(income, production_percentage)",
-                                  "plt.title('지역별 평균소득월액과 생산가능 인구 관계')",
-                                  "plt.xlabel('평균소득월액')",
-                                  "plt.ylabel('생산가능인구 백분율(%)')",
+                                  "A_scatter = plt.scatter(income, production_percentage)",
+                                  "A_title = plt.title('지역별 평균소득월액과 생산가능 인구 관계')",
+                                  "A_xlabel = plt.xlabel('평균소득월액')",
+                                  "A_ylabel = plt.ylabel('생산가능인구 백분율(%)')",
                                   "plt.show()"                                   ]}
 ]
 question_8583 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -3915,10 +3915,10 @@ answer_8583 = [
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')",
                                   "income = data['income']",
                                   "old_percentage = data['old_percentage']", 
-                                  "plt.scatter(income, old_percentage)", 
-                                  "plt.title('지역별 평균소득월액과 노령인구 관계')", 
-                                  "plt.xlabel('평균소득월액')", 
-                                  "plt.ylabel('노령인구 백분율(%)')", 
+                                  "A_scatter = plt.scatter(income, old_percentage)", 
+                                  "A_title = plt.title('지역별 평균소득월액과 노령인구 관계')", 
+                                  "A_xlabel = plt.xlabel('평균소득월액')", 
+                                  "A_ylabel = plt.ylabel('노령인구 백분율(%)')", 
                                   "plt.show()"                                   ]}
 ]
 
