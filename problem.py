@@ -2797,7 +2797,1134 @@ answer_8501 = [
                                    "plt.title('경상남도 시에서 발생하는 음식물 쓰레기량')",
                                    "plt.show()"]}
 ]
+question_8502 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>경상남도 시에서 1년간 발생한 음식물 쓰레기량(톤)과 경상남도 시군구별 인구 데이터입니다.</p>
+<p><a href ="https://www.data.go.kr/data/15088741/fileData.do" target = 'blank'>경상남도 시군구별 음식물 쓰레기량</a></p>
+<p><a href ="https://bigdata.gyeongnam.go.kr/index.gn?menuCd=DOM_000000115001006000" target = 'blank'>경상남도 시군구별 인구</a></p>
+<p>경상남도 시에서 발생한 음식물 쓰레기량을 막대 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>경상남도 시에서 발생하는 음식물 쓰레기량, 인구와 인구당 발생하는 음식물 쓰레기량으로 구성된 데이터</p>
+<p>열 : city_province, emission, population, emission_per_person </p>
+<h2>그래프</h2>
+<p>가로 축에는 경상남도 시 이름, 세로 축에는 1명당 발생하는 음식물 쓰레기량을 막대 그래프로 나타냅니다.</p>
+<p>그래프 제목 : '경상남도 시에서 발생하는 1인당 음식물 쓰레기량'</p>
+<p>가로축 제목 : '경상남도 시'</p>
+<p>세로축 제목 : '1인당 발생하는 음식물 쓰레기량(단위 : 톤/명)'</p>
+<p>색 : 초록색</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')</p>
+<p>'city_province', 'emission_per_person' 열에 있는 데이터를 사용해봅시다.</p>
 
+</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8502.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8502 = ''
+question_review_8502 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>막대 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8502 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')", 
+                                   "city = data['city_province']", 
+                                   "emission_per_person = data['emission_per_person']", 
+
+                                   "plt.bar(city, emission_per_person, color = 'green'), "
+                                   "plt.xlabel('경상남도 시')", 
+                                   "plt.ylabel('1인당 발생하는 음식물 쓰레기량(단위 : 톤/명)')",
+                                   "plt.title('경상남도 시에서 발생하는 1인당 음식물 쓰레기량')",
+                                   "plt.show()"]}
+]
+question_8511 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>한전에서 제공하는 에너지원별 발전량입니다.</p>
+<p><a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>에너지원별 발전량</a></p>
+<p>2022년 에너지원별 발전량을 막대그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>연간 에너지원별 발전량으로 구성된 데이터로 1961년부터 2022년까지 포함된 데이터</p>
+<p>열 : year, thermal_power, LNG, nuclear_power, renewable_power, other, individual </p>
+<p>엑셀에서 _power 제거하기</p>
+<h2>그래프</h2>
+<p>가로 축에는 에너지원별 이름, 세로 축에는 발전량(MWh)을 막대 그래프로 나타냅니다.</p>
+<p>그래프 제목 : 에너지원별 발전량</p>
+<p>가로축 제목 : 에너지원</p>
+<p>세로축 제목 : 발전량(MWh)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>energy_source = ['thermal', 'LNG', 'nuclear', 'renewable', 'other', 'individual']</p>
+<p>amount = [188476694,123995839,176054012,47266256, 58156521, 30650791]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8511.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8511 = ''
+question_review_8502 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>막대 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8511 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                   "energy_source = ['thermal', 'LNG', 'nuclear', 'renewable', 'other', 'individual']",
+                                   "amount = [188476694,123995839,176054012,47266256, 58156521, 30650791]",
+                                   "plt.bar(energy_source, amount)", 
+                                   "plt.xlabel('에너지원')", 
+                                   "plt.ylabel('발전량(MWh)')", 
+                                   "plt.title('에너지원별 발전량')",
+                                   "plt.show()"]}
+]
+question_8512 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>한전에서 제공하는 에너지원별 발전량입니다.</p>
+<p><a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>에너지원별 발전량</a></p>
+<p>연도별 신재생 발전량을 꺾은선 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>연간 에너지원별 발전량으로 구성된 데이터로 1961년부터 2022년까지 포함된 데이터</p>
+<p>열 : year, thermal_power, LNG, nuclear_power, renewable_power, other, individual </p>
+<h2>그래프</h2>
+<p>가로 축에는 연도, 세로 축에는 신재생 에너지 발전량(MWh)을 꺾은선 그래프로 나타냅니다.</p>
+<p>그래프 제목 : 연도별 신재생 에너지 발전량</p>
+<p>가로축 제목 : 연도</p>
+<p>세로축 제목 : 신재생 에너지 발전량(MWh)</p>
+<p>가로축 범위 : 2010 ~ 2022</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')
+'year', 'renewable_power' 열에 있는 데이터를 사용해봅시다.
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8512.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8512 = ''
+question_review_8512 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+<input type='checkbox'/>xlim
+'''
+answer_8512 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')", 
+                                   "year = data['year']", 
+                                   "renewable = data['renewable_power']", 
+                                   "plt.plot(year, renewable)", 
+                                   "plt.xlabel('연도')", 
+                                   "plt.ylabel('신재생 에너지 발전량(MWh)')", 
+                                   "plt.xlim(2010,2022)", 
+                                   "plt.title('연도별 신재생 에너지 발전량')", 
+                                   "plt.show()"]}
+]
+question_8513 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>한전에서 제공하는 에너지원별 발전량입니다.</p>
+<p><a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>에너지원별 발전량</a></p>
+<p>연도별 신재생 발전량과 화력 발전량을 꺾은선 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>연간 에너지원별 발전량으로 구성된 데이터로 1961년부터 2022년까지 포함된 데이터</p>
+<p>열 : year, thermal_power, LNG, nuclear_power, renewable_power, other, individual </p>
+<h2>그래프</h2>
+<p>가로 축에는 연도, 세로 축에는 신재생 에너지 발전량(MWh)을 꺾은선 그래프로 나타냅니다.</p>
+<p>그래프 제목 : 연도별 신재생 및 화력 에너지 발전량</p>
+<p>가로축 제목 : 연도</p>
+<p>세로축 제목 : 에너지 발전량(MWh)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')</p>
+<p>'year', 'renewable_power', 'thermal_power' 열에 있는 데이터를 사용해봅시다.</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8513.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8513 = ''
+question_review_8513 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8513 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')", 
+                                   "year = data['year']", 
+                                   "renewable = data['renewable_power']", 
+                                   "thermal = data['thermal_power']", 
+                                   "plt.plot(year, renewable)", 
+                                   "plt.plot(year, thermal)", 
+                                   "plt.xlabel('연도')",
+                                   "plt.ylabel('에너지 발전량(MWh)')", 
+                                   "plt.title('연도별 신재생 및 화력 에너지 발전량')", 
+                                   "plt.show()"]}
+]
+question_8521 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>육아 휴직 통계와 관련하여 출생아 100명당 출생아 부,모 중 육아휴직자 수입니다.</p>
+<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부모 중 육아휴직자 수</a></p>
+<p>연도별 엄마의 육아 휴직자 수를 꺾은선 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>연도별 출생아 100명당 출생아의 아빠, 엄마 중 육아휴직자 수가 2012년부터 2020년까지 포함된 데이터</p>
+<p>열 : year, father, mother, total </p>
+<h2>그래프</h2>
+<p>가로 축에는 연도, 세로 축에는 출생아 100명당 엄마의 육아휴직자 수를 꺾은선 그래프로 나타냅니다.</p>
+<p>그래프 제목 : 출생아 100명당 엄마 육아휴직자 수의 연도별 변화</p>
+<p>가로축 제목 : 연도</p>
+<p>세로축 제목 : 육아휴직자 수(명)</p>
+<p>label : mother</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')</p>
+<p>'year', 'mother' 열에 있는 데이터를 사용해봅시다.</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8521.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8521 = ''
+question_review_8521 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+<input type='checkbox'/>label
+'''
+answer_8521 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                   "year = data['year']",
+                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')", 
+                                   "mother = data['mother']", 
+                                   "plt.plot(year, mother, label = 'mother')", 
+                                   "plt.xlabel('연도')", 
+                                   "plt.ylabel('육아휴직자 수(명)')", 
+                                   "plt.title('출생아 100명당 엄마 육아휴직자 수의 연도별 변화')", 
+                                   "plt.show()"]}
+]
+question_8522 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>육아 휴직 통계와 관련하여 출생아 100명당 출생아 부,모 중 육아휴직자 수입니다.</p>
+<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부모 중 육아휴직자 수</a></p>
+<p>연도별 아빠의 육아 휴직자 수를 꺾은선 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>연도별 출생아 100명당 출생아의 아빠, 엄마 중 육아휴직자 수가 2012년부터 2020년까지 포함된 데이터</p>
+<p>열 : year, father, mother, total </p>
+<h2>그래프</h2>
+<p>가로 축에는 연도, 세로 축에는 출생아 100명당 아빠의 육아휴직자 수를 꺾은선 그래프로 나타냅니다.</p>
+<p>그래프 제목 : 출생아 100명당 아빠 육아휴직자 수의 연도별 변화</p>
+<p>가로축 제목 : 연도</p>
+<p>세로축 제목 : 육아휴직자 수(명)</p>
+<p>label : father</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')</p>
+<p>'year', 'father' 열에 있는 데이터를 사용해봅시다.</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8522.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8522 = ''
+question_review_8522 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+<input type='checkbox'/>label
+'''
+answer_8522 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')", 
+                                   "year = data['year']", 
+                                   "father = data['father']", 
+                                   "plt.plot(year, father, label = 'father')", 
+                                   "plt.xlabel('연도')", 
+                                   "plt.ylabel('육아휴직자 수(명)')", 
+                                   "plt.title('출생아 100명당 아빠 육아휴직자 수의 연도별 변화')", 
+                                   "plt.show()"]}
+]
+question_8523 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>육아 휴직 통계와 관련하여 출생아 100명당 출생아 부,모 중 육아휴직자 수입니다.</p>
+<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부모 중 육아휴직자 수</a></p>
+<p>연도별 엄마와 아빠의 육아휴직자 수를 꺾은선 그래프로 그려봅시다.</p>
+<h2>데이터</h2>
+<p>연도별 출생아 100명당 출생아의 아빠, 엄마 중 육아휴직자 수가 2012년부터 2020년까지 포함된 데이터</p>
+<p>열 : year, father, mother, total </p>
+<h2>그래프</h2>
+<p>가로 축에는 연도, 세로 축에는 출생아 100명당 육아휴직자 수를 꺾은선 그래프로 나타냅니다.</p>
+<p>그래프 제목 : 연도별 출생아 100명당 육아휴직자 수</p>
+<p>가로축 제목 : 연도</p>
+<p>세로축 제목 : 육아휴직자 수(명)</p>
+<p>label : mother, father이며 그래프에 범례를 표시합니다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')</p>
+<p>'year', 'mother', 'father' 열에 있는 데이터를 사용해봅시다.</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8523.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8523 = ''
+question_review_8523 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+<input type='checkbox'/>label
+'''
+answer_8523 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')", 
+                                   "year = data['year']", 
+                                   "mother = data['mother']", 
+                                   "father = data['father']", 
+                                   "plt.plot(year, mother, label = 'mother')", 
+                                   "plt.plot(year, father, label = 'father')", 
+                                   "plt.xlabel('연도')", 
+                                   "plt.ylabel('육아휴직자 수(명)')", 
+                                   "plt.legend()", 
+                                   "plt.title('연도별 출생아 100명당 육아휴직자 수')", 
+                                   "plt.show()"]}
+]
+question_8531 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>사교육비 실태를 체계적으로 조사하여 공신력 있는 통계를 정기적으로 작성한 데이터입니다.</p>
+<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>학교급별 사교육비 총액 </a></p>
+<p>2022년의 초등학교, 중학교, 고등학교 사교육비를 원그래프로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>학교급별(초등학교, 중학교, 고등학교)로 지역(대도시, 대도시이외), 과목(일반교과,예체능 등), 유형(과외, 학원 등)으로 구분되며 2013년부터 2022년까지의 데이터</p>
+<p>열 : 연도, 초등학교 과목, 중학교 과목, 고등학교 과목 등</p>
+<h2>그래프</h2>
+<p>2022년 초등학교, 중학교, 고등학교 사교육비 총액을 원 그래프로 나타냅니다.</p>
+<p>그래프 제목 : 학교급별 사교육비 총액</p>
+<p>백분율을 넣습니다.</p>
+<p>초등학교 부분을 분리하여 강조합니다.(explode = [0.1, 0, 0])</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>school = ['초등학교', '중학교', '고등학교']</p>
+<p>amount = [119055, 70832, 69651]
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8531.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8531 = ''
+question_review_8531 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>원 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>autopct
+<input type='checkbox'/>explode
+'''
+answer_8531 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                   "school = ['초등학교', '중학교', '고등학교']", 
+                                   "amount = [119055, 70832, 69651]", 
+                                   "plt.pie(amount, labels = school, explode = [0.1, 0, 0], autopct = '%1.f%%')", 
+                                   "plt.title('학교급별 사교육비 총액')", 
+                                   "plt.show()"                                   ]}
+]
+question_8532 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>사교육비 실태를 체계적으로 조사하여 공신력 있는 통계를 정기적으로 작성한 데이터입니다.</p>
+<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>학교급별 사교육비 총액 </a></p>
+<p>2022년의 초등학교 과목별 사교육비 총액을 원그래프로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>학교급별(초등학교, 중학교, 고등학교)로 지역(대도시, 대도시이외), 과목(일반교과,예체능 등), 유형(과외, 학원 등)으로 구분되며 2013년부터 2022년까지의 데이터</p>
+<p>열 : 연도, 초등학교 과목, 중학교 과목, 고등학교 과목 등</p>
+<p>데이터 중 2022년에서 초등학교_일반교과, 초등학교_예체능, 초등학교_예체능, 초등학교_취업,초등학교_진로 데이터를 추출</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 2022년 초등학교 과목별 사교육비</p>
+<p>백분율을 넣습니다.(autopct = '%1.f%%')</p>
+<p>일반교과 부분을 분리하여 강조합니다.(explode = [0.1, 0, 0, 0])</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>subject = ['일반교과', '예체능', '취업', '진로']</p>
+<p>price_sub = [74849, 43973, 0, 233]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8532.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8532 = ''
+question_review_8532 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>원 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>autopct
+<input type='checkbox'/>explode
+'''
+answer_8532 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                  "subject = ['일반교과', '예체능', '취업', '진로']", 
+                                  "price_sub = [74849, 43973, 0, 233]", 
+                                  "plt.pie(price_sub, labels = subject, explode = [0.1, 0, 0, 0], autopct = '%1.f%%')", 
+                                  "plt.title('2022년 초등학교 과목별 사교육비')", 
+                                  "plt.show()"                                   ]}
+]
+question_8533 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>사교육비 실태를 체계적으로 조사하여 공신력 있는 통계를 정기적으로 작성한 데이터입니다.</p>
+<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>학교급별 사교육비 총액 </a></p>
+<p>2022년의 초등학교 일반교과의 과목별 사교육비 총액을 원그래프로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>학교급별(초등학교, 중학교, 고등학교)로 지역(대도시, 대도시이외), 과목(일반교과,예체능 등), 유형(과외, 학원 등)으로 구분되며 2013년부터 2022년까지의 데이터</p>
+<p>열 : 연도, 초등학교 과목, 중학교 과목, 고등학교 과목 등</p>
+<p>데이터 중 2022년에서 초등학교_국어, 초등학교_영어, 초등학교_수학, 초등학교_사회과학,초등학교_논술, 초등학교_컴퓨터, 초등학교_제2외국어 데이터를 추출</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 2022년 초등학교 일반교과 과목별 사교육비</p>
+<p>백분율을 넣습니다.(autopct = '%1.f%%')</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>gen_subject = ['국어' ,'영어', '수학', '사회과학', '논술', '컴퓨터', '제2외국어']</p>
+<p>gen_price = [7082, 34525, 22585, 2989, 5398, 914, 1357]</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8533.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8533 = ''
+question_review_8533 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>원 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>autopct
+'''
+answer_8533 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                  "gen_subject = ['국어' ,'영어', '수학', '사회과학', '논술', '컴퓨터', '제2외국어']", 
+                                  "gen_price = [7082, 34525, 22585, 2989, 5398, 914, 1357]", 
+                                  "plt.pie(gen_price, labels = gen_subject, autopct = '%1.f%%')", 
+                                  "plt.title('2022년 초등학교 일반과목 과목별 사교육비')", 
+                                  "plt.show()"                                   ]}
+]
+question_8534 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>사교육비 실태를 체계적으로 조사하여 공신력 있는 통계를 정기적으로 작성한 데이터입니다.</p>
+<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>학교급별 사교육비 총액 </a></p>
+<p>연도별 초등학교 사교육비 총액을 꺾은선 그래프로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>학교급별(초등학교, 중학교, 고등학교)로 지역(대도시, 대도시이외), 과목(일반교과,예체능 등), 유형(과외, 학원 등)으로 구분되며 2013년부터 2022년까지의 데이터</p>
+<p>열 : 연도, 초등학교 과목, 중학교 과목, 고등학교 과목 등</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 연도별 초등학교 사교육비 총액</p>
+<p>가로축 제목 : 연도</p>
+<p>세로축 제목 : 사교육비(억원)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/private_education_expense.csv')</p>
+<p>'연도', '초등학교_전체' 열에 있는 데이터를 사용해봅시다.</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8534.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8534 = ''
+question_review_8534 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+<input type='checkbox'/>title
+'''
+answer_8534 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/private_education_expense.csv')",
+                                  "year = data['연도']", 
+                                  "total_ele = data['초등학교_전체']", 
+                                  "plt.plot(year, total_ele)", 
+                                  "plt.title('연도별 초등학교 사교육비 총액')", 
+                                  "plt.xlabel('연도')", 
+                                  "plt.ylabel('사교육비(억원)')", 
+                                  "plt.show()"                                   ]}
+]
+question_8541 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>교통사고분석시스템(TAAS)는 경찰, 보험사 등이 교통사고 자료를 수집,통합,분석하여 교통안전 정책 수립 등에 활용될 수 있도록 교통사고 정보를 제공합니다.</p>
+<p><a href ="https://taas.koroad.or.kr/sta/acs/gus/selectPopltnTfcacdSido.do?menuId=WEB_KMP_OVT_MVT_TAC_PTA" target = 'blank'>인구 10만명당 교통사고 </a></p>
+<p>광역시에서 발생한 교통사고 건수를 원그래프로 나타내봅시다. </p>
+<h2>데이터</h2>
+<p>인구 10만명당 교통사고 수, 사망자 수를 지역별로 제공한 데이터</p>
+<p>열 : city_province, metropolitan_city, accident, death</p>
+<p>기존 데이터에서 행정구역(metropolitan_city)을 추가하고 부상자 수를 삭제함</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 광역시에서 발생하는 교통사고</p>
+<p>백분율을 넣습니다.(autopct = '%1.f%%')</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')</p>
+<p>data_city = data[data['metropolitan_city'] == '광역시']</p>
+<p>city_province = data_city['city_province']</p>
+<p>amount = data_city['accident']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8541.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8541 = ''
+question_review_8541 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>원 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>autopct
+'''
+answer_8541 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')", 
+                                  "data_city = data[data['metropolitan_city'] == '광역시']", 
+                                  "city_province = data_city['city_province']", 
+                                  "amount = data_city['accident']", 
+                                  "plt.pie(amount, labels = city_province, autopct = '%1.f%%')", 
+                                  "plt.title('광역시에서 발생하는 인구 10만명당 교통사고')", 
+                                  "plt.show()"                                   ]}
+]
+question_8542 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>교통사고분석시스템(TAAS)는 경찰, 보험사 등이 교통사고 자료를 수집,통합,분석하여 교통안전 정책 수립 등에 활용될 수 있도록 교통사고 정보를 제공합니다.</p>
+<p><a href ="https://taas.koroad.or.kr/sta/acs/gus/selectPopltnTfcacdSido.do?menuId=WEB_KMP_OVT_MVT_TAC_PTA" target = 'blank'>인구 10만명당 교통사고 </a></p>
+<p>17개 시도에서 발생한 교통사고 사망자 수를 히스토그램으로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>인구 10만명당 교통사고 수, 사망자 수를 지역별로 제공한 데이터</p>
+<p>열 : city_province, metropolitan_city, accident, death</p>
+<p>기존 데이터에서 행정구역(metropolitan_city)을 추가하고 부상자 수를 삭제함</p>
+<h2>그래프</h2>
+<p>계급의 크기는 1이며, 계급은 bins = [2,3,4,5,6,7,8,9,10,11,12]입니다.</p>
+<p>그래프 제목 : 17개 시도에서 발생한 인구 10만명당 교통사고 사망자 히스토그램</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')</p>
+<p>death = data['death']
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8542.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8542 = ''
+question_review_8542 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>bins
+'''
+answer_8542 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')", 
+                                  "death = data['death']", 
+                                  "plt.hist(death, bins = [2,3,4,5,6,7,8,9,10,11,12])", 
+                                  "plt.xlabel('사망자 수(명)')", 
+                                  "plt.title('17개 시도에서 발생한 인구 10만명당 교통사고 사망자 히스토그램')", 
+                                  "plt.show()"                                   ]}
+]
+question_8551 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>영화관입장권통합전산망(KOBIS:KOREA Box-office Information System)은 전국영화관 입장권 발권정보를 실시간으로 집계처리하는 시스템(서비스 플랫폼)으로, 신속하고 다양한 박스오피스 정보와 각종 영화산업 통계정보를 제공합니다.</p>
+<p><a href ="https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do" target = 'blank'>대한민국에서 상영한 역대 박스오피스 </a></p>
+<p>1000만 관객을 넘은 영화를 대상으로 100만명을 단위로 한 히스토그램을 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>영화 제목, 개봉일, 매출액, 관객수, 스크린수, 상영횟수를 제공한 데이터</p>
+<p>열 : rank, movie_title, sales, total_movigoer, total_screen, screening_times, sales_per_screening</p>
+<p>기존 데이터에서 개봉일을 제거하고 상영횟수 당 매출액을 추가함</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 1000만 관객을 넘은 영화의 히스토그램</p>
+<p>계급의 크기는 1000000</p>
+<p>구간은 8(bins = 8), 범위는 10000000~18000000입니다.(range = (10000000, 18000000))</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')</p>
+<p>movigoer = data['total_moviegoer']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8551.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8551 = ''
+question_review_8551 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>bins
+<input type='checkbox'/>range
+'''
+answer_8551 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')",
+                                  "movigoer = data['total_moviegoer']",
+                                  "plt.hist(movigoer, bins = 8, range = (10000000, 18000000))",
+                                  "plt.title('1000만 관객을 넘은 영화의 히스토그램')",
+                                  "plt.xlabel('관객수(명)')",
+                                  "plt.show()"                                   ]}
+]
+question_8552 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>영화관입장권통합전산망(KOBIS:KOREA Box-office Information System)은 전국영화관 입장권 발권정보를 실시간으로 집계처리하는 시스템(서비스 플랫폼)으로, 신속하고 다양한 박스오피스 정보와 각종 영화산업 통계정보를 제공합니다.</p>
+<p><a href ="https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do" target = 'blank'>대한민국에서 상영한 역대 박스오피스 </a></p>
+<p>1000만 관객을 넘은 영화를 대상으로 1회 상영당 매출액을 세로 막대그래프로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>영화 제목, 개봉일, 매출액, 관객수, 스크린수, 상영횟수를 제공한 데이터</p>
+<p>열 : rank, movie_title, sales, total_movigoer, total_screen, screening_times, sales_per_screening</p>
+<p>기존 데이터에서 개봉일을 제거하고 상영횟수 당 매출액을 추가함</p>
+<h2>그래프</h2>
+<p>1회 상영당 매출액이 상위 15개인 영화만 그래프로 나타냅니다.</p>
+<p>그래프 제목 : 1000만 관객 넘은 영화 중 1회 상영당 매출액</p>
+<p>가로축 이름 : 매출액(원/상영))</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')</p>
+<p>data = data.sort_values('sales_per_screening', ascending = False)[:15]</p>
+<p>sales_per_screening = data['sales_per_screening']</p>
+<p>movie_title = data['movie_title']
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8552.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8552 = ''
+question_review_8552 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>세로 막대그래프
+<input type='checkbox'/>title
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8552 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')",
+                                  "data = data.sort_values('sales_per_screening', ascending = False)[:15]",
+                                  "sales_per_screening = data['sales_per_screening']",
+                                  "movie_title = data['movie_title']",
+                                  "plt.barh(movie_title, sales_per_screening)",
+                                  "plt.title('1000만 관객 넘은 영화 중 1회 상영당 매출액')",
+                                  "plt.xlabel('1회 상영당 매출액(원)')",
+                                  "plt.show()"                                   ]}
+]
+question_8561 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
+<p><a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>지하철 혼잡도</a></p>
+<p>평일 사당역 내선의 혼잡도를 히스토그램과 혼잡도의 평균을 수직선으로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>서울교통공사 혼잡도 데이터는 요일구분(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.</p>
+<p>열 : weekday_inner, weekday_outer, sat_inner, sat_outer, holiday_inner, holiday_outer</p>
+<p>기존 데이터에서 사당역만 추출하여 요일 구분과 내선 외선을 구분한 데이터로 수정함.</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 평일 사당역 내선의 혼잡도 히스토그램 </p>
+<p>가로축 이름 : 혼잡도(%)</p>
+<p>세로축 이름 : 도수</p>
+<p>수직선 x좌표 : 혼잡도의 평균</p>
+<p>수직선의 y좌표 범위 : 0~12
+<p>수직선의 label : 평균
+<p>수직선의 색 : 빨간색</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')</p>
+<p>weekday_inner= data['weekday_inner']</p>
+<p>weekday_inner_mean = weekday_inner.mean()
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8561.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8561 = ''
+question_review_8561 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>vlines
+<input type='checkbox'/>vlines 범위
+<input type='checkbox'/>가로축 이름
+<input type='checkbox'/>세로축 이름
+<input type='checkbox'/>label과 legend
+'''
+answer_8561 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')", 
+                                  "weekday_inner= data['weekday_inner']", 
+                                  "weekday_inner_mean = weekday_inner.mean()", 
+                                  "plt.hist(weekday_inner)",
+                                  "plt.vlines(weekday_inner_mean, 0, 12, color = 'red', label = '평균')",
+                                  "plt.xlabel('혼잡도(%)')",
+                                  "plt.title('평일 사당역 내선의 혼잡도 히스토그램')",
+                                  "plt.legend()",
+                                  "plt.show()"                                   ]}
+]
+question_8562 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
+<p><a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>지하철 혼잡도</a></p>
+<p>평일 사당역 내선과 외선의 상자그림을 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>서울교통공사 혼잡도 데이터는 요일구분(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.</p>
+<p>열 : weekday_inner, weekday_outer, sat_inner, sat_outer, holiday_inner, holiday_outer</p>
+<p>기존 데이터에서 사당역만 추출하여 요일 구분과 내선 외선을 구분한 데이터로 수정함.</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 평일 사당역 내선, 외선 상자그림 </p>
+<p>가로축 이름 : 내선, 외선</p>
+<p>세로축 이름 : 혼잡도(%)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')</p>
+<p>weekday_inner = data['weekday_inner']</p>
+<p>weekday_outer = data['weekday_outer']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8562.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8562 = ''
+question_review_8562 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>내선과 외선의 boxplot
+'''
+answer_8562 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')", 
+                                  "weekday_inner = data['weekday_inner']",
+                                  "weekday_outer = data['weekday_outer']", 
+                                  "plt.boxplot([weekday_inner, weekday_outer], labels = ['내선', '외선'])", 
+                                  "plt.title('평일 사당역 내선, 외선 상자그림')", 
+                                  "plt.ylabel('혼잡도(%)')", 
+                                  "plt.show()"]}
+]
+question_8563 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
+<p><a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>지하철 혼잡도</a></p>
+<p>평일 사당역 외선의 시간대별 혼잡도 세로 막대그래프를 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>서울교통공사 혼잡도 데이터는 요일구분(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.</p>
+<p>열 : time, weekday_inner, weekday_outer, sat_inner, sat_outer, holiday_inner, holiday_outer</p>
+<p>기존 데이터에서 사당역만 추출하여 요일 구분과 내선 외선을 구분한 데이터로 수정함.</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 시간대별 내선 혼잡도</p>
+<p>가로축 제목 : 혼잡도(%)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')</p>
+<p>weekday_inner = data['weekday_inner']</p>
+<p>subway_time = data['time']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8563.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+
+img_8563 = ''
+question_review_8563 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>막대그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8563 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')", 
+                                  "weekday_inner = data['weekday_inner']", 
+                                  "subway_time = data['time']", 
+                                  "plt.barh(subway_time, weekday_inner)", 
+                                  "plt.title('시간대별 내선 혼잡도')", 
+                                  "plt.xlabel('혼잡도(%)')", 
+                                  "plt.show()"                                   ]}
+]
+question_8564 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
+<p><a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>지하철 혼잡도</a></p>
+<p>평일 사당역 외선의 시간대별 혼잡도 세로 막대그래프를 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>서울교통공사 혼잡도 데이터는 요일구분(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.</p>
+<p>열 : time, weekday_inner, weekday_outer, sat_inner, sat_outer, holiday_inner, holiday_outer</p>
+<p>기존 데이터에서 사당역만 추출하여 요일 구분과 내선 외선을 구분한 데이터로 수정함.</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 평일 시간대별 외선 혼잡도</p>
+<p>가로축 제목 : 혼잡도(%)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')</p>
+<p>weekday_inner = data['weekday_outer']</p>
+<p>subway_time = data['time']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8564.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+
+img_8564 = ''
+question_review_8564 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>막대그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8564 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/subway_congestion.csv')", 
+                                  "weekday_outer = data['weekday_outer']", 
+                                  "subway_time = data['time']", 
+                                  "plt.barh(subway_time, weekday_outer)", 
+                                  "plt.xlabel('혼잡도(%)')", 
+                                  "plt.title('평일 시간대별 외선 혼잡도')", 
+                                  "plt.show()"                                   ]}
+]
+question_8571 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>서울특별시 공공자전거 이용현황 데이터로 서울특별시에서 운영하는 공공자전거(따릉이)에 대한 일별 대여건수 데이터를 제공합니다.</p>
+<p><a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>서울특별시 공공자전거 이용현</a></p>
+<p>기상청 기상자료개방포털은 과거 기온, 기온현상일수 등을 제공합니다.
+<p><a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>기상자료 개방포털</a></p>
+<p>일별 대여건수를 상자그림으로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>서울시 공공자전거 데이터는 대여일시, 대여건수로 구성되어 있으며 6개월 단위로 제공됩니다.</p>
+<p>기상자료개방포털에서 기온, 미세먼지농도 데이터를 일일데이터로 제공됩니다.</p>
+<p>열 : day, rent, humidity, temperature, dust</p>
+<p>문제에서 제공하는 데이터는 공공데이터를 정리하여 2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 기온, 미세먼지 농도로 재구성</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 서울시 공공자전거 대여건수 상자그림 </p>
+<p>가로축 이름 : 대여</p>
+<p>세로축 이름 : 대여건수(건)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')</p>
+<p>rent = data['rent']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8571.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8571 = ''
+question_review_8571 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>boxplot
+<input type='checkbox'/>title
+<input type='checkbox'/>ylabel
+'''
+answer_8571 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')", 
+                                  "rent = data['rent']", 
+                                  "rent_mean = data['rent'].mean()", 
+                                  "plt.boxplot(rent, labels = ['대여건수'])", 
+                                  "plt.title('서울시 공공자전거 대여건수 상자그림')", 
+                                  "plt.ylabel('대여건수(건)')", 
+                                  "plt.show()"                                   ]}
+]
+question_8572 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>서울특별시 공공자전거 이용현황 데이터로 서울특별시에서 운영하는 공공자전거(따릉이)에 대한 일별 대여건수 데이터를 제공합니다.</p>
+<p><a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>서울특별시 공공자전거 이용현</a></p>
+<p>기상청 기상자료개방포털은 과거 기온, 기온현상일수 등을 제공합니다.
+<p><a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>기상자료 개방포털</a></p>
+<p>서울시 공공자전거 대여건수를 히스토그램으로 나타내고 평균을 수직선으로 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>서울시 공공자전거 데이터는 대여일시, 대여건수로 구성되어 있으며 6개월 단위로 제공됩니다.</p>
+<p>기상자료개방포털에서 기온, 미세먼지농도 데이터를 일일데이터로 제공됩니다.</p>
+<p>열 : day, rent, humidity, temperature, dust</p>
+<p>문제에서 제공하는 데이터는 공공데이터를 정리하여 2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 기온, 미세먼지 농도로 재구성</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 서울시 공공자전거 대여건수 히스토그램 </p>
+<p>세로축 이름 : 도수</p>
+<p>수직선 범위 : 0 ~ 60</p>
+<p>수직선 색 : 빨강</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')</p>
+<p>rent = data['rent']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8572.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8572 = ''
+question_review_8572 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>title
+<input type='checkbox'/>ylabel
+'''
+answer_8572 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')", 
+                                  "rent = data['rent']", 
+                                  "rent_mean = data['rent'].mean()",
+                                  "plt.hist(rent)",
+                                  "plt.title('서울시 공공자전거 대여건수 히스토그램')", 
+                                  "plt.ylabel('도수')", 
+                                  "plt.xlabel('대여건수')", 
+                                  "plt.vlines(rent_mean, 0, 60, color = 'red', label = '평균')", 
+                                  "plt.legend()", 
+                                  "plt.show()"                                   ]}
+]
+question_8573 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>서울특별시 공공자전거 이용현황 데이터로 서울특별시에서 운영하는 공공자전거(따릉이)에 대한 일별 대여건수 데이터를 제공합니다.</p>
+<p><a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>서울특별시 공공자전거 이용현</a></p>
+<p>기상청 기상자료개방포털은 과거 기온, 기온현상일수 등을 제공합니다.
+<p><a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>기상자료 개방포털</a></p>
+<p>일별 대여건수와 온도의 산점도와 회귀선을 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>서울시 공공자전거 데이터는 대여일시, 대여건수로 구성되어 있으며 6개월 단위로 제공됩니다.</p>
+<p>기상자료개방포털에서 기온, 미세먼지농도 데이터를 일일데이터로 제공됩니다.</p>
+<p>열 : day, rent, humidity, temperature, dust</p>
+<p>2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 기온, 미세먼지 농도로 재구성</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 대여건수와 온도의 관계  </p>
+<p>가로축 이름 : 대여건수</p>
+<p>세로축 이름 : 온도</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')</p>
+<p>rent = data['rent']</p>
+<p>temperature = data['temperature']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8573.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8573 = ''
+question_review_8573 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>산점도
+<input type='checkbox'/>회귀선
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8573 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')", 
+                                  "rent = data['rent']", 
+                                  "temperature = data['temperature']", 
+                                  "plt.scatter(rent, temperature)", 
+                                  "plt.title('대여건수와 온도의 관계')", 
+                                  "sns.regplot(x = rent, y = temperature, data = data)", 
+                                  "plt.xlabel('대여건수')", 
+                                  "plt.ylabel('온도')", 
+                                  "plt.show()"                                   ]}
+]
+question_8574 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>서울특별시 공공자전거 이용현황 데이터로 서울특별시에서 운영하는 공공자전거(따릉이)에 대한 일별 대여건수 데이터를 제공합니다.</p>
+<p><a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>서울특별시 공공자전거 이용현황</a></p>
+<p>기상청 기상자료개방포털은 과거 기온, 기온현상일수 등을 제공합니다.
+<p><a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>기상자료 개방포털</a></p>
+<p>일별 대여건수와 미세먼지의 산점도와 회귀선을 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>서울시 공공자전거 데이터는 대여일시, 대여건수로 구성되어 있으며 6개월 단위로 제공됩니다.</p>
+<p>기상자료개방포털에서 기온, 미세먼지농도 데이터를 일일데이터로 제공됩니다.</p>
+<p>열 : day, rent, humidity, temperature, dust</p>
+<p>2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 기온, 미세먼지 농도로 재구성</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 대여건수와 미세먼지 농도와의 관계  </p>
+<p>가로축 이름 : 대여건수</p>
+<p>세로축 이름 : 미세먼지 농도</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')</p>
+<p>rent = data['rent']</p>
+<p>dust = data['dust']</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8574.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8574= ''
+question_review_8574 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>산점도
+<input type='checkbox'/>회귀선
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8574 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')", 
+                                  "rent = data['rent']", 
+                                  "dust = data['dust']", 
+                                  "plt.scatter(rent, dust)", 
+                                  "sns.regplot(x = rent, y = dust, data = data)", 
+                                  "plt.title('대여건수와 미세먼지 농도와의 관계')", 
+                                  "plt.xlabel('대여건수')", 
+                                  "plt.ylabel('미세먼지 농도')", 
+                                  "plt.show()"]}
+]
+question_8581 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>국민연금에 가입한 지역가입자의 평균소득월액을 제공합니다.</p>
+<p><a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>국민연금공단_자격 시구신고 평균소득월액</a></p>
+<p>평균소득월액을 히스토그램으로 나타내고, 평균소득월액의 평균에 해당하는 부분에 수직선을 그려봅시다.</p>
+<h2>데이터</h2>
+<p>지역과 지역별 평균소득월액, 연령별 인구 및 백분율로 구성되어 있으며 지역별로 제공됩니다.</p>
+<p>열 : city_province, district, income, total_population, youth_population, production_population, old_population, youth_percentage, production_percentage, old_percentage</p>
+<p>국민연금 지역가입자의 평균소득월액과 지역별 인구 및 백분율을 합쳐 재구성하였다.</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 지역별 평균소득월액 히스토그램 </p>
+<p>가로축 이름 : 평균소득월액</p>
+<p>세로축 이름 : 도수</p>
+<p>수직선 x좌표 : 평균소득월액</p>
+<p>수직선의 y좌표 범위 : 0~50</p>
+<p>수직선의 색 : 빨간색</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')</p>
+<p>income = data['income']</p>
+<p>income_mean = income.mean()</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8581.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8581= ''
+question_review_8581 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>vlines
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8581 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')", 
+                                  "income = data['income']", 
+                                  "income_mean = income.mean()",
+                                  "plt.hist(income)",
+                                  "plt.vlines(income_mean, 0, 60, color = 'red', label = '평균')", 
+                                  "plt.legend()", 
+                                  "plt.title('지역별 평균소득월액 히스토그램')", 
+                                  "plt.xlabel('소득월액')", 
+                                  "plt.ylabel('도수')", 
+                                  "plt.show()"]}
+]
+question_8582 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>국민연금에 가입한 지역가입자의 평균소득월액을 제공합니다.</p>
+<p><a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>국민연금공단_자격 시구신고 평균소득월액</a></p>
+<p>평균소득월액과 생산가능인구 백분율의 산점도와 회귀선을 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>지역과 지역별 평균소득월액, 연령별 인구 및 백분율로 구성되어 있으며 지역별로 제공됩니다.</p>
+<p>열 : city_province, district, income, total_population, youth_population, production_population, old_population, youth_percentage, production_percentage, old_percentage</p>
+<p>국민연금 지역가입자의 평균소득월액과 지역별 인구 및 백분율을 합쳐 재구성하였다.</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 지역별 평균소득월액과 생산가능 인구 관계 </p>
+<p>가로축 이름 : 평균소득월액</p>
+<p>세로축 이름 : 생산가능인구 백분율(%)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')</p>
+<p>income = data['income']</p>
+<p>production_percentage = data['production_percentage']
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8582.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8582= ''
+question_review_8582 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>산점도
+<input type='checkbox'/>회귀선
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8582 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)", 
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')",
+                                  "income = data['income']",
+                                  "production_percentage = data['production_percentage']",
+                                  "plt.scatter(income, production_percentage)",
+                                  "sns.regplot(x = income, y = 'production_percentage', data= data)",
+                                  "plt.title('지역별 평균소득월액과 생산가능 인구 관계')",
+                                  "plt.xlabel('평균소득월액')",
+                                  "plt.ylabel('생산가능인구 백분율(%)')",
+                                  "plt.show()"                                   ]}
+]
+question_8583 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<p>국민연금에 가입한 지역가입자의 평균소득월액을 제공합니다.</p>
+<p><a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>국민연금공단_자격 시구신고 평균소득월액</a></p>
+<p>평균소득월액과 노령인구 백분율의 산점도와 회귀선을 나타내봅시다.</p>
+<h2>데이터</h2>
+<p>지역과 지역별 평균소득월액, 연령별 인구 및 백분율로 구성되어 있으며 지역별로 제공됩니다.</p>
+<p>열 : city_province, district, income, total_population, youth_population, production_population, old_population, youth_percentage, production_percentage, old_percentage</p>
+<p>국민연금 지역가입자의 평균소득월액과 지역별 인구 및 백분율을 합쳐 재구성하였다.</p>
+<h2>그래프</h2>
+<p>그래프 제목 : 지역별 평균소득월액과 노령인구 관계 </p>
+<p>가로축 이름 : 평균소득월액</p>
+<p>세로축 이름 : 노령인구 백분율(%)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')</p>
+<p>income = data['income']</p>
+<p>old_percentage = data['old_percentage']
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8583.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8583= ''
+question_review_8583 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>산점도
+<input type='checkbox'/>회귀선
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8583 = [
+    {'input' : [[10]], 'output' : ["p|lt.subplot(1,2,2)", 
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/income_and_population.csv')",
+                                  "income = data['income']",
+                                  "old_percentage = data['old_percentage']", 
+                                  "plt.scatter(income, old_percentage)", 
+                                  "sns.regplot(x = income, y = old_percentage, data= data)", 
+                                  "plt.title('지역별 평균소득월액과 노령인구 관계')", 
+                                  "plt.xlabel('평균소득월액')", 
+                                  "plt.ylabel('노령인구 백분율(%)')", 
+                                  "plt.show()"                                   ]}
+]
 
 test_set = [
 #입력,변수,출력_수와 연산산
@@ -2917,30 +4044,30 @@ test_set = [
     {'test_file' : '_8403.py', 'answer' : answer_8403, 'question' : question_8403, 'img' : img_8403},        
 
     {'test_file' : '_8501.py', 'answer' : answer_8501, 'question' : question_8501, 'img' : img_8501},        
-#    {'test_file' : '_8502.py', 'answer' : answer_8502, 'question' : question_8202, 'img' : img_8502},    
-#    {'test_file' : '_8511.py', 'answer' : answer_8511, 'question' : question_8511, 'img' : img_8511},    
-#    {'test_file' : '_8512.py', 'answer' : answer_8512, 'question' : question_8512, 'img' : img_8512},        
-#    {'test_file' : '_8513.py', 'answer' : answer_8513, 'question' : question_8513, 'img' : img_8513},      
-#    {'test_file' : '_8521.py', 'answer' : answer_8521, 'question' : question_8521, 'img' : img_8521},        
-#    {'test_file' : '_8522.py', 'answer' : answer_8522, 'question' : question_8522, 'img' : img_8522},         
-#    {'test_file' : '_8523.py', 'answer' : answer_8523, 'question' : question_8523, 'img' : img_8523},      
-#    {'test_file' : '_8531.py', 'answer' : answer_8531, 'question' : question_8531, 'img' : img_8531},        
-#    {'test_file' : '_8532.py', 'answer' : answer_8532, 'question' : question_8532, 'img' : img_8532},        
-#    {'test_file' : '_8533.py', 'answer' : answer_8533, 'question' : question_8533, 'img' : img_8533},        
-#    {'test_file' : '_8534.py', 'answer' : answer_8534, 'question' : question_8534, 'img' : img_8534},    
-#    {'test_file' : '_8541.py', 'answer' : answer_8541, 'question' : question_8541, 'img' : img_8541},    
-#    {'test_file' : '_8542.py', 'answer' : answer_8542, 'question' : question_8542, 'img' : img_8542},        
-#    {'test_file' : '_8551.py', 'answer' : answer_8551, 'question' : question_8551, 'img' : img_8551},      
-#    {'test_file' : '_8552.py', 'answer' : answer_8552, 'question' : question_8552, 'img' : img_8552},        
-#    {'test_file' : '_8561.py', 'answer' : answer_8561, 'question' : question_8561, 'img' : img_8561},         
-#    {'test_file' : '_8562.py', 'answer' : answer_8562, 'question' : question_8562, 'img' : img_8562},      
-#    {'test_file' : '_8563.py', 'answer' : answer_8563, 'question' : question_8563, 'img' : img_8563},        
-#    {'test_file' : '_8564.py', 'answer' : answer_8564, 'question' : question_8564, 'img' : img_8564},          
-#    {'test_file' : '_8571.py', 'answer' : answer_8571, 'question' : question_8571, 'img' : img_8571},         
-#    {'test_file' : '_8572.py', 'answer' : answer_8572, 'question' : question_8572, 'img' : img_8572},      
-#    {'test_file' : '_8573.py', 'answer' : answer_8573, 'question' : question_8573, 'img' : img_8573},        
-#    {'test_file' : '_8574.py', 'answer' : answer_8574, 'question' : question_8574, 'img' : img_8574},         
-#    {'test_file' : '_8581.py', 'answer' : answer_8581, 'question' : question_8581, 'img' : img_8581},         
-#    {'test_file' : '_8582.py', 'answer' : answer_8582, 'question' : question_8582, 'img' : img_8582},      
-#    {'test_file' : '_8583.py', 'answer' : answer_8583, 'question' : question_8583, 'img' : img_8583},          
+    {'test_file' : '_8502.py', 'answer' : answer_8502, 'question' : question_8202, 'img' : img_8502},    
+    {'test_file' : '_8511.py', 'answer' : answer_8511, 'question' : question_8511, 'img' : img_8511},    
+    {'test_file' : '_8512.py', 'answer' : answer_8512, 'question' : question_8512, 'img' : img_8512},        
+    {'test_file' : '_8513.py', 'answer' : answer_8513, 'question' : question_8513, 'img' : img_8513},      
+    {'test_file' : '_8521.py', 'answer' : answer_8521, 'question' : question_8521, 'img' : img_8521},        
+    {'test_file' : '_8522.py', 'answer' : answer_8522, 'question' : question_8522, 'img' : img_8522},         
+    {'test_file' : '_8523.py', 'answer' : answer_8523, 'question' : question_8523, 'img' : img_8523},      
+    {'test_file' : '_8531.py', 'answer' : answer_8531, 'question' : question_8531, 'img' : img_8531},        
+    {'test_file' : '_8532.py', 'answer' : answer_8532, 'question' : question_8532, 'img' : img_8532},        
+    {'test_file' : '_8533.py', 'answer' : answer_8533, 'question' : question_8533, 'img' : img_8533},        
+    {'test_file' : '_8534.py', 'answer' : answer_8534, 'question' : question_8534, 'img' : img_8534},    
+    {'test_file' : '_8541.py', 'answer' : answer_8541, 'question' : question_8541, 'img' : img_8541},    
+    {'test_file' : '_8542.py', 'answer' : answer_8542, 'question' : question_8542, 'img' : img_8542},        
+    {'test_file' : '_8551.py', 'answer' : answer_8551, 'question' : question_8551, 'img' : img_8551},      
+    {'test_file' : '_8552.py', 'answer' : answer_8552, 'question' : question_8552, 'img' : img_8552},        
+    {'test_file' : '_8561.py', 'answer' : answer_8561, 'question' : question_8561, 'img' : img_8561},         
+    {'test_file' : '_8562.py', 'answer' : answer_8562, 'question' : question_8562, 'img' : img_8562},      
+    {'test_file' : '_8563.py', 'answer' : answer_8563, 'question' : question_8563, 'img' : img_8563},        
+    {'test_file' : '_8564.py', 'answer' : answer_8564, 'question' : question_8564, 'img' : img_8564},          
+    {'test_file' : '_8571.py', 'answer' : answer_8571, 'question' : question_8571, 'img' : img_8571},         
+    {'test_file' : '_8572.py', 'answer' : answer_8572, 'question' : question_8572, 'img' : img_8572},      
+    {'test_file' : '_8573.py', 'answer' : answer_8573, 'question' : question_8573, 'img' : img_8573},        
+    {'test_file' : '_8574.py', 'answer' : answer_8574, 'question' : question_8574, 'img' : img_8574},         
+    {'test_file' : '_8581.py', 'answer' : answer_8581, 'question' : question_8581, 'img' : img_8581},         
+    {'test_file' : '_8582.py', 'answer' : answer_8582, 'question' : question_8582, 'img' : img_8582},      
+    {'test_file' : '_8583.py', 'answer' : answer_8583, 'question' : question_8583, 'img' : img_8583},          
 ]
