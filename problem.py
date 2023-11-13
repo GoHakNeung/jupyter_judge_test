@@ -2754,15 +2754,15 @@ answer_8403 = [
 ]
 
 question_8501 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>경상남도 시에서 1년간 발생한 음식물 쓰레기량(톤)과 경상남도 시군구별 인구 데이터입니다.</p>
-<p><a href ="https://www.data.go.kr/data/15088741/fileData.do" target = 'blank'>경상남도 시군구별 음식물 쓰레기량</a></p>
-<p><a href ="https://bigdata.gyeongnam.go.kr/index.gn?menuCd=DOM_000000115001006000" target = 'blank'>경상남도 시군구별 인구</a></p>
-<p>경상남도 시에서 발생한 음식물 쓰레기량을 막대 그래프로 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>음식물 쓰레기는 환경적인 문제와 경제적인 문제를 모두 가지고 있습니다.</p>
+<p>다음 뉴스를 보고 음식물쓰레기의 문제점을 생각해봅시다.<a href ="http://www.greenpostkorea.co.kr/news/articleView.html?idxno=120801" target = 'blank'>음식물 쓰레기 관련 뉴스</a></p>
+<hr>
 <h2>데이터</h2>
-<p>경상남도 시에서 발생하는 음식물 쓰레기량, 인구와 인구당 발생하는 음식물 쓰레기량으로 구성된 데이터</p>
-<p>열 : city_province, emission, population, emission_per_person </p>
+<p>문제에서 제공하는 데이터는 경상남도는 경상남도 시군에서 발생한 <a href ="https://www.data.go.kr/data/15088741/fileData.do" target = 'blank'>1년간 음식물 쓰레기량(톤)</a>과 <a href ="https://bigdata.gyeongnam.go.kr/index.gn?menuCd=DOM_000000115001006000" target = 'blank'>인구 데이터</a>를 바탕으로 경상남도 시별 음식물 쓰레기량과 1인당 음식물 쓰레기량으로 구성되어 있습니다.</p>
+<p>열 : city_province(시), emission(배출량), population(인구), emission_per_person(1인당 음식물 쓰레기 배출량) </p>
 <h2>그래프</h2>
-<p>가로 축에는 경상남도 시 이름, 세로 축에는 음식물 쓰레기 배출량을 막대 그래프로 나타냅니다.</p>
+<p>경상남도 시에서 제공하는 시군구별 음식물 쓰레기 및 인구와 관련하여 막대 그래프로 그려봅시다.</p>
 <p>그래프 제목 : '경상남도 시에서 발생하는 음식물 쓰레기량'</p>
 <p>가로축 제목 : '경상남도 시'</p>
 <p>세로축 제목 : '음식물 쓰레기량(단위:톤)'</p>
@@ -2798,13 +2798,13 @@ answer_8501 = [
                                    "plt.show()"]}
 ]
 question_8502 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>경상남도 시에서 1년간 발생한 음식물 쓰레기량(톤)과 경상남도 시군구별 인구 데이터입니다.</p>
-<p><a href ="https://www.data.go.kr/data/15088741/fileData.do" target = 'blank'>경상남도 시군구별 음식물 쓰레기량</a></p>
-<p><a href ="https://bigdata.gyeongnam.go.kr/index.gn?menuCd=DOM_000000115001006000" target = 'blank'>경상남도 시군구별 인구</a></p>
-<p>경상남도 시에서 발생한 음식물 쓰레기량을 막대 그래프로 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>음식물 쓰레기는 환경적인 문제와 경제적인 문제를 모두 가지고 있습니다.</p>
+<p>다음 뉴스를 보고 음식물쓰레기의 문제점을 생각해봅시다.<a href ="http://www.greenpostkorea.co.kr/news/articleView.html?idxno=120801" target = 'blank'>음식물 쓰레기 관련 뉴스</a></p>
+<hr>
 <h2>데이터</h2>
-<p>경상남도 시에서 발생하는 음식물 쓰레기량, 인구와 인구당 발생하는 음식물 쓰레기량으로 구성된 데이터</p>
-<p>열 : city_province, emission, population, emission_per_person </p>
+<p>문제에서 제공하는 데이터는 경상남도는 경상남도 시군에서 발생한 <a href ="https://www.data.go.kr/data/15088741/fileData.do" target = 'blank'>1년간 음식물 쓰레기량(톤)</a>과 <a href ="https://bigdata.gyeongnam.go.kr/index.gn?menuCd=DOM_000000115001006000" target = 'blank'>인구 데이터</a>를 바탕으로 경상남도 시별 음식물 쓰레기량과 1인당 음식물 쓰레기량으로 구성되어 있습니다.</p>
+<p>열 : city_province(시), emission(배출량), population(인구), emission_per_person(1인당 음식물 쓰레기 배출량) </p>
 <h2>그래프</h2>
 <p>가로 축에는 경상남도 시 이름, 세로 축에는 1명당 발생하는 음식물 쓰레기량을 막대 그래프로 나타냅니다.</p>
 <p>그래프 제목 : '경상남도 시에서 발생하는 1인당 음식물 쓰레기량'</p>
@@ -2845,15 +2845,16 @@ answer_8502 = [
                                    "plt.show()"]}
 ]
 question_8511 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>한전에서 제공하는 에너지원별 발전량입니다.</p>
-<p><a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>에너지원별 발전량</a></p>
-<p>2022년 에너지원별 발전량을 막대그래프로 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>2050년 탄소중립을 달성하기 위해 전력 생산의 많은 비중을 차지하는 화석연료를 재생에너지, 신에너지로의 전환 문제를 다루고 있는 신문기사입니다.</p>
+<p>다음 뉴스를 보고 탄소중립과 발전하는데 사용하는 에너지원을 생각해봅시다. <a href ="https://www.etnews.com/20210416000107" target = 'blank'>발전 관련 뉴스</a></p>
+<hr>
 <h2>데이터</h2>
-<p>연간 에너지원별 발전량으로 구성된 데이터로 1961년부터 2022년까지 포함된 데이터</p>
-<p>열 : year, thermal_power, LNG, nuclear_power, renewable_power, other, individual </p>
-<p>엑셀에서 _power 제거하기</p>
+<p>문제에서 제공하는 데이터는 한전에서 제공하는 <a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>전원별 발전량</a>을 바탕으로 연도별, 전원별 발전량로 구성되어 있습니다.</p>
+<p>열 : year(연도), thermal(화력), LNG(천연가스), nuclear(원자력), renewable(신재생), other(기타), individual(개별발전) </p>
 <h2>그래프</h2>
-<p>가로 축에는 에너지원별 이름, 세로 축에는 발전량(MWh)을 막대 그래프로 나타냅니다.</p>
+<p>2022년 에너지원별 발전량을 막대그래프로 그려봅시다.</p>
+<p>2022년 전원별 발전량을 가로 축에는 전원별 이름, 세로 축에는 발전량(MWh)으로 막대그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 에너지원별 발전량</p>
 <p>가로축 제목 : 에너지원</p>
 <p>세로축 제목 : 발전량(MWh)</p>
@@ -2887,14 +2888,15 @@ answer_8511 = [
                                    "plt.show()"]}
 ]
 question_8512 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>한전에서 제공하는 에너지원별 발전량입니다.</p>
-<p><a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>에너지원별 발전량</a></p>
-<p>연도별 신재생 발전량을 꺾은선 그래프로 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>2050년 탄소중립을 달성하기 위해 전력 생산의 많은 비중을 차지하는 화석연료를 재생에너지, 신에너지로의 전환 문제를 다루고 있는 신문기사입니다.</p>
+<p>다음 뉴스를 보고 탄소중립과 발전하는데 사용하는 에너지원을 생각해봅시다. <a href ="https://www.etnews.com/20210416000107" target = 'blank'>발전 관련 뉴스</a></p>
+<hr>
 <h2>데이터</h2>
-<p>연간 에너지원별 발전량으로 구성된 데이터로 1961년부터 2022년까지 포함된 데이터</p>
-<p>열 : year, thermal_power, LNG, nuclear_power, renewable_power, other, individual </p>
+<p>문제에서 제공하는 데이터는 한전에서 제공하는 <a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>전원별 발전량</a>을 바탕으로 연도별, 전원별 발전량로 구성되어 있습니다.</p>
+<p>열 : year(연도), thermal(화력), LNG(천연가스), nuclear(원자력), renewable(신재생), other(기타), individual(개별발전) </p>
 <h2>그래프</h2>
-<p>가로 축에는 연도, 세로 축에는 신재생 에너지 발전량(MWh)을 꺾은선 그래프로 나타냅니다.</p>
+<p>가로 축에는 연도, 세로 축에는 신재생 에너지 발전량(MWh)으로 꺾은선 그래프를 나타냅니다.</p>
 <p>그래프 제목 : 연도별 신재생 에너지 발전량</p>
 <p>가로축 제목 : 연도</p>
 <p>세로축 제목 : 신재생 에너지 발전량(MWh)</p>
@@ -2976,14 +2978,15 @@ answer_8513 = [
                                    "plt.show()"]}
 ]
 question_8521 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>육아 휴직 통계와 관련하여 출생아 100명당 출생아 부,모 중 육아휴직자 수입니다.</p>
-<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부모 중 육아휴직자 수</a></p>
-<p>연도별 엄마의 육아 휴직자 수를 꺾은선 그래프로 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>양성평등 사회로 나아가기 위한 방법 중 하나인 아빠의 육아와 관련된 신문기사입니다.</p>
+<p>다음 뉴스를 보고 아빠의 육아와 양성평등을 생각해봅시다. <a href ="https://www.sisain.co.kr/news/articleView.html?idxno=49406" target = 'blank'>아빠의 육아</a></p>
+<hr>
 <h2>데이터</h2>
-<p>연도별 출생아 100명당 출생아의 아빠, 엄마 중 육아휴직자 수가 2012년부터 2020년까지 포함된 데이터</p>
-<p>열 : year, father, mother, total </p>
+<p>문제에서 제공하는 데이터는 KOSIS에서 육아휴직과 관련하여 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부,모 중 육아휴직자</a>수입니다.</p>
+<p>열 : year(연도), father(아빠의 육아휴직자 수), mother(엄마의 육아휴직자 수), total(합계) </p>
 <h2>그래프</h2>
-<p>가로 축에는 연도, 세로 축에는 출생아 100명당 엄마의 육아휴직자 수를 꺾은선 그래프로 나타냅니다.</p>
+<p>연도별 엄마의 육아휴직자 수를 꺾은선 그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 출생아 100명당 엄마 육아휴직자 수의 연도별 변화</p>
 <p>가로축 제목 : 연도</p>
 <p>세로축 제목 : 육아휴직자 수(명)</p>
@@ -3020,14 +3023,15 @@ answer_8521 = [
                                    "plt.show()"]}
 ]
 question_8522 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>육아 휴직 통계와 관련하여 출생아 100명당 출생아 부,모 중 육아휴직자 수입니다.</p>
-<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부모 중 육아휴직자 수</a></p>
-<p>연도별 아빠의 육아 휴직자 수를 꺾은선 그래프로 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>양성평등 사회로 나아가기 위한 방법 중 하나인 아빠의 육아와 관련된 신문기사입니다.</p>
+<p>다음 뉴스를 보고 아빠의 육아와 양성평등을 생각해봅시다. <a href ="https://www.sisain.co.kr/news/articleView.html?idxno=49406" target = 'blank'>아빠의 육아</a></p>
+<hr>
 <h2>데이터</h2>
-<p>연도별 출생아 100명당 출생아의 아빠, 엄마 중 육아휴직자 수가 2012년부터 2020년까지 포함된 데이터</p>
-<p>열 : year, father, mother, total </p>
+<p>문제에서 제공하는 데이터는 KOSIS에서 육아휴직과 관련하여 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부,모 중 육아휴직자</a>수입니다.</p>
+<p>열 : year(연도), father(아빠의 육아휴직자 수), mother(엄마의 육아휴직자 수), total(합계) </p>
 <h2>그래프</h2>
-<p>가로 축에는 연도, 세로 축에는 출생아 100명당 아빠의 육아휴직자 수를 꺾은선 그래프로 나타냅니다.</p>
+<p>연도별 아빠의 육아휴직자 수를 꺾은선 그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 출생아 100명당 아빠 육아휴직자 수의 연도별 변화</p>
 <p>가로축 제목 : 연도</p>
 <p>세로축 제목 : 육아휴직자 수(명)</p>
@@ -3064,14 +3068,15 @@ answer_8522 = [
                                    "plt.show()"]}
 ]
 question_8523 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>육아 휴직 통계와 관련하여 출생아 100명당 출생아 부,모 중 육아휴직자 수입니다.</p>
-<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부모 중 육아휴직자 수</a></p>
-<p>연도별 엄마와 아빠의 육아휴직자 수를 꺾은선 그래프로 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>양성평등 사회로 나아가기 위한 방법 중 하나인 아빠의 육아와 관련된 신문기사입니다.</p>
+<p>다음 뉴스를 보고 아빠의 육아와 양성평등을 생각해봅시다. <a href ="https://www.sisain.co.kr/news/articleView.html?idxno=49406" target = 'blank'>아빠의 육아</a></p>
+<hr>
 <h2>데이터</h2>
-<p>연도별 출생아 100명당 출생아의 아빠, 엄마 중 육아휴직자 수가 2012년부터 2020년까지 포함된 데이터</p>
-<p>열 : year, father, mother, total </p>
+<p>문제에서 제공하는 데이터는 KOSIS에서 육아휴직과 관련하여 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_CC2020B001&vw_cd=MT_ZTITLE&list_id=D_002_002_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target = 'blank'>출생아 100명당 출생아 부,모 중 육아휴직자</a>수입니다.</p>
+<p>열 : year(연도), father(아빠의 육아휴직자 수), mother(엄마의 육아휴직자 수), total(합계) </p>
 <h2>그래프</h2>
-<p>가로 축에는 연도, 세로 축에는 출생아 100명당 육아휴직자 수를 꺾은선 그래프로 나타냅니다.</p>
+<p>연도별 엄마와 아빠의 육아휴직자 수를 꺾은선 그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 연도별 출생아 100명당 육아휴직자 수</p>
 <p>가로축 제목 : 연도</p>
 <p>세로축 제목 : 육아휴직자 수(명)</p>
@@ -3111,14 +3116,15 @@ answer_8523 = [
                                    "plt.show()"]}
 ]
 question_8531 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>사교육비 실태를 체계적으로 조사하여 공신력 있는 통계를 정기적으로 작성한 데이터입니다.</p>
-<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>학교급별 사교육비 총액 </a></p>
-<p>2022년의 초등학교, 중학교, 고등학교 사교육비를 원그래프로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>코로나 19로 인한 발생한 학습 결손을 해결하기 위해 늘어나고 있는 사교육비와 관련된 신문기사입니다.</p>
+<p>다음 뉴스를 보고 코로나와 사교육비를 생각해봅시다. <a href ="https://www.yna.co.kr/view/AKR20230307079000530" target = 'blank'>늘어나는 사교육비</a></p>
+<hr>
 <h2>데이터</h2>
-<p>학교급별(초등학교, 중학교, 고등학교)로 지역(대도시, 대도시이외), 과목(일반교과,예체능 등), 유형(과외, 학원 등)으로 구분되며 2013년부터 2022년까지의 데이터</p>
+<p>문제에서 제공하는 데이터는 KOSIS에서 사교육비 실태를 조사하여 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>연도별 학교급별 사교육비 총액</a>에서 초등학교만 나타낸 데이터입니다.</p>
 <p>열 : 연도, 초등학교 과목, 중학교 과목, 고등학교 과목 등</p>
 <h2>그래프</h2>
-<p>2022년 초등학교, 중학교, 고등학교 사교육비 총액을 원 그래프로 나타냅니다.</p>
+<p>2022년의 초등학교, 중학교, 고등학교 사교육비를 원그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 학교급별 사교육비 총액</p>
 <p>백분율을 넣습니다.</p>
 <p>초등학교 부분을 분리하여 강조합니다.(explode = [0.1, 0, 0])</p>
@@ -3150,14 +3156,15 @@ answer_8531 = [
                                    "plt.show()"                                   ]}
 ]
 question_8532 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>사교육비 실태를 체계적으로 조사하여 공신력 있는 통계를 정기적으로 작성한 데이터입니다.</p>
-<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>학교급별 사교육비 총액 </a></p>
-<p>2022년의 초등학교 과목별 사교육비 총액을 원그래프로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>코로나 19로 인한 발생한 학습 결손을 해결하기 위해 늘어나고 있는 사교육비와 관련된 신문기사입니다.</p>
+<p>다음 뉴스를 보고 코로나와 사교육비를 생각해봅시다. <a href ="https://www.yna.co.kr/view/AKR20230307079000530" target = 'blank'>늘어나는 사교육비</a></p>
+<hr>
 <h2>데이터</h2>
-<p>학교급별(초등학교, 중학교, 고등학교)로 지역(대도시, 대도시이외), 과목(일반교과,예체능 등), 유형(과외, 학원 등)으로 구분되며 2013년부터 2022년까지의 데이터</p>
+<p>문제에서 제공하는 데이터는 KOSIS에서 사교육비 실태를 조사하여 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>연도별 학교급별 사교육비 총액</a>에서 초등학교만 나타낸 데이터입니다.</p>
 <p>열 : 연도, 초등학교 과목, 중학교 과목, 고등학교 과목 등</p>
-<p>데이터 중 2022년에서 초등학교_일반교과, 초등학교_예체능, 초등학교_예체능, 초등학교_취업,초등학교_진로 데이터를 추출</p>
 <h2>그래프</h2>
+<p>2022년의 초등학교 과목별 사교육비 총액을 원그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 2022년 초등학교 과목별 사교육비</p>
 <p>백분율을 넣습니다.(autopct = '%1.f%%')</p>
 <p>일반교과 부분을 분리하여 강조합니다.(explode = [0.1, 0, 0, 0])</p>
@@ -3189,14 +3196,15 @@ answer_8532 = [
                                   "plt.show()"                                   ]}
 ]
 question_8533 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>사교육비 실태를 체계적으로 조사하여 공신력 있는 통계를 정기적으로 작성한 데이터입니다.</p>
-<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>학교급별 사교육비 총액 </a></p>
-<p>2022년의 초등학교 일반교과의 과목별 사교육비 총액을 원그래프로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>코로나 19로 인한 발생한 학습 결손을 해결하기 위해 늘어나고 있는 사교육비와 관련된 신문기사입니다.</p>
+<p>다음 뉴스를 보고 코로나와 사교육비를 생각해봅시다. <a href ="https://www.yna.co.kr/view/AKR20230307079000530" target = 'blank'>늘어나는 사교육비</a></p>
+<hr>
 <h2>데이터</h2>
-<p>학교급별(초등학교, 중학교, 고등학교)로 지역(대도시, 대도시이외), 과목(일반교과,예체능 등), 유형(과외, 학원 등)으로 구분되며 2013년부터 2022년까지의 데이터</p>
+<p>문제에서 제공하는 데이터는 KOSIS에서 사교육비 실태를 조사하여 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>연도별 학교급별 사교육비 총액</a>에서 초등학교만 나타낸 데이터입니다.</p>
 <p>열 : 연도, 초등학교 과목, 중학교 과목, 고등학교 과목 등</p>
-<p>데이터 중 2022년에서 초등학교_국어, 초등학교_영어, 초등학교_수학, 초등학교_사회과학,초등학교_논술, 초등학교_컴퓨터, 초등학교_제2외국어 데이터를 추출</p>
 <h2>그래프</h2>
+<p>2022년의 초등학교 일반교과의 과목별 사교육비 총액을 원그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 2022년 초등학교 일반교과 과목별 사교육비</p>
 <p>백분율을 넣습니다.(autopct = '%1.f%%')</p>
 <HR>
@@ -3226,13 +3234,15 @@ answer_8533 = [
                                   "plt.show()"                                   ]}
 ]
 question_8534 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>사교육비 실태를 체계적으로 조사하여 공신력 있는 통계를 정기적으로 작성한 데이터입니다.</p>
-<p><a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>학교급별 사교육비 총액 </a></p>
-<p>연도별 초등학교 사교육비 총액을 꺾은선 그래프로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>코로나 19로 인한 발생한 학습 결손을 해결하기 위해 늘어나고 있는 사교육비와 관련된 신문기사입니다.</p>
+<p>다음 뉴스를 보고 코로나와 사교육비를 생각해봅시다. <a href ="https://www.yna.co.kr/view/AKR20230307079000530" target = 'blank'>늘어나는 사교육비</a></p>
+<hr>
 <h2>데이터</h2>
-<p>학교급별(초등학교, 중학교, 고등학교)로 지역(대도시, 대도시이외), 과목(일반교과,예체능 등), 유형(과외, 학원 등)으로 구분되며 2013년부터 2022년까지의 데이터</p>
+<p>문제에서 제공하는 데이터는 KOSIS에서 사교육비 실태를 조사하여 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>연도별 학교급별 사교육비 총액</a>에서 초등학교만 나타낸 데이터입니다.</p>
 <p>열 : 연도, 초등학교 과목, 중학교 과목, 고등학교 과목 등</p>
 <h2>그래프</h2>
+<p>연도별 초등학교 사교육비 총액을 꺾은선 그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 연도별 초등학교 사교육비 총액</p>
 <p>가로축 제목 : 연도</p>
 <p>세로축 제목 : 사교육비(억원)</p>
@@ -3267,23 +3277,28 @@ answer_8534 = [
                                   "plt.show()"                                   ]}
 ]
 question_8541 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>교통사고분석시스템(TAAS)는 경찰, 보험사 등이 교통사고 자료를 수집,통합,분석하여 교통안전 정책 수립 등에 활용될 수 있도록 교통사고 정보를 제공합니다.</p>
-<p><a href ="https://taas.koroad.or.kr/sta/acs/gus/selectPopltnTfcacdSido.do?menuId=WEB_KMP_OVT_MVT_TAC_PTA" target = 'blank'>인구 10만명당 교통사고 </a></p>
-<p>광역시에서 발생한 교통사고 건수를 원그래프로 나타내봅시다. </p>
+<h2>관련 뉴스</h2>
+<p>교통사고로 인해 발생하는 사회비용(사상자의 물리적 손실비용과 정신적 고통 비용)을 다루는 신문기사입니다.</p>
+<p>다음 뉴스를 보고 지역별 교통사고 현황과 그 이유를 생각해봅시다. <a href ="https://www.etoday.co.kr/news/view/1912232" target = 'blank'>지역별로 차이나는 교통사고</a></p>
+<hr>
 <h2>데이터</h2>
-<p>인구 10만명당 교통사고 수, 사망자 수를 지역별로 제공한 데이터</p>
-<p>열 : city_province, metropolitan_city, accident, death</p>
-<p>기존 데이터에서 행정구역(metropolitan_city)을 추가하고 부상자 수를 삭제함</p>
+<p>문제에서 제공하는 데이터는 교통사고분석시스템(TAAS)에서 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>인구 10만명당 교통사고</a>에 권역을 추가했습니다.</p>
+<p>열 : city_province(시도 이름), metropolitan_city(권역 이름),accident(교통사고 발생건수), death(교통사고 사망자 수)</p>
+<p>기존 데이터에서 권역(metropolitan_city)을 추가하고 부상자 수를 삭제함</p>
+
 <h2>그래프</h2>
-<p>그래프 제목 : 광역시에서 발생하는 교통사고</p>
-<p>백분율을 넣습니다.(autopct = '%1.f%%')</p>
+<p>경상도에서 발생한 교통사고 사망자 수를 막대그래프로 나타내봅시다. </p>
+<p>그래프 제목 : 경상도에서 발생하는 인구 10만명당 교통사고 사망자 수</p>
+<p>가로축 제목 : 경상도 시도</p>
+<p>세로축 제목 : 사망자 수(명)</p>
+
 <HR>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>data = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')</p>
-<p>data_city = data[data['metropolitan_city'] == '광역시']</p>
+<p>data_city = data[data['metropolitan_city'] == '경상도']</p>
 <p>city_province = data_city['city_province']</p>
-<p>amount = data_city['accident']</p>
+<p>death = data_city['death']</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
@@ -3293,9 +3308,11 @@ question_8541 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 img_8541 = ''
 question_review_8541 = '''
 <h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
-<input type='checkbox'/>원 그래프
+<input type='checkbox'/>막대 그래프
 <input type='checkbox'/>제목
-<input type='checkbox'/>autopct
+<input type='checkbox'/>가로축 이름
+<input type='checkbox'/>세로축 이름
+
 '''
 answer_8541 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
@@ -3308,14 +3325,16 @@ answer_8541 = [
                                   "plt.show()"                                   ]}
 ]
 question_8542 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>교통사고분석시스템(TAAS)는 경찰, 보험사 등이 교통사고 자료를 수집,통합,분석하여 교통안전 정책 수립 등에 활용될 수 있도록 교통사고 정보를 제공합니다.</p>
-<p><a href ="https://taas.koroad.or.kr/sta/acs/gus/selectPopltnTfcacdSido.do?menuId=WEB_KMP_OVT_MVT_TAC_PTA" target = 'blank'>인구 10만명당 교통사고 </a></p>
-<p>17개 시도에서 발생한 교통사고 사망자 수를 히스토그램으로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>교통사고로 인해 발생하는 사회비용(사상자의 물리적 손실비용과 정신적 고통 비용)을 다루는 신문기사입니다.</p>
+<p>다음 뉴스를 보고 지역별 교통사고 현황과 그 이유를 생각해봅시다. <a href ="https://www.etoday.co.kr/news/view/1912232" target = 'blank'>지역별로 차이나는 교통사고</a></p>
+<hr>
 <h2>데이터</h2>
-<p>인구 10만명당 교통사고 수, 사망자 수를 지역별로 제공한 데이터</p>
-<p>열 : city_province, metropolitan_city, accident, death</p>
-<p>기존 데이터에서 행정구역(metropolitan_city)을 추가하고 부상자 수를 삭제함</p>
+<p>문제에서 제공하는 데이터는 교통사고분석시스템(TAAS)에서 제공하는 <a href ="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003&vw_cd=MT_ZTITLE&list_id=H1_10_003&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do" target = 'blank'>인구 10만명당 교통사고</a>에 권역을 추가했습니다.</p>
+<p>열 : city_province(시도 이름), metropolitan_city(권역 이름), accident(교통사고 발생건수), death(교통사고 사망자 수)</p>
+<p>기존 데이터에서 권역(metropolitan_city)을 추가하고 부상자 수를 삭제함</p>
 <h2>그래프</h2>
+<p>17개 시도에서 발생한 교통사고 사망자 수를 히스토그램으로 나타내봅시다.</p>
 <p>계급의 크기는 1이며, 계급은 bins = [2,3,4,5,6,7,8,9,10,11,12]입니다.</p>
 <p>그래프 제목 : 17개 시도에서 발생한 인구 10만명당 교통사고 사망자 히스토그램</p>
 <HR>
@@ -3345,14 +3364,16 @@ answer_8542 = [
                                   "plt.show()"                                   ]}
 ]
 question_8551 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>영화관입장권통합전산망(KOBIS:KOREA Box-office Information System)은 전국영화관 입장권 발권정보를 실시간으로 집계처리하는 시스템(서비스 플랫폼)으로, 신속하고 다양한 박스오피스 정보와 각종 영화산업 통계정보를 제공합니다.</p>
-<p><a href ="https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do" target = 'blank'>대한민국에서 상영한 역대 박스오피스 </a></p>
-<p>1000만 관객을 넘은 영화를 대상으로 100만명을 단위로 한 히스토그램을 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>화를 관객수로만 평가하는 것이 아니라 상영횟수를 고려해야 한다는 신문기사입니다.</p>
+<p>다음 뉴스를 보고 영화 매출액을 어떻게 평가하면 좋을지 생각해봅시다. <a href ="https://www.etoday.co.kr/news/view/1912232" target = 'blank'>영화 관객수와 영화 상영횟수</a></p>
+<hr>
 <h2>데이터</h2>
-<p>영화 제목, 개봉일, 매출액, 관객수, 스크린수, 상영횟수를 제공한 데이터</p>
-<p>열 : rank, movie_title, sales, total_movigoer, total_screen, screening_times, sales_per_screening</p>
-<p>기존 데이터에서 개봉일을 제거하고 상영횟수 당 매출액을 추가함</p>
+<p>문제에서 제공하는 데이터는 영화관입장권통합전산망(KOBIS)에서 제공하는 <a href ="https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do" target = 'blank'>역대 박스오피스</a>에서 1000만 관객을 돌파한 영화로 구성했습니다.</p>
+<p>열 : rank(순위), movie_title(영화제목), sales(매출액), total_movigoer(관객수), total_screen(상영 스크린수), screening_times(상영횟수), sales_per_screening(1회 상영당 매출액)</p>
+<p>기존 데이터에서 개봉일을 제거하고 1회 상영당 매출액을 추가함</p>
 <h2>그래프</h2>
+<p>1000만 관객을 넘은 영화를 대상으로 100만명을 단위로 한 히스토그램을 나타내봅시다.</p>
 <p>그래프 제목 : 1000만 관객을 넘은 영화의 히스토그램</p>
 <p>계급의 크기는 1000000</p>
 <p>구간은 8(bins = 8), 범위는 10000000~18000000입니다.(range = (10000000, 18000000))</p>
@@ -3384,15 +3405,16 @@ answer_8551 = [
                                   "plt.show()"                                   ]}
 ]
 question_8552 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>영화관입장권통합전산망(KOBIS:KOREA Box-office Information System)은 전국영화관 입장권 발권정보를 실시간으로 집계처리하는 시스템(서비스 플랫폼)으로, 신속하고 다양한 박스오피스 정보와 각종 영화산업 통계정보를 제공합니다.</p>
-<p><a href ="https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do" target = 'blank'>대한민국에서 상영한 역대 박스오피스 </a></p>
-<p>1000만 관객을 넘은 영화를 대상으로 1회 상영당 매출액을 세로 막대그래프로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>화를 관객수로만 평가하는 것이 아니라 상영횟수를 고려해야 한다는 신문기사입니다.</p>
+<p>다음 뉴스를 보고 영화 매출액을 어떻게 평가하면 좋을지 생각해봅시다. <a href ="https://www.etoday.co.kr/news/view/1912232" target = 'blank'>영화 관객수와 영화 상영횟수</a></p>
+<hr>
 <h2>데이터</h2>
-<p>영화 제목, 개봉일, 매출액, 관객수, 스크린수, 상영횟수를 제공한 데이터</p>
-<p>열 : rank, movie_title, sales, total_movigoer, total_screen, screening_times, sales_per_screening</p>
-<p>기존 데이터에서 개봉일을 제거하고 상영횟수 당 매출액을 추가함</p>
+<p>문제에서 제공하는 데이터는 영화관입장권통합전산망(KOBIS)에서 제공하는 <a href ="https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do" target = 'blank'>역대 박스오피스</a>에서 1000만 관객을 돌파한 영화로 구성했습니다.</p>
+<p>열 : rank(순위), movie_title(영화제목), sales(매출액), total_movigoer(관객수), total_screen(상영 스크린수), screening_times(상영횟수), sales_per_screening(1회 상영당 매출액)</p>
+<p>기존 데이터에서 개봉일을 제거하고 1회 상영당 매출액을 추가함</p>
 <h2>그래프</h2>
-<p>1회 상영당 매출액이 상위 15개인 영화만 그래프로 나타냅니다.</p>
+<p>1000만 관객을 넘은 영화 중 1회 상영당 매출액이 상위 15개의 영화에 대해서 1회 상영당 매출액을 세로 막대그래프로 나타내봅시다.</p>
 <p>그래프 제목 : 1000만 관객 넘은 영화 중 1회 상영당 매출액</p>
 <p>가로축 이름 : 매출액(원/상영))</p>
 <HR>
@@ -3428,14 +3450,16 @@ answer_8552 = [
                                   "plt.show()"                                   ]}
 ]
 question_8561 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
-<p><a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>지하철 혼잡도</a></p>
-<p>평일 사당역 내선의 혼잡도를 히스토그램과 혼잡도의 평균을 수직선으로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>지하철 역중에서 사고가 많이 나는 역과 사고 유형을 조사한 신문기사 입니다.</p>
+<p>이용객이 많은 역 중 하나인 사당역에서 언제 사고가 많이 발생할지 생각해봅시다. <a href ="https://biz.sbs.co.kr/article/20000136368" target = 'blank'>출퇴근길에 특히 조심해야 할 역은?</a></p>
+<hr>
 <h2>데이터</h2>
-<p>서울교통공사 혼잡도 데이터는 요일구분(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.</p>
-<p>열 : weekday_inner, weekday_outer, sat_inner, sat_outer, holiday_inner, holiday_outer</p>
-<p>기존 데이터에서 사당역만 추출하여 요일 구분과 내선 외선을 구분한 데이터로 수정함.</p>
+<p>문제에서 제공하는 데이터는 서울교통공사가 제공하는 <a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>요일별, 시간대별, 지하철 역별 혼잡도</a>에서 요일별 사당역 데이터로 구성했습니다.</p>
+<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
+<p>열 : weekday_inner(평일 내선), weekday_outer(평일 외선), sat_inner(토요일 내선), sat_outer(토요일 외선), holiday_inner(공휴일 내선), holiday_outer(공휴일 외선)</p>
 <h2>그래프</h2>
+<p>평일 사당역 내선의 혼잡도를 히스토그램과 혼잡도의 평균을 수직선으로 나타내봅시다.</p>
 <p>그래프 제목 : 평일 사당역 내선의 혼잡도 히스토그램 </p>
 <p>가로축 이름 : 혼잡도(%)</p>
 <p>세로축 이름 : 도수</p>
@@ -3478,14 +3502,16 @@ answer_8561 = [
                                   "plt.show()"                                   ]}
 ]
 question_8562 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
-<p><a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>지하철 혼잡도</a></p>
-<p>평일 사당역 내선과 외선의 상자그림을 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>지하철 역중에서 사고가 많이 나는 역과 사고 유형을 조사한 신문기사 입니다.</p>
+<p>이용객이 많은 역 중 하나인 사당역에서 언제 사고가 많이 발생할지 생각해봅시다. <a href ="https://biz.sbs.co.kr/article/20000136368" target = 'blank'>출퇴근길에 특히 조심해야 할 역은?</a></p>
+<hr>
 <h2>데이터</h2>
-<p>서울교통공사 혼잡도 데이터는 요일구분(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.</p>
-<p>열 : weekday_inner, weekday_outer, sat_inner, sat_outer, holiday_inner, holiday_outer</p>
-<p>기존 데이터에서 사당역만 추출하여 요일 구분과 내선 외선을 구분한 데이터로 수정함.</p>
+<p>문제에서 제공하는 데이터는 서울교통공사가 제공하는 <a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>요일별, 시간대별, 지하철 역별 혼잡도</a>에서 요일별 사당역 데이터로 구성했습니다.</p>
+<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
+<p>열 : weekday_inner(평일 내선), weekday_outer(평일 외선), sat_inner(토요일 내선), sat_outer(토요일 외선), holiday_inner(공휴일 내선), holiday_outer(공휴일 외선)</p>
 <h2>그래프</h2>
+<p>평일 사당역 내선과 외선의 상자그림을 나타내봅시다.</p>
 <p>그래프 제목 : 평일 사당역 내선, 외선 상자그림 </p>
 <p>가로축 이름 : 내선, 외선</p>
 <p>세로축 이름 : 혼잡도(%)</p>
@@ -3517,14 +3543,16 @@ answer_8562 = [
                                   "plt.show()"]}
 ]
 question_8563 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
-<p><a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>지하철 혼잡도</a></p>
-<p>평일 사당역 외선의 시간대별 혼잡도 세로 막대그래프를 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>지하철 역중에서 사고가 많이 나는 역과 사고 유형을 조사한 신문기사 입니다.</p>
+<p>이용객이 많은 역 중 하나인 사당역에서 언제 사고가 많이 발생할지 생각해봅시다. <a href ="https://biz.sbs.co.kr/article/20000136368" target = 'blank'>출퇴근길에 특히 조심해야 할 역은?</a></p>
+<hr>
 <h2>데이터</h2>
-<p>서울교통공사 혼잡도 데이터는 요일구분(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.</p>
-<p>열 : time, weekday_inner, weekday_outer, sat_inner, sat_outer, holiday_inner, holiday_outer</p>
-<p>기존 데이터에서 사당역만 추출하여 요일 구분과 내선 외선을 구분한 데이터로 수정함.</p>
+<p>문제에서 제공하는 데이터는 서울교통공사가 제공하는 <a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>요일별, 시간대별, 지하철 역별 혼잡도</a>에서 요일별 사당역 데이터로 구성했습니다.</p>
+<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
+<p>열 : weekday_inner(평일 내선), weekday_outer(평일 외선), sat_inner(토요일 내선), sat_outer(토요일 외선), holiday_inner(공휴일 내선), holiday_outer(공휴일 외선)</p>
 <h2>그래프</h2>
+<p>평일 사당역 내선의 시간대별 혼잡도 세로 막대그래프를 나타내봅시다.</p>
 <p>그래프 제목 : 시간대별 내선 혼잡도</p>
 <p>가로축 제목 : 혼잡도(%)</p>
 <HR>
@@ -3559,14 +3587,16 @@ answer_8563 = [
                                   "plt.show()"                                   ]}
 ]
 question_8564 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
-<p><a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>지하철 혼잡도</a></p>
-<p>평일 사당역 외선의 시간대별 혼잡도 세로 막대그래프를 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>지하철 역중에서 사고가 많이 나는 역과 사고 유형을 조사한 신문기사 입니다.</p>
+<p>이용객이 많은 역 중 하나인 사당역에서 언제 사고가 많이 발생할지 생각해봅시다. <a href ="https://biz.sbs.co.kr/article/20000136368" target = 'blank'>출퇴근길에 특히 조심해야 할 역은?</a></p>
+<hr>
 <h2>데이터</h2>
-<p>서울교통공사 혼잡도 데이터는 요일구분(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.</p>
-<p>열 : time, weekday_inner, weekday_outer, sat_inner, sat_outer, holiday_inner, holiday_outer</p>
-<p>기존 데이터에서 사당역만 추출하여 요일 구분과 내선 외선을 구분한 데이터로 수정함.</p>
+<p>문제에서 제공하는 데이터는 서울교통공사가 제공하는 <a href ="https://www.data.go.kr/data/15071311/fileData.do" target = 'blank'>요일별, 시간대별, 지하철 역별 혼잡도</a>에서 요일별 사당역 데이터로 구성했습니다.</p>
+<p>서울교통공사 1-8호선 30분 단위 평균 혼잡도로 30분간 지나는 열차들의 평균 혼잡도(정원대비 승차인원으로, 승차인과 좌석수가 일치할 경우를 혼잡도 34%로 산정) 입니다.(단위: %)</p>
+<p>열 : weekday_inner(평일 내선), weekday_outer(평일 외선), sat_inner(토요일 내선), sat_outer(토요일 외선), holiday_inner(공휴일 내선), holiday_outer(공휴일 외선)</p>
 <h2>그래프</h2>
+<p>평일 사당역 외선의 시간대별 혼잡도 세로 막대그래프를 나타내봅시다.</p>
 <p>그래프 제목 : 평일 시간대별 외선 혼잡도</p>
 <p>가로축 제목 : 혼잡도(%)</p>
 <HR>
@@ -3581,7 +3611,6 @@ question_8564 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8564.png?raw=true" width = 150% height = 150%>
 </div>
 '''
-
 img_8564 = ''
 question_review_8564 = '''
 <h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
@@ -3601,17 +3630,16 @@ answer_8564 = [
                                   "plt.show()"                                   ]}
 ]
 question_8571 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>서울특별시 공공자전거 이용현황 데이터로 서울특별시에서 운영하는 공공자전거(따릉이)에 대한 일별 대여건수 데이터를 제공합니다.</p>
-<p><a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>서울특별시 공공자전거 이용현</a></p>
-<p>기상청 기상자료개방포털은 과거 기온, 기온현상일수 등을 제공합니다.
-<p><a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>기상자료 개방포털</a></p>
-<p>일별 대여건수를 상자그림으로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>다음은 따릉이 대여건수에 영향을 주는 것을 조사한 신문기사 입니다.</p>
+<p>따릉이 대여건수에 영향을 주는 것은 무엇일지 생각해봅시다. <a href ="https://www.newspim.com/news/view/20221114000868" target = 'blank'>따릉이 대여와 관련있는 것은?</a></p>
+<hr>
 <h2>데이터</h2>
-<p>서울시 공공자전거 데이터는 대여일시, 대여건수로 구성되어 있으며 6개월 단위로 제공됩니다.</p>
-<p>기상자료개방포털에서 기온, 미세먼지농도 데이터를 일일데이터로 제공됩니다.</p>
-<p>열 : day, rent, humidity, temperature, dust</p>
-<p>문제에서 제공하는 데이터는 공공데이터를 정리하여 2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 기온, 미세먼지 농도로 재구성</p>
+<p>문제에서 제공하는 데이터는 서울특별시에서 제공하는 <a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>따릉이 대여건수</a>와 기상청에서 제공하는 <a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>서울특별시 기상정보(온도, 습도, 미세먼지)</a>로 구성했습니다.</p>
+<p>열 : day(일), rent(대여건수), humidity(습도), temperature(온도), dust(미세먼지)</p>
+<p>문제에서 제공하는 데이터는 공공데이터를 정리하여 2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 습도, 기온, 미세먼지 농도로 재구성</p>
 <h2>그래프</h2>
+<p>일별 대여건수를 상자그림으로 나타내봅시다</p>
 <p>그래프 제목 : 서울시 공공자전거 대여건수 상자그림 </p>
 <p>가로축 이름 : 대여</p>
 <p>세로축 이름 : 대여건수(건)</p>
@@ -3644,17 +3672,16 @@ answer_8571 = [
                                   "plt.show()"                                   ]}
 ]
 question_8572 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>서울특별시 공공자전거 이용현황 데이터로 서울특별시에서 운영하는 공공자전거(따릉이)에 대한 일별 대여건수 데이터를 제공합니다.</p>
-<p><a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>서울특별시 공공자전거 이용현</a></p>
-<p>기상청 기상자료개방포털은 과거 기온, 기온현상일수 등을 제공합니다.
-<p><a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>기상자료 개방포털</a></p>
-<p>서울시 공공자전거 대여건수를 히스토그램으로 나타내고 평균을 수직선으로 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>다음은 따릉이 대여건수에 영향을 주는 것을 조사한 신문기사 입니다.</p>
+<p>따릉이 대여건수에 영향을 주는 것은 무엇일지 생각해봅시다. <a href ="https://www.newspim.com/news/view/20221114000868" target = 'blank'>따릉이 대여와 관련있는 것은?</a></p>
+<hr>
 <h2>데이터</h2>
-<p>서울시 공공자전거 데이터는 대여일시, 대여건수로 구성되어 있으며 6개월 단위로 제공됩니다.</p>
-<p>기상자료개방포털에서 기온, 미세먼지농도 데이터를 일일데이터로 제공됩니다.</p>
-<p>열 : day, rent, humidity, temperature, dust</p>
-<p>문제에서 제공하는 데이터는 공공데이터를 정리하여 2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 기온, 미세먼지 농도로 재구성</p>
+<p>문제에서 제공하는 데이터는 서울특별시에서 제공하는 <a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>따릉이 대여건수</a>와 기상청에서 제공하는 <a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>서울특별시 기상정보(온도, 습도, 미세먼지)</a>로 구성했습니다.</p>
+<p>열 : day(일), rent(대여건수), humidity(습도), temperature(온도), dust(미세먼지)</p>
+<p>문제에서 제공하는 데이터는 공공데이터를 정리하여 2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 습도, 기온, 미세먼지 농도로 재구성</p>
 <h2>그래프</h2>
+<p>서울시 공공자전거 대여건수를 히스토그램으로 나타내고 평균을 수직선으로 나타내봅시다.</p>
 <p>그래프 제목 : 서울시 공공자전거 대여건수 히스토그램 </p>
 <p>세로축 이름 : 도수</p>
 <p>수직선 범위 : 0 ~ 60</p>
@@ -3691,17 +3718,17 @@ answer_8572 = [
                                   "plt.show()"                                   ]}
 ]
 question_8573 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>서울특별시 공공자전거 이용현황 데이터로 서울특별시에서 운영하는 공공자전거(따릉이)에 대한 일별 대여건수 데이터를 제공합니다.</p>
-<p><a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>서울특별시 공공자전거 이용현</a></p>
-<p>기상청 기상자료개방포털은 과거 기온, 기온현상일수 등을 제공합니다.
-<p><a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>기상자료 개방포털</a></p>
-<p>일별 대여건수와 온도의 산점도와 회귀선을 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>다음은 따릉이 대여건수에 영향을 주는 것을 조사한 신문기사 입니다.</p>
+<p>따릉이 대여건수에 영향을 주는 것은 무엇일지 생각해봅시다. <a href ="https://www.newspim.com/news/view/20221114000868" target = 'blank'>따릉이 대여와 관련있는 것은?</a></p>
+<hr>
 <h2>데이터</h2>
-<p>서울시 공공자전거 데이터는 대여일시, 대여건수로 구성되어 있으며 6개월 단위로 제공됩니다.</p>
-<p>기상자료개방포털에서 기온, 미세먼지농도 데이터를 일일데이터로 제공됩니다.</p>
-<p>열 : day, rent, humidity, temperature, dust</p>
-<p>2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 기온, 미세먼지 농도로 재구성</p>
+<p>문제에서 제공하는 데이터는 서울특별시에서 제공하는 <a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>따릉이 대여건수</a>와 기상청에서 제공하는 <a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>서울특별시 기상정보(온도, 습도, 미세먼지)</a>로 구성했습니다.</p>
+<p>열 : day(일), rent(대여건수), humidity(습도), temperature(온도), dust(미세먼지)</p>
+<p>문제에서 제공하는 데이터는 공공데이터를 정리하여 2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 습도, 기온, 미세먼지 농도로 재구성</p>
 <h2>그래프</h2>
+<p>일별 대여건수와 온도의 산점도를 나타내봅시다.</p>
+
 <p>그래프 제목 : 대여건수와 온도의 관계  </p>
 <p>가로축 이름 : 대여건수</p>
 <p>세로축 이름 : 온도</p>
@@ -3738,17 +3765,16 @@ answer_8573 = [
                                   "plt.show()"                                   ]}
 ]
 question_8574 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>서울특별시 공공자전거 이용현황 데이터로 서울특별시에서 운영하는 공공자전거(따릉이)에 대한 일별 대여건수 데이터를 제공합니다.</p>
-<p><a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>서울특별시 공공자전거 이용현황</a></p>
-<p>기상청 기상자료개방포털은 과거 기온, 기온현상일수 등을 제공합니다.
-<p><a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>기상자료 개방포털</a></p>
-<p>일별 대여건수와 미세먼지의 산점도와 회귀선을 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>다음은 따릉이 대여건수에 영향을 주는 것을 조사한 신문기사 입니다.</p>
+<p>따릉이 대여건수에 영향을 주는 것은 무엇일지 생각해봅시다. <a href ="https://www.newspim.com/news/view/20221114000868" target = 'blank'>따릉이 대여와 관련있는 것은?</a></p>
+<hr>
 <h2>데이터</h2>
-<p>서울시 공공자전거 데이터는 대여일시, 대여건수로 구성되어 있으며 6개월 단위로 제공됩니다.</p>
-<p>기상자료개방포털에서 기온, 미세먼지농도 데이터를 일일데이터로 제공됩니다.</p>
-<p>열 : day, rent, humidity, temperature, dust</p>
-<p>2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 기온, 미세먼지 농도로 재구성</p>
+<p>문제에서 제공하는 데이터는 서울특별시에서 제공하는 <a href ="https://www.data.go.kr/data/15051873/fileData.do" target = 'blank'>따릉이 대여건수</a>와 기상청에서 제공하는 <a href ="https://data.kma.go.kr/cmmn/main.do" target = 'blank'>서울특별시 기상정보(온도, 습도, 미세먼지)</a>로 구성했습니다.</p>
+<p>열 : day(일), rent(대여건수), humidity(습도), temperature(온도), dust(미세먼지)</p>
+<p>문제에서 제공하는 데이터는 공공데이터를 정리하여 2022년 1월부터 12월까지 서울시 공공자전거 대여건수와 습도, 기온, 미세먼지 농도로 재구성</p>
 <h2>그래프</h2>
+<p>일별 대여건수와 미세먼지의 산점도를 나타내봅시다.</p>
 <p>그래프 제목 : 대여건수와 미세먼지 농도와의 관계  </p>
 <p>가로축 이름 : 대여건수</p>
 <p>세로축 이름 : 미세먼지 농도</p>
@@ -3785,14 +3811,16 @@ answer_8574 = [
                                   "plt.show()"]}
 ]
 question_8581 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>국민연금에 가입한 지역가입자의 평균소득월액을 제공합니다.</p>
-<p><a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>국민연금공단_자격 시구신고 평균소득월액</a></p>
-<p>평균소득월액을 히스토그램으로 나타내고, 평균소득월액의 평균에 해당하는 부분에 수직선을 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>청년층은 도시로 이동하고 시골은 고령화가 심화되는 문제를 제시한 신문기사입니다.</p>
+<p>도시가 고령화되면 어떤 특징이 있을지 생각해봅시다. <a href ="https://www.ajunews.com/view/20201117125912110" target = 'blank'>고령 인구 늘어나는 시골</a></p>
+<hr>
 <h2>데이터</h2>
-<p>지역과 지역별 평균소득월액, 연령별 인구 및 백분율로 구성되어 있으며 지역별로 제공됩니다.</p>
-<p>열 : city_province, district, income, total_population, youth_population, production_population, old_population, youth_percentage, production_percentage, old_percentage</p>
+<p>문제에서 제공하는 데이터는 국민연금공단에서 제공하는 <a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>지역가입자 평균소득월액</a>과 행정안전부에서 제공하는 <a href ="https://www.data.go.kr/data/15099158/fileData.do" target = 'blank'>지역별 성별 연령별 주민등록 인구수</a>에서 지역별 평균소득월액과 유소년인구, 생산가능인구, 고령인구로 구성했습니다.</p>
+<p>열 : city_province(시도), district(시군구), income(평균소득), total_population(총 인구), youth_population(유소년 인구), production_population(생산가능 인구), old_population(고령 인구), youth_percentage(유소년 인구 비율), production_percentage(생산가능 인구 비율), old_percentage(고령 인구 비율)</p>
 <p>국민연금 지역가입자의 평균소득월액과 지역별 인구 및 백분율을 합쳐 재구성하였다.</p>
 <h2>그래프</h2>
+<p>평균소득월액을 히스토그램으로 나타내고, 평균소득월액의 평균에 해당하는 부분에 수직선을 그려봅시다.</p>
 <p>그래프 제목 : 지역별 평균소득월액 히스토그램 </p>
 <p>가로축 이름 : 평균소득월액</p>
 <p>세로축 이름 : 도수</p>
@@ -3834,14 +3862,16 @@ answer_8581 = [
                                   "plt.show()"]}
 ]
 question_8582 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>국민연금에 가입한 지역가입자의 평균소득월액을 제공합니다.</p>
-<p><a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>국민연금공단_자격 시구신고 평균소득월액</a></p>
-<p>평균소득월액과 생산가능인구 백분율의 산점도와 회귀선을 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>청년층은 도시로 이동하고 시골은 고령화가 심화되는 문제를 제시한 신문기사입니다.</p>
+<p>도시가 고령화되면 어떤 특징이 있을지 생각해봅시다. <a href ="https://www.ajunews.com/view/20201117125912110" target = 'blank'>고령 인구 늘어나는 시골</a></p>
+<hr>
 <h2>데이터</h2>
-<p>지역과 지역별 평균소득월액, 연령별 인구 및 백분율로 구성되어 있으며 지역별로 제공됩니다.</p>
-<p>열 : city_province, district, income, total_population, youth_population, production_population, old_population, youth_percentage, production_percentage, old_percentage</p>
+<p>문제에서 제공하는 데이터는 국민연금공단에서 제공하는 <a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>지역가입자 평균소득월액</a>과 행정안전부에서 제공하는 <a href ="https://www.data.go.kr/data/15099158/fileData.do" target = 'blank'>지역별 성별 연령별 주민등록 인구수</a>에서 지역별 평균소득월액과 유소년인구, 생산가능인구, 고령인구로 구성했습니다.</p>
+<p>열 : city_province(시도), district(시군구), income(평균소득), total_population(총 인구), youth_population(유소년 인구), production_population(생산가능 인구), old_population(고령 인구), youth_percentage(유소년 인구 비율), production_percentage(생산가능 인구 비율), old_percentage(고령 인구 비율)</p>
 <p>국민연금 지역가입자의 평균소득월액과 지역별 인구 및 백분율을 합쳐 재구성하였다.</p>
 <h2>그래프</h2>
+<p>평균소득월액과 생산가능인구 백분율의 산점도를 나타내봅시다.</p>
 <p>그래프 제목 : 지역별 평균소득월액과 생산가능 인구 관계 </p>
 <p>가로축 이름 : 평균소득월액</p>
 <p>세로축 이름 : 생산가능인구 백분율(%)</p>
@@ -3878,14 +3908,16 @@ answer_8582 = [
                                   "plt.show()"                                   ]}
 ]
 question_8583 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>국민연금에 가입한 지역가입자의 평균소득월액을 제공합니다.</p>
-<p><a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>국민연금공단_자격 시구신고 평균소득월액</a></p>
-<p>평균소득월액과 노령인구 백분율의 산점도와 회귀선을 나타내봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>청년층은 도시로 이동하고 시골은 고령화가 심화되는 문제를 제시한 신문기사입니다.</p>
+<p>도시가 고령화되면 어떤 특징이 있을지 생각해봅시다. <a href ="https://www.ajunews.com/view/20201117125912110" target = 'blank'>고령 인구 늘어나는 시골</a></p>
+<hr>
 <h2>데이터</h2>
-<p>지역과 지역별 평균소득월액, 연령별 인구 및 백분율로 구성되어 있으며 지역별로 제공됩니다.</p>
-<p>열 : city_province, district, income, total_population, youth_population, production_population, old_population, youth_percentage, production_percentage, old_percentage</p>
+<p>문제에서 제공하는 데이터는 국민연금공단에서 제공하는 <a href ="https://www.data.go.kr/data/3046077/fileData.do" target = 'blank'>지역가입자 평균소득월액</a>과 행정안전부에서 제공하는 <a href ="https://www.data.go.kr/data/15099158/fileData.do" target = 'blank'>지역별 성별 연령별 주민등록 인구수</a>에서 지역별 평균소득월액과 유소년인구, 생산가능인구, 고령인구로 구성했습니다.</p>
+<p>열 : city_province(시도), district(시군구), income(평균소득), total_population(총 인구), youth_population(유소년 인구), production_population(생산가능 인구), old_population(고령 인구), youth_percentage(유소년 인구 비율), production_percentage(생산가능 인구 비율), old_percentage(고령 인구 비율)</p>
 <p>국민연금 지역가입자의 평균소득월액과 지역별 인구 및 백분율을 합쳐 재구성하였다.</p>
 <h2>그래프</h2>
+<p>평균소득월액과 노령인구 백분율의 산점도를 나타내봅시다.</p>
 <p>그래프 제목 : 지역별 평균소득월액과 노령인구 관계 </p>
 <p>가로축 이름 : 평균소득월액</p>
 <p>세로축 이름 : 노령인구 백분율(%)</p>
