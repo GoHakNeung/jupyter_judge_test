@@ -2934,14 +2934,15 @@ answer_8512 = [
                                    "plt.show()"]}
 ]
 question_8513 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
-<p>한전에서 제공하는 에너지원별 발전량입니다.</p>
-<p><a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>에너지원별 발전량</a></p>
-<p>연도별 신재생 발전량과 화력 발전량을 꺾은선 그래프로 그려봅시다.</p>
+<h2>관련 뉴스</h2>
+<p>2050년 탄소중립을 달성하기 위해 전력 생산의 많은 비중을 차지하는 화석연료를 재생에너지, 신에너지로의 전환 문제를 다루고 있는 신문기사입니다.</p>
+<p>다음 뉴스를 보고 탄소중립과 발전하는데 사용하는 에너지원을 생각해봅시다. <a href ="https://www.etnews.com/20210416000107" target = 'blank'>발전 관련 뉴스</a></p>
+<hr>
 <h2>데이터</h2>
-<p>연간 에너지원별 발전량으로 구성된 데이터로 1961년부터 2022년까지 포함된 데이터</p>
-<p>열 : year, thermal_power, LNG, nuclear_power, renewable_power, other, individual </p>
+<p>문제에서 제공하는 데이터는 한전에서 제공하는 <a href ="https://epsis.kpx.or.kr/epsisnew/selectEkgeGepTotChart.do?menuId=060101" target = 'blank'>전원별 발전량</a>을 바탕으로 연도별, 전원별 발전량로 구성되어 있습니다.</p>
+<p>열 : year(연도), thermal(화력), LNG(천연가스), nuclear(원자력), renewable(신재생), other(기타), individual(개별발전) </p>
 <h2>그래프</h2>
-<p>가로 축에는 연도, 세로 축에는 신재생 에너지 발전량(MWh)을 꺾은선 그래프로 나타냅니다.</p>
+<p>가로 축에는 연도, 세로 축에는 화력 발전량(MWh)과 신재생 에너지 발전량(MWh)으로 꺾은선 그래프를 나타냅니다.</p>
 <p>그래프 제목 : 연도별 신재생 및 화력 에너지 발전량</p>
 <p>가로축 제목 : 연도</p>
 <p>세로축 제목 : 에너지 발전량(MWh)</p>
