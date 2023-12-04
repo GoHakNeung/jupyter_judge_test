@@ -1,4 +1,4 @@
-﻿rank,movie_title,sales,total_moviegoer,total_screen,screening_times,sales_per_screeningtimes,moviegoer_per_screeingtimes
+﻿rank,movie,sales,audiences,total_screen,total_showing,sales_per_showing,audience_per_showing
 1,명량,"135,758,658,810",17615919,"1,587","188,726",719342.6386,93.34124074
 2,극한직업,"139,657,105,516",16266480,"2,003","292,817",476943.2974,55.5516927
 3,신과함께-죄와 벌,"115,727,528,087",14414658,"1,912","214,631",539192.9781,67.16018655
