@@ -3367,12 +3367,12 @@ answer_8542 = [
 question_8551 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>관련 뉴스</h2>
 <p>화를 관객수로만 평가하는 것이 아니라 상영횟수를 고려해야 한다는 신문기사입니다.</p>
-<p>다음 뉴스를 보고 영화 매출액을 어떻게 평가하면 좋을지 생각해봅시다. <a href ="https://www.etoday.co.kr/news/view/1912232" target = 'blank'>영화 관객수와 영화 상영횟수</a></p>
+<p>다음 뉴스를 보고 영화 매출액을 어떻게 평가하면 좋을지 생각해봅시다. <a href ="https://m.tf.co.kr/amp/entertain/1698743.htm" target = 'blank'>영화 관객수와 영화 상영횟수</a></p>
 <hr>
 <h2>데이터</h2>
 <p>문제에서 제공하는 데이터는 영화관입장권통합전산망(KOBIS)에서 제공하는 <a href ="https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do" target = 'blank'>역대 박스오피스</a>에서 1000만 관객을 돌파한 영화로 구성했습니다.</p>
-<p>열 : rank(순위), movie_title(영화제목), sales(매출액), total_movigoer(관객수), total_screen(상영 스크린수), screening_times(상영횟수), sales_per_screening(1회 상영당 매출액)</p>
-<p>기존 데이터에서 개봉일을 제거하고 1회 상영당 매출액을 추가함</p>
+<p>열 : rank(순위), movie(영화제목), sales(매출액), audiences(관객수), total_screen(상영 스크린수), total_showing(상영횟수), sales_per_showing(1회 상영당 매출액), audience_per_showing(1회 상영당 관객수)</p>
+<p>기존 데이터에서 개봉일을 제거하고 1회 상영당 매출액, 1회 상영당 관객수를 추가함</p>
 <h2>그래프</h2>
 <p>1000만 관객을 넘은 영화를 대상으로 100만명을 단위로 한 히스토그램을 나타내봅시다.</p>
 <p>그래프 제목 : 1000만 관객을 넘은 영화의 히스토그램</p>
@@ -3381,8 +3381,8 @@ question_8551 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <HR>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
-<p>data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')</p>
-<p>movigoer = data['total_moviegoer']</p>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/movie_audience.csv')</p>
+<p>movie_audience = data['audiences']</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
@@ -3398,9 +3398,9 @@ question_review_8551 = '''
 '''
 answer_8551 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
-                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')",
-                                  "movigoer = data['total_moviegoer']",
-                                  "A_hist = plt.hist(movigoer, bins = 8, range = (10000000, 18000000))",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/movie_audience.csv')",
+                                  "movie_audience = data['audiences']",
+                                  "A_hist = plt.hist(movie_audience, bins = 8, range = (10000000, 18000000))",
                                   "A_title = plt.title('1000만 관객을 넘은 영화의 히스토그램')",
                                   "A_xlabel = plt.xlabel('관객수(명)')",
                                   "plt.show()"                                   ]}
@@ -3408,23 +3408,24 @@ answer_8551 = [
 question_8552 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>관련 뉴스</h2>
 <p>화를 관객수로만 평가하는 것이 아니라 상영횟수를 고려해야 한다는 신문기사입니다.</p>
-<p>다음 뉴스를 보고 영화 매출액을 어떻게 평가하면 좋을지 생각해봅시다. <a href ="https://www.etoday.co.kr/news/view/1912232" target = 'blank'>영화 관객수와 영화 상영횟수</a></p>
+<p>다음 뉴스를 보고 영화 매출액을 어떻게 평가하면 좋을지 생각해봅시다. <a href ="https://m.tf.co.kr/amp/entertain/1698743.htm" target = 'blank'>영화 관객수와 영화 상영횟수</a></p>
 <hr>
 <h2>데이터</h2>
 <p>문제에서 제공하는 데이터는 영화관입장권통합전산망(KOBIS)에서 제공하는 <a href ="https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do" target = 'blank'>역대 박스오피스</a>에서 1000만 관객을 돌파한 영화로 구성했습니다.</p>
-<p>열 : rank(순위), movie_title(영화제목), sales(매출액), total_movigoer(관객수), total_screen(상영 스크린수), screening_times(상영횟수), sales_per_screening(1회 상영당 매출액)</p>
-<p>기존 데이터에서 개봉일을 제거하고 1회 상영당 매출액을 추가함</p>
+<p>열 : rank(순위), movie(영화제목), sales(매출액), audiences(관객수), total_screen(상영 스크린수), total_showing(상영횟수), sales_per_showing(1회 상영당 매출액), audience_per_showing(1회 상영당 관객수)</p>
+<p>기존 데이터에서 개봉일을 제거하고 1회 상영당 매출액, 1회 상영당 관객수를 추가함</p>
 <h2>그래프</h2>
-<p>1000만 관객을 넘은 영화 중 1회 상영당 매출액이 상위 15개의 영화에 대해서 1회 상영당 매출액을 세로 막대그래프로 나타내봅시다.</p>
-<p>그래프 제목 : 1000만 관객 넘은 영화 중 1회 상영당 매출액</p>
-<p>가로축 이름 : 매출액(원/상영))</p>
+<p>1000만 관객을 넘은 영화를 대상으로 100만명을 단위로 한 히스토그램을 나타내봅시다.</p>
+<p>그래프 제목 : 1000만 관객을 넘은 영화의 히스토그램</p>
+<p>계급의 크기는 1000000</p>
+<p>구간은 8(bins = 8), 범위는 10000000~18000000입니다.(range = (10000000, 18000000))</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
-<p>data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')</p>
-<p>data = data.sort_values('sales_per_screening', ascending = False)[:15]</p>
-<p>sales_per_screening = data['sales_per_screening']</p>
-<p>movie_title = data['movie_title']
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/movie_audience.csv')</p>
+<p>data = data.sort_values('audience_per_showing', ascending = False)[:15]</p>
+<p>audience_per_showing = data['audience_per_showing']</p>
+<p>movie = data['movie']</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
@@ -3441,11 +3442,11 @@ question_review_8552 = '''
 '''
 answer_8552 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
-                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/moviegoer.csv')",
-                                  "data = data.sort_values('sales_per_screening', ascending = False)[:15]",
-                                  "sales_per_screening = data['sales_per_screening']",
-                                  "movie_title = data['movie_title']",
-                                  "A_barh = plt.barh(movie_title, sales_per_screening)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/movie_audience.csv')",
+                                  "data = data.sort_values('audience_per_showing', ascending = False)[:15]",
+                                  "audience_per_showing = data['audience_per_showing']",
+                                  "movie = data['movie']",
+                                  "A_barh = plt.barh(movie, audience_per_showing)",
                                   "A_title = plt.title('1000만 관객 넘은 영화 중 1회 상영당 매출액')",
                                   "A_xlabel = plt.xlabel('1회 상영당 매출액(원)')",
                                   "plt.show()"                                   ]}
