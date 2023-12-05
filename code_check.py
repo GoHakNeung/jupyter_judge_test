@@ -610,15 +610,13 @@ def turtle_check(py) :
   else :
     update_excel('turtle_실행', py)
 #------------------------------------------------------------------------------#
-#@title
-# 여기서 수정 중
 from google.colab import output
 # 그래프에서 평가 정보를 얻는 것은 info, 평가하는 그래프 종류는 pyplot, 정답과 관련된 것은 A_ 접두사를 붙임.
-plot_info= ['pie', 'scatter', 'bar', 'hist', 'hlines', 'vlines', 'plot', 'title', 'xlabel', 'ylabel', 'xlim', 'ylim', 'legend']
-A_plot_info = ['A_pie', 'A_boxplot', 'A_scatter', 'A_bar', 'A_hist', 'A_hlines', 'A_vlines', 'A_plot', 'A_title', 'A_xlabel', 'A_ylabel', 'A_xlim', 'A_ylim', 'A_legend']
+plot_info= ['pie', 'scatter', 'barh', 'bar', 'hist', 'hlines', 'vlines', 'plot', 'title', 'xlabel', 'ylabel', 'xlim', 'ylim', 'legend']
+A_plot_info = ['A_pie', 'A_boxplot', 'A_scatter', 'A_barh', 'A_bar', 'A_hist', 'A_hlines', 'A_vlines', 'A_plot', 'A_title', 'A_xlabel', 'A_ylabel', 'A_xlim', 'A_ylim', 'A_legend']
 
-plot_pyplot = ['pie', 'scatter', 'bar', 'hist', 'hlines', 'vlines', 'plot']
-A_plo_pyplot = ['A_pie', 'A_scatter', 'A_bar', 'A_hist', 'A_hlines', 'A_vlines', 'A_plot']
+plot_pyplot = ['pie', 'scatter','barh', 'bar', 'hist', 'hlines', 'vlines', 'plot']
+A_plot_pyplot = ['A_pie', 'A_scatter', 'A_barh', 'A_bar', 'A_hist', 'A_hlines', 'A_vlines', 'A_plot']
 
 plot_kind = []
 A_plot_kind = []
@@ -684,10 +682,10 @@ def plot_convert(output_plot) :
 # 함수에 정보를 주기 위 한 함수.
 
 def plot_feedback(A_plot_kind) :
-  global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
+  global pie_text, pie_autotext, box_data, scatter_offset, barh_data, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
   global plot_title, plot_xlabel, plot_ylabel, plot_xlim, plot_ylim, plot_legend
 
-  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
+  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_barh_data, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
 
   for i in set(A_plot_kind) :
@@ -706,6 +704,10 @@ def plot_feedback(A_plot_kind) :
       if not np.array_equal(scatter_offset,A_scatter_offset) : Question('산점도의 <b>x값, y값</b>이 틀렸습니다.') #print('scatter의 x값, y값이 틀렸습니다.')
       # print('scatter 데이터 :', np.array_equal(scatter_offset,A_scatter_offset))  # 해결
       # print('scatter : ', scatter_offset[i], A_scatter_offset[i])
+    elif i == 'barh' :
+      if barh_data != A_barh_data : Question('막대 그래프의 <b>값</b>이 틀렸습니다.') #print('막대그래프의 x값이 틀렸습니다.')
+      # print('막대 그래프 데이터 :', bar_data == A_bar_data)  # 해결
+      # print('bar : ', bar_data, A_bar_data)
     elif i == 'bar' :
       if bar_data != A_bar_data : Question('막대 그래프의 <b>값</b>이 틀렸습니다.') #print('막대그래프의 x값이 틀렸습니다.')
       # print('막대 그래프 데이터 :', bar_data == A_bar_data)  # 해결
@@ -756,10 +758,10 @@ def plot_feedback(A_plot_kind) :
   # print('legend :', plot_legend, A_plot_legend)
 
 def get_return(info) :
-  global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
+  global pie_text, pie_autotext, box_data, scatter_offset, barh_data, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
   global plot_title, plot_xlabel, plot_ylabel, plot_xlim, plot_ylim, plot_legend
 
-  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
+  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_barh_data, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
 
   if info == 'pie' :
@@ -769,6 +771,8 @@ def get_return(info) :
     box_data.append([globals()['_boxplot']['boxes'][0].get_data()[1][1], globals()['_boxplot']['boxes'][0].get_data()[1][2], globals()['_boxplot']['medians'][0].get_data()[1][0]])    #[_boxplot['boxes'][0].get_data()[1][1], _boxplot['boxes'][0].get_data()[1][2], _boxplot['medians'][0].get_data()[1][0]]
   elif info == 'scatter' :
     scatter_offset.append(globals()['_scatter'].get_offsets())  # np.array_equal(_scatter_offset,A_scatter_offset) << 형태로 일치 여부 확인
+  elif info == 'barh' :   #높이 값을 구할 수 있음, x 값은 아직,
+    barh_data.append(list(globals()['_barh'].datavalues))     # array를 list로 변환
   elif info == 'bar' :   #높이 값을 구할 수 있음, x 값은 아직,
     bar_data.append(list(globals()['_bar'].datavalues))     # array를 list로 변환
   elif info == 'hist' :
@@ -799,6 +803,8 @@ def get_return(info) :
     A_box_data.append([globals()['A_boxplot']['boxes'][0].get_data()[1][1], globals()['A_boxplot']['boxes'][0].get_data()[1][2], globals()['A_boxplot']['medians'][0].get_data()[1][0]])
   elif info == 'A_scatter' :
     A_scatter_offset.append(globals()['A_scatter'].get_offsets())   #boxplot 검토 필요, 1분위, 3분위 값만 저장
+  elif info == 'A_barh' :   #높이 값을 구할 수 있음, x 값은 아직,
+    A_barh_data.append(list(globals()['A_barh'].datavalues))     # array를 list로 변환
   elif info == 'A_bar' :   #높이 값을 구할 수 있음, x 값은 아직,
     A_bar_data.append(list(globals()['A_bar'].datavalues))     # array를 list로 변환
   elif info == 'A_hist' :
@@ -827,11 +833,16 @@ def get_return(info) :
 
 
 def plot_check(py) :
+  file_list = os.listdir("/content/")
+  for file in file_list:    
+    if file == 'submit.png' : 
+      os.remove("/content/submit.png")
+
   # 피드백을 주기 위해 그래프에 설명을 넣기 위한 변수들
-  global pie_text, pie_autotext, box_data, scatter_offset, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
+  global pie_text, pie_autotext, box_data, scatter_offset, barh_data, bar_data, hist_data, hlines_data, vlines_data, plot_data, plot_mcl
   global plot_title, plot_xlabel, plot_ylabel, plot_xlim, plot_ylim, plot_legend
 
-  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
+  global A_pie_text, A_pie_autotext, A_box_data, A_scatter_offset, A_barh_data, A_bar_data, A_hist_data, A_hlines_data, A_vlines_data, A_plot_data, A_plot_mcl
   global A_plot_title, A_plot_xlabel, A_plot_ylabel, A_plot_xlim, A_plot_ylim, A_plot_legend
 
   #plot_check() 실행할 때마다 초기화해야 함. append를 사용하므로 그래야 쌓이지 않음.
@@ -845,8 +856,12 @@ def plot_check(py) :
 
   scatter_offset = []
   A_scatter_offset = []
+
+  barh_data = []
+  A_barh_data = []
   bar_data = []
   A_bar_data = []
+
   hist_data = []
   A_hist_data = []
   hlines_data = []
@@ -918,12 +933,19 @@ def plot_check(py) :
   plot_not = ['matplotlib', 'pyplot', 'subplot']
 
   # 어떤 그래프를 그렸는지 알기
+
   for i in range(len(code)) :
+
     if code[i].find('plt') >= 0 and code[i].find('A_') == 0 :
       for j in plot_pyplot :
-        if code[i].find(j) >= 0 :
+        if code[i].find(j) >= 0 :  # 여기서  bar, barh 둘 중 하나만 나오도록 해야함.
           if  code[i].find('boxplot') >= 0 :
             A_plot_kind.append('boxplot')
+          elif  (code[i].find('h') >=0) and (code[i].find('h') - code[i].find('barh')==3) :
+            if j == 'barh' : 
+              A_plot_kind.append('barh')
+          # elif  (code[i].find('h') >=0) and (code[i].find('h') - code[i].find('barh')!=3) :
+          #   A_plot_kind.append('bar')
           else :
             A_plot_kind.append(j)
             A_plot_kind_code.append(code[i])
@@ -932,29 +954,43 @@ def plot_check(py) :
         if code[i].find(j) >= 0 :
           if code[i].find('boxplot') >= 0 :
             plot_kind.append('boxplot')
+          elif (code[i].find('h') >= 0) and (code[i].find('h') - code[i].find('barh') == 3) :
+            if j == 'barh' : 
+              plot_kind.append('barh')
+          # elif (code[i].find('h') >= 0) and (code[i].find('h') - code[i].find('barh') != 3) :
+          #   plot_kind.append('bar')
           else :
             plot_kind.append(j)
             plot_kind_code.append(code[i])
 
 
   #code에서 code_dict에 값 넣기
+
   for i in range(len(code)) :
+
     if code[i].find('A_') == 0 :
       for j in A_plot_info :
         if code[i].find(j) >= 0  :
           if code[i].find('boxplot') >= 0:
             code_dict[code[i]] = 'A_boxplot'
+          elif code[i].find('barh') >= 0:
+            code_dict[code[i]] = 'A_barh'
           else :
             code_dict[code[i]] = j
     elif code[i].find('plt') >= 0 :
       for j in plot_info :
-        if code[i].find(j) >= 0 and code[i].find(plot_not[0]) == -1 and code[i].find(plot_not[1]) == -1 and code[i].find(plot_not[2]) == -1  and not code[i].find('_A') == 0:
+        if code[i].find(j) >= 0 and code[i].find(plot_not[0]) == -1 and code[i].find(plot_not[1]) == -1 and code[i].find(plot_not[2]) == -1  and not code[i].find('A_') == 0:
           if code[i].find('boxplot') >= 0 :
             code_dict['_boxplot='+code[i]] = 'boxplot'
             code[i] = '_boxplot='+code[i]
+          elif code[i].find('barh') >= 0 :
+            code_dict['_barh='+code[i]] = 'barh'
+            code[i] = '_barh='+code[i]
           else :
             code_dict['_'+j+'='+code[i]] = j
             code[i] = '_'+j+'='+code[i]
+
+
 
   Question('''
   <h3 style = "float:left;width:50%" >왼쪽 그래프는 여러분이 작성한 그래프입니다. </h3>
@@ -1057,19 +1093,25 @@ def plot_check(py) :
 
   Question(eval(review))
   Question('<HR>')
-  img_submit = np.asarray(Image.open("/content/submit.png"))
-  img_answer = np.asarray(Image.open(answer_graph))
+  try :
+    img_submit = np.asarray(Image.open("/content/submit.png"))
+    img_answer = np.asarray(Image.open(answer_graph))
 
-  if np.array_equal(img_submit, img_answer) :
-    input('그래프를 보고 알 수 있는 내용을 적어봅시다.')
+    if np.array_equal(img_submit, img_answer) :
     # print(tc_green+'정답입니다.'+reset)
-    Question('<h3 style = "color:green; ">정답입니다.</h2>')
-  else :
-    # print(tc_red+'오답입니다.'+reset)
-    Question('<h3 style = "color:red; ">오답입니다.</h2>')
-    plot_feedback(A_plot_kind)
+      Question('<h3 style = "color:green; ">정답입니다.</h2>')
+      input('그래프를 보고 알 수 있는 내용을 적어봅시다.')
+    else :
+     # print(tc_red+'오답입니다.'+reset)
+      Question('<h3 style = "color:red; ">오답입니다.</h2>')
+      plot_feedback(A_plot_kind)
+
+  except : 
+    print('그래프가 생성되지 않았습니다.')
+
 
   if compile_error == True :
     update_excel('틀렸습니다.',py)
   else :
     update_excel('정답입니다.', py)
+
