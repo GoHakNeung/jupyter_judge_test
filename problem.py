@@ -2838,7 +2838,7 @@ answer_8502 = [
                                    "city = data['city_province']", 
                                    "emission_per_person = data['emission_per_person']", 
 
-                                   "A_bar = plt.bar(city, emission_per_person, color = 'green'), "
+                                   "A_bar = plt.bar(city, emission_per_person, color = 'green')", 
                                    "A_xlabel = plt.xlabel('경상남도 시')", 
                                    "A_ylabel = plt.ylabel('1인당 발생하는 음식물 쓰레기량(단위 : 톤/명)')",
                                    "A_title = plt.title('경상남도 시에서 발생하는 1인당 음식물 쓰레기량')",
@@ -2870,7 +2870,7 @@ question_8511 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 </div>
 '''
 img_8511 = ''
-question_review_8502 = '''
+question_review_8511 = '''
 <h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
 <input type='checkbox'/>막대 그래프
 <input type='checkbox'/>제목
