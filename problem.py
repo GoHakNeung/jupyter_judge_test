@@ -2999,7 +2999,8 @@ question_8521 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')</p>
-<p>'year', 'mother' 열에 있는 데이터를 사용해봅시다.</p>
+<p>year = data['year']</p>
+<p>mother = data['mother']</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
@@ -3044,7 +3045,8 @@ question_8522 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')</p>
-<p>'year', 'father' 열에 있는 데이터를 사용해봅시다.</p>
+<p>year = data['year']</p>
+<p>father = data['father']</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
@@ -3089,7 +3091,9 @@ question_8523 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>data = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')</p>
-<p>'year', 'mother', 'father' 열에 있는 데이터를 사용해봅시다.</p>
+<p>year = data['year']</p>
+<p>mother = data['mother']</p>
+<p>father = data['father']</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
