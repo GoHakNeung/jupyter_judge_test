@@ -3258,7 +3258,8 @@ question_8534 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>data = pd.read_csv('/content/jupyter_judge/csv_file/private_education_expense.csv')</p>
-<p>'연도', '초등학교_전체' 열에 있는 데이터를 사용해봅시다.</p>
+<p>year = data['연도']</p>
+<p>ele = data['초등학교_전체']</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
@@ -3325,11 +3326,13 @@ question_review_8541 = '''
 answer_8541 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')", 
-                                  "data_city = data[data['metropolitan_city'] == '광역시']", 
+                                  "data_city = data[data['metropolitan_city'] == '경상도']", 
                                   "city_province = data_city['city_province']", 
-                                  "amount = data_city['accident']", 
-                                  "A_pie = plt.pie(amount, labels = city_province, autopct = '%1.f%%')", 
-                                  "A_title = plt.title('광역시에서 발생하는 인구 10만명당 교통사고')", 
+                                  "death = data_city['death']", 
+                                  "A_bar = plt.bar(city_province, death)", 
+                                  "A_xlabel = plt.xlabel('경상도 시도')",
+                                  "A_ylabel = plt.ylabel('사망자 수(명)')",
+                                  "A_title = plt.title('경상도에서 발생하는 인구 10만명당 교통사고 사망자 수')", 
                                   "plt.show()"                                   ]}
 ]
 question_8542 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
