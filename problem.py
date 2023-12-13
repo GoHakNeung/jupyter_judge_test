@@ -2904,8 +2904,9 @@ question_8512 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <HR>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
-data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')
-'year', 'renewable_power' 열에 있는 데이터를 사용해봅시다.
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')</p>
+<p>year = data['year']</p>
+<p>renewable = data['renewable]</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
@@ -2924,9 +2925,9 @@ question_review_8512 = '''
 answer_8512 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
                                    "data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')", 
-                                   "year = data['year']", 
-                                   "renewable = data['renewable_power']", 
-                                   "A_plot = plt.plot(year, renewable)", 
+                                   "year_ = data['year']", 
+                                   "renewable_ = data['renewable']", 
+                                   "A_plot = plt.plot(year_, renewable_)", 
                                    "A_xlabel = plt.xlabel('연도')", 
                                    "A_ylabel = plt.ylabel('신재생 에너지 발전량(MWh)')", 
                                    "A_xlim = plt.xlim(2010,2022)", 
@@ -2950,7 +2951,9 @@ question_8513 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')</p>
-<p>'year', 'renewable_power', 'thermal_power' 열에 있는 데이터를 사용해봅시다.</p>
+<p>year = data['year']</p>
+<p>renewable = data['renewable']</p>
+<p>thermal = data['thermal']</p>
 </div>
 <div style = "float:right;width:50%">
 <h2>그래프 예시 </h2>
@@ -2968,11 +2971,11 @@ question_review_8513 = '''
 answer_8513 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
                                    "data = pd.read_csv('/content/jupyter_judge/csv_file/output_by_the_material.csv')", 
-                                   "year = data['year']", 
-                                   "renewable = data['renewable_power']", 
-                                   "thermal = data['thermal_power']", 
-                                   "A_plot = plt.plot(year, renewable)", 
-                                   "A_plot = plt.plot(year, thermal)", 
+                                   "year_ = data['year']", 
+                                   "renewable_ = data['renewable']", 
+                                   "thermal_ = data['thermal']", 
+                                   "A_plot = plt.plot(year_, renewable_)", 
+                                   "A_plot = plt.plot(year_, thermal_)", 
                                    "A_xlabel = plt.xlabel('연도')",
                                    "A_ylabel = plt.ylabel('에너지 발전량(MWh)')", 
                                    "A_title = plt.title('연도별 신재생 및 화력 에너지 발전량')", 
