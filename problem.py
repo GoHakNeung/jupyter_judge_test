@@ -3262,7 +3262,7 @@ answer_8524 = [
     {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
                                   "data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
                                   "data_man = data[data['성별'] == '남']",
-                                  "man_height = data_woman['키(cm)']",
+                                  "man_height = data_man['키(cm)']",
                                   "age = data_man['나이']",
                                   "A_plot = plt.plot(age, woman_height, label = '남')",
                                   "A_xlabel = plt.xlabel('나이')",
