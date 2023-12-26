@@ -3264,7 +3264,7 @@ answer_8524 = [
                                   "data_man = data[data['성별'] == '남']",
                                   "man_height = data_man['키(cm)']",
                                   "age = data_man['나이']",
-                                  "A_plot = plt.plot(age, woman_height, label = '남')",
+                                  "A_plot = plt.plot(age, man_height, label = '남')",
                                   "A_xlabel = plt.xlabel('나이')",
                                   "A_ylabel = plt.ylabel('키(cm)')",
                                   "A_title = plt.title('나이에 따른 남성의 키')",
