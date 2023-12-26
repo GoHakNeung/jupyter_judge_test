@@ -2844,6 +2844,103 @@ answer_8502 = [
                                    "A_title = plt.title('경상남도 시에서 발생하는 1인당 음식물 쓰레기량')",
                                    "plt.show()"]}
 ]
+question_8503 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<h2>관련 뉴스</h2>
+<p>사고가 발생한 다음 대처하는 것보다 중요한 것은 예방하는 것입니다. 코로나 19이후 학교에서 발생하는 사고가 늘어나고 있습니다. </p>
+<p>학교에서 발생하는 다양하고 많은 사고를 알아보고 이를 예방하는 방법을 생각해봅시다.<a href ="https://munhwa.com/news/view.html?no=2023051901070821043001" target = 'blank'>학교 안전 사고 관련 뉴스</a></p>
+<hr>
+<h2>데이터</h2>
+<p>문제에서 제공하는 데이터는 한국청소년활동진흥원에서 제공한 <a href ="https://www.data.go.kr/data/15076546/fileData.do" target = 'blank'>청소년 생활(학교) 사고 통계</a>입니다. 2012년부터 2022년까지 데이터이며, 학교급별, 부위별 안전사고 발생 현황으로 구성되어 있습니다.</p>
+<p>열 : 연도, 학교급별, 머리(두부), 치아(구강), 흉복부, 팔, 손, 다리, 발, 기타</p>
+<h2>그래프</h2>
+<p>2022년 초등학교에서 발생한 안전사고 중 부위별 데이터를 막대그래프로 나타내봅시다.</p>
+<p>그래프 제목 : '2022년 초등학교에서 발생한 부위별 안전사고</p>
+<p>가로축 제목 : '신체 부위'</p>
+<p>세로축 제목 : '발생 건수'</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>body_part = ['머리', '치아', '흉복부', '팔', '손', '다리', '팔', '기타']</p>
+<p>count = [8943, 2096, 695, 3280, 14263, 3437, 12657, 1274]"</p>
+
+
+</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8503.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8503 = ''
+question_review_8503 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>막대 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8503 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')",
+                                  "body_part = ['머리', '치아', '흉복부', '팔', '손', '다리', '팔', '기타']",
+                                  "count = [8943, 2096, 695, 3280, 14263, 3437, 12657, 1274]",
+                                  "A_bar = plt.bar(body_part, count)",
+                                  "A_xlabel = plt.xlabel('신체 부위')",
+                                  "A_ylabel = plt.ylabel('발생 건수')",
+                                  "A_title = plt.title('2022년 초등학교에서 발생한 부위별 안전사고')",
+                                  "plt.show()"]
+
+     }
+]
+question_8504 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<h2>관련 뉴스</h2>
+<p>사고가 발생한 다음 대처하는 것보다 중요한 것은 예방하는 것입니다. 코로나 19이후 학교에서 발생하는 사고가 늘어나고 있습니다. </p>
+<p>학교에서 발생하는 다양하고 많은 사고를 알아보고 이를 예방하는 방법을 생각해봅시다.<a href ="https://munhwa.com/news/view.html?no=2023051901070821043001" target = 'blank'>학교 안전 사고 관련 뉴스</a></p>
+<hr>
+<h2>데이터</h2>
+<p>문제에서 제공하는 데이터는 한국청소년활동진흥원에서 제공한 <a href ="https://www.data.go.kr/data/15076546/fileData.do" target = 'blank'>청소년 생활(학교) 사고 통계</a>입니다. 2014년부터 2022년까지 데이터이며, 학교급별, 시간별 안전사고 발생 현황으로 구성되어 있습니다.</p>
+<p>열 : 연도, 학교급별, 수업, 체육, 점심, 석식, 휴식_청소, 특별활동, 학교행사, 등하교, 기숙사, 기타</p>
+<h2>그래프</h2>
+<p>2022년 초등학교에서 발생한 안전사고 중 부위별 데이터를 막대그래프로 나타내봅시다.</p>
+<p>그래프 제목 : '2022년 초등학교에서 발생한 시간별 안전사고</p>
+<p>가로축 제목 : '장소'</p>
+<p>세로축 제목 : '발생 건수'</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>time = ['수업', '체육', '점심', '휴식_청소', '특별활동', '학교행사', '등하교', '기타']</p>
+<p>count = [7606, 17077, 11761, 8282, 953, 1628, 4086, 1355]</p>
+
+
+</p>
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8504.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8504 = ''
+question_review_8504 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>막대 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+'''
+answer_8504 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')",
+                                  "time = ['수업', '체육', '점심', '휴식_청소', '특별활동', '학교행사', '등하교',  '기타']",
+                                  "count = [7606, 17077, 11761,  8282, 953, 1628, 4086,  1355]",
+                                  "plt.bar(time, count)",
+                                  "plt.xlabel('장소')",
+                                  "plt.ylabel('발생 건수')",
+                                  "plt.title('2022년 초등학교에서 발생한 시간별 안전사고')",
+                                  "plt.show()"]
+
+     }
+]
+
+
+
 question_8511 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>관련 뉴스</h2>
 <p>2050년 탄소중립을 달성하기 위해 전력 생산의 많은 비중을 차지하는 화석연료를 재생에너지, 신에너지로의 전환 문제를 다루고 있는 신문기사입니다.</p>
@@ -3123,6 +3220,176 @@ answer_8523 = [
                                    "A_title= plt.title('연도별 출생아 100명당 육아휴직자 수')", 
                                    "plt.show()"]}
 ]
+question_8524 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<h2>관련 뉴스</h2>
+<p>초등학교에서는 대체로 여자 아이가 남자 아이보다 더 크지만 중학교 이후부터는 남자 아이가 여자 아이보다 더 큽니다.</p>
+<p>이는 남자 아이와 여자 아이의 성장 속도가 다르기 때문입니다.<a href ="http://www.bosa.co.kr/news/articleView.html?idxno=2160542" target = 'blank'>남자 아이와 여자 아이의 성장 속도 관련 뉴스</a></p>
+<hr>
+<h2>데이터</h2>
+<p>문제에서 제공하는 데이터는 교육부에서 제공한 <a href ="https://www.data.go.kr/data/15051014/fileData.do" target = 'blank'>학교건강검사 조사결과</a>입니다. 만6세부터 만18세까지 성별 키와 몸무게 데이터로 구성되어 있습니다.</p>
+<p>열 : 나이, 성별, 키(cm), 몸무게(kg)</p>
+<h2>그래프</h2>
+
+<p>나이별 남성의 키 변화를 꺾은선 그래프로 나태내봅시다.</p>
+<p>그래프 제목 : 나이에 따른 남성의 키</p>
+<p>가로축 제목 : 나이</p>
+<p>세로축 제목 : 키(cm)</p>
+<p>label : 남성</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')</p>
+<p>data_man = data[data['성별'] == '남']</p>
+<p>man_height = data_man['키(cm)']</p>
+</p>age = data_man['나이']</p>
+
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8524.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8524 = ''
+question_review_8524 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+<input type='checkbox'/>legend
+'''
+answer_8524 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
+                                  "data_man = data[data['성별'] == '남']",
+                                  "man_height = data_woman['키(cm)']",
+                                  "age = data_man['나이']",
+                                  "A_plot = plt.plot(age, woman_height, label = '남')",
+                                  "A_xlabel = plt.xlabel('나이')",
+                                  "A_ylabel = plt.ylabel('키(cm)')",
+                                  "A_title = plt.title('나이에 따른 남성의 키')",
+                                  "A_legned = plt.legend()",
+                                  "plt.show()"]
+
+     }
+]
+question_8525 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<h2>관련 뉴스</h2>
+<p>초등학교에서는 대체로 여자 아이가 남자 아이보다 더 크지만 중학교 이후부터는 남자 아이가 여자 아이보다 더 큽니다.</p>
+<p>이는 남자 아이와 여자 아이의 성장 속도가 다르기 때문입니다.<a href ="http://www.bosa.co.kr/news/articleView.html?idxno=2160542" target = 'blank'>남자 아이와 여자 아이의 성장 속도 관련 뉴스</a></p>
+<hr>
+<h2>데이터</h2>
+<p>문제에서 제공하는 데이터는 교육부에서 제공한 <a href ="https://www.data.go.kr/data/15051014/fileData.do" target = 'blank'>학교건강검사 조사결과</a>입니다. 만6세부터 만18세까지 성별 키와 몸무게 데이터로 구성되어 있습니다.</p>
+<p>열 : 나이, 성별, 키(cm), 몸무게(kg)</p>
+<h2>그래프</h2>
+
+<p>나이별 여성의 키 변화를 꺾은선 그래프로 나태내봅시다.</p>
+<p>그래프 제목 : 나이에 따른 여성의 키</p>
+<p>가로축 제목 : 나이</p>
+<p>세로축 제목 : 키(cm)</p>
+<p>label : 여성</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')</p>
+<p>data_woman = data[data['성별'] == '여']</p>
+<p>woman_height = data_woman['키(cm)']</p>
+</p>age = data_woman['나이']</p>
+
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8525.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8525 = ''
+question_review_8525 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+<input type='checkbox'/>legend
+'''
+answer_8525 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
+                                  "data_woman = data[data['성별'] == '여']",
+                                  "woman_height = data_woman['키(cm)']",
+                                  "age = data_woman['나이']",
+                                  "A_plot = plt.plot(age, woman_height, label = '여')",
+                                  "A_xlabel = plt.xlabel('나이')",
+                                  "A_ylabel = plt.ylabel('키(cm)')",
+                                  "A_title = plt.title('나이에 따른 여성의 키')",
+                                  "A_legned = plt.legend()",
+                                  "plt.show()"]
+
+     }
+]
+question_8526 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<h2>관련 뉴스</h2>
+<p>초등학교에서는 대체로 여자 아이가 남자 아이보다 더 크지만 중학교 이후부터는 남자 아이가 여자 아이보다 더 큽니다.</p>
+<p>이는 남자 아이와 여자 아이의 성장 속도가 다르기 때문입니다.<a href ="http://www.bosa.co.kr/news/articleView.html?idxno=2160542" target = 'blank'>남자 아이와 여자 아이의 성장 속도 관련 뉴스</a></p>
+<hr>
+<h2>데이터</h2>
+<p>문제에서 제공하는 데이터는 교육부에서 제공한 <a href ="https://www.data.go.kr/data/15051014/fileData.do" target = 'blank'>학교건강검사 조사결과</a>입니다. 만6세부터 만18세까지 성별 키와 몸무게 데이터로 구성되어 있습니다.</p>
+<p>열 : 나이, 성별, 키(cm), 몸무게(kg)</p>
+<h2>그래프</h2>
+
+<p>나이별 남성과 여성의 키 변화를 꺾은선 그래프로 나태내봅시다.</p>
+<p>그래프 제목 : 나이에 따른 남성, 여성의 키</p>
+<p>가로축 제목 : 나이</p>
+<p>세로축 제목 : 키(cm)</p>
+<p>label : 남성, 여성</p>
+<p>color : 남성은 파랑, 여성은 빨강</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')</p>
+<p>data_man = data[data['성별'] == '남']</p>
+<p>man_height = data_man['키(cm)']</p>
+<p>data_woman = data[data['성별'] == '여']</p>
+<p>woman_height = data_woman['키(cm)']</p>
+</p>age = data_man['나이']</p>
+
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8526.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8526 = ''
+question_review_8526 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>꺾은선 그래프
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>ylabel
+<input type='checkbox'/>color
+<input type='checkbox'/>legend
+'''
+answer_8526 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
+                                  "data_man = data[data['성별'] == '남']",
+                                  "man_height = data_man['키(cm)']",
+                                  "data_woman = data[data['성별'] == '여']",
+                                  "woman_height = data_woman['키(cm)']",
+                                  "age = data_man['나이']",
+                                  "A_plot = plt.plot(age, man_height, label = '남', color = 'blue')",
+                                  "A_plot = plt.plot(age, woman_height, label = '여', color = 'red')",
+                                  "A_xlabel = plt.xlabel('나이')",
+                                  "A_ylabel = plt.ylabel('키(cm)')",
+                                  "A_title = plt.title('나이에 따른 남성, 여성의 키')",
+                                  "A_legned = plt.legend()",
+                                  "plt.show()"]
+
+     }
+]
+
+
+
+
 question_8531 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>관련 뉴스</h2>
 <p>코로나 19로 인한 발생한 학습 결손을 해결하기 위해 늘어나고 있는 사교육비와 관련된 신문기사입니다.</p>
@@ -3374,6 +3641,157 @@ answer_8542 = [
                                   "A_title = plt.title('17개 시도에서 발생한 인구 10만명당 교통사고 사망자 히스토그램')", 
                                   "plt.show()"                                   ]}
 ]
+question_8543 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<h2>관련 뉴스</h2>
+<p>평균에 가까운 값은 많이 관찰 되고, 평균에서 멀어지는 값은 적게 관찰 되는 것을 경험상 알 수 있습니다.</p>
+<p>예를 들어 키가 평균인 사람은 많지만, 키가 엄청 크거나 엄청 작은 사람은 매우 적습니다. 이는 정규분포로 나타낼 수 있습니다. <a href ="https://terms.naver.com/entry.naver?docId=3569149&cid=58944&categoryId=58970" target = 'blank'>정규 분포</a></p>
+<hr>
+<h2>데이터</h2>
+<p>문제에서 제공하는 데이터는 교육부에서 제공한 <a href ="https://www.data.go.kr/data/15100360/fileData.do" target = 'blank'>학교건강검사 표본조사</a>입니다. 초1부터 고3까지 9만명의 건강 데이터로 구성되어 있습니다.</p>
+<p>열 : 도시구분, 시도, 학교급, 학년, 성별, 키, 몸무게</p>
+<p>문제에서는 전처리한 데이터를 제공합니다.</p>
+<h2>그래프</h2>
+<p>중3 학생의 키를 히스토그램으로 나타내봅시다.</p>
+<p>그래프 제목 : 중3학생의 키</p>
+<p>가로축 제목 : 키(cm)</p>
+<p>구간 : 12</p>
+<p>범위 : 130 ~ 190</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')</p>
+<p>data_mid = data[data['학년']=='중3']['키']</p>
+
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8543.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8543 = ''
+question_review_8543 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>bins
+<input type='checkbox'/>range
+'''
+answer_8543 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)",
+                                  "data = pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')",
+                                  "data_mid = data[data['학년']=='중3']['키']",
+                                  "A_hist = plt.hist(data_mid,bins = 12, range = [130, 190])",
+                                  "A_title = plt.title('중3학생의 키')",
+                                  "A_xlabel = plt.xlabel('키(cm)')",
+                                  "plt.show()"]
+
+     }
+]
+question_8544 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<h2>관련 뉴스</h2>
+<p>평균에 가까운 값은 많이 관찰 되고, 평균에서 멀어지는 값은 적게 관찰 되는 것을 경험상 알 수 있습니다.</p>
+<p>예를 들어 키가 평균인 사람은 많지만, 키가 엄청 크거나 엄청 작은 사람은 매우 적습니다. 이는 정규분포로 나타낼 수 있습니다. <a href ="https://terms.naver.com/entry.naver?docId=3569149&cid=58944&categoryId=58970" target = 'blank'>정규 분포</a></p>
+<hr>
+<h2>데이터</h2>
+<p>문제에서 제공하는 데이터는 교육부에서 제공한 <a href ="https://www.data.go.kr/data/15100360/fileData.do" target = 'blank'>학교건강검사 표본조사</a>입니다. 초1부터 고3까지 9만명의 건강 데이터로 구성되어 있습니다.</p>
+<p>열 : 도시구분, 시도, 학교급, 학년, 성별, 키, 몸무게</p>
+<p>문제에서는 전처리한 데이터를 제공합니다.</p>
+<h2>그래프</h2>
+<p>중3 학생의 몸무게를 히스토그램으로 나타내봅시다.</p>
+<p>그래프 제목 : 중3학생의 몸무게</p>
+<p>가로축 제목 : 몸무게(kg)</p>
+<p>구간 : 14</p>
+<p>범위 : 30 ~ 100</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')</p>
+<p>data_mid = data[data['학년']=='중3']['몸무게']</p>
+
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8544.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8544 = ''
+question_review_8544 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>bins
+<input type='checkbox'/>range
+'''
+answer_8544 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')",
+                                  "data_mid = data[data['학년']=='중3']",
+                                  "A_hist = plt.hist(data_mid['몸무게'],bins = 14, range = [30, 100])",
+                                  "A_title = plt.title('중3학생의 몸무게')",
+                                  "A_xlabel = plt.xlabel('몸무게(kg)')",
+                                  "plt.show()"]
+
+     }
+]
+question_8545 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
+<h2>관련 뉴스</h2>
+<p>평균에 가까운 값은 많이 관찰 되고, 평균에서 멀어지는 값은 적게 관찰 되는 것을 경험상 알 수 있습니다.</p>
+<p>예를 들어 키가 평균인 사람은 많지만, 키가 엄청 크거나 엄청 작은 사람은 매우 적습니다. 이는 정규분포로 나타낼 수 있습니다. <a href ="https://terms.naver.com/entry.naver?docId=3569149&cid=58944&categoryId=58970" target = 'blank'>정규 분포</a></p>
+<hr>
+<h2>데이터</h2>
+<p>문제에서 제공하는 데이터는 교육부에서 제공한 <a href ="https://www.data.go.kr/data/15100360/fileData.do" target = 'blank'>학교건강검사 표본조사</a>입니다. 초1부터 고3까지 9만명의 건강 데이터로 구성되어 있습니다.</p>
+<p>열 : 도시구분, 시도, 학교급, 학년, 성별, 키, 몸무게</p>
+<p>문제에서는 전처리한 데이터를 제공합니다.</p>
+<h2>그래프</h2>
+<p>중3 학생의 키를 나타낸 히스토그램에 평균 키를 나타내봅시다.</p>
+<p>그래프 제목 : 중3학생의 키</p>
+<p>가로축 제목 : 키(cm)</p>
+<p>히스토그램 구간 : 12</p>
+<p>히스토그램 범위 : 130 ~ 190</p>
+<p>수직선 x 위치 : 중3 학생 키의 평균</p>
+<p>수직선 y 범위 : 0 ~ 2000</p>
+<p>수직선 label : 평균 키</p>
+<p>수직선 색 : red</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2>데이터 예시 </h2>
+<p>data = pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')</p>
+<p>data_mid = data[data['학년']=='중3']['키']</p>
+<p>data_mid_mean = data_mid.mean()</p>
+
+</div>
+<div style = "float:right;width:50%">
+<h2>그래프 예시 </h2>
+<img src="https://github.com/GoHakNeung/jupyter_judge/blob/main/graph/answer_8545.png?raw=true" width = 150% height = 150%>
+</div>
+'''
+img_8545 = ''
+question_review_8545 = '''
+<h3> 아래 요소들이 그래프에 반영되었는지 확인해봅시다.</h3>
+<input type='checkbox'/>히스토그램
+<input type='checkbox'/>제목
+<input type='checkbox'/>xlabel
+<input type='checkbox'/>bins
+<input type='checkbox'/>range
+<input type='checkbox'/>수직선 범위
+<input type='checkbox'/>수직선 색
+<input type='checkbox'/>수직선 label
+'''
+answer_8545 = [
+    {'input' : [[10]], 'output' : ["plt.subplot(1,2,2)","data = pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')",
+                                  "data_mid = data[data['학년']=='중3']['키']",
+                                  "data_mid_mean = data_mid.mean()",
+                                  "A_hist = plt.hist(data_mid,bins = 12, range = [130, 190])",
+                                  "A_vlines = plt.vlines(data_mid_mean, 0, 2000, color = 'red', label = '평균 키')",
+                                  "A_title = plt.title('중3학생의 키')",
+                                  "A_xlabel = plt.xlabel('키(cm)')",
+                                  "A_legend = plt.legend()",
+                                  "plt.show()"]
+
+     }
+]
+
 question_8551 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>관련 뉴스</h2>
 <p>영영화를 관객수로만 평가하는 것이 아니라 상영횟수도 고려해야 한다는 신문기사입니다.</p>
@@ -4084,18 +4502,30 @@ test_set = [
 
     {'test_file' : '_8501.py', 'answer' : answer_8501, 'question' : question_8501, 'img' : img_8501},        
     {'test_file' : '_8502.py', 'answer' : answer_8502, 'question' : question_8502, 'img' : img_8502},    
+    {'test_file' : '_8503.py', 'answer' : answer_8503, 'question' : question_8503, 'img' : img_8503},        
+    {'test_file' : '_8504.py', 'answer' : answer_8504, 'question' : question_8504, 'img' : img_8504},    
+  
     {'test_file' : '_8511.py', 'answer' : answer_8511, 'question' : question_8511, 'img' : img_8511},    
     {'test_file' : '_8512.py', 'answer' : answer_8512, 'question' : question_8512, 'img' : img_8512},        
     {'test_file' : '_8513.py', 'answer' : answer_8513, 'question' : question_8513, 'img' : img_8513},      
     {'test_file' : '_8521.py', 'answer' : answer_8521, 'question' : question_8521, 'img' : img_8521},        
     {'test_file' : '_8522.py', 'answer' : answer_8522, 'question' : question_8522, 'img' : img_8522},         
-    {'test_file' : '_8523.py', 'answer' : answer_8523, 'question' : question_8523, 'img' : img_8523},      
+    {'test_file' : '_8523.py', 'answer' : answer_8523, 'question' : question_8523, 'img' : img_8523},   
+    {'test_file' : '_8524.py', 'answer' : answer_8524, 'question' : question_8524, 'img' : img_8524},        
+    {'test_file' : '_8525.py', 'answer' : answer_8525, 'question' : question_8525, 'img' : img_8525},         
+    {'test_file' : '_8526.py', 'answer' : answer_8526, 'question' : question_8526, 'img' : img_8526},   
+
+  
     {'test_file' : '_8531.py', 'answer' : answer_8531, 'question' : question_8531, 'img' : img_8531},        
     {'test_file' : '_8532.py', 'answer' : answer_8532, 'question' : question_8532, 'img' : img_8532},        
     {'test_file' : '_8533.py', 'answer' : answer_8533, 'question' : question_8533, 'img' : img_8533},        
     {'test_file' : '_8534.py', 'answer' : answer_8534, 'question' : question_8534, 'img' : img_8534},    
     {'test_file' : '_8541.py', 'answer' : answer_8541, 'question' : question_8541, 'img' : img_8541},    
     {'test_file' : '_8542.py', 'answer' : answer_8542, 'question' : question_8542, 'img' : img_8542},        
+    {'test_file' : '_8543.py', 'answer' : answer_8543, 'question' : question_8543, 'img' : img_8543},    
+    {'test_file' : '_8544.py', 'answer' : answer_8544, 'question' : question_8544, 'img' : img_8544},   
+    {'test_file' : '_8545.py', 'answer' : answer_8545, 'question' : question_8545, 'img' : img_8545},   
+  
     {'test_file' : '_8551.py', 'answer' : answer_8551, 'question' : question_8551, 'img' : img_8551},      
     {'test_file' : '_8552.py', 'answer' : answer_8552, 'question' : question_8552, 'img' : img_8552},        
     {'test_file' : '_8561.py', 'answer' : answer_8561, 'question' : question_8561, 'img' : img_8561},         
