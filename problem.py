@@ -3874,8 +3874,8 @@ answer_8552 = [
                                   "audience_per_showing = data['audience_per_showing']",
                                   "movie = data['movie']",
                                   "A_barh = plt.barh(movie, audience_per_showing)",
-                                  "A_title = plt.title('1000만 관객 넘은 영화 중 1회 상영당 매출액')",
-                                  "A_xlabel = plt.xlabel('1회 상영당 매출액(원)')",
+                                  "A_title = plt.title('1000만 관객 넘은 영화 중 1회 상영당 관객')",
+                                  "A_xlabel = plt.xlabel('1회 상영당 관객수')",
                                   "plt.show()"                                   ]}
 ]
 question_8561 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
