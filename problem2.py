@@ -11,5 +11,5 @@ answer_0010 = [{'input': [['-459']], 'output': ['-459']}, {'input': [['-33']], '
 
 test_set = [
 #입력,변수,출력_수와 연산산
-    {'test_file' : '0010', 'answer' : answer_0010},'question' : 0010, 'img' : img_1101},
+    {'test_file' : '0010', 'answer' : answer_0010},'question' : question_0010, 'img' : img_1101},
 ]
