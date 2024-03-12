@@ -1,4 +1,6 @@
 from IPython.display import display, HTML
+import pandas as pd
+import numpy as np
 
 def Question(question_) : 
   display(HTML(question_))
