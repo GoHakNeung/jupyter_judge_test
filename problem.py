@@ -4395,6 +4395,28 @@ answer_8583 = [
                                   "A_ylabel = plt.ylabel('노령인구 백분율(%)')", 
                                   "plt.show()"                                   ]}
 ]
+### 판다스 평가 문제 ###
+#문제, 데이터 프레임이 추가됨
+fruits = pd.DataFrame({'Apples' : [30], 'Bananas' : [21]})
+fruits_html = fruits.to_html(max_rows = 5, max_cols = 5)
+question_8601 = f'''
+Apples 열에는 30, Bananas 열에는 21 값이 있는 데이터 프레임을 df에 만들어봅시다.
+<p>예시 </p>
+{fruits_html}
+'''
+#정답데이터
+answer_8601 = [
+    {'input' : [[10]], 'output' : ["df_answer = pd.DataFrame({",
+                                   "    'Apples' : [30],",
+                                   "    'Bananas' : [21]",
+                                   "})"]}
+]
+#이미지
+img_8601 =''
+#메타데이터
+
+### 판다스 평가 문제 ###
+
 
 test_set = [
 #입력,변수,출력_수와 연산산
@@ -4551,5 +4573,7 @@ test_set = [
     {'test_file' : '_8574.py', 'answer' : answer_8574, 'question' : question_8574, 'img' : img_8574},         
     {'test_file' : '_8581.py', 'answer' : answer_8581, 'question' : question_8581, 'img' : img_8581},         
     {'test_file' : '_8582.py', 'answer' : answer_8582, 'question' : question_8582, 'img' : img_8582},      
-    {'test_file' : '_8583.py', 'answer' : answer_8583, 'question' : question_8583, 'img' : img_8583},          
+    {'test_file' : '_8583.py', 'answer' : answer_8583, 'question' : question_8583, 'img' : img_8583},        
+    #판다스 평가 문제
+    {'test_file' : '_8601.py', 'answer' : answer_8601, 'question' : question_8601, 'img' : img_8601},
 ]
