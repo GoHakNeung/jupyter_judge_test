@@ -1115,4 +1115,5 @@ def plot_check(py) :
     update_excel('틀렸습니다.',py)
   else :
     update_excel('정답입니다.', py)
-
+###
+global df, df_answer
