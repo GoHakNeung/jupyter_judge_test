@@ -4397,8 +4397,8 @@ answer_8583 = [
                                   "A_ylabel = plt.ylabel('노령인구 백분율(%)')", 
                                   "plt.show()"                                   ]}
 ]
-### 판다스 평가 문제 ###
-#문제, 데이터 프레임이 추가됨
+### 판다스 평가 예시 문제1 - 데이터 프레임 추가하기 ###
+
 fruits = pd.DataFrame({'Apples' : [30], 'Bananas' : [21]})
 fruits_html = fruits.to_html(max_rows = 5, max_cols = 5)
 question_8601 = f'''
@@ -4415,11 +4415,65 @@ answer_8601 = [
 ]
 #이미지
 img_8601 =''
+
+### 판다스 평가 예시 문제2 - 외부데이터 데이터프레임으로 불러오기 ###
+
+readcsv = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')
+readcsv_html = readcsv.to_html(max_rows = 5, max_cols = 5)
+question_8602 = f'''
+read_csv로 데이터프레임을 불러옵시다.
+<p>예시 </p>
+{readcsv_html}
+'''
+#정답데이터
+answer_8602 = [
+    {'input' : [[10]], 'output' : ["df_answer = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')"]}
+]
+#이미지
+img_8602 =''
 #메타데이터
 
-### 판다스 평가 문제 ###
+### 판다스 평가 예시 문제3 - groupby ###
+
+readcsv = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')
+readcsv = readcsv.groupby(metropolitan_city).sum()
+readcsv_html = readcsv.to_html(max_rows = 5, max_cols = 5)
+
+question_8603 = f'''
+metropolitan_city로 groupby하여 합계를 구해 봅시다.
+<p>예시 </p>
+{readcsv_html}
+'''
+#정답데이터
+answer_8603 = [
+    {'input' : [[10]], 'output' : ["df_answer = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')", 
+                                  "df_answer = df_answer.groupby('metropolitan_city').sum()"]}
+]
+#이미지
+img_8603 =''
+
+### 판다스 평가 예시 문제4 - 숫자 가져오기 ###
+
+readcsv = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')
+readcsv_html = readcsv.to_html(max_rows = 5, max_cols = 5)
+question_8604 = f'''
+year 열에서 최댓값을 df에 저장합시다. 
+<p>예시 </p>
+{readcsv_html}
+'''
+#정답데이터
+answer_8604 = [
+    {'input' : [[10]], 'output' : ["df_answer = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')", 
+                                  "df_answer = df_answer.year.max()"]}
+]
+#이미지
+img_8604 =''
+#메타데이터
 
 
+
+
+#메타데이터
 test_set = [
 #입력,변수,출력_수와 연산산
     {'test_file' : '_1101.py', 'answer' : answer_1101, 'question' : question_1101, 'img' : img_1101},
@@ -4578,4 +4632,7 @@ test_set = [
     {'test_file' : '_8583.py', 'answer' : answer_8583, 'question' : question_8583, 'img' : img_8583},        
     #판다스 평가 문제
     {'test_file' : '_8601.py', 'answer' : answer_8601, 'question' : question_8601, 'img' : img_8601},
+    {'test_file' : '_8602.py', 'answer' : answer_8602, 'question' : question_8602, 'img' : img_8602},
+    {'test_file' : '_8603.py', 'answer' : answer_8603, 'question' : question_8603, 'img' : img_8603},
+    {'test_file' : '_8604.py', 'answer' : answer_8604, 'question' : question_8604, 'img' : img_8604},  
 ]
