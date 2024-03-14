@@ -4436,7 +4436,7 @@ img_8602 =''
 ### 판다스 평가 예시 문제3 - groupby ###
 
 readcsv = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')
-readcsv = readcsv.groupby(metropolitan_city).sum()
+readcsv = readcsv.groupby('metropolitan_city').sum()
 readcsv_html = readcsv.to_html(max_rows = 5, max_cols = 5)
 
 question_8603 = f'''
