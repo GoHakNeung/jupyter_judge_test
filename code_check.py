@@ -1254,9 +1254,49 @@ def table_check(py) :
     else :
       update_excel('정답입니다.', py)
   elif df == df_answer and df !='' :
+    output_html = f'''
+    <div style="display: flex; flex-direction: row;">
+        <div style="float:left;width:50%">
+        <h3>왼쪽에 있는 값은 여러분이 작성한 값입니다.</h3>
+        <p >{df}</p>
+        </div>
+        <div style="float:right;width:50%">
+        <h3>오른쪽에 있는 값은 예시 답안입니다.</h3>
+        <p >{df_answer}</p>
+        </div>
+    </div>
+    '''
+    Question(output_html)
+    Question('<HR>')
     print(tc_green+'정답입니다.'+reset)
+
+    if compile_error == True :
+      update_excel('틀렸습니다.',py)
+    else :
+      update_excel('정답입니다.', py) 
+      
   elif df != df_answer and df != '' :
+    output_html = f'''
+    <div style="display: flex; flex-direction: row;">
+        <div style="float:left;width:50%">
+        <h3>왼쪽에 있는 값은 여러분이 작성한 값입니다.</h3>
+        <p >{df}</p>
+        </div>
+        <div style="float:right;width:50%">
+        <h3>오른쪽에 있는 값은 예시 답안입니다.</h3>
+        <p >{df_answer}</p>
+        </div>
+    </div>
+    '''
+    Question(output_html)
+    Question('<HR>')
     print(tc_red+'틀렸습니다.'+reset)
+    
+    if compile_error == True :
+      update_excel('틀렸습니다.',py)
+    else :
+      update_excel('정답입니다.', py) 
+
   elif df == df_answer and df == '' :
     return
 
