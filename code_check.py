@@ -10,6 +10,9 @@ from jupyter_judge.problem import *
 from jupyter_judge.ColabTurtleClass import *
 from PIL import Image
 
+import warnings
+warnings.filterwarnings(action='ignore')
+
 #------------------------------------------------------------------------------#
 #구글 스프레드시트와 연동하기
 scope = ['https://spreadsheets.google.com/feeds']
@@ -296,6 +299,7 @@ def error_check(test_py) :
   compile_error = False
   try :
     exec(open(test_py).read())
+    return df
   except NameError :
     sys.stdout = original
     name_error(test_py)
@@ -1117,3 +1121,176 @@ def plot_check(py) :
     update_excel('정답입니다.', py)
 ###
 global df, df_answer
+
+
+###  판다스 평가 도구
+
+# 전처리 함수
+
+def table_arrange(py) :
+  global raw_code, code
+  raw_code = []
+  code = []
+  
+  file_name = '/content/'+py
+
+  # 코드에서 공백제거고 code에 리스트로 저장하기.
+  f = open(file_name, 'r')
+  lines = f.readlines()
+  for line in lines :
+    if line != '' :
+      raw_code.append(line)
+  f.close()
+
+  # code 리스트에서 \n 개행문자 제거하기
+  for i in range(len(raw_code)) :
+    if raw_code[i].find('\n') >= 0 :
+      raw_code[i] = raw_code[i][:-1]
+    raw_code[i] = raw_code[i].rstrip()
+
+  #code 리스트에서 df, print(df), display(df) 제거하기
+  for i in raw_code :
+    if i != 'df' and i != 'print(df)' and i != 'display(df)':
+      code.append(i)
+
+
+def table_convert(output_table) :
+
+  global code
+  global answer_table
+  global original
+
+  f = open(output_table, 'w')
+  original = sys.stdout
+  sys.stdout = f
+  print('import pandas as pd')
+  print('import numpy as np')
+  print('from IPython.display import display, HTML')
+  print('global df, df_answer')  # 변수를 전역으로 선언해야 함! ~ 아마 시각화 함수에서도 비슷했을 것 같음.
+
+  for i in range(len(code)) :
+    print(code[i])
+
+  for i in answer_table :
+    print(i)
+  sys.stdout = original
+  f.close()
+
+# 평가 함수
+def table_check(py) :
+  global code, raw_code
+  global original
+  global compile_error
+  global df, df_answer
+  df, df_answer = '', ''
+  compile_error = False
+
+  code = []
+  raw_code = []
+
+  trial_error_count[py] += 1
+  for i in range(len(test_set)) :
+    if test_set[i]['test_file'] == py :
+      global answer, answer_table
+      answer = test_set[i]['answer']
+      answer_table = answer[0]['output']
+      global question
+      question = test_set[i]['question']
+  try :
+    table_arrange(py)
+  except :
+    print('평가 코드를 생성하세요.')
+    return
+  table_convert('table_output.py')
+  error_check('table_output.py')
+
+
+  if type(df) != type(df_answer) :
+    print('형식이 다릅니다.')
+  elif type(df) == pd.core.frame.DataFrame and type(df_answer) == pd.core.frame.DataFrame :
+    Question('<h2 style = "background-color:yellow">결과 확인</h2>')
+  # 결과 자가 평가
+    df_html = df.to_html(max_cols = 5, max_rows =5)
+    df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5)
+    output_html = f'''
+    <div style="display: flex; flex-direction: row;">
+        <div style="float:left;width:50%">
+        <h3>왼쪽 표는 여러분이 작성한 표입니다.</h3>
+        <p >{df_html}</p>
+        </div>
+        <div style="float:right;width:50%">
+        <h3>오른쪽 표는 예시 답안입니다.</h3>
+        <p >{df_answer_html}</p>
+        </div>
+    </div>
+    '''
+    Question(output_html)
+    Question('<HR>')
+# 자동 평가
+    df_numpy = df.to_numpy()
+    df_answer_numpy = df_answer.to_numpy()
+    if np.array_equal(df_numpy, df_answer_numpy) and np.array_equal(df.columns, df_answer.columns) and np.array_equal(df.index, df_answer.index) :
+      print(tc_green+'정답입니다.'+reset)
+    else :
+      print(tc_red+'틀렸습니다.'+reset)
+      table_feedback(df, df_answer)
+
+    if compile_error == True :
+      update_excel('틀렸습니다.',py)
+    else :
+      update_excel('정답입니다.', py)
+
+  elif type(df) == pd.core.series.Series and type(df_answer) == pd.core.series.Series :
+    df_numpy = df.to_numpy()
+    df_answer_numpy = df_answer.to_numpy()
+    if np.array_equal(df_numpy, df_answer_numpy) and np.array_equal(df.index, df_answer.index) :
+      print(tc_green+'정답입니다.'+reset)
+    else :
+      print(tc_red+'틀렸습니다.'+reset)
+      table_series_feedback(df, df_answer)
+
+    if compile_error == True :
+      update_excel('틀렸습니다.',py)
+    else :
+      update_excel('정답입니다.', py)
+  elif df == df_answer and df !='' :
+    print(tc_green+'정답입니다.'+reset)
+  elif df != df_answer and df != '' :
+    print(tc_red+'틀렸습니다.'+reset)
+  elif df == df_answer and df == '' :
+    return
+
+
+
+### --- ###
+### 변환까지 정상작동 ###
+### 동시 출력 및 자동 평가, 피드백은 3/12에 하기 ###
+
+#------------------------------------------------------------------------------#
+# syntax 오류 코드 출력창에 코드 불러오는 것
+# 틀린 코드에 빨간색 표시 없음
+
+
+#------------------------------------------------------------------------------#
+#에러에 따른 정보를 알려주는 함수
+
+def table_feedback(df, df_answer) :
+  if df.shape != df_answer.shape :
+    Question('shape가 다릅니다.')
+  elif (df.columns != df_answer.columns).sum() != 0 :
+    Question('columns가 다릅니다.')
+  elif (df.index != df_answer.index).sum() != 0 :
+    Question('index가 다릅니다.')
+  else :
+    Question('데이터 프레임 속 값이 다릅니다.')
+
+
+
+def table_series_feedback(df, df_answer) :
+  if df.shape != df_answer.shape :
+    Question('shape가 다릅니다.')
+  elif (df.index != df_answer.index).sum() != 0 :
+    Question('index가 다릅니다.')
+  else :
+    Question('데이터 프레임 속 값이 다릅니다.')
+
