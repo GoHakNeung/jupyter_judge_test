@@ -296,6 +296,8 @@ def else_error(test_py) :
 
 def error_check(test_py) :
   global compile_error, original, trace, error_code, df, df_answer
+  df = ''
+  df_answer = ''
   compile_error = False
   try :
     exec(open(test_py).read())
