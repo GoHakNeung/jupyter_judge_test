@@ -4491,7 +4491,7 @@ answer_8610 = [
     {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/missing_fill.csv')",
                               "df_answer = data.fillna(value = data['D'].mean())"]}
 ]
-Question(question_8610)
+img_8610 =''
 
 
 
