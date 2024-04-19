@@ -4474,16 +4474,30 @@ table_8610 = pd.read_csv("/content/jupyter_judge/csv_file/missing_fill.csv")
 table_html_8610 = table_8610.to_html(max_rows = 10, max_cols = 10)
 pre_table_8610 = table_8610.fillna(value = table_8610['D'].mean())
 pre_table_html_8610 = pre_table_8610.to_html(max_rows = 10, max_cols = 10)
-question_8610 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
+# question_8610 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
+# <h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/missing_fill.csv")</h3>
+# <p>위 데이터에서 결측치를 D열의 평균으로 채워 넣어 df에 저장해봅시다.</p>
+# <HR>
+# <div style = "float:left;width:50%">
+# <h2> 전처리 전 데이터 </h2>
+# <p>{table_html_8610}<p>
+# </div>
+# <div style = "float:right;width:50%">
+# <h2> 전처리 후 데이터 </h2>
+# {pre_table_html_8610}
+# </div>
+# '''
+
+question_8610 = f''' <h2 style = "background-color:yellow; ">Description</h2>
 <h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/missing_fill.csv")</h3>
-<p>위 데이터에서 결측치를 D열의 평균으로 채워 넣어 df에 저장해봅시다.</p>
+<p>Let's fill in the missing values in the data with the average of column D and save it to df.</p>
 <HR>
 <div style = "float:left;width:50%">
-<h2> 전처리 전 데이터 </h2>
+<h2> Data before preprocessing </h2>
 <p>{table_html_8610}<p>
 </div>
 <div style = "float:right;width:50%">
-<h2> 전처리 후 데이터 </h2>
+<h2> Data after preprocessing </h2>
 {pre_table_html_8610}
 </div>
 '''
@@ -4504,21 +4518,37 @@ merge_df1_html = merge_df1.to_html(max_rows = 10, max_cols =10)
 merge_df2_html = merge_df2.to_html(max_rows = 10, max_cols =10)
 merge_df_html = merge_df.to_html(max_rows = 10, max_cols =10)
 
-question_8620 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
+# question_8620 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
+# <h3 = "white-space: pre-wrap;">data1=pd.read_csv("/content/jupyter_judge/csv_file/merge1.csv")</h3>
+# <h3 = "white-space: pre-wrap;">data2=pd.read_csv("/content/jupyter_judge/csv_file/merge2.csv")</h3>
+# <p>위 데이터를 key 열을 중심으로 data1에서 data2로 합쳐 df에 저장해봅시다.</p>
+# <HR>
+# <div style = "float:left;width:50%">
+# <h2> 전처리 전 데이터 </h2>
+# <p>data1 : {merge_df1_html}<p>
+# <p>data2 : {merge_df2_html}<p>
+# </div>
+# <div style = "float:right;width:50%">
+# <h2> 전처리 후 데이터 </h2>
+# {merge_df_html}
+# </div>
+# '''
+question_8620 = f''' <h2 style = "background-color:yellow; ">Description</h2>
 <h3 = "white-space: pre-wrap;">data1=pd.read_csv("/content/jupyter_judge/csv_file/merge1.csv")</h3>
 <h3 = "white-space: pre-wrap;">data2=pd.read_csv("/content/jupyter_judge/csv_file/merge2.csv")</h3>
-<p>위 데이터를 key 열을 중심으로 data1에서 data2로 합쳐 df에 저장해봅시다.</p>
+<p>Let's merge the data from data1 to data2 based on the 'key' column and save it to df.</p>
 <HR>
 <div style = "float:left;width:50%">
-<h2> 전처리 전 데이터 </h2>
+<h2> Data before preprocessing </h2>
 <p>data1 : {merge_df1_html}<p>
 <p>data2 : {merge_df2_html}<p>
 </div>
 <div style = "float:right;width:50%">
-<h2> 전처리 후 데이터 </h2>
+<h2> Data after preprocessing </h2>
 {merge_df_html}
 </div>
 '''
+
 #정답데이터
 answer_8620 = [
     {'input' : [[10]], 'output' : ["data1 = pd.read_csv('/content/jupyter_judge/csv_file/merge1.csv')", 
