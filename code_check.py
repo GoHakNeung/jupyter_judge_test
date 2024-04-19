@@ -1232,8 +1232,8 @@ def table_check(py) :
     #NAN이 있어도 평가하기 위해 추가한 코드
     if df_answer.isna().to_numpy().sum() : 
       random_number = random.randint(1, 20141112)
-      df.fillna(value = random_number, replace = True)
-      df_answer.fillna(value = random_number, replace = True)
+      df.fillna(value = random_number, inplace = True)
+      df_answer.fillna(value = random_number, inplace = True)
     #NAN이 있어도 평가하기 위해 추가한 코드
     
     df_numpy = df.to_numpy()
