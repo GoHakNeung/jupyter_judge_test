@@ -1231,7 +1231,7 @@ def table_check(py) :
 # 자동 평가
     #NAN이 있어도 평가하기 위해 추가한 코드
     if df_answer.isna().to_numpy().sum() : 
-      random_number = random.randint()
+      random_number = random.randint(1, 20141112)
       df.fillna(value = random_number, replace = True)
       df_answer.fillna(value = random_number, replace = True)
     #NAN이 있어도 평가하기 위해 추가한 코드
