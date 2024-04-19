@@ -4468,8 +4468,39 @@ answer_8604 = [
 ]
 #이미지
 img_8604 =''
-#메타데이터
 
+#데이터 합치기
+merge_df1 = pd.read_csv('/content/jupyter_judge/csv_file/merge1.csv')
+merge_df2 = pd.read_csv('/content/jupyter_judge/csv_file/merge2.csv')
+merge_df = pd.merge(merge_df1, merge_df2, how = 'left', on = 'key')
+
+merge_df1_html = merge_df1.to_html(max_rows = 10, max_cols =10)
+merge_df2_html = merge_df2.to_html(max_rows = 10, max_cols =10)
+merge_df_html = merge_df.to_html(max_rows = 10, max_cols =10)
+
+question_8620 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
+<h3 = "white-space: pre-wrap;">data1=pd.read_csv("/content/jupyter_judge/csv_file/merge1.csv")</h3>
+<h3 = "white-space: pre-wrap;">data2=pd.read_csv("/content/jupyter_judge/csv_file/merge2.csv")</h3>
+<p>위 데이터를 key 열을 중심으로 data1에서 data2로 합쳐 df에 저장해봅시다.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> 전처리 전 데이터 </h2>
+<p>data1 : {merge_df1_html}<p>
+<p>data2 : {merge_df2_html}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> 전처리 후 데이터 </h2>
+{merge_df_html}
+</div>
+'''
+#정답데이터
+answer_8620 = [
+    {'input' : [[10]], 'output' : ["data1 = pd.read_csv('/content/jupyter_judge/csv_file/merge1.csv')", 
+                                  "data2 = pd.read_csv('/content/jupyter_judge/csv_file/merge2.csv')", 
+                                  "df_answer = pd.merge(data1, data2, how = 'left', on = 'key')"]}
+]
+#이미지
+img_8620 =''
 
 
 
@@ -4634,5 +4665,6 @@ test_set = [
     {'test_file' : '_8601.py', 'answer' : answer_8601, 'question' : question_8601, 'img' : img_8601},
     {'test_file' : '_8602.py', 'answer' : answer_8602, 'question' : question_8602, 'img' : img_8602},
     {'test_file' : '_8603.py', 'answer' : answer_8603, 'question' : question_8603, 'img' : img_8603},
-    {'test_file' : '_8604.py', 'answer' : answer_8604, 'question' : question_8604, 'img' : img_8604},  
+    {'test_file' : '_8604.py', 'answer' : answer_8604, 'question' : question_8604, 'img' : img_8604}, 
+    {'test_file' : '_8620.py', 'answer' : answer_8620, 'question' : question_8620, 'img' : img_8620},   
 ]
