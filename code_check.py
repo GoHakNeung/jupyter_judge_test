@@ -1,5 +1,5 @@
 #@title
-import sys, random, math, os, traceback, gspread, shutil
+import sys, random, math, os, traceback, gspread, shutil, random
 import pandas as pd
 import numpy as np
 from requests import get
@@ -1229,6 +1229,13 @@ def table_check(py) :
     Question(output_html)
     Question('<HR>')
 # 자동 평가
+    #NAN이 있어도 평가하기 위해 추가한 코드
+    if df_answer.isna().to_numpy().sum() : 
+      random_number = random.randint()
+      df.fillna(value = random_number, replace = True)
+      df_answer.fillna(value = random_number, replace = True)
+    #NAN이 있어도 평가하기 위해 추가한 코드
+    
     df_numpy = df.to_numpy()
     df_answer_numpy = df_answer.to_numpy()
     if np.array_equal(df_numpy, df_answer_numpy) and np.array_equal(df.columns, df_answer.columns) and np.array_equal(df.index, df_answer.index) :
