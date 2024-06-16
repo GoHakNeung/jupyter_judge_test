@@ -612,10 +612,10 @@ def turtle_check(py) :
   Question('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
   #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)
   error_check('turtle_output.py')
-  if compile_error == True :
-    # update_excel('오류입니다.',py)
-  else :
-    # update_excel('turtle_실행', py)
+  # if compile_error == True :
+  #   # update_excel('오류입니다.',py)
+  # else :
+  #   # update_excel('turtle_실행', py)
 #------------------------------------------------------------------------------#
 from google.colab import output
 # 그래프에서 평가 정보를 얻는 것은 info, 평가하는 그래프 종류는 pyplot, 정답과 관련된 것은 A_ 접두사를 붙임.
