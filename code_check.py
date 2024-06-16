@@ -3,10 +3,9 @@ import sys, random, math, os, traceback, gspread, shutil, random
 import pandas as pd
 import numpy as np
 from requests import get
-from oauth2client.service_account import ServiceAccountCredentials
+# from oauth2client.service_account import ServiceAccountCredentials
 from IPython.core.display import display, HTML
 from jupyter_judge.problem import *
-# from jupyter_judge.problem2 import *
 from jupyter_judge.ColabTurtleClass import *
 from PIL import Image
 
@@ -14,14 +13,15 @@ import warnings
 warnings.filterwarnings(action='ignore')
 
 #------------------------------------------------------------------------------#
-#구글 스프레드시트와 연동하기
-scope = ['https://spreadsheets.google.com/feeds']
-# 구글 클라우드 플랫폼에서 json 파일 인증 받아야 함.
-json_file_name = '/content/jupyter_judge/judge-dashboard-5145c009c952.json'
-credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
-gc = gspread.authorize(credentials)
-# 개인적으로 사용할 스프레드시트 url
-spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-NdFk0Fdw7Ut6m3LzHEZxKrMg/edit#gid=0'
+# #구글 스프레드시트와 연동하기
+# # 구글 스프레드시트를 더이상 사용할 수 없음.
+# scope = ['https://spreadsheets.google.com/feeds']
+# # 구글 클라우드 플랫폼에서 json 파일 인증 받아야 함.
+# json_file_name = '/content/jupyter_judge/judge-dashboard-5145c009c952.json'
+# credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
+# gc = gspread.authorize(credentials)
+# # 개인적으로 사용할 스프레드시트 url
+# spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-NdFk0Fdw7Ut6m3LzHEZxKrMg/edit#gid=0'
 #------------------------------------------------------------------------------#
 # matplotlib에서 한글을 사용하기 위한 코드
 # 나눔바른고딕을 git에 저장시켜서 다운로드하기. 그래야 나눔 폰트 다운로드에 시간 안씀.
@@ -43,8 +43,8 @@ my_id = input('이름을 입력해주세요.')
 print('지금부터 공부를 시작합니다.')
 #------------------------------------------------------------------------------#
 # 문서 및 시트 불러오기
-doc = gc.open_by_url(spreadsheet_url)
-worksheet = doc.worksheet('시트1')
+# doc = gc.open_by_url(spreadsheet_url)
+# worksheet = doc.worksheet('시트1')
 
 #문제에 따른 시도한 횟수를 dictionary로 만듬
 trial_error_count = {}
@@ -420,26 +420,26 @@ def error_check(test_py) :
 
 #------------------------------------------------------------------------------#
 # 코드 결과를 구글 스프레드 시트에 보내기
-def update_excel(message, py) :
-  global my_id
-  name_list = worksheet.col_values(1)
-  question_list = worksheet.row_values(1)
-  if my_id in name_list :
-    row = name_list.index(my_id)+1
-  else :
-    row = len(name_list)+1
-    worksheet.update_cell(row,1, my_id)
+# def update_excel(message, py) :
+#   global my_id
+#   name_list = worksheet.col_values(1)
+#   question_list = worksheet.row_values(1)
+#   if my_id in name_list :
+#     row = name_list.index(my_id)+1
+#   else :
+#     row = len(name_list)+1
+#     worksheet.update_cell(row,1, my_id)
 
-  # 몇 번 문제 풀었는지 확인함.
-  if py in question_list :
-    col = question_list.index(py) + 1
-  else :
-    col = len(question_list) + 1
-    worksheet.update_cell(1,col, py)
-    worksheet.update_cell(1,col+1, '시도횟수')
+#   # 몇 번 문제 풀었는지 확인함.
+#   if py in question_list :
+#     col = question_list.index(py) + 1
+#   else :
+#     col = len(question_list) + 1
+#     worksheet.update_cell(1,col, py)
+#     worksheet.update_cell(1,col+1, '시도횟수')
 
-  worksheet.update_cell(row, col, message)
-  worksheet.update_cell(row, col+1, trial_error_count[py])
+#   worksheet.update_cell(row, col, message)
+#   worksheet.update_cell(row, col+1, trial_error_count[py])
 #------------------------------------------------------------------------------#
 #HTML 형식의 문제 불러오기기
 # def Question(question_, img="") :
@@ -462,7 +462,7 @@ def code_check(py) :
     return
   if code_input_count :
     if code_input_count != len(answer[0]['input']) :
-      update_excel('입력 오류', py)
+      # update_excel('입력 오류', py)
       print('입력을 확인해주세요.')
       return
 
@@ -478,7 +478,7 @@ def code_check(py) :
     # 코드 실행 시 오류발생하면 확인 종료
     if compile_error == True :
       try :
-        update_excel('오류입니다.', py)
+        # update_excel('오류입니다.', py)
         return
       except :
         return
@@ -542,13 +542,13 @@ def code_check(py) :
     Question('<HR>')
   if sum(result) == test_count+1 :
     try :
-      update_excel('정답입니다.', py)
+      # update_excel('정답입니다.', py)
       print(tc_green+'정답입니다.'+reset)
     except :
       print(tc_green+'정답입니다.'+reset)
   else :
     try :
-      update_excel('틀렸습니다.', py)
+      # update_excel('틀렸습니다.', py)
       print(tc_red+'틀렸습니다.'+reset)
     except :
       print(tc_red+'틀렸습니다.'+reset)
@@ -613,9 +613,9 @@ def turtle_check(py) :
   #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)
   error_check('turtle_output.py')
   if compile_error == True :
-    update_excel('오류입니다.',py)
+    # update_excel('오류입니다.',py)
   else :
-    update_excel('turtle_실행', py)
+    # update_excel('turtle_실행', py)
 #------------------------------------------------------------------------------#
 from google.colab import output
 # 그래프에서 평가 정보를 얻는 것은 info, 평가하는 그래프 종류는 pyplot, 정답과 관련된 것은 A_ 접두사를 붙임.
@@ -1117,14 +1117,14 @@ def plot_check(py) :
     print('그래프가 생성되지 않았습니다.')
 
 
-  if compile_error == True :
-    update_excel('틀렸습니다.',py)
-  else :
-    update_excel('정답입니다.', py)
+  # if compile_error == True :
+    # update_excel('틀렸습니다.',py)
+  # else :
+    # update_excel('정답입니다.', py)
 ###
 global df, df_answer
 
-
+#___________________________________________#
 ###  판다스 평가 도구
 
 # 전처리 함수
@@ -1244,10 +1244,10 @@ def table_check(py) :
       print(tc_red+'틀렸습니다.'+reset)
       table_feedback(df, df_answer)
 
-    if compile_error == True :
-      update_excel('틀렸습니다.',py)
-    else :
-      update_excel('정답입니다.', py)
+    # if compile_error == True :
+    #   update_excel('틀렸습니다.',py)
+    # else :
+    #   update_excel('정답입니다.', py)
 
   elif type(df) == pd.core.series.Series and type(df_answer) == pd.core.series.Series :
     df_numpy = df.to_numpy()
@@ -1258,10 +1258,10 @@ def table_check(py) :
       print(tc_red+'틀렸습니다.'+reset)
       table_series_feedback(df, df_answer)
 
-    if compile_error == True :
-      update_excel('틀렸습니다.',py)
-    else :
-      update_excel('정답입니다.', py)
+    # if compile_error == True :
+    #   update_excel('틀렸습니다.',py)
+    # else :
+    #   update_excel('정답입니다.', py)
   elif df == df_answer and df !='' :
     output_html = f'''
     <div style="display: flex; flex-direction: row;">
@@ -1279,10 +1279,10 @@ def table_check(py) :
     Question('<HR>')
     print(tc_green+'정답입니다.'+reset)
 
-    if compile_error == True :
-      update_excel('틀렸습니다.',py)
-    else :
-      update_excel('정답입니다.', py) 
+    # if compile_error == True :
+    #   update_excel('틀렸습니다.',py)
+    # else :
+    #   update_excel('정답입니다.', py) 
       
   elif df != df_answer and df != '' :
     output_html = f'''
@@ -1301,10 +1301,10 @@ def table_check(py) :
     Question('<HR>')
     print(tc_red+'틀렸습니다.'+reset)
     
-    if compile_error == True :
-      update_excel('틀렸습니다.',py)
-    else :
-      update_excel('정답입니다.', py) 
+    # if compile_error == True :
+    #   update_excel('틀렸습니다.',py)
+    # else :
+    #   update_excel('정답입니다.', py) 
 
   elif df == df_answer and df == '' :
     return
