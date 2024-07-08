@@ -448,7 +448,7 @@ def error_check(test_py) :
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
-  display(HTML("<div id = "test">))
+  display(HTML("<div id = 'test'>"))
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer
