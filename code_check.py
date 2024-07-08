@@ -448,6 +448,7 @@ def error_check(test_py) :
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
+  display(HTML("<div id = "test">))
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer
@@ -539,6 +540,7 @@ def code_check(py) :
             print(bc_yellow+str(i)+reset,tc_red+'X'+reset)
           else :
             print(bc_yellow+str(i)+reset)
+            display(HTML("</div>"))
     Question('<HR>')
   if sum(result) == test_count+1 :
     try :
