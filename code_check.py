@@ -447,7 +447,7 @@ def display_HTML(question_) :
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
-  display_HTML('<div id = "result">')
+
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer
@@ -552,7 +552,7 @@ def code_check(py) :
       print(tc_red+'틀렸습니다.'+reset)
     except :
       print(tc_red+'틀렸습니다.'+reset)
-  display_HTML('</div>')
+
 #------------------------------------------------------------------------------#
 #터틀 평가 함수
 def turtle_arrange(py) :
