@@ -423,7 +423,7 @@ def error_check(test_py) :
 # def update_excel(message, py) :
 #   global my_id
 #   name_list = worksheet.col_values(1)
-#   question_list = worksheet.row_values(1)
+#   display_HTML_list = worksheet.row_values(1)
 #   if my_id in name_list :
 #     row = name_list.index(my_id)+1
 #   else :
@@ -431,10 +431,10 @@ def error_check(test_py) :
 #     worksheet.update_cell(row,1, my_id)
 
 #   # 몇 번 문제 풀었는지 확인함.
-#   if py in question_list :
-#     col = question_list.index(py) + 1
+#   if py in display_HTML_list :
+#     col = display_HTML_list.index(py) + 1
 #   else :
-#     col = len(question_list) + 1
+#     col = len(display_HTML_list) + 1
 #     worksheet.update_cell(1,col, py)
 #     worksheet.update_cell(1,col+1, '시도횟수')
 
@@ -442,18 +442,19 @@ def error_check(test_py) :
 #   worksheet.update_cell(row, col+1, trial_error_count[py])
 #------------------------------------------------------------------------------#
 #HTML 형식의 문제 불러오기기
-# def Question(question_, img="") :
-#   display(HTML(question_))
+# def display_HTML(display_HTML_, img="") :
+#   display(HTML(display_HTML_))
 #   return Image(url= img)
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
+  display(HTML('<div id = "result">'))
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer
       answer = test_set[i]['answer']
-      global question
-      question = test_set[i]['question']
+      global display_HTML
+      display_HTML = test_set[i]['display_HTML']
   trial_error_count[py] += 1
   try :
     code_arrange(py)
@@ -466,7 +467,7 @@ def code_check(py) :
       print('입력을 확인해주세요.')
       return
 
-  Question('<h2 style = "background-color:yellow">결과 확인</h2>')
+  display_HTML('<h2 style = "background-color:yellow">결과 확인</h2>')
 
   global test_count
   for test_count in range(len(answer)) :
@@ -487,14 +488,14 @@ def code_check(py) :
     #입력이 없는 문제
     if len(answer[0]['input']) == 0 :
       if result[test_count] == True :
-        Question('<li>처리한 데이터 : </li>')
+        display_HTML('<li>처리한 데이터 : </li>')
         for i in user_answer :
           if i == user_answer[-1] :
             print(bc_yellow+str(i)+reset,tc_green+'O'+reset)
           else :
             print(bc_yellow+str(i)+reset)
       else :
-        Question('<li>처리한 데이터 : </li>')
+        display_HTML('<li>처리한 데이터 : </li>')
         for i in user_answer :
           if i == user_answer[-1] :
             print(bc_yellow+str(i)+reset, tc_red+'X'+reset)
@@ -503,7 +504,7 @@ def code_check(py) :
     else :
     #입력이 있는 문제
       if result[test_count] == True :
-        Question('<li>입력한 데이터 : </li>')
+        display_HTML('<li>입력한 데이터 : </li>')
         for i in answer[test_count]['input'] :
           if len(i) == 1 :
             print(i[0])
@@ -515,14 +516,14 @@ def code_check(py) :
                 print(j, end = ' ')
 
         # for i in answer[test_count]['input'] : print(i)
-        Question('<li>처리한 데이터 : </li>')
+        display_HTML('<li>처리한 데이터 : </li>')
         for i in user_answer :
           if i == user_answer[-1] :
             print(bc_yellow+str(i)+reset, tc_green+'O'+reset)
           else :
             print(bc_yellow+str(i)+reset)
       else :
-        Question('<li>입력한 데이터 : </li>')
+        display_HTML('<li>입력한 데이터 : </li>')
         for i in answer[test_count]['input'] :
           if len(i) == 1 :
             print(i[0])
@@ -533,13 +534,13 @@ def code_check(py) :
               else :
                 print(j, end = ' ')
 
-        Question('<li>처리한 데이터 : </li>')
+        display_HTML('<li>처리한 데이터 : </li>')
         for i in user_answer :
           if i == user_answer[-1] :
             print(bc_yellow+str(i)+reset,tc_red+'X'+reset)
           else :
             print(bc_yellow+str(i)+reset)
-    Question('<HR>')
+    display_HTML('<HR>')
   if sum(result) == test_count+1 :
     try :
       # update_excel('정답입니다.', py)
@@ -552,6 +553,8 @@ def code_check(py) :
       print(tc_red+'틀렸습니다.'+reset)
     except :
       print(tc_red+'틀렸습니다.'+reset)
+
+  display(HTML('</div>'))
 
 #------------------------------------------------------------------------------#
 #터틀 평가 함수
@@ -601,15 +604,15 @@ def turtle_check(py) :
       global answer, answer_turtle
       answer = test_set[i]['answer']
       answer_turtle = answer[0]['output']
-      global question
-      question = test_set[i]['question']
+      global display_HTML
+      display_HTML = test_set[i]['display_HTML']
   try :
     turtle_arrange(py)
   except :
     print('평가 코드를 생성하세요.')
     return
   turtle_convert('turtle_output.py')
-  Question('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
+  display_HTML('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
   #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)
   error_check('turtle_output.py')
   # if compile_error == True :
@@ -697,65 +700,65 @@ def plot_feedback(A_plot_kind) :
 
   for i in set(A_plot_kind) :
     if i == 'pie' :
-      if pie_text != A_pie_text : Question('원 그래프의 <b>labels</b>가 틀렸습니다.') #print('원 그래프의 labels이 틀렸습니다.')
-      if pie_autotext != A_pie_autotext : Question('원 그래프의 <b>x값</b>이 틀렸습니다.') #print('원 그래프의 x값이 틀렸습니다.')
+      if pie_text != A_pie_text : display_HTML('원 그래프의 <b>labels</b>가 틀렸습니다.') #print('원 그래프의 labels이 틀렸습니다.')
+      if pie_autotext != A_pie_autotext : display_HTML('원 그래프의 <b>x값</b>이 틀렸습니다.') #print('원 그래프의 x값이 틀렸습니다.')
       # print('pie label :', pie_text == A_pie_text)
       # print('pie x값 :', pie_autotext == A_pie_autotext)
       # print('label : ', pie_text[i], A_pie_text[i])
       # print('x값 : ', pie_autotext[i], A_pie_autotext[i])
     elif i == 'boxplot' :
-      if not np.array_equal(box_data, A_box_data) : Question('상자 그림의 <b>x값</b>이 틀렸습니다.') #print('boxplot의 x값이 틀렸습니다.')
+      if not np.array_equal(box_data, A_box_data) : display_HTML('상자 그림의 <b>x값</b>이 틀렸습니다.') #print('boxplot의 x값이 틀렸습니다.')
       # print('box_data : ',np.array_equal(box_data, A_box_data))
 
     elif i == 'scatter' :
-      if not np.array_equal(scatter_offset,A_scatter_offset) : Question('산점도의 <b>x값, y값</b>이 틀렸습니다.') #print('scatter의 x값, y값이 틀렸습니다.')
+      if not np.array_equal(scatter_offset,A_scatter_offset) : display_HTML('산점도의 <b>x값, y값</b>이 틀렸습니다.') #print('scatter의 x값, y값이 틀렸습니다.')
       # print('scatter 데이터 :', np.array_equal(scatter_offset,A_scatter_offset))  # 해결
       # print('scatter : ', scatter_offset[i], A_scatter_offset[i])
     elif i == 'barh' :
-      if barh_data != A_barh_data : Question('막대 그래프의 <b>값</b>이 틀렸습니다.') #print('막대그래프의 x값이 틀렸습니다.')
+      if barh_data != A_barh_data : display_HTML('막대 그래프의 <b>값</b>이 틀렸습니다.') #print('막대그래프의 x값이 틀렸습니다.')
       # print('막대 그래프 데이터 :', bar_data == A_bar_data)  # 해결
       # print('bar : ', bar_data, A_bar_data)
     elif i == 'bar' :
-      if bar_data != A_bar_data : Question('막대 그래프의 <b>값</b>이 틀렸습니다.') #print('막대그래프의 x값이 틀렸습니다.')
+      if bar_data != A_bar_data : display_HTML('막대 그래프의 <b>값</b>이 틀렸습니다.') #print('막대그래프의 x값이 틀렸습니다.')
       # print('막대 그래프 데이터 :', bar_data == A_bar_data)  # 해결
       # print('bar : ', bar_data, A_bar_data)
     elif i == 'hist' :
-      if str(hist_data) != str(A_hist_data) : Question('히스토그램의 <b>x값</b>이 틀렸습니다.') #print('히스토그램의 x값이 틀렸습니다.')
+      if str(hist_data) != str(A_hist_data) : display_HTML('히스토그램의 <b>x값</b>이 틀렸습니다.') #print('히스토그램의 x값이 틀렸습니다.')
       # print('히스토그램 데이터 :', str(hist_data) == str(A_hist_data))  # 이것도 길다...
       # print('hist : ', hist_data[i], A_hist_data[i])
     elif i == 'hlines' :
-      if not np.array_equal(hlines_data, A_hlines_data) : Question('수평선의 <b>y, xmin, xmax값</b>이 틀렸습니다.') #print('수평선의 y, xmin, xmax값이 틀렸습니다.')
+      if not np.array_equal(hlines_data, A_hlines_data) : display_HTML('수평선의 <b>y, xmin, xmax값</b>이 틀렸습니다.') #print('수평선의 y, xmin, xmax값이 틀렸습니다.')
       # print('수평선 :', np.array_equal(hlines_data, A_hlines_data))
       # print('hlines : ', hlines_data[i], A_hlines_data[i])
     elif i == 'vlines' :
-      if not np.array_equal(vlines_data, A_vlines_data) : Question('수직선의 <b>x, ymin, ymax값</b>이 틀렸습니다.') #print('수직선의 x, ymin, ymax값이 틀렸습니다.')
+      if not np.array_equal(vlines_data, A_vlines_data) : display_HTML('수직선의 <b>x, ymin, ymax값</b>이 틀렸습니다.') #print('수직선의 x, ymin, ymax값이 틀렸습니다.')
       # print('수직선 :', np.array_equal(vlines_data, A_vlines_data))
       # print('vlines : ', vlines_data[i], A_vlines_data[i])
     elif i == 'plot' :
-      if not np.array_equal(plot_data, A_plot_data) : Question('plot의 <b>데이터</b>가 틀렸습니다.') #print('plot의 데이터가 틀렸습니다.')
-      if not np.array_equal(plot_mcl, A_plot_mcl) : Question('plot의 <b>마커, 색, 선 종류</b>가 틀렸습니다.') #print('plot의 마커, 색, 선종류가 틀렸습니다.')
+      if not np.array_equal(plot_data, A_plot_data) : display_HTML('plot의 <b>데이터</b>가 틀렸습니다.') #print('plot의 데이터가 틀렸습니다.')
+      if not np.array_equal(plot_mcl, A_plot_mcl) : display_HTML('plot의 <b>마커, 색, 선 종류</b>가 틀렸습니다.') #print('plot의 마커, 색, 선종류가 틀렸습니다.')
       # print('plot 데이터 :', np.array_equal(plot_data, plot_data))
       # print('plot 마커, 색, 선 :', np.array_equal(plot_mcl, A_plot_mcl))
       # print('데이터 : ', plot_data[i], A_plot_data[i])
       # print('마커 등 : ', plot_mcl[i], A_plot_mcl[i])
 
   if A_plot_title != '' :
-    if A_plot_title != plot_title : Question('<b>title</b>이 틀렸습니다.') #print('title이 틀렸습니다.')
+    if A_plot_title != plot_title : display_HTML('<b>title</b>이 틀렸습니다.') #print('title이 틀렸습니다.')
     # print('제목 :',A_plot_title == plot_title)
   if A_plot_xlabel != '' :
-    if A_plot_xlabel != plot_xlabel : Question('<b>xlabel</b>이 틀렸습니다.') #print('xlabel이 틀렸습니다.')
+    if A_plot_xlabel != plot_xlabel : display_HTML('<b>xlabel</b>이 틀렸습니다.') #print('xlabel이 틀렸습니다.')
     # print('x축 이름 :', A_plot_xlabel == plot_xlabel)
   if A_plot_ylabel != '' :
-    if A_plot_ylabel != plot_ylabel : Question('<b>ylabel</b>이 틀렸습니다.') #print('ylabel이 틀렸습니다.')
+    if A_plot_ylabel != plot_ylabel : display_HTML('<b>ylabel</b>이 틀렸습니다.') #print('ylabel이 틀렸습니다.')
     # print('y축 이름 :', A_plot_ylabel == plot_ylabel)
   if A_plot_xlim != '' :
-    if A_plot_xlim != plot_xlim : Question('<b>xlim</b>이 틀렸습니다.') #print('xlim이 틀렸습니다.')
+    if A_plot_xlim != plot_xlim : display_HTML('<b>xlim</b>이 틀렸습니다.') #print('xlim이 틀렸습니다.')
     # print('x축 범위 :', A_plot_xlim == plot_xlim)
   if A_plot_ylim != '' :
-    if A_plot_ylim != plot_ylim : Question('<b>ylim</b>이 틀렸습니다.') #print('ylim이 틀렸습니다.')
+    if A_plot_ylim != plot_ylim : display_HTML('<b>ylim</b>이 틀렸습니다.') #print('ylim이 틀렸습니다.')
     # print('y축 범위 :', A_plot_ylim == plot_ylim)
   if A_plot_legend != '' :
-    if str(A_plot_legend) != str(plot_legend) : Question('<b>legend</b>가 틀렸습니다.') #print('legend가 틀렸습니다.')
+    if str(A_plot_legend) != str(plot_legend) : display_HTML('<b>legend</b>가 틀렸습니다.') #print('legend가 틀렸습니다.')
     # print('범례 :', str(A_plot_legend) == str(plot_legend))
   # print('title :', plot_title, A_plot_title)
   # print('xlabel :', plot_xlabel, A_plot_xlabel)
@@ -903,7 +906,7 @@ def plot_check(py) :
 
   #정답 코드 가져오는것
   answer_graph = '/content/jupyter_judge/graph/answer'+py[:-3]+'.png'
-  review = 'question'+'_review'+py[:-3]
+  review = 'display_HTML'+'_review'+py[:-3]
   global original
   trial_error_count[py] += 1
   for i in range(len(test_set)) :
@@ -911,8 +914,8 @@ def plot_check(py) :
       global answer, answer_plot
       answer = test_set[i]['answer']
       answer_plot = answer[0]['output']
-      global question
-      question = test_set[i]['question']
+      global display_HTML
+      display_HTML = test_set[i]['display_HTML']
   try :
     plot_arrange(py)
   except :
@@ -999,7 +1002,7 @@ def plot_check(py) :
 
 
 
-  Question('''
+  display_HTML('''
   <h3 style = "float:left;width:50%" >왼쪽 그래프는 여러분이 작성한 그래프입니다. </h3>
   <h3 style = "float:right;width:50%" >오른쪽 그래프는 예시 답안입니다. </h3>
   ''')
@@ -1098,19 +1101,19 @@ def plot_check(py) :
       compile_error = True
       break
 
-  Question(eval(review))
-  Question('<HR>')
+  display_HTML(eval(review))
+  display_HTML('<HR>')
   try :
     img_submit = np.asarray(Image.open("/content/submit.png"))
     img_answer = np.asarray(Image.open(answer_graph))
 
     if np.array_equal(img_submit, img_answer) :
     # print(tc_green+'정답입니다.'+reset)
-      Question('<h3 style = "color:green; ">정답입니다.</h2>')
+      display_HTML('<h3 style = "color:green; ">정답입니다.</h2>')
       input('그래프를 보고 알 수 있는 내용을 적어봅시다.')
     else :
      # print(tc_red+'오답입니다.'+reset)
-      Question('<h3 style = "color:red; ">오답입니다.</h2>')
+      display_HTML('<h3 style = "color:red; ">오답입니다.</h2>')
       plot_feedback(A_plot_kind)
 
   except : 
@@ -1196,8 +1199,8 @@ def table_check(py) :
       global answer, answer_table
       answer = test_set[i]['answer']
       answer_table = answer[0]['output']
-      global question
-      question = test_set[i]['question']
+      global display_HTML
+      display_HTML = test_set[i]['display_HTML']
   try :
     table_arrange(py)
   except :
@@ -1210,7 +1213,7 @@ def table_check(py) :
   if type(df) != type(df_answer) :
     print('형식이 다릅니다.')
   elif type(df) == pd.core.frame.DataFrame and type(df_answer) == pd.core.frame.DataFrame :
-    Question('<h2 style = "background-color:yellow">결과 확인</h2>')
+    display_HTML('<h2 style = "background-color:yellow">결과 확인</h2>')
   # 결과 자가 평가
     df_html = df.to_html(max_cols = 5, max_rows =5)
     df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5)
@@ -1226,8 +1229,8 @@ def table_check(py) :
         </div>
     </div>
     '''
-    Question(output_html)
-    Question('<HR>')
+    display_HTML(output_html)
+    display_HTML('<HR>')
 # 자동 평가
     #NAN이 있어도 평가하기 위해 추가한 코드
     if df_answer.isna().to_numpy().sum() : 
@@ -1275,8 +1278,8 @@ def table_check(py) :
         </div>
     </div>
     '''
-    Question(output_html)
-    Question('<HR>')
+    display_HTML(output_html)
+    display_HTML('<HR>')
     print(tc_green+'정답입니다.'+reset)
 
     # if compile_error == True :
@@ -1297,8 +1300,8 @@ def table_check(py) :
         </div>
     </div>
     '''
-    Question(output_html)
-    Question('<HR>')
+    display_HTML(output_html)
+    display_HTML('<HR>')
     print(tc_red+'틀렸습니다.'+reset)
     
     # if compile_error == True :
@@ -1325,21 +1328,21 @@ def table_check(py) :
 
 def table_feedback(df, df_answer) :
   if df.shape != df_answer.shape :
-    Question('shape가 다릅니다.')
+    display_HTML('shape가 다릅니다.')
   elif (df.columns != df_answer.columns).sum() != 0 :
-    Question('columns가 다릅니다.')
+    display_HTML('columns가 다릅니다.')
   elif (df.index != df_answer.index).sum() != 0 :
-    Question('index가 다릅니다.')
+    display_HTML('index가 다릅니다.')
   else :
-    Question('데이터 프레임 속 값이 다릅니다.')
+    display_HTML('데이터 프레임 속 값이 다릅니다.')
 
 
 
 def table_series_feedback(df, df_answer) :
   if df.shape != df_answer.shape :
-    Question('shape가 다릅니다.')
+    display_HTML('shape가 다릅니다.')
   elif (df.index != df_answer.index).sum() != 0 :
-    Question('index가 다릅니다.')
+    display_HTML('index가 다릅니다.')
   else :
-    Question('데이터 프레임 속 값이 다릅니다.')
+    display_HTML('데이터 프레임 속 값이 다릅니다.')
 
