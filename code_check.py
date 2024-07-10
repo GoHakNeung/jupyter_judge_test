@@ -423,7 +423,7 @@ def error_check(test_py) :
 # def update_excel(message, py) :
 #   global my_id
 #   name_list = worksheet.col_values(1)
-#   display_HTML_list = worksheet.row_values(1)
+#   question_list = worksheet.row_values(1)
 #   if my_id in name_list :
 #     row = name_list.index(my_id)+1
 #   else :
@@ -431,10 +431,10 @@ def error_check(test_py) :
 #     worksheet.update_cell(row,1, my_id)
 
 #   # 몇 번 문제 풀었는지 확인함.
-#   if py in display_HTML_list :
-#     col = display_HTML_list.index(py) + 1
+#   if py in question_list :
+#     col = question_list.index(py) + 1
 #   else :
-#     col = len(display_HTML_list) + 1
+#     col = len(question_list) + 1
 #     worksheet.update_cell(1,col, py)
 #     worksheet.update_cell(1,col+1, '시도횟수')
 
@@ -442,19 +442,19 @@ def error_check(test_py) :
 #   worksheet.update_cell(row, col+1, trial_error_count[py])
 #------------------------------------------------------------------------------#
 #HTML 형식의 문제 불러오기기
-# def display_HTML(display_HTML_, img="") :
-#   display(HTML(display_HTML_))
-#   return Image(url= img)
+def display_HTML(question_, img="") :
+  display(HTML(question_))
+  return Image(url= img)
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
-  display(HTML('<div id = "result">'))
+  display_HTML('<div id = "result">')
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer
       answer = test_set[i]['answer']
-      global display_HTML
-      display_HTML = test_set[i]['display_HTML']
+      global question
+      question = test_set[i]['question']
   trial_error_count[py] += 1
   try :
     code_arrange(py)
@@ -553,9 +553,7 @@ def code_check(py) :
       print(tc_red+'틀렸습니다.'+reset)
     except :
       print(tc_red+'틀렸습니다.'+reset)
-
-  display(HTML('</div>'))
-
+  display_HTML('</div>'))
 #------------------------------------------------------------------------------#
 #터틀 평가 함수
 def turtle_arrange(py) :
@@ -604,8 +602,8 @@ def turtle_check(py) :
       global answer, answer_turtle
       answer = test_set[i]['answer']
       answer_turtle = answer[0]['output']
-      global display_HTML
-      display_HTML = test_set[i]['display_HTML']
+      global question
+      question = test_set[i]['question']
   try :
     turtle_arrange(py)
   except :
@@ -906,7 +904,7 @@ def plot_check(py) :
 
   #정답 코드 가져오는것
   answer_graph = '/content/jupyter_judge/graph/answer'+py[:-3]+'.png'
-  review = 'display_HTML'+'_review'+py[:-3]
+  review = 'question'+'_review'+py[:-3]
   global original
   trial_error_count[py] += 1
   for i in range(len(test_set)) :
@@ -914,8 +912,8 @@ def plot_check(py) :
       global answer, answer_plot
       answer = test_set[i]['answer']
       answer_plot = answer[0]['output']
-      global display_HTML
-      display_HTML = test_set[i]['display_HTML']
+      global question
+      question = test_set[i]['question']
   try :
     plot_arrange(py)
   except :
@@ -1199,8 +1197,8 @@ def table_check(py) :
       global answer, answer_table
       answer = test_set[i]['answer']
       answer_table = answer[0]['output']
-      global display_HTML
-      display_HTML = test_set[i]['display_HTML']
+      global question
+      question = test_set[i]['question']
   try :
     table_arrange(py)
   except :
@@ -1345,4 +1343,3 @@ def table_series_feedback(df, df_answer) :
     display_HTML('index가 다릅니다.')
   else :
     display_HTML('데이터 프레임 속 값이 다릅니다.')
-
