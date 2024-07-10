@@ -553,7 +553,7 @@ def code_check(py) :
       print(tc_red+'틀렸습니다.'+reset)
     except :
       print(tc_red+'틀렸습니다.'+reset)
-  display_HTML('</div>'))
+  display_HTML('</div>')
 #------------------------------------------------------------------------------#
 #터틀 평가 함수
 def turtle_arrange(py) :
