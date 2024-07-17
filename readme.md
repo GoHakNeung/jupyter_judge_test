@@ -9,10 +9,18 @@
 **코드 평가**는 **code cell**에서 평가 함수를 실행하며, **Code cell output**에서 평가 결과를 확인할 수 있습니다.  
 상호작용형 프로그램 자동 평가 시스템은 중앙 서버에서 평가하는 것이 아닌 **주피터 노트북(Kernel)**에서 평가합니다.  
 
+___
 
 ### 초기 설정
+**Code cell**에서 아래 코드를 실행하면 초기 설정이 완료됩니다.
+``` python 
+!git clone https://github.com/GoHakNeung/jupyter_judge.git
+%run /content/jupyter_judge/code_check.py 
+```
 
 ### 문제 제시
+문제 출력 함수는 `Question(문제 변수)`로 정의했습니다.  
+문제 변수는 `question_0000`이며 ![문항 확인](https://github.com/GoHakNeung/jupyter_judge/tree/main/%EB%AC%B8%ED%95%AD)에서 확인할 수 있습니다.
 
 ### 코드 작성
 
