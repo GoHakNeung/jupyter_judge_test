@@ -20,8 +20,8 @@ ___
 
 ### 문제 제시
 문제 출력 함수는 `Question(문제 변수)`로 정의했습니다.  
-문제 변수는 `question_0000`이며 ![문항 확인](https://github.com/GoHakNeung/jupyter_judge/tree/main/%EB%AC%B8%ED%95%AD)에서 확인할 수 있습니다.
-
+문제 변수는 `question_0000`이며 [문항 확인](https://github.com/GoHakNeung/jupyter_judge/tree/main/%EB%AC%B8%ED%95%AD)에서 확인할 수 있습니다.
+이미지 넣기
 ### 코드 작성
 
 ### 평가
