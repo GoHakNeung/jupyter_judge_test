@@ -1,6 +1,7 @@
 from IPython.display import display, HTML, Javascript
 import pandas as pd
 import numpy as np
+from jupyter_judge.code_check import *
 from google.colab import output
 
 def Question(question_file, _type = 'code'):
