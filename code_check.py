@@ -8,6 +8,7 @@ from IPython.core.display import display, HTML
 from jupyter_judge.problem import *
 from jupyter_judge.ColabTurtleClass import *
 from PIL import Image
+from google.colab import _frontend
 
 import warnings
 warnings.filterwarnings(action='ignore')
@@ -49,6 +50,36 @@ bc_yellow = '\033[48;2;255;255;0m'
 bc_green = '\033[48;2;0;255;0m'
 bc_red = '\033[48;2;255;0;m'
 bc_black = '\033[40m'
+#------------------------------------------------------------------------------#
+# JavaScript를 통해 Python 함수를 호출하는 HTML/JavaScript 코드 생성
+def create_button_with_scratch_cell():
+    html_script = """
+    <button onclick="createScratchCell()">문제 추천</button>
+    <script>
+    function createScratchCell() {
+        // Python 함수를 호출하여 스크래치 코드 셀을 생성
+        google.colab.kernel.invokeFunction('notebook.create_scratch_cell', [], {});
+    }
+    </script>
+    """
+    display_HTML(html_script)
+
+    # Python 측에서 호출할 함수를 등록
+    def create_scratch_cell():
+        question_file1 = 'question_6301'
+        _frontend.create_scratch_cell(f'#이 코드를 실행해주세요.\nQuestion({question_file1})')
+    output.register_callback('notebook.create_scratch_cell', create_scratch_cell)
+
+
+
+
+
+
+
+
+
+
+
 #------------------------------------------------------------------------------#
 # 코드를 input/output 리스트에 넣기
 def code_arrange(py_name) :
@@ -499,6 +530,8 @@ def code_check(py) :
       print(tc_red+'틀렸습니다.'+reset)
     except :
       print(tc_red+'틀렸습니다.'+reset)
+
+  create_button_with_scratch_cell()
 
 #------------------------------------------------------------------------------#
 #터틀 평가 함수
