@@ -1,9 +1,72 @@
-from IPython.display import display, HTML
+from IPython.display import display, HTML, Javascript
 import pandas as pd
 import numpy as np
 
-def Question(question_) : 
-  display(HTML(question_))
+def Question(question_file, _type = 'code'):
+    # 문제 검색 및 파일 설정
+    search_question = question_file
+    matched_dicts = [d for d in test_set if d['question'] == search_question]
+    file_name = matched_dicts[0]['test_file']
+
+    # HTML과 JavaScript 코드를 설정
+    code_editor = setup_html_js()
+    display(HTML(question_file + code_editor))
+
+    # 콜백 함수 등록
+    def save_text(text):
+        file_path = f'/content/{file_name}'
+        with open(file_path, 'w') as file:
+            file.write(text)
+        if _type == 'code' : 
+          code_check(file_name)  # 결과 확인 함수
+        elif _type =='turtle' : 
+          turtle_check(file_name)
+        elif _type == 'plot' : 
+          plot_check(file_name)
+        elif _type == 'pandas' : 
+          table_check(file_name)
+
+    output.register_callback('notebook.save_text', save_text)
+
+def setup_html_js():
+    return """
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <style>.CodeMirror {height: 200px; border: 1px solid #ccc; border-radius: 5px;}</style>
+    <div style="clear: both"></div>
+    <hr>
+    <h2 style="background-color:orange;">코드 작성</h2>
+    <div><textarea id="code-editor"></textarea></div>
+    <button id="submitBtn">제출</button>
+    <button onclick="deleteAllExceptSpecified()">초기화</button>
+    <hr>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+            lineNumbers: true, mode: 'python', theme: 'default', viewportMargin: Infinity, inputStyle: 'textarea'
+        });
+
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const text = editor.getValue();
+            google.colab.kernel.invokeFunction('notebook.save_text', [text], {});
+        });
+
+        function deleteAllExceptSpecified() {
+            var allDivs = document.querySelectorAll('div');
+            var allClasses = [];
+            allDivs.forEach(function(div) {
+                if (div.className.includes('output-id')) {
+                    allClasses.push(div.className);
+                }
+            });
+            allClasses = allClasses.slice(1).map(className => className.replace(' ', '.'));
+            allClasses.forEach(className => {
+                document.querySelectorAll('.' + className).forEach(element => element.remove());
+            });
+        };
+    </script>
+    """
+
 
 question_1101 = '''<h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>5.24에서 자연수 부분을 출력해봅시다.</p>
