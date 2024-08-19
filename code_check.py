@@ -12,17 +12,6 @@ from PIL import Image
 import warnings
 warnings.filterwarnings(action='ignore')
 
-#------------------------------------------------------------------------------#
-# #구글 스프레드시트와 연동하기
-# # 구글 스프레드시트를 더이상 사용할 수 없음.
-# scope = ['https://spreadsheets.google.com/feeds']
-# # 구글 클라우드 플랫폼에서 json 파일 인증 받아야 함.
-# json_file_name = '/content/jupyter_judge/judge-dashboard-5145c009c952.json'
-# credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
-# gc = gspread.authorize(credentials)
-# # 개인적으로 사용할 스프레드시트 url
-# spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Y9eq9eP1XV9qepsgFw-NdFk0Fdw7Ut6m3LzHEZxKrMg/edit#gid=0'
-#------------------------------------------------------------------------------#
 # matplotlib에서 한글을 사용하기 위한 코드
 # 나눔바른고딕을 git에 저장시켜서 다운로드하기. 그래야 나눔 폰트 다운로드에 시간 안씀.
 # 폰트 크기 수정하기
@@ -37,14 +26,12 @@ mpl.rc('font', size = 14)
 # addfont reference
 # https://github.com/matplotlib/matplotlib/blob/v3.7.1/lib/matplotlib/font_manager.py#L1025-L1046
 #------------------------------------------------------------------------------#
+
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
-my_id = input('이름을 입력해주세요.')
-print('지금부터 공부를 시작합니다.')
+# my_id = input('이름을 입력해주세요.')
+# print('지금부터 공부를 시작합니다.')
 #------------------------------------------------------------------------------#
-# 문서 및 시트 불러오기
-# doc = gc.open_by_url(spreadsheet_url)
-# worksheet = doc.worksheet('시트1')
 
 #문제에 따른 시도한 횟수를 dictionary로 만듬
 trial_error_count = {}
@@ -87,10 +74,6 @@ def code_arrange(py_name) :
     if code[i].find('\n') >= 0 :
       code[i] = code[i][:-1]
     code[i] = code[i].rstrip()
-
-  # print(f'code 리스트 : {code}, code 개수 : {len(code)}')
-  # print(f'code_input 리스트 : {code_input}')
-  # print(f'code_input_count 리스트 : {code_input_count}')
 
 #------------------------------------------------------------------------------#
 # 리스트에 있는 코드를 평가 코드로 수정하기
@@ -333,18 +316,7 @@ def error_check(test_py) :
     sys.stdout = original
     value_error(test_py)
     compile_error = True
-    print('오류메세지 : ',bc_black+str(valueerror)+reset)    
-
-    #에러 메세지 txt 파일로 저장
-    #여기서 오류가 난 코드와 원인 출력
-    # sys.stdout = original
-    # f = open('valueerror.txt', 'w')
-    # original = sys.stdout
-    # sys.stdout = f
-    # print(trace)
-    # f.close()
-    # sys.stdout = original
-
+    print('오류메세지 : ',bc_black+str(valueerror)+reset)   
     return
   except IndexError :
     sys.stdout = original
@@ -386,9 +358,6 @@ def error_check(test_py) :
     f.close()
     sys.stdout = original
 
-    #에러 메세지 txt 파일로 저장
-    #여기서 오류가 난 코드와 원인 출력
-
     syntax_error(test_py)
 
 
@@ -418,28 +387,6 @@ def error_check(test_py) :
     compile_error = True
     return
 
-#------------------------------------------------------------------------------#
-# 코드 결과를 구글 스프레드 시트에 보내기
-# def update_excel(message, py) :
-#   global my_id
-#   name_list = worksheet.col_values(1)
-#   question_list = worksheet.row_values(1)
-#   if my_id in name_list :
-#     row = name_list.index(my_id)+1
-#   else :
-#     row = len(name_list)+1
-#     worksheet.update_cell(row,1, my_id)
-
-#   # 몇 번 문제 풀었는지 확인함.
-#   if py in question_list :
-#     col = question_list.index(py) + 1
-#   else :
-#     col = len(question_list) + 1
-#     worksheet.update_cell(1,col, py)
-#     worksheet.update_cell(1,col+1, '시도횟수')
-
-#   worksheet.update_cell(row, col, message)
-#   worksheet.update_cell(row, col+1, trial_error_count[py])
 #------------------------------------------------------------------------------#
 #HTML 형식의 문제 불러오기기
 def display_HTML(question_) :
@@ -612,10 +559,7 @@ def turtle_check(py) :
   display_HTML('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
   #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)
   error_check('turtle_output.py')
-  # if compile_error == True :
-  #   # update_excel('오류입니다.',py)
-  # else :
-  #   # update_excel('turtle_실행', py)
+  
 #------------------------------------------------------------------------------#
 from google.colab import output
 # 그래프에서 평가 정보를 얻는 것은 info, 평가하는 그래프 종류는 pyplot, 정답과 관련된 것은 A_ 접두사를 붙임.
@@ -1178,7 +1122,30 @@ def table_convert(output_table) :
   sys.stdout = original
   f.close()
 
-# 평가 함수
+table_count = 0
+def table_compare(x, df_answer, color='#fffacd') :
+  global table_count
+  # print(count)
+  if type(df_answer) == pd.core.series.Series : 
+    df_answer = df_answer.to_frame()
+  row = df_answer.shape[0]
+  col = df_answer.shape[1]
+  new_row = table_count % row
+  new_col = table_count // row
+  table_count += 1
+  # print(f'new_row : {new_row}')
+  # print(f'new_col : {new_col}')
+  # print(f'x : {x}')
+  # print(f'df_answer.iloc[new_row, new_col] : {df_answer.iloc[new_row, new_col]}')
+  if x != df_answer.iloc[new_row, new_col]:
+    color = f'background-color:{color}'
+    return color
+  else :
+    return ''
+#df.style.applymap(table_compare) <- 이런 형태로 출력함.
+
+
+
 def table_check(py) :
   global code, raw_code
   global original
@@ -1208,26 +1175,81 @@ def table_check(py) :
 
 
   if type(df) != type(df_answer) :
-    print('형식이 다릅니다.')
+    print('형태가 다릅니다.')
   elif type(df) == pd.core.frame.DataFrame and type(df_answer) == pd.core.frame.DataFrame :
-    display_HTML('<h2 style = "background-color:yellow">결과 확인</h2>')
+    Question('<h2 style = "background-color:yellow">결과 확인</h2>')
   # 결과 자가 평가
-    df_html = df.to_html(max_cols = 5, max_rows =5)
-    df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5)
-    output_html = f'''
-    <div style="display: flex; flex-direction: row;">
-        <div style="float:left;width:50%">
-        <h3>왼쪽 표는 여러분이 작성한 표입니다.</h3>
-        <p >{df_html}</p>
-        </div>
-        <div style="float:right;width:50%">
-        <h3>오른쪽 표는 예시 답안입니다.</h3>
-        <p >{df_answer_html}</p>
-        </div>
-    </div>
-    '''
-    display_HTML(output_html)
-    display_HTML('<HR>')
+    df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
+    df_html = df.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
+    
+    if df.shape == df_answer.shape : 
+      global table_count
+      table_count = 0     
+      df_answer_html = df_answer.style.format(precision = 2). to_html(max_rows = 5, max_columns = 5).replace('<table', '<table class = "dataframe"')
+      df_html_color = df.style.format(precision=2).applymap(table_compare, df_answer = df_answer).to_html(max_rows = 5, max_columns = 5).replace('<table', '<table class = "dataframe"')
+      output_html_color = f'''
+      <div style="display: flex; flex-direction: row;">
+          <div style="float:left;width:50%">
+          <h3>왼쪽은 여러분이 작성한 Dateframe입니다.</h3>
+          <p >{df_html_color}</p>
+          </div>
+          <div style="float:right;width:50%">
+          <h3>오른쪽은 여러분이 작성한 Dataframe입니다.</h3>
+          <p >{df_answer_html}</p>
+          </div>
+      </div>
+      '''      
+
+      Qu답'+reset)
+    else :
+      print(tc_red+'오답'+reset)
+      table_feedback(df, df_answer)
+###
+  # elif type(df) == pd.core.series.Series and type(df_answer) == pd.core.series.Series :
+
+###
+  elif type(df) == pd.core.series.Series and type(df_answer) == pd.core.series.Series :
+    Question('<h2 style = "background-color:yellow">결과 확인</h2>')
+  # 결과 자가 평가
+    # df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
+    # df_html = df.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
+    
+    if df.shape == df_answer.shape : 
+      # global table_count
+      table_count = 0     
+      df_answer_html = df_answer.to_frame().style.format(precision = 2).to_html(max_rows = 5, max_columns = 5).replace('<table', '<table class = "dataframe"')
+      df_html_color = df.to_frame().style.format(precision=2).applymap(table_compare, df_answer = df_answer).to_html(max_rows = 5, max_columns = 5).replace('<table', '<table class = "dataframe"')
+      output_html_color = f'''
+      <div style="display: flex; flex-direction: row;">
+          <div style="float:left;width:50%">
+          <h3>왼쪽은 여러분이 작성한 Dataframe입니다.</h3>
+          <p >{df_html_color}</p>
+          </div>
+          <div style="float:right;width:50%">
+          <h3>오른쪽은 예시 답안으로 작성한 Dataframe입니다.</h3>
+          <p >{df_answer_html}</p>
+          </div>
+      </div>
+      '''      
+
+      Question(output_html_color)
+    else : 
+      df_html = df.to_frame().to_html(max_cols =5, max_rows = 5)
+      df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5)
+      output_html = f'''
+      <div style="display: flex; flex-direction: row;">
+          <div style="float:left;width:50%">
+          <h3>왼쪽은 여러분이 작성한 Series입니다.</h3>
+          <p >{df_html}</p>
+          </div>
+          <div style="float:right;width:50%">
+          <h3>오른쪽은 예시 답안으로 작성한 Series입니다.</h3>
+          <p >{df_answer_html}</p>
+          </div>
+      </div>
+      '''      
+      Question(output_html)
+    Question('<HR>')
 # 자동 평가
     #NAN이 있어도 평가하기 위해 추가한 코드
     if df_answer.isna().to_numpy().sum() : 
@@ -1236,32 +1258,15 @@ def table_check(py) :
       df_answer.fillna(value = random_number, inplace = True)
     #NAN이 있어도 평가하기 위해 추가한 코드
     
-    df_numpy = df.to_numpy()
-    df_answer_numpy = df_answer.to_numpy()
-    if np.array_equal(df_numpy, df_answer_numpy) and np.array_equal(df.columns, df_answer.columns) and np.array_equal(df.index, df_answer.index) :
-      print(tc_green+'정답입니다.'+reset)
-    else :
-      print(tc_red+'틀렸습니다.'+reset)
-      table_feedback(df, df_answer)
-
-    # if compile_error == True :
-    #   update_excel('틀렸습니다.',py)
-    # else :
-    #   update_excel('정답입니다.', py)
-
-  elif type(df) == pd.core.series.Series and type(df_answer) == pd.core.series.Series :
+   
     df_numpy = df.to_numpy()
     df_answer_numpy = df_answer.to_numpy()
     if np.array_equal(df_numpy, df_answer_numpy) and np.array_equal(df.index, df_answer.index) :
-      print(tc_green+'정답입니다.'+reset)
+      print(tc_green+'정답'+reset)
     else :
-      print(tc_red+'틀렸습니다.'+reset)
+      print(tc_red+'오답'+reset)
       table_series_feedback(df, df_answer)
 
-    # if compile_error == True :
-    #   update_excel('틀렸습니다.',py)
-    # else :
-    #   update_excel('정답입니다.', py)
   elif df == df_answer and df !='' :
     output_html = f'''
     <div style="display: flex; flex-direction: row;">
@@ -1275,15 +1280,11 @@ def table_check(py) :
         </div>
     </div>
     '''
-    display_HTML(output_html)
-    display_HTML('<HR>')
-    print(tc_green+'정답입니다.'+reset)
+    Question(output_html)
+    Question('<HR>')
+    print(tc_green+'Right answer.'+reset)
 
-    # if compile_error == True :
-    #   update_excel('틀렸습니다.',py)
-    # else :
-    #   update_excel('정답입니다.', py) 
-      
+     
   elif df != df_answer and df != '' :
     output_html = f'''
     <div style="display: flex; flex-direction: row;">
@@ -1297,14 +1298,9 @@ def table_check(py) :
         </div>
     </div>
     '''
-    display_HTML(output_html)
-    display_HTML('<HR>')
-    print(tc_red+'틀렸습니다.'+reset)
-    
-    # if compile_error == True :
-    #   update_excel('틀렸습니다.',py)
-    # else :
-    #   update_excel('정답입니다.', py) 
+    Question(output_html)
+    Question('<HR>')
+    print(tc_red+'Wrong answer.'+reset)
 
   elif df == df_answer and df == '' :
     return
@@ -1325,20 +1321,20 @@ def table_check(py) :
 
 def table_feedback(df, df_answer) :
   if df.shape != df_answer.shape :
-    display_HTML('shape가 다릅니다.')
+    Question('Shape가 다릅니다.')
   elif (df.columns != df_answer.columns).sum() != 0 :
-    display_HTML('columns가 다릅니다.')
+    Question('Columns이 다릅니다.')
   elif (df.index != df_answer.index).sum() != 0 :
-    display_HTML('index가 다릅니다.')
+    Question('Index가 다릅니다.')
   else :
-    display_HTML('데이터 프레임 속 값이 다릅니다.')
+    Question('Dataframe 속 값이 다릅니다.')
 
 
 
 def table_series_feedback(df, df_answer) :
   if df.shape != df_answer.shape :
-    display_HTML('shape가 다릅니다.')
+    Question('Shape가 다릅니다.')
   elif (df.index != df_answer.index).sum() != 0 :
-    display_HTML('index가 다릅니다.')
+    Question('Index가 다릅니다.')
   else :
-    display_HTML('데이터 프레임 속 값이 다릅니다.')
+    Question('Dataframe 속 값이 다릅니다.')
