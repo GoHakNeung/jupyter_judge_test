@@ -1,6 +1,7 @@
 from IPython.display import display, HTML, Javascript
 import pandas as pd
 import numpy as np
+from google.colab import output
 
 def Question(question_file, _type = 'code'):
     # 문제 검색 및 파일 설정
