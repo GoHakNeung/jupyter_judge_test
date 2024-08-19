@@ -4834,7 +4834,7 @@ table2_8618 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul_7to12.csv"
 table1_html_8618 = table1_8618.to_html(max_rows = 5, max_cols = 10)
 table2_html_8618 = table2_8618.to_html(max_rows = 5, max_cols = 10)
 
-pre_table_8618 = pd.concat([table1_8618, table2_8618])
+pre_table_8618 = pd.concat([table1_8618, table2_8618], ignore_index = Ture)
 pre_table_html_8618 = pre_table_8618.to_html(max_rows = 10, max_cols = 10)
 question_8618 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
 <h3 = "white-space: pre-wrap;">data1=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul_1to6.csv")</h3>
