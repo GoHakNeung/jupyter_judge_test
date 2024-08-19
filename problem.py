@@ -4397,100 +4397,231 @@ answer_8583 = [
                                   "A_ylabel = plt.ylabel('노령인구 백분율(%)')", 
                                   "plt.show()"                                   ]}
 ]
-### 판다스 평가 예시 문제1 - 데이터 프레임 추가하기 ###
 
-fruits = pd.DataFrame({'Apples' : [30], 'Bananas' : [21]})
-fruits_html = fruits.to_html(max_rows = 5, max_cols = 5)
-question_8601 = f'''
-Apples 열에는 30, Bananas 열에는 21 값이 있는 데이터 프레임을 df에 만들어봅시다.
-<p>예시 </p>
-{fruits_html}
+
+### DPAA 문제
+##8601 데이터 프레임 만들기
+table_8601 = pd.DataFrame({'Apples' : [30, 34, 21,22,54, 23, 43], 'Bananas' : [21, 12, 43, 23, 33, 56,23]})
+table_html_8601 = table_8601.to_html(max_rows = 10, max_cols = 10)
+question_8601 =f''' <h2 style = "background-color:yellow; ">Description</h2>
+<p>Let's create a data frame for the df variable by entering </p>
+<p>30, 34, 21, 22, 54, 23, 43 in the Apples column and 21, 12, 43, 23, 33, 56, 23 in the Bananas column.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> example </h2>
+<p>{table_html_8601}<p>
+</div>
 '''
 #정답데이터
 answer_8601 = [
-    {'input' : [[10]], 'output' : ["df_answer = pd.DataFrame({",
-                                   "    'Apples' : [30],",
-                                   "    'Bananas' : [21]",
-                                   "})"]}
+    {'input' : [[10]], 'output' : ["df_answer = pd.DataFrame({'Apples' : [30, 34, 21,22,54, 23, 43], 'Bananas' : [21, 12, 43, 23, 33, 56,23]})"
+                                  ]}
 ]
 #이미지
 img_8601 =''
 
-### 판다스 평가 예시 문제2 - 외부데이터 데이터프레임으로 불러오기 ###
-
-readcsv = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')
-readcsv_html = readcsv.to_html(max_rows = 5, max_cols = 5)
-question_8602 = f'''
-read_csv로 데이터프레임을 불러옵시다.
-<p>예시 </p>
-{readcsv_html}
+##8602 외부데이터 불러와서 데이터 프레임 만들기
+table_8602 = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')
+table_html_8602 = table_8602.to_html(max_rows = 10, max_cols = 10)
+question_8602 =f''' <h2 style = "background-color:yellow; ">Description</h2>
+<p>Let's import the checkup.csv file in the csv_file folder into a data frame in the df variable.</p>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/checkup.csv")</h3>
+<HR>
+<div style = "float:left;width:50%">
+<h2> example </h2>
+<p>{table_html_8602}<p>
+</div>
 '''
 #정답데이터
 answer_8602 = [
-    {'input' : [[10]], 'output' : ["df_answer = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')"]}
+    {'input' : [[10]], 'output' : ["df_answer = pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')"]}
 ]
 #이미지
 img_8602 =''
-#메타데이터
 
-### 판다스 평가 예시 문제3 - groupby ###
-
-readcsv = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')
-readcsv = readcsv.groupby('metropolitan_city').sum()
-readcsv_html = readcsv.to_html(max_rows = 5, max_cols = 5)
-
-question_8603 = f'''
-metropolitan_city로 groupby하여 합계를 구해 봅시다.
-<p>예시 </p>
-{readcsv_html}
+##8603 문제
+table_8603 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")
+table_html_8603 = table_8603.to_html(max_rows = 10, max_cols = 10)
+pre_table_8603 = table_8603.head()
+pre_table_html_8603 = pre_table_8603.to_html(max_rows = 10, max_cols = 10)
+question_8603 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
+<p>Let's just import the head() value of the bike_seoul.csv in the csv_file folder into the df variable.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8603}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8603}
+</div>
 '''
-#정답데이터
 answer_8603 = [
-    {'input' : [[10]], 'output' : ["df_answer = pd.read_csv('/content/jupyter_judge/csv_file/car_accident.csv')", 
-                                  "df_answer = df_answer.groupby('metropolitan_city').sum()"]}
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')",
+                              "df_answer = data.head()"]}
 ]
-#이미지
 img_8603 =''
 
-### 판다스 평가 예시 문제4 - 숫자 가져오기 ###
-
-readcsv = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')
-readcsv_html = readcsv.to_html(max_rows = 5, max_cols = 5)
-question_8604 = f'''
-year 열에서 최댓값을 df에 저장합시다. 
-<p>예시 </p>
-{readcsv_html}
+##8604문제
+table_8604 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")
+table_html_8604 = table_8604.to_html(max_rows = 10, max_cols = 10)
+pre_table_8604 = table_8604.tail()
+pre_table_html_8604 = pre_table_8604.to_html(max_rows = 10, max_cols = 10)
+question_8604 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
+<p>Let's just import the tail() value of the bike_seoul.csv in the csv_file folder in the df variable.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8604}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8604}
+</div>
 '''
-#정답데이터
+#모범답안
 answer_8604 = [
-    {'input' : [[10]], 'output' : ["df_answer = pd.read_csv('/content/jupyter_judge/csv_file/babybreak.csv')", 
-                                  "df_answer = df_answer.year.max()"]}
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')",
+                              "df_answer = data.tail()"]}
 ]
-#이미지
+#이미지 힌트
 img_8604 =''
 
-# 결측치 처리
-table_8610 = pd.read_csv("/content/jupyter_judge/csv_file/missing_fill.csv")
-table_html_8610 = table_8610.to_html(max_rows = 10, max_cols = 10)
-pre_table_8610 = table_8610.fillna(value = table_8610['D'].mean())
-pre_table_html_8610 = pre_table_8610.to_html(max_rows = 10, max_cols = 10)
-# question_8610 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
-# <h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/missing_fill.csv")</h3>
-# <p>위 데이터에서 결측치를 D열의 평균으로 채워 넣어 df에 저장해봅시다.</p>
-# <HR>
-# <div style = "float:left;width:50%">
-# <h2> 전처리 전 데이터 </h2>
-# <p>{table_html_8610}<p>
-# </div>
-# <div style = "float:right;width:50%">
-# <h2> 전처리 후 데이터 </h2>
-# {pre_table_html_8610}
-# </div>
-# '''
+##8605 문제
+table_8605 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")
+table_html_8605 = table_8605.to_html(max_rows = 10, max_cols = 10)
+pre_table_8605 = table_8605.describe()
+pre_table_html_8605 = pre_table_8605.to_html(max_rows = 10, max_cols = 10)
+question_8605 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
+<p>Let's just import the describ() value of the bike_seoul.csv in the csv_file folder in the df variable.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8605}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8605}
+</div>
+'''
+#모범답안
+answer_8605 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')",
+                              "df_answer = data.describe()"]}
+]
+img_8605 =''
 
+##8606 문제
+table_8606 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")
+table_html_8606 = table_8606.to_html(max_rows = 10, max_cols = 10)
+pre_table_8606 = table_8606.sort_values(by = 'rent', ascending = False)
+pre_table_html_8606 = pre_table_8606.to_html(max_rows = 10, max_cols = 10)
+question_8606 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
+<p>Let's import bike_seoul.csv in the csv_file folder into df by arranging the rent columns in descending order.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8606}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8606}
+</div>
+'''
+#모범답안
+answer_8606 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')",
+                              "df_answer = data.sort_values(by = 'rent', ascending = False)"]}
+]
+img_8606 =''
+
+##8607 문제
+table_8607 = pd.read_csv("/content/jupyter_judge/csv_file/total_checkup.csv")
+table_html_8607 = table_8607.to_html(max_rows = 10, max_cols = 10)
+pre_table_8607 = table_8607.groupby('학년')[['키', '몸무게']].min()
+pre_table_html_8607 = pre_table_8607.to_html(max_rows = 10, max_cols = 10)
+question_8607 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/total_checkup.csv")</h3>
+<p>Let's group by '학년' in the total_check.csv file in csv file to get the minimum value and save it in df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8607}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8607}
+</div>
+'''
+#모범답안
+answer_8607 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')",
+                              "df_answer = data.groupby('학년')[['키', '몸무게']].min()"]}
+]
+img_8607 =''
+
+##8606 문제
+table_8608 = pd.read_csv("/content/jupyter_judge/csv_file/total_checkup.csv")
+table_html_8608 = table_8608.to_html(max_rows = 10, max_cols = 10)
+pre_table_8608 = table_8608.groupby('학년')[['키', '몸무게']].max()
+pre_table_html_8608 = pre_table_8608.to_html(max_rows = 10, max_cols = 10)
+question_8608 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/total_checkup.csv")</h3>
+<p>Let's group by '학년' in the total_check.csv file in csv file to get the maxium value and save it in df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8608}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8608}
+</div>
+'''
+#모범답안
+answer_8608 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')",
+                              "df_answer = data.groupby('학년')[['키', '몸무게']].max()"]}
+]
+img_8608 =''
+
+##8609 문제
+table_8609 = pd.read_csv("/content/jupyter_judge/csv_file/total_checkup.csv")
+table_html_8609 = table_8609.to_html(max_rows = 10, max_cols = 10)
+pre_table_8609 = table_8609.groupby('시도')[['키', '몸무게']].mean()
+pre_table_html_8609 = pre_table_8609.to_html(max_rows = 10, max_cols = 10)
+question_8609 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/total_checkup.csv")</h3>
+<p>Let's group by '시도' in the total_check.csv file in csv file to get the mean value of '키', '몸무게' and save it in df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8609}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8609}
+</div>
+'''
+#모범답안
+answer_8609 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/total_checkup.csv')",
+                              "df_answer = data.groupby('시도')[['키', '몸무게']].mean()"]}
+]
+img_8609 =''
+
+##8610 문제
+table_8610 = pd.read_csv("/content/jupyter_judge/csv_file/movie_audience.csv")
+table_html_8610 = table_8610.to_html(max_rows = 10, max_cols = 5)
+pre_table_8610 = table_8610.loc[:,['movie', 'audiences']]
+pre_table_html_8610 = pre_table_8610.to_html(max_rows = 10, max_cols = 5)
 question_8610 = f''' <h2 style = "background-color:yellow; ">Description</h2>
-<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/missing_fill.csv")</h3>
-<p>Let's fill in the missing values in the data with the average of column D and save it to df.</p>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/movie_audience.csv")</h3>
+<p>Let's save only 'movie' and 'audience' in the movie_audience.csv file in df.</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> Data before preprocessing </h2>
@@ -4502,63 +4633,299 @@ question_8610 = f''' <h2 style = "background-color:yellow; ">Description</h2>
 </div>
 '''
 answer_8610 = [
-    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/missing_fill.csv')",
-                              "df_answer = data.fillna(value = data['D'].mean())"]}
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/movie_audience.csv')",
+                              "df_answer = data.loc[:,['movie', 'audiences']]"]}
 ]
 img_8610 =''
 
-
-
-#데이터 합치기
-merge_df1 = pd.read_csv('/content/jupyter_judge/csv_file/merge1.csv')
-merge_df2 = pd.read_csv('/content/jupyter_judge/csv_file/merge2.csv')
-merge_df = pd.merge(merge_df1, merge_df2, how = 'left', on = 'key')
-
-merge_df1_html = merge_df1.to_html(max_rows = 10, max_cols =10)
-merge_df2_html = merge_df2.to_html(max_rows = 10, max_cols =10)
-merge_df_html = merge_df.to_html(max_rows = 10, max_cols =10)
-
-# question_8620 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
-# <h3 = "white-space: pre-wrap;">data1=pd.read_csv("/content/jupyter_judge/csv_file/merge1.csv")</h3>
-# <h3 = "white-space: pre-wrap;">data2=pd.read_csv("/content/jupyter_judge/csv_file/merge2.csv")</h3>
-# <p>위 데이터를 key 열을 중심으로 data1에서 data2로 합쳐 df에 저장해봅시다.</p>
-# <HR>
-# <div style = "float:left;width:50%">
-# <h2> 전처리 전 데이터 </h2>
-# <p>data1 : {merge_df1_html}<p>
-# <p>data2 : {merge_df2_html}<p>
-# </div>
-# <div style = "float:right;width:50%">
-# <h2> 전처리 후 데이터 </h2>
-# {merge_df_html}
-# </div>
-# '''
-question_8620 = f''' <h2 style = "background-color:yellow; ">Description</h2>
-<h3 = "white-space: pre-wrap;">data1=pd.read_csv("/content/jupyter_judge/csv_file/merge1.csv")</h3>
-<h3 = "white-space: pre-wrap;">data2=pd.read_csv("/content/jupyter_judge/csv_file/merge2.csv")</h3>
-<p>Let's merge the data from data1 to data2 based on the 'key' column and save it to df.</p>
+##8611 문제
+table_8611 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")
+table_html_8611 = table_8611.to_html(max_rows = 10, max_cols = 10)
+pre_table_8611 = table_8611.iloc[:,1:]
+pre_table_html_8611 = pre_table_8611.to_html(max_rows = 10, max_cols = 10)
+question_8611 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
+<p>Let's save the value in the csv file except for the day column in the bike_seoul.csv file in df.</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> Data before preprocessing </h2>
-<p>data1 : {merge_df1_html}<p>
-<p>data2 : {merge_df2_html}<p>
+<p>{table_html_8611}<p>
 </div>
 <div style = "float:right;width:50%">
 <h2> Data after preprocessing </h2>
-{merge_df_html}
+{pre_table_html_8611}
 </div>
 '''
-
-#정답데이터
-answer_8620 = [
-    {'input' : [[10]], 'output' : ["data1 = pd.read_csv('/content/jupyter_judge/csv_file/merge1.csv')", 
-                                  "data2 = pd.read_csv('/content/jupyter_judge/csv_file/merge2.csv')", 
-                                  "df_answer = pd.merge(data1, data2, how = 'left', on = 'key')"]}
+answer_8611 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')",
+                              "df_answer = data.iloc[:,1:]"]}
 ]
-#이미지
+img_8611 =''
+
+##8612문제
+table_8612 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")
+table_html_8612 = table_8612.to_html(max_rows = 10, max_cols = 10)
+table_8612 = table_8612.iloc[:,1:]
+pre_table_8612 = (table_8612-table_8612.min()) / (table_8612.max() - table_8612.min())
+pre_table_html_8612 = pre_table_8612.to_html(max_rows = 10, max_cols = 10)
+question_8612 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
+<p>1. Excludes column 'day'.</p>
+<p>2. Each value is converted to a value between 0 and 1 and stored in the resultant df.</p>
+<p>(value - min) / (max - min)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8612}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8612}
+</div>
+'''
+answer_8612 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')",
+                               "data = data.iloc[:,1:]",
+                              "df_answer = (data-data.min()) / (data.max() - data.min())"]}
+]
+img_8612 =''
+
+##8613 문제
+table_8613 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")
+table_html_8613 = table_8613.to_html(max_rows = 10, max_cols = 10)
+table_8613 = table_8613.iloc[:,1:]
+pre_table_8613 = (table_8613-table_8613.mean()) / (table_8613.std())
+pre_table_html_8613 = pre_table_8613.to_html(max_rows = 10, max_cols = 10)
+question_8613 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
+<p>1. Excludes column 'day'.</p>
+<p>2. Normalize each value and store it in df.</p>
+<p>(value -mean) / (std)</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8613}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8613}
+</div>
+'''
+answer_8613 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')",
+                               "data = data.iloc[:,1:]",
+                               "df_answer = (data-data.mean()) / (data.std())"]}
+]
+img_8613 =''
+
+##8614 문제
+table_8614 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")
+table_html_8614 = table_8614.to_html(max_rows = 10, max_cols = 10)
+pre_table_8614 = table_8614[table_8614['rent']>180000]
+pre_table_html_8614 = pre_table_8614.to_html(max_rows = 10, max_cols = 10)
+question_8614 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
+<p>Let's save a value with a 'rent' value greater than 180000 in df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8614}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8614}
+</div>
+'''
+answer_8614 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul.csv')",
+                              "df_answer = data[data['rent']>180000]"]}
+]
+img_8614 =''
+
+##8615 문제
+table_8615 = pd.read_csv("/content/jupyter_judge/csv_file/checkup.csv")
+table_html_8615 = table_8615.to_html(max_rows = 10, max_cols = 10)
+pre_table_8615 = table_8615[table_8615['성별']=='남']
+pre_table_html_8615 = pre_table_8615.to_html(max_rows = 10, max_cols = 10)
+question_8615 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/checkup.csv")</h3>
+<p>Let's save the value with '성별' as '남' in df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8615}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8615}
+</div>
+'''
+answer_8615 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/checkup.csv')",
+                              "df_answer = data[data['성별']=='남']"]}
+]
+img_8615 =''  
+
+##8616 문제
+table_8616 = pd.read_csv("/content/jupyter_judge/csv_file/missing_data.csv")
+table_html_8616 = table_8616.to_html(max_rows = 10, max_cols = 10)
+pre_table_8616 = table_8616.fillna(value = table_8616['D'].mean())
+pre_table_html_8616 = pre_table_8616.to_html(max_rows = 10, max_cols = 10)
+question_8616 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/missing_data.csv")</h3>
+<p>Let's fill in the missing values in the data with the average of column D and save it to df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8616}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8616}
+</div>
+'''
+answer_8616 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/missing_data.csv')",
+                              "df_answer = data.fillna(value = data['D'].mean())"]}
+]
+img_8616 =''
+
+##8617 문제
+table_8617 = pd.read_csv("/content/jupyter_judge/csv_file/missing_data.csv")
+table_html_8617 = table_8617.to_html(max_rows = 10, max_cols = 10)
+pre_table_8617 = table_8617.dropna()
+pre_table_html_8617 = pre_table_8617.to_html(max_rows = 10, max_cols = 10)
+question_8617 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/missing_data.csv")</h3>
+<p>Let's remove the missing value and save it to df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8617}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8617}
+</div>
+'''
+answer_8617 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/missing_data.csv')",
+                              "df_answer = data.dropna()"]}
+]
+img_8617 =''
+
+##8618 문제
+table1_8618 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul_1to6.csv")
+table2_8618 = pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul_7to12.csv")
+table1_html_8618 = table1_8618.to_html(max_rows = 5, max_cols = 10)
+table2_html_8618 = table2_8618.to_html(max_rows = 5, max_cols = 10)
+
+pre_table_8618 = pd.concat([table1_8618, table2_8618])
+pre_table_html_8618 = pre_table_8618.to_html(max_rows = 10, max_cols = 10)
+question_8618 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data1=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul_1to6.csv")</h3>
+<h3 = "white-space: pre-wrap;">data2=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul_7to12.csv")</h3>
+<p>Let's combine data from January to June and data from July to December into one data frame and store it in df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table1_html_8618}<p>
+<p>{table2_html_8618}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8618}
+</div>
+'''
+answer_8618 = [
+    {'input' : [], 'output' : ["data1=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul_1to6.csv')",
+                               "data2=pd.read_csv('/content/jupyter_judge/csv_file/bike_seoul_7to12.csv')",
+                              "df_answer = pd.concat([data1, data2])"]}
+]
+img_8618 =''
+
+##8619문제
+table1_8619 = pd.read_csv("/content/jupyter_judge/csv_file/merge1.csv")
+table2_8619 = pd.read_csv("/content/jupyter_judge/csv_file/merge2.csv")
+table1_html_8619 = table1_8619.to_html(max_rows = 10, max_cols = 5)
+table2_html_8619 = table2_8619.to_html(max_rows = 10, max_cols = 5)
+
+pre_table_8619 = pd.merge(table1_8619, table2_8619, on = ['key1', 'key2'])
+pre_table_html_8619 = pre_table_8619.to_html(max_rows = 10, max_cols = 10)
+question_8619 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data1=pd.read_csv("/content/jupyter_judge/csv_file/merge1.csv")</h3>
+<h3 = "white-space: pre-wrap;">data2=pd.read_csv("/content/jupyter_judge/csv_file/merge2.csv")</h3>
+<p>Let's combine data1 and data2 around key1 and key2 and store them in df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table1_html_8619}<p>
+<p>{table2_html_8619}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8619}
+</div>
+'''
+answer_8619 = [
+    {'input' : [], 'output' : ["data1=pd.read_csv('/content/jupyter_judge/csv_file/merge1.csv')",
+                               "data2=pd.read_csv('/content/jupyter_judge/csv_file/merge2.csv')",
+                              "df_answer = pd.merge(table1_8619, table2_8619, on = ['key1', 'key2'])"]}
+]
+img_8619 =''
+
+##8620문제
+table_8620 = pd.read_pickle("/content/jupyter_judge/csv_file/multiindex.pkl")
+table_html_8620 = table_8620.to_html(max_rows = 10, max_cols = 10)
+
+pre_table_8620 = table_8620.stack()
+pre_table_html_8620 = pre_table_8620.to_frame().to_html(max_rows = 10, max_cols = 10)
+question_8620 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/multiindex.pkl")</h3>
+<p>Let's stack the data and store it in the df.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8620}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8620}
+</div>
+'''
+answer_8620 = [
+    {'input' : [], 'output' : ["data=pd.read_pickle('/content/jupyter_judge/csv_file/multiindex.pkl')",
+                              "df_answer = data.stack()"]}
+]
 img_8620 =''
 
+##8621문제
+table_8621 = pd.read_csv('/content/jupyter_judge/csv_file/pivot_table.csv')
+table_html_8621 = table_8621.to_html(max_rows = 10, max_cols = 10)
 
+pre_table_8621 = pd.pivot_table(table_8621, values = 'D', index = ['A', 'B'], columns = ['C'])
+pre_table_html_8621 = pre_table_8621.to_html(max_rows = 10, max_cols = 10)
+question_8621 = f''' <h2 style = "background-color:yellow; ">Description</h2>
+<h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/pivot_table.csv")</h3>
+<p>1. Let's make a pivot table of data and store it in df.</p>
+<p>2. Index columns 'A' and 'B'.</p>
+<p>3. Column 'C' as column.</p>
+<p>4. Let 'D' column be value.</p>
+<HR>
+<div style = "float:left;width:50%">
+<h2> Data before preprocessing </h2>
+<p>{table_html_8621}<p>
+</div>
+<div style = "float:right;width:50%">
+<h2> Data after preprocessing </h2>
+{pre_table_html_8621}
+</div>
+'''
+answer_8621 = [
+    {'input' : [], 'output' : ["data=pd.read_csv('/content/jupyter_judge/csv_file/pivot_table.csv')",
+                              "df_answer =pd.pivot_table(table_8621, values = 'D', index = ['A', 'B'], columns = ['C'])"]}
+]
+img_8621 =''
 
 #메타데이터
 test_set = [
@@ -4722,6 +5089,21 @@ test_set = [
     {'test_file' : '_8602.py', 'answer' : answer_8602, 'question' : question_8602, 'img' : img_8602},
     {'test_file' : '_8603.py', 'answer' : answer_8603, 'question' : question_8603, 'img' : img_8603},
     {'test_file' : '_8604.py', 'answer' : answer_8604, 'question' : question_8604, 'img' : img_8604}, 
-    {'test_file' : '_8610.py', 'answer' : answer_8610, 'question' : question_8610, 'img' : img_8610},   
-    {'test_file' : '_8620.py', 'answer' : answer_8620, 'question' : question_8620, 'img' : img_8620},   
+    {'test_file' : '_8605.py', 'answer' : answer_8605, 'question' : question_8605, 'img' : img_8605}, 
+    {'test_file' : '_8606.py', 'answer' : answer_8606, 'question' : question_8606, 'img' : img_8606}, 
+    {'test_file' : '_8607.py', 'answer' : answer_8607, 'question' : question_8607, 'img' : img_8607}, 
+    {'test_file' : '_8608.py', 'answer' : answer_8608, 'question' : question_8608, 'img' : img_8608}, 
+    {'test_file' : '_8609.py', 'answer' : answer_8609, 'question' : question_8609, 'img' : img_8609}, 
+    {'test_file' : '_8610.py', 'answer' : answer_8610, 'question' : question_8610, 'img' : img_8610}, 
+    {'test_file' : '_8611.py', 'answer' : answer_8611, 'question' : question_8611, 'img' : img_8611}, 
+    {'test_file' : '_8612.py', 'answer' : answer_8612, 'question' : question_8612, 'img' : img_8612}, 
+    {'test_file' : '_8613.py', 'answer' : answer_8613, 'question' : question_8613, 'img' : img_8613}, 
+    {'test_file' : '_8614.py', 'answer' : answer_8614, 'question' : question_8614, 'img' : img_8614}, 
+    {'test_file' : '_8615.py', 'answer' : answer_8615, 'question' : question_8615, 'img' : img_8615}, 
+    {'test_file' : '_8616.py', 'answer' : answer_8616, 'question' : question_8616, 'img' : img_8616},   
+    {'test_file' : '_8617.py', 'answer' : answer_8617, 'question' : question_8617, 'img' : img_8617}, 
+    {'test_file' : '_8618.py', 'answer' : answer_8618, 'question' : question_8618, 'img' : img_8618}, 
+    {'test_file' : '_8619.py', 'answer' : answer_8619, 'question' : question_8619, 'img' : img_8619}, 
+    {'test_file' : '_8620.py', 'answer' : answer_8620, 'question' : question_8620, 'img' : img_8620}, 
+    {'test_file' : '_8621.py', 'answer' : answer_8621, 'question' : question_8621, 'img' : img_8621},     
 ]
