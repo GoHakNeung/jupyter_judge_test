@@ -592,6 +592,7 @@ def turtle_check(py) :
   display_HTML('''<h3><p><span style="color:blue">파란색 도형</span>은 여러분이 작성한 코드로 그린 도형입니다.</p><p><span style="color:red">빨간색 도형</span>은 선생님이 작성한 코드로 그린 도형입니다.</p></h3>''')
   #error_check에서 파일을 실행함. 이후 또 실행하면 터틀이 2번 그려짐. 그래서 error_check에서 에러검사 및 실행을 함.(정상 실행되면 그냥 실행함.)
   error_check('turtle_output.py')
+  create_button_with_scratch_cell()
   
 #------------------------------------------------------------------------------#
 from google.colab import output
@@ -1093,6 +1094,8 @@ def plot_check(py) :
   except : 
     print('그래프가 생성되지 않았습니다.')
 
+  create_button_with_scratch_cell()
+
 
   # if compile_error == True :
     # update_excel('틀렸습니다.',py)
@@ -1365,6 +1368,7 @@ def table_check(py) :
 
   elif df == df_answer and df == '' :
     return
+  create_button_with_scratch_cell()
 
 #------------------------------------------------------------------------------#
 #에러에 따른 정보를 알려주는 함수
