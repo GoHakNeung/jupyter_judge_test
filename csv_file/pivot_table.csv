@@ -1,0 +1,13 @@
+A,B,C,D,E
+one,A,foo,1,54
+one,B,foo,23,21
+two,C,foo,4,1
+three,A,bar,2,5
+one,B,bar,1,33
+one,C,bar,2,4
+two,A,foo,3,6
+three,B,foo,4,23
+one,C,foo,1,56
+one,A,bar,2,6
+two,B,bar,3,1
+three,C,bar,15,32
