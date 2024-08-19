@@ -4408,7 +4408,7 @@ question_8601 =f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>Apple 열 : 30, 34, 21, 22, 54, 23, 43 | Bananas 열 : 21, 12, 43, 23, 33, 56, 23</p>
 <HR>
 <div style = "float:left;width:50%">
-<h2> example </h2>
+<h2> 예시시 </h2>
 <p>{table_html_8601}<p>
 </div>
 '''
@@ -4428,7 +4428,7 @@ question_8602 =f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
 <h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/checkup.csv")</h3>
 <HR>
 <div style = "float:left;width:50%">
-<h2> example </h2>
+<h2> 예시시 </h2>
 <p>{table_html_8602}<p>
 </div>
 '''
