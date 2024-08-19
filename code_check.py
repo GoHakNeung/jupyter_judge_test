@@ -1051,7 +1051,7 @@ def plot_check(py) :
     if np.array_equal(img_submit, img_answer) :
     # print(tc_green+'정답입니다.'+reset)
       display_HTML('<h3 style = "color:green; ">정답입니다.</h2>')
-      input('그래프를 보고 알 수 있는 내용을 적어봅시다.')
+      # input('그래프를 보고 알 수 있는 내용을 적어봅시다.')
     else :
      # print(tc_red+'오답입니다.'+reset)
       display_HTML('<h3 style = "color:red; ">오답입니다.</h2>')
