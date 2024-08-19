@@ -1,7 +1,6 @@
 from IPython.display import display, HTML, Javascript
 import pandas as pd
 import numpy as np
-from jupyter_judge.code_check import *
 from google.colab import output
 
 def Question(question_file, _type = 'code'):
@@ -5191,3 +5190,5 @@ test_set = [
     {'test_file' : '_8620.py', 'answer' : answer_8620, 'question' : question_8620, 'img' : img_8620}, 
     {'test_file' : '_8621.py', 'answer' : answer_8621, 'question' : question_8621, 'img' : img_8621},     
 ]
+
+from jupyter_judge.code_check import *
