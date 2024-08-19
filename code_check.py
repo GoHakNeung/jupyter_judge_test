@@ -1177,7 +1177,7 @@ def table_check(py) :
   if type(df) != type(df_answer) :
     print('Type is different.')
   elif type(df) == pd.core.frame.DataFrame and type(df_answer) == pd.core.frame.DataFrame :
-    Question('<h2 style = "background-color:yellow">결과 확인</h2>')
+    display_HTML('<h2 style = "background-color:yellow">결과 확인</h2>')
   # 결과 자가 평가
     df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
     df_html = df.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
@@ -1200,7 +1200,7 @@ def table_check(py) :
       </div>
       '''      
 
-      Question(output_html_color)
+      display_HTML(output_html_color)
     else : 
       df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5)
       output_html = f'''
@@ -1215,8 +1215,8 @@ def table_check(py) :
           </div>
       </div>
       '''      
-      Question(output_html)
-    Question('<HR>')
+      display_HTML(output_html)
+    display_HTML('<HR>')
 # 자동 평가
     #NAN이 있어도 평가하기 위해 추가한 코드
     if df_answer.isna().to_numpy().sum() : 
@@ -1237,7 +1237,7 @@ def table_check(py) :
 
 ###
   elif type(df) == pd.core.series.Series and type(df_answer) == pd.core.series.Series :
-    Question('<h2 style = "background-color:yellow">Check the results</h2>')
+    display_HTML('<h2 style = "background-color:yellow">Check the results</h2>')
   # 결과 자가 평가
     # df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
     # df_html = df.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
@@ -1260,7 +1260,7 @@ def table_check(py) :
       </div>
       '''      
 
-      Question(output_html_color)
+      display_HTML(output_html_color)
     else : 
       df_html = df.to_frame().to_html(max_cols =5, max_rows = 5)
       df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5)
@@ -1276,8 +1276,8 @@ def table_check(py) :
           </div>
       </div>
       '''      
-      Question(output_html)
-    Question('<HR>')
+      display_HTML(output_html)
+    display_HTML('<HR>')
 # 자동 평가
     #NAN이 있어도 평가하기 위해 추가한 코드
     if df_answer.isna().to_numpy().sum() : 
@@ -1308,8 +1308,8 @@ def table_check(py) :
         </div>
     </div>
     '''
-    Question(output_html)
-    Question('<HR>')
+    display_HTML(output_html)
+    display_HTML('<HR>')
     print(tc_green+'정답'+reset)
 
      
@@ -1326,8 +1326,8 @@ def table_check(py) :
         </div>
     </div>
     '''
-    Question(output_html)
-    Question('<HR>')
+    display_HTML(output_html)
+    display_HTML('<HR>')
     print(tc_red+'오답'+reset)
 
   elif df == df_answer and df == '' :
@@ -1338,20 +1338,20 @@ def table_check(py) :
 
 def table_feedback(df, df_answer) :
   if df.shape != df_answer.shape :
-    Question('Shape가 다릅니다.')
+    display_HTML('Shape가 다릅니다.')
   elif (df.columns != df_answer.columns).sum() != 0 :
-    Question('Columns이 다릅니다.')
+    display_HTML('Columns이 다릅니다.')
   elif (df.index != df_answer.index).sum() != 0 :
-    Question('Index가 다릅니다.')
+    display_HTML('Index가 다릅니다.')
   else :
-    Question('Dataframe 속 값이 다릅니다.')
+    display_HTML('Dataframe 속 값이 다릅니다.')
 
 
 
 def table_series_feedback(df, df_answer) :
   if df.shape != df_answer.shape :
-    Question('Shape가 다릅니다.')
+    display_HTML('Shape가 다릅니다.')
   elif (df.index != df_answer.index).sum() != 0 :
-    Question('Index가 다릅니다.')
+    display_HTML('Index가 다릅니다.')
   else :
-    Question('Dataframe 속 값이 다릅니다.')
+    display_HTML('Dataframe 속 값이 다릅니다.')
