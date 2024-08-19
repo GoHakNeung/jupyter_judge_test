@@ -1168,16 +1168,16 @@ def table_check(py) :
   try :
     table_arrange(py)
   except :
-    print('평가 코드를 생성하세요.')
+    print('Generate the evaluation code.')
     return
   table_convert('table_output.py')
   error_check('table_output.py')
 
 
   if type(df) != type(df_answer) :
-    print('형태가 다릅니다.')
+    print('Type is different.')
   elif type(df) == pd.core.frame.DataFrame and type(df_answer) == pd.core.frame.DataFrame :
-    Question('<h2 style = "background-color:yellow">결과 확인</h2>')
+    Question('<h2 style = "background-color:yellow">Check the results</h2>')
   # 결과 자가 평가
     df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
     df_html = df.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
@@ -1190,26 +1190,54 @@ def table_check(py) :
       output_html_color = f'''
       <div style="display: flex; flex-direction: row;">
           <div style="float:left;width:50%">
-          <h3>왼쪽은 여러분이 작성한 Dateframe입니다.</h3>
+          <h3>The left side shows the output produced by your code.</h3>
           <p >{df_html_color}</p>
           </div>
           <div style="float:right;width:50%">
-          <h3>오른쪽은 여러분이 작성한 Dataframe입니다.</h3>
+          <h3>The right side shows the output produced by model answer.</h3>
           <p >{df_answer_html}</p>
           </div>
       </div>
       '''      
 
-      Qu답'+reset)
+      Question(output_html_color)
+    else : 
+      df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5)
+      output_html = f'''
+      <div style="display: flex; flex-direction: row;">
+          <div style="float:left;width:50%">
+          <h3>The left side shows the output produced by your code.</h3>
+          <p >{df_html}</p>
+          </div>
+          <div style="float:right;width:50%">
+          <h3>The right side shows the output produced by model answer.</h3>
+          <p >{df_answer_html}</p>
+          </div>
+      </div>
+      '''      
+      Question(output_html)
+    Question('<HR>')
+# 자동 평가
+    #NAN이 있어도 평가하기 위해 추가한 코드
+    if df_answer.isna().to_numpy().sum() : 
+      random_number = random.randint(1, 20141112)
+      df.fillna(value = random_number, inplace = True)
+      df_answer.fillna(value = random_number, inplace = True)
+    #NAN이 있어도 평가하기 위해 추가한 코드
+    
+    df_numpy = df.to_numpy()
+    df_answer_numpy = df_answer.to_numpy()
+    if np.array_equal(df_numpy, df_answer_numpy) and np.array_equal(df.columns, df_answer.columns) and np.array_equal(df.index, df_answer.index) :
+      print(tc_green+'Right answer.'+reset)
     else :
-      print(tc_red+'오답'+reset)
+      print(tc_red+'Wrong answer'+reset)
       table_feedback(df, df_answer)
 ###
   # elif type(df) == pd.core.series.Series and type(df_answer) == pd.core.series.Series :
 
 ###
   elif type(df) == pd.core.series.Series and type(df_answer) == pd.core.series.Series :
-    Question('<h2 style = "background-color:yellow">결과 확인</h2>')
+    Question('<h2 style = "background-color:yellow">Check the results</h2>')
   # 결과 자가 평가
     # df_answer_html = df_answer.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
     # df_html = df.to_html(max_cols = 5, max_rows =5, show_dimensions = True)
@@ -1222,11 +1250,11 @@ def table_check(py) :
       output_html_color = f'''
       <div style="display: flex; flex-direction: row;">
           <div style="float:left;width:50%">
-          <h3>왼쪽은 여러분이 작성한 Dataframe입니다.</h3>
+          <h3>The left side shows the output produced by your code.</h3>
           <p >{df_html_color}</p>
           </div>
           <div style="float:right;width:50%">
-          <h3>오른쪽은 예시 답안으로 작성한 Dataframe입니다.</h3>
+          <h3>The right side shows the output produced by model answer.</h3>
           <p >{df_answer_html}</p>
           </div>
       </div>
@@ -1239,11 +1267,11 @@ def table_check(py) :
       output_html = f'''
       <div style="display: flex; flex-direction: row;">
           <div style="float:left;width:50%">
-          <h3>왼쪽은 여러분이 작성한 Series입니다.</h3>
+          <h3>The left side shows the output produced by your code.</h3>
           <p >{df_html}</p>
           </div>
           <div style="float:right;width:50%">
-          <h3>오른쪽은 예시 답안으로 작성한 Series입니다.</h3>
+          <h3>The right side shows the output produced by model answer.</h3>
           <p >{df_answer_html}</p>
           </div>
       </div>
@@ -1262,20 +1290,20 @@ def table_check(py) :
     df_numpy = df.to_numpy()
     df_answer_numpy = df_answer.to_numpy()
     if np.array_equal(df_numpy, df_answer_numpy) and np.array_equal(df.index, df_answer.index) :
-      print(tc_green+'정답'+reset)
+      print(tc_green+'Right answer.'+reset)
     else :
-      print(tc_red+'오답'+reset)
+      print(tc_red+'Wrong answer.'+reset)
       table_series_feedback(df, df_answer)
 
   elif df == df_answer and df !='' :
     output_html = f'''
     <div style="display: flex; flex-direction: row;">
         <div style="float:left;width:50%">
-        <h3>왼쪽에 있는 값은 여러분이 작성한 값입니다.</h3>
+        <h3>The value on the left is the output produced by your code.</h3>
         <p >{df}</p>
         </div>
         <div style="float:right;width:50%">
-        <h3>오른쪽에 있는 값은 예시 답안입니다.</h3>
+        <h3>The value on the right is the output produced by your code.</h3>
         <p >{df_answer}</p>
         </div>
     </div>
@@ -1289,11 +1317,11 @@ def table_check(py) :
     output_html = f'''
     <div style="display: flex; flex-direction: row;">
         <div style="float:left;width:50%">
-        <h3>왼쪽에 있는 값은 여러분이 작성한 값입니다.</h3>
+        <h3>The value on the left is the output produced by your code.</h3>
         <p >{df}</p>
         </div>
         <div style="float:right;width:50%">
-        <h3>오른쪽에 있는 값은 예시 답안입니다.</h3>
+        <h3>The value on the right is the output produced by your code..</h3>
         <p >{df_answer}</p>
         </div>
     </div>
@@ -1321,20 +1349,20 @@ def table_check(py) :
 
 def table_feedback(df, df_answer) :
   if df.shape != df_answer.shape :
-    Question('Shape가 다릅니다.')
+    Question('Shape is different.')
   elif (df.columns != df_answer.columns).sum() != 0 :
-    Question('Columns이 다릅니다.')
+    Question('Columns is different.')
   elif (df.index != df_answer.index).sum() != 0 :
-    Question('Index가 다릅니다.')
+    Question('Index is different')
   else :
-    Question('Dataframe 속 값이 다릅니다.')
+    Question('The values in the dataframe are different.')
 
 
 
 def table_series_feedback(df, df_answer) :
   if df.shape != df_answer.shape :
-    Question('Shape가 다릅니다.')
+    Question('Shape is different.')
   elif (df.index != df_answer.index).sum() != 0 :
-    Question('Index가 다릅니다.')
+    Question('Index is different')
   else :
-    Question('Dataframe 속 값이 다릅니다.')
+    Question('The values in the dataframe are different.')
