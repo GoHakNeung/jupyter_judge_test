@@ -153,10 +153,10 @@ def code_print(py_name) :
 #   for line in lines[4:-2] :
   for line in lines[4:4+len(code)] :
     if error_count == code_count :
-      display_HTML(tc_red+line[:-1]+reset)
+      print(tc_red+line[:-1]+reset)
       code_count += 1
     else :
-      display_HTML(line[:-1])
+      print(line[:-1])
       code_count += 1
   f.close()
 #------------------------------------------------------------------------------#
@@ -191,9 +191,9 @@ def error_line() :
 #------------------------------------------------------------------------------#
 #에러에 따른 정보를 알려주는 함수
 def name_error(test_py) :
-  display_HTML(error_line(), '번째 줄에 정의되지 않은 변수가 있습니다.')
-  display_HTML('또는 따옴표 없는 문자열입니까? 아니면 잘못 입력한 명령어입니까?')
-  display_HTML("="*40)
+  print(error_line(), '번째 줄에 정의되지 않은 변수가 있습니다.')
+  print('또는 따옴표 없는 문자열입니까? 아니면 잘못 입력한 명령어입니까?')
+  print("="*40)
   code_print(test_py)
 
 def type_error(test_py) :
