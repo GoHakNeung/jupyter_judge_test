@@ -3,28 +3,52 @@ import pandas as pd
 import numpy as np
 from google.colab import output
 
-def Question(question_file, _type = 'code'):
-    # 문제 검색 및 파일 설정
-    search_question = question_file
-    matched_dicts = [d for d in test_set if d['question'] == search_question]
-    file_name = matched_dicts[0]['test_file']
+def Question(question_number, _type = 'code'):
 
-    # HTML과 JavaScript 코드를 설정
+    question_path = '/content/' + question_number+'.html'
+    question_name = 'question_'+question_number
+    question_file = 'question_'+question_number
+
+    file_name = '_'+ question_number+'.py'
+    img_name = 'img_'+question_number
+
+    
+    globals()[img_name] = ''
+
     code_editor = setup_html_js()
-    display(HTML(question_file + code_editor))
+
+    if question_name in globals() : 
+        display(HTML(globals()[question_name] + code_editor))
+
+    else : 
+        with open(question_path, 'r') as f :
+            data = f.read()
+        globals()[question_name] = data
+
+        answer_path = '/content/answer_' + question_number + '.py'
+        %run $answer_path
+
+
+        meta_path = '/content/meta_data_' + question_number + '.py'
+        with open(meta_path, 'r') as f : 
+            meta = f.read()
+        exec(meta)
+  
+        display(HTML(globals()[question_name] + code_editor))
 
     # 콜백 함수 등록
     def save_text(text):
         file_path = f'/content/{file_name}'
         with open(file_path, 'w') as file:
             file.write(text)
-        if _type == 'code' : 
+
+        if _type == 'code' :
           code_check(file_name)  # 결과 확인 함수
-        elif _type =='turtle' : 
+        elif _type =='turtle' :
           turtle_check(file_name)
-        elif _type == 'plot' : 
+        elif _type == 'plot' :
           plot_check(file_name)
-        elif _type == 'pandas' : 
+        elif _type == 'pandas' :
           table_check(file_name)
 
     output.register_callback('notebook.save_text', save_text)
