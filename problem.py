@@ -26,7 +26,9 @@ def Question(question_number, _type = 'code'):
         globals()[question_name] = data
 
         answer_path = '/content/answer_' + question_number + '.py'
-        exec(globals()[answer_path])
+        with open(answer_path, 'r') as f : 
+            _answer = f.read()
+        exec(_answer)
 
 
         meta_path = '/content/meta_data_' + question_number + '.py'
