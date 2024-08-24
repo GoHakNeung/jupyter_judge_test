@@ -26,7 +26,7 @@ def Question(question_number, _type = 'code'):
         globals()[question_name] = data
 
         answer_path = '/content/answer_' + question_number + '.py'
-        %run $answer_path
+        exec(answer_path)
 
 
         meta_path = '/content/meta_data_' + question_number + '.py'
