@@ -31,13 +31,13 @@ mpl.rc('font', size = 14)
 # 문서 이름을 ID로 불러오기
 # 학생들이 문서이름을 ID로 만들어야 함.
 # my_id = input('이름을 입력해주세요.')
-# print('지금부터 공부를 시작합니다.')
+print('지금부터 공부를 시작합니다.')
 #------------------------------------------------------------------------------#
 
 #문제에 따른 시도한 횟수를 dictionary로 만듬
-trial_error_count = {}
-for i in range(len(test_set)) :
-  trial_error_count[test_set[i]['test_file']] = 0
+# trial_error_count = {}
+# for i in range(len(test_set)) :
+#   trial_error_count[test_set[i]['test_file']] = 0
 #------------------------------------------------------------------------------#
 #문제 입력
 #problem.py에 입력
@@ -67,7 +67,8 @@ def create_button_with_scratch_cell():
     # Python 측에서 호출할 함수를 등록
     def create_scratch_cell():
         question_file1 = 'question_6301'
-        _frontend.create_scratch_cell(f'#이 코드를 실행해주세요.\nQuestion({question_file1})')
+        # _frontend.create_scratch_cell(f'#이 코드를 실행해주세요.\nQuestion({question_file1})')
+        _frontend.create_scratch_cell('테스트 중입니다.')
     output.register_callback('notebook.create_scratch_cell', create_scratch_cell)
 
 
@@ -432,7 +433,7 @@ def code_check(py) :
       answer = test_set[i]['answer']
       global question
       question = test_set[i]['question']
-  trial_error_count[py] += 1
+  # trial_error_count[py] += 1
   try :
     code_arrange(py)
   except :
@@ -575,7 +576,7 @@ def turtle_convert(output_turtle) :
 
 def turtle_check(py) :
   global original
-  trial_error_count[py] += 1
+  # trial_error_count[py] += 1
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer, answer_turtle
@@ -883,7 +884,7 @@ def plot_check(py) :
   answer_graph = '/content/jupyter_judge/graph/answer'+py[:-3]+'.png'
   review = 'question'+'_review'+py[:-3]
   global original
-  trial_error_count[py] += 1
+  # trial_error_count[py] += 1
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer, answer_plot
@@ -1193,7 +1194,7 @@ def table_check(py) :
   code = []
   raw_code = []
 
-  trial_error_count[py] += 1
+  # trial_error_count[py] += 1
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer, answer_table
