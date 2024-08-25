@@ -76,10 +76,9 @@ def create_button_with_scratch_cell():
 
 
 #------------------------------------------------------------------------------#
-global final_result
+global final_result, attempts
 final_result = False
-
-
+attempts = 0
 
 
 #------------------------------------------------------------------------------#
