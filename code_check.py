@@ -442,7 +442,6 @@ def code_check(py) :
   if code_input_count :
     if code_input_count != len(answer[0]['input']) :
       # update_excel('입력 오류', py)
-      print(code_input_count)
       print('입력을 확인해주세요.')
       return
 
