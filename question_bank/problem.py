@@ -5127,8 +5127,7 @@ test_set = [
     {'test_file' : '_8006.py', 'answer' : answer_8006, 'question' : question_8006, 'img' : img_8006},
     {'test_file' : '_8007.py', 'answer' : answer_8007, 'question' : question_8007, 'img' : img_8007},
     {'test_file' : '_8008.py', 'answer' : answer_8008, 'question' : question_8008, 'img' : img_8008},
-    {'test_file' : '_8009.py', 'answer' : answer_8009, 'question' : question_8009, 'img' : img_8009},  
-    {'test_file' : 'test.py', 'answer' : answer, 'question' : question_8009, 'img' : img_8009},       
+    {'test_file' : '_8009.py', 'answer' : answer_8009, 'question' : question_8009, 'img' : img_8009},     
   
   
     #plot_check() 문제 모음
