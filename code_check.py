@@ -50,40 +50,6 @@ bc_yellow = '\033[48;2;255;255;0m'
 bc_green = '\033[48;2;0;255;0m'
 bc_red = '\033[48;2;255;0;m'
 bc_black = '\033[40m'
-
-#------------------------------------------------------------------------------#
-#문제 번호에서 난이도 높거나 낮은 문제 번호 추출해주는 함수
-question_info = pd.read_csv('/content/jupyter_judge/question_bank/question_info.csv', dtype = {'id' : str, '1st_area' : str, '2nd_area' : str, 'difficulty' : int}) 
-
-# 문제 추천 함수
-def recommend_next_question(current_question_id, is_correct, df, wrong_attempts):
-    current_question = df[df['id'] == current_question_id]
-   
-    area = current_question['1st_area'].iloc[0]
-    sub_area = current_question['2nd_area'].iloc[0]
-    difficulty = current_question['difficulty'].iloc[0]
-    
-    if is_correct:
-        next_difficulty = min(difficulty + 1, 5)
-        wrong_attempts = 0  # 정답 시 오답 카운트 초기화
-    else:
-        if wrong_attempts == 1:
-            # 첫 번째 오답인 경우 같은 난이도 유지
-            next_difficulty = difficulty
-        else:
-            # 두 번째 오답인 경우 난이도 감소 및 오답 카운트 초기화
-            next_difficulty = max(difficulty - 1, 1)
-            wrong_attempts = 0
-    
-    # 같은 난이도 내에서 다른 문제 추천 (첫 번째 오답)
-    recommended_questions = df[(df['1st_area'] == area) & 
-                               (df['2nd_area'] == sub_area) & 
-                               (df['difficulty'] == next_difficulty) &
-                               (df['id'] != current_question_id)].sample(n=1)
-
-    return recommended_questions['id'].iloc[0]
-
-
 #------------------------------------------------------------------------------#
 # JavaScript를 통해 Python 함수를 호출하는 HTML/JavaScript 코드 생성
 def create_button_with_scratch_cell():
@@ -100,11 +66,9 @@ def create_button_with_scratch_cell():
 
     # Python 측에서 호출할 함수를 등록
     def create_scratch_cell():
-
-        recommand_question = recommend_next_question(question_number, final_result, question_info, attempts)
-        
-        _frontend.create_scratch_cell(f"#이 코드를 실행해주세요.\nQuestion('{recommand_question}')")
-        # _frontend.create_scratch_cell('테스트 중입니다.')
+        question_file1 = 'question_6301'
+        # _frontend.create_scratch_cell(f'#이 코드를 실행해주세요.\nQuestion({question_file1})')
+        _frontend.create_scratch_cell('테스트 중입니다.')
     output.register_callback('notebook.create_scratch_cell', create_scratch_cell)
 
 
@@ -571,7 +535,6 @@ def code_check(py) :
     print(tc_red+'틀렸습니다.'+reset)
 
   create_button_with_scratch_cell()
-    
 
 #------------------------------------------------------------------------------#
 #터틀 평가 함수
