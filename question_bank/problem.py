@@ -4,7 +4,10 @@ import numpy as np
 from google.colab import output
 
 def Question(question_number, _type = 'code'):
-
+    global attempts, final_resutl 
+    attempts = 0
+    final_attempt = False
+    
     question_path = '/content/jupyter_judge/question_bank/question/' + question_number+'.html'
     question_name = 'question_'+question_number
     question_file = 'question_'+question_number
