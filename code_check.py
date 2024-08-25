@@ -524,9 +524,13 @@ def code_check(py) :
   if sum(result) == test_count+1 :
     final_result = True  
     attempts = 0  
+    print('final_results', final_results)
+    print('attempts', attempts)
     print(tc_green+'정답입니다.'+reset)
   else :
     final_result = False  
+    print('final_results', final_results)
+    print('attempts', attempts)
     print(tc_red+'틀렸습니다.'+reset)
 
   create_button_with_scratch_cell()
