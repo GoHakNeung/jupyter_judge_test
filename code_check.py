@@ -75,8 +75,9 @@ def create_button_with_scratch_cell():
 
 
 
-
-
+#------------------------------------------------------------------------------#
+global final_result
+final_result = False
 
 
 
@@ -426,6 +427,7 @@ def display_HTML(question_) :
 #------------------------------------------------------------------------------#
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
+  global final_result, attempts
 
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
@@ -520,17 +522,12 @@ def code_check(py) :
             print(bc_yellow+str(i)+reset)
     display_HTML('<HR>')
   if sum(result) == test_count+1 :
-    try :
-      # update_excel('정답입니다.', py)
-      print(tc_green+'정답입니다.'+reset)
-    except :
-      print(tc_green+'정답입니다.'+reset)
+    final_result = True  
+    attempts = 0  
+    print(tc_green+'정답입니다.'+reset)
   else :
-    try :
-      # update_excel('틀렸습니다.', py)
-      print(tc_red+'틀렸습니다.'+reset)
-    except :
-      print(tc_red+'틀렸습니다.'+reset)
+    final_result = False  
+    print(tc_red+'틀렸습니다.'+reset)
 
   create_button_with_scratch_cell()
 
