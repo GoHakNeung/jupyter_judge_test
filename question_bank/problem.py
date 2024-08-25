@@ -2235,18 +2235,7 @@ img_6107 = "https://github.com/GoHakNeung/python/blob/main/img_1102.jpg?raw=true
 answer_6107 = [
     {'input' : [[13,21], [13]], 'output' : ['t = Turtle(window)','t.width(3)', "t.color('red')", 'for i in range(6) : ', ' t.forward(60)', ' t.right(120)']}
 ]
-#// 채점 데이터 셋
-answer = [{'input': [['-459']], 'output': ['-459']},
- {'input': [['-33']], 'output': ['-33']},
- {'input': [['-166']], 'output': ['-166']},
- {'input': [['0']], 'output': ['0']},
- {'input': [['-331']], 'output': ['-331']},
- {'input': [['224']], 'output': ['224']},
- {'input': [['-22']], 'output': ['-22']},
- {'input': [['-142']], 'output': ['-142']},
- {'input': [['462']], 'output': ['462']},
- {'input': [['-36']], 'output': ['-36']}
-]
+
 
 
 question_8000 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
