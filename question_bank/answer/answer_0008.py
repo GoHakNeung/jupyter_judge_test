@@ -1,0 +1,1 @@
+answer_0008 = [{'input': [], 'output': ["Isn't it lovely?"]}]

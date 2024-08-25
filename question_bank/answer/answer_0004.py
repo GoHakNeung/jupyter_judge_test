@@ -1,0 +1,1 @@
+answer_0004 = [{'input': [], 'output': ['Value is 789']}]
