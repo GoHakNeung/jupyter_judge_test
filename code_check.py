@@ -428,7 +428,8 @@ def display_HTML(question_) :
 #코드의 정답 여부를 확인하는 함수
 def code_check(py) :
   global final_result, attempts
-
+  attempts +=1
+    
   for i in range(len(test_set)) :
     if test_set[i]['test_file'] == py :
       global answer
