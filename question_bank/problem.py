@@ -3,10 +3,6 @@ import pandas as pd
 import numpy as np
 from google.colab import output
 
-global trial_error_count, attempts 
-trial_error_count = {}
-attempts = 0
-
 def Question(question_number, _type = 'code'):
 
     question_path = '/content/jupyter_judge/question_bank/question/' + question_number+'.html'
@@ -49,7 +45,6 @@ def Question(question_number, _type = 'code'):
         with open(file_path, 'w') as file:
             file.write(text)
             
-        attempts += 1
         
         if _type == 'code' :
           code_check(file_name)  # 결과 확인 함수
