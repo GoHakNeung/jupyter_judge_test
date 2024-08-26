@@ -83,6 +83,9 @@ question_info = pd.read_csv('/content/jupyter_judge/question_bank/question_info.
 def recommend_next_question(current_question_id, is_correct, df, wrong_attempts):
     current_question = df[df['id'] == current_question_id]
 
+    if current_question.empty:
+        return "No such question exists."
+
     area = current_question['1st_area'].iloc[0]
     sub_area = current_question['2nd_area'].iloc[0]
     difficulty = current_question['difficulty'].iloc[0]
@@ -105,7 +108,10 @@ def recommend_next_question(current_question_id, is_correct, df, wrong_attempts)
                                (df['difficulty'] == next_difficulty) &
                                (df['id'] != current_question_id)].sample(n=1)
 
-    return recommended_questions['id'].iloc[0]
+    if recommended_questions.empty:
+        return "No recommendation available."
+    else : 
+        return recommended_questions['id'].iloc[0]
 
 
 
