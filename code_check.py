@@ -59,8 +59,6 @@ def create_button_with_scratch_cell():
     print(attempts)
     print(question_info.head())
 
-    global question_num
-    print(pyname)
     
     
     html_script = """
