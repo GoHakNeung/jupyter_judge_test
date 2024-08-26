@@ -4490,7 +4490,7 @@ table_8601 = pd.DataFrame({'Apples' : [30, 34, 21,22,54, 23, 43], 'Bananas' : [2
 table_html_8601 = table_8601.to_html(max_rows = 10, max_cols = 10)
 question_8601 =f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
 <p>DataFrame을 만들어서 df 변수에 입력해봅시다. </p>
-<p>Apple 열 : 30, 34, 21, 22, 54, 23, 43 | Bananas 열 : 21, 12, 43, 23, 33, 56, 23</p>
+<p>Apples 열 : 30, 34, 21, 22, 54, 23, 43 | Bananas 열 : 21, 12, 43, 23, 33, 56, 23</p>
 <HR>
 <div style = "float:left;width:50%">
 <h2> 예시 </h2>
