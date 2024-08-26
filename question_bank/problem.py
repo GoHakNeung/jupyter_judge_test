@@ -10,6 +10,7 @@ def Question(question_number, _type = 'code'):
     attempts = 0
     final_attempt = False
     question_num = question_number
+    print(question_num)
     
     question_path = '/content/jupyter_judge/question_bank/question/' + question_num+'.html'
     question_name = 'question_'+question_num
