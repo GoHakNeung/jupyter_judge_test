@@ -53,11 +53,11 @@ bc_black = '\033[40m'
 #------------------------------------------------------------------------------#
 # JavaScript를 통해 Python 함수를 호출하는 HTML/JavaScript 코드 생성
 def create_button_with_scratch_cell():
-    # global question_number, final_result, attempts, question_info
-    # print(question_number)
-    # print(final_result)
-    # print(attempts)
-    # print(question_info.head())
+    global question_num, final_result, attempts, question_info
+    print(question_num)
+    print(final_result)
+    print(attempts)
+    print(question_info.head())
     
     html_script = """
     <button onclick="createScratchCell()">문제 추천</button>
@@ -73,7 +73,7 @@ def create_button_with_scratch_cell():
     # Python 측에서 호출할 함수를 등록
     def create_scratch_cell():
 
-        # next_question = recommend_next_question(question_number, final_result, question_info, attempts)
+        # next_question = recommend_next_question(question_num, final_result, question_info, attempts)
         _frontend.create_scratch_cell("#이 코드를 실행해주세요.\nQuestion('0001')")
         _frontend.create_scratch_cell(f"#이 코드를 실행해주세요.\nQuestion('{next_question}')")
         # _frontend.create_scratch_cell(f'#이 코드를 실행해주세요.\nQuestion({question_file1})')
