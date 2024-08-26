@@ -71,9 +71,11 @@ def create_button_with_scratch_cell():
     def create_scratch_cell():
 
         next_question = recommend_next_question(globals_variable.question_num, final_result, question_info, attempts)
-        # _frontend.create_scratch_cell("#이 코드를 실행해주세요.\nQuestion('0001')")
-        _frontend.create_scratch_cell(f"#이 코드를 실행해주세요.\nQuestion('{next_question}')")
-        # _frontend.create_scratch_cell(f'#이 코드를 실행해주세요.\nQuestion({question_file1})')
+        if next_question == '추천 문제가 없습니다.' : 
+            _frontend.create_scratch_cell(f"#{next_question}.\n노트북으로 돌아가세요.")            
+        else : 
+            _frontend.create_scratch_cell(f"#이 코드를 실행해주세요.\nQuestion('{next_question}')")
+
     output.register_callback('notebook.create_scratch_cell', create_scratch_cell)
 
 global question_info
@@ -84,7 +86,7 @@ def recommend_next_question(current_question_id, is_correct, df, wrong_attempts)
     current_question = df[df['id'] == current_question_id]
 
     if current_question.empty:
-        return "No such question exists."
+        return "추천 문제가 없습니다."
 
     area = current_question['1st_area'].iloc[0]
     sub_area = current_question['2nd_area'].iloc[0]
@@ -109,7 +111,7 @@ def recommend_next_question(current_question_id, is_correct, df, wrong_attempts)
                                (df['id'] != current_question_id)].sample(n=1)
 
     if recommended_questions.empty:
-        return "No recommendation available."
+        return "추천 문제가 없습니다."
     else : 
         return recommended_questions['id'].iloc[0]
 
