@@ -72,7 +72,7 @@ def create_button_with_scratch_cell():
 
         next_question = recommend_next_question(globals_variable.question_num, final_result, question_info, attempts)
         if next_question == '추천 문제가 없습니다.' : 
-            _frontend.create_scratch_cell(f"#{next_question}.\n노트북으로 돌아가세요.")            
+            _frontend.create_scratch_cell(f"#{next_question}.\n#노트북으로 돌아가세요.")            
         else : 
             _frontend.create_scratch_cell(f"#이 코드를 실행해주세요.\nQuestion('{next_question}')")
 
