@@ -9,6 +9,7 @@ from jupyter_judge.question_bank.problem import *
 from jupyter_judge.ColabTurtleClass import *
 from PIL import Image
 from google.colab import _frontend
+import globals
 
 import warnings
 warnings.filterwarnings(action='ignore')
@@ -58,9 +59,7 @@ def create_button_with_scratch_cell():
     print(final_result)
     print(attempts)
     print(question_info.head())
-
-    global question_num
-    print(question_num)
+    print(globals.question_num)
     
     html_script = """
     <button onclick="createScratchCell()">문제 추천</button>
