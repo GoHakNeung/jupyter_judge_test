@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from google.colab import output
 global question_num
-question_num = ''
+
 
 def Question(question_number, _type = 'code'):
     global attempts, final_resutl, question_num 
