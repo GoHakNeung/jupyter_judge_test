@@ -53,11 +53,11 @@ bc_black = '\033[40m'
 #------------------------------------------------------------------------------#
 # JavaScript를 통해 Python 함수를 호출하는 HTML/JavaScript 코드 생성
 def create_button_with_scratch_cell():
-    global question_number, final_result, attempts, question_info
-    print(question_number)
-    print(final_result)
-    print(attempts)
-    print(question_info.head())
+    # global question_number, final_result, attempts, question_info
+    # print(question_number)
+    # print(final_result)
+    # print(attempts)
+    # print(question_info.head())
     
     html_script = """
     <button onclick="createScratchCell()">문제 추천</button>
