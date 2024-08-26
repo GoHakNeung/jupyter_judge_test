@@ -2,6 +2,8 @@ from IPython.display import display, HTML, Javascript
 import pandas as pd
 import numpy as np
 from google.colab import output
+import globals
+
 global question_num
 
 
@@ -9,7 +11,7 @@ def Question(question_number, _type = 'code'):
     global attempts, final_resutl, question_num 
     attempts = 0
     final_attempt = False
-    question_num = question_number
+    globals.question_num = question_number
     print(question_num)
     
     question_path = '/content/jupyter_judge/question_bank/question/' + question_num+'.html'
