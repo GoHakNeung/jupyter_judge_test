@@ -59,7 +59,8 @@ def create_button_with_scratch_cell():
     print(attempts)
     print(question_info.head())
 
-    
+    global question_num
+    print(question_num)
     
     html_script = """
     <button onclick="createScratchCell()">문제 추천</button>
