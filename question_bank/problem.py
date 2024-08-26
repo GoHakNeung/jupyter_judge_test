@@ -4,16 +4,17 @@ import numpy as np
 from google.colab import output
 
 def Question(question_number, _type = 'code'):
-    global attempts, final_resutl 
+    global attempts, final_resutl, question_num 
     attempts = 0
     final_attempt = False
+    question_num = question_number
     
-    question_path = '/content/jupyter_judge/question_bank/question/' + question_number+'.html'
-    question_name = 'question_'+question_number
-    question_file = 'question_'+question_number
+    question_path = '/content/jupyter_judge/question_bank/question/' + question_num+'.html'
+    question_name = 'question_'+question_num
+    question_file = 'question_'+question_num
 
-    file_name = '_'+ question_number+'.py'
-    img_name = 'img_'+question_number
+    file_name = '_'+ question_num+'.py'
+    img_name = 'img_'+question_num
 
     
     globals()[img_name] = ''
@@ -28,13 +29,13 @@ def Question(question_number, _type = 'code'):
             data = f.read()
         globals()[question_name] = data
 
-        answer_path = '/content/jupyter_judge/question_bank/answer/answer_' + question_number + '.py'
+        answer_path = '/content/jupyter_judge/question_bank/answer/answer_' + question_num + '.py'
         with open(answer_path, 'r') as f : 
             _answer = f.read()
         exec(_answer)
 
 
-        meta_path = '/content/jupyter_judge/question_bank/metadata/meta_data_' + question_number + '.py'
+        meta_path = '/content/jupyter_judge/question_bank/metadata/meta_data_' + question_num + '.py'
         with open(meta_path, 'r') as f : 
             meta = f.read()
         exec(meta)
