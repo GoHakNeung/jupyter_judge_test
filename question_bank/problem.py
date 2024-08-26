@@ -2870,7 +2870,8 @@ question_8501 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')</p>
-<p>'city_province', 'emission' 열에 있는 데이터를 사용해봅시다.</p>
+<p>city = data['city_province']</p>
+<p>emission = data['emission']</p>
 
 </p>
 </div>
@@ -2915,7 +2916,8 @@ question_8502 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <div style = "float:left;width:50%">
 <h2>데이터 예시 </h2>
 <p>data = pd.read_csv('/content/jupyter_judge/csv_file/food_waste.csv')</p>
-<p>'city_province', 'emission_per_person' 열에 있는 데이터를 사용해봅시다.</p>
+<p>city = data['city_province']</p>
+<p>emission_per_person = data['emission_per_person']</p>
 
 </p>
 </div>
@@ -3665,8 +3667,8 @@ question_8541 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
 <h2>그래프</h2>
 <p>경상도에서 발생한 교통사고 사망자 수를 막대그래프로 나타내봅시다. </p>
 <p>그래프 제목 : 경상도에서 발생하는 인구 10만명당 교통사고 사망자 수</p>
-<p>가로축 제목 : 경상도 시도</p>
-<p>세로축 제목 : 사망자 수(명)</p>
+<p>가로축 제목 : 경상도 시도(명)</p>
+<p>세로축 제목 : 사망자 수</p>
 
 <HR>
 <div style = "float:left;width:50%">
@@ -3697,8 +3699,8 @@ answer_8541 = [
                                   "city_province = data_city['city_province']", 
                                   "death = data_city['death']", 
                                   "A_bar = plt.bar(city_province, death)", 
-                                  "A_xlabel = plt.xlabel('경상도 시도')",
-                                  "A_ylabel = plt.ylabel('사망자 수(명)')",
+                                  "A_xlabel = plt.xlabel('경상도 시도(명)')",
+                                  "A_ylabel = plt.ylabel('사망자 수')",
                                   "A_title = plt.title('경상도에서 발생하는 인구 10만명당 교통사고 사망자 수')", 
                                   "plt.show()"                                   ]}
 ]
@@ -4196,8 +4198,8 @@ answer_8571 = [
                                   "rent = data['rent']", 
                                   "rent_mean = data['rent'].mean()", 
                                   "plt.boxplot(rent, labels = ['대여건수'])", 
-                                  "plt.title('서울시 공공자전거 대여건수 상자그림')", 
-                                  "plt.ylabel('대여건수(건)')", 
+                                  "A_title = plt.title('서울시 공공자전거 대여건수 상자그림')", 
+                                  "A_ylabel = plt.ylabel('대여건수(건)')", 
                                   "plt.show()"                                   ]}
 ]
 question_8572 = '''<h1 style = "background-color:yellow; ">문제 설명</h1>
@@ -4532,7 +4534,7 @@ pre_table_html_8603 = pre_table_8603.to_html(max_rows = 10, max_cols = 10)
 question_8603 = f''' <h2 style = "background-color:yellow; ">문제 설명</h2>
 <h3 = "white-space: pre-wrap;">data=pd.read_csv("/content/jupyter_judge/csv_file/bike_seoul.csv")</h3>
 <p>csv_file 폴더에 있는 bike_seoul.csv 파일을 Dataframe으로 불러와서 head() 값을 df 변수에 입력해봅시다.</p>
-<p>Let's just import the head() value of the bike_seoul.csv in the csv_file folder into the df variable.</p>
+
 <HR>
 <div style = "float:left;width:50%">
 <h2> 전처리 전 데이터 </h2>
