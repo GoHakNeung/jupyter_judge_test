@@ -102,7 +102,6 @@ def recommend_next_question(current_question_id, is_correct, df, wrong_attempts)
         else:
             # 두 번째 오답인 경우 난이도 감소 및 오답 카운트 초기화
             next_difficulty = max(difficulty - 1, 1)
-            wrong_attempts = 0
 
     # 같은 난이도 내에서 다른 문제 추천 (첫 번째 오답)
     recommended_questions = df[(df['1st_area'] == area) &
