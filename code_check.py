@@ -563,8 +563,6 @@ def code_check(py) :
     final_result = False  
     print(tc_red+'틀렸습니다.'+reset)
 
-  print(globals_variable.question_name)
-  exec('print(globals_variable.question_name)')
   create_button_with_scratch_cell()
 
 #------------------------------------------------------------------------------#
