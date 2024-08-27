@@ -52,7 +52,6 @@ def Question(question_number, _type = 'code'):
         with open(file_path, 'w') as file:
             file.write(text)
             
-        print(globals_variable.total_attempts)
         if _type == 'code' :
           code_check(file_name)  # 결과 확인 함수
         elif _type =='turtle' :
