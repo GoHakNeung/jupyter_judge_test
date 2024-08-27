@@ -3,10 +3,9 @@ import sys, random, math, os, traceback, gspread, shutil, random
 import pandas as pd
 import numpy as np
 from requests import get
-# from oauth2client.service_account import ServiceAccountCredentials
 from IPython.core.display import display, HTML
-from jupyter_judge.question_bank.problem import *
-from jupyter_judge.ColabTurtleClass import *
+from jupyter_judge_test.question_bank.problem import *
+from jupyter_judge_test.ColabTurtleClass import *
 from PIL import Image
 from google.colab import _frontend
 import globals_variable
