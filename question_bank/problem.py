@@ -5,10 +5,8 @@ from google.colab import output
 import globals_variable
 
 def Question(question_number, _type = 'code'):
-    global attempts, final_resutl, question_num, total_attempts
-    attempts = 0
-    total_attempts = 0
-    final_attempt = False
+    global  globals_variable.question_num, globals_variable.total_attempts
+
     globals_variable.question_num = question_number
     globals_variable.total_attempts = 0
     
