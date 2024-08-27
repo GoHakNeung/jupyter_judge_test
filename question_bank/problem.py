@@ -5,7 +5,6 @@ from google.colab import output
 import globals_variable
 
 def Question(question_number, _type = 'code'):
-    global  globals_variable.question_num, globals_variable.total_attempts
 
     globals_variable.question_num = question_number
     globals_variable.total_attempts = 0
