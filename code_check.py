@@ -108,14 +108,12 @@ def recommend_next_question(current_question_id, is_correct, df, wrong_attempts)
     else : 
         return recommended_questions['id'].iloc[0]
 
-
-
-
 #------------------------------------------------------------------------------#
 global final_result, attempts
 final_result = False
 attempts = 0
 
+result_df = pd.DataFrame(columns = ['id', 'question_file', 'final_result', 'attempts']) 
 
 #------------------------------------------------------------------------------#
 # 코드를 input/output 리스트에 넣기
